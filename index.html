@@ -55,6 +55,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" onerror="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" onerror="this.media='all'">
 <style>
 /* Naslovnica (hero) uvijek zadržava tamnu fotografiju s njoj namijenjenim svijetlim tekstom,
    bez obzira na temu stranice — inače se fotografija peći gubi na svijetloj pozadini. */
@@ -1712,6 +1713,326 @@ body.zoom-pl{background:#0E1013;color:#F3F4F6}
 .vl-brend .vb-boje label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:var(--dim2)}
 .vl-brend .vb-boje input[type=color]{width:64px;height:42px;border:1px solid var(--line2);border-radius:10px;background:transparent;padding:2px;cursor:pointer}
 .vl-brend .vb-boje select{margin:0;min-width:130px}
+/* ==================== ZooM GOST — svijetli "pro" izgled (Wolt / Glovo stil) ====================
+   Vrijedi samo za gostinsku stranicu restorana (body.zg). Kuhinja, pult, vozač, vlasnik i admin
+   zadržavaju svoj izgled. Boja restorana dolazi iz brendCSS() kao --z-a. */
+body.zg{--z-bg:#F3F1EE;--z-card:#FFFFFF;--z-ink:#15171C;--z-mut:#646A73;--z-mut2:#8C919A;--z-line:#ECE9E4;
+ --z-a:#D94A2B;--z-a-ink:#fff;--z-ok:#1E8E5A;--z-r:18px;
+ --z-sjena:0 1px 2px rgba(20,22,28,.05),0 6px 20px rgba(20,22,28,.07);
+ --z-staklo:rgba(255,255,255,.62);--z-staklo-rub:rgba(255,255,255,.75);
+ --z-font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+ /* stari elementi (praćenje narudžbe, pravno…) dobivaju svijetlu paletu */
+ --bg:var(--z-bg);--bg2:#F7F6F4;--card:#fff;--line:var(--z-line);--line2:#DCD8D2;--cream:var(--z-ink);--dim:var(--z-mut);--dim2:var(--z-mut2);
+ --or:var(--z-a);--gold:var(--z-a);--bw:1px;
+ background:var(--z-bg)!important;color:var(--z-ink);font-family:var(--z-font);font-weight:500;line-height:1.45;
+ -webkit-font-smoothing:antialiased}
+body.zg.zg-tamna{--z-bg:#0F1115;--z-card:#1A1D23;--z-ink:#F2F3F5;--z-mut:#A2A8B2;--z-mut2:#7E848E;--z-line:#2A2E36;
+ --z-staklo:rgba(20,22,27,.62);--z-staklo-rub:rgba(255,255,255,.08);--bg2:#15181D;--card:#1A1D23;--line2:#353A43;
+ --z-sjena:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25)}
+body.zg h1,body.zg h2,body.zg h3,body.zg h4,body.zg button,body.zg input,body.zg textarea,body.zg select{font-family:var(--z-font);text-transform:none;letter-spacing:normal}
+body.zg .wrap{max-width:none;padding-bottom:0}
+html.zg-lock,html.zg-lock body{overflow:hidden}
+
+/* ---- pozadinska fotografija: stoji na mjestu, sadržaj klizi preko nje ---- */
+.zg-bg{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,color-mix(in srgb,var(--z-a) 22%,#fff) 0%,var(--z-bg) 70%);
+ background-size:cover;background-position:center}
+.zg-bg.s-slikom{background-color:#ddd}
+.zg-bg.s-slikom::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18) 0,rgba(0,0,0,0) 22%)}
+body.zg-tamna .zg-bg:not(.s-slikom){background:linear-gradient(180deg,color-mix(in srgb,var(--z-a) 30%,#0F1115) 0%,var(--z-bg) 70%)}
+
+/* ---- gornja traka (instaliraj / jezik) — male okrugle tipke preko slike ---- */
+body.zg #topbar{position:absolute;top:calc(10px + env(safe-area-inset-top,0px));right:12px;left:auto;z-index:6;background:none;border:0;padding:0;width:auto;box-shadow:none}
+body.zg #topbar .tb-grupa{background:none;border:0;box-shadow:none;padding:0;gap:8px;backdrop-filter:none}
+body.zg #topbar .tb-grupa .tb-it{width:40px;height:40px;min-width:0;padding:0;border-radius:50%;background:rgba(255,255,255,.94)!important;color:#15171C!important;
+ border:0!important;box-shadow:0 2px 10px rgba(0,0,0,.18)!important;justify-content:center;align-items:center}
+body.zg-podstr #topbar{display:none}
+body.zg #topbar .tb-it .tb-t{display:none}
+body.zg #topbar .tb-it .tb-ik{color:var(--z-ink)!important;width:20px;height:20px}
+body.zg #topbar .tema{display:none!important}
+body.zg #topbar .tb-grupa>*+*{border:0}
+
+/* ---- zaglavlje restorana ---- */
+.zg-hero{position:relative;max-width:760px;margin:0 auto;padding:0 12px}
+.zg-cover{height:clamp(170px,34vh,300px)}
+.zg-info{position:relative;background:var(--z-card);border-radius:24px;box-shadow:var(--z-sjena);padding:46px 18px 16px;text-align:center}
+.zg-logo{position:absolute;left:50%;top:-38px;transform:translateX(-50%);width:76px;height:76px;border-radius:22px;background:var(--z-a);
+ color:var(--z-a-ink);display:grid;place-items:center;font-weight:800;font-size:28px;letter-spacing:-.02em;box-shadow:0 0 0 4px var(--z-card),0 6px 18px rgba(0,0,0,.15);overflow:hidden}
+.zg-logo img{width:100%;height:100%;object-fit:cover;background:#fff}
+.zg-info h1{font-size:26px;line-height:1.15;font-weight:800;letter-spacing:-.02em;margin:0}
+.zg-slogan{color:var(--z-mut);font-size:15px;margin-top:4px}
+.zg-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:14px}
+.zg-cip{display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;background:var(--bg2);border:1px solid var(--z-line);font-size:13px;font-weight:600;color:var(--z-ink);white-space:nowrap}
+.zg-cip svg{width:15px;height:15px;color:var(--z-mut)}
+.zg-cip.ok{color:var(--z-ok)}.zg-cip.ok i{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+.zg-cip.ne{color:#B42318}
+.zg-nacin{display:flex;gap:4px;margin:14px auto 0;padding:4px;border-radius:14px;background:var(--bg2);border:1px solid var(--z-line);max-width:360px}
+.zg-nacin button{flex:1;border:0;background:none;padding:9px 6px;border-radius:10px;font-weight:700;font-size:14px;color:var(--z-mut);display:flex;align-items:center;justify-content:center;gap:6px}
+.zg-nacin button svg{width:17px;height:17px}
+.zg-nacin button[aria-pressed="true"]{background:var(--z-card);color:var(--z-ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.zg-nacin button:disabled{opacity:.45}
+.zg-akcije{display:flex;gap:8px;margin-top:14px}
+.zg-akcije>*{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;border-radius:14px;border:1px solid var(--z-line);
+ background:var(--z-card);color:var(--z-ink);text-decoration:none;font-size:12.5px;font-weight:700}
+.zg-akcije svg{width:20px;height:20px;color:var(--z-a)}
+.zg-akcije>*:active{transform:scale(.97)}
+.zg-onama{text-align:left;margin-top:14px;padding:14px;border-radius:14px;background:var(--bg2);color:var(--z-mut);font-size:14.5px;line-height:1.55}
+.zg-onama p+p{margin-top:8px}
+
+.zg-obavijest{max-width:736px;margin:12px auto 0;padding:14px 16px;border-radius:16px;background:#FFF4E5;border:1px solid #F5D9A8;color:#7A4B00;font-size:14.5px}
+.zg-obavijest b{display:block;font-size:15.5px;margin-bottom:2px}
+body.zg-tamna .zg-obavijest{background:#2A2112;border-color:#4A3A1C;color:#F3D9A6}
+
+/* ---- kategorije (ljepljive) ---- */
+.zg-kat{position:sticky;top:0;z-index:20;margin-top:14px;padding:10px 0;background:color-mix(in srgb,var(--z-bg) 78%,transparent);
+ backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+.zg-kat.zalijepljeno{border-bottom-color:var(--z-line);box-shadow:0 4px 14px rgba(0,0,0,.06);background:color-mix(in srgb,var(--z-card) 92%,transparent)}
+.zg-kat-in{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;max-width:760px;margin:0 auto;padding:0 12px}
+.zg-kat-in::-webkit-scrollbar{display:none}
+.zg-kat button{flex:none;border:1px solid var(--z-line);background:var(--z-card);color:var(--z-ink);padding:9px 15px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap;transition:background .15s,color .15s}
+.zg-kat button.on{background:var(--z-ink);color:var(--z-card);border-color:var(--z-ink)}
+
+/* ---- jelovnik ---- */
+.zg-meni{max-width:760px;margin:0 auto;padding:6px 12px 0}
+.zg-sekcija{margin-top:14px;padding:16px 12px 12px;border-radius:24px;background:var(--z-staklo);border:1px solid var(--z-staklo-rub);
+ backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);scroll-margin-top:66px}
+.zg-sekcija>h2{font-size:21px;font-weight:800;letter-spacing:-.015em;padding:0 4px 12px;display:flex;align-items:baseline;gap:8px}
+.zg-sekcija>h2 small{font-size:13px;font-weight:700;color:var(--z-mut)}
+.zg-lista{display:grid;grid-template-columns:1fr;gap:10px}
+.zg-jelo{display:flex;gap:12px;align-items:stretch;background:var(--z-card);border-radius:var(--z-r);padding:12px;box-shadow:var(--z-sjena);
+ border:1.5px solid transparent;cursor:pointer;transition:transform .12s,border-color .2s;text-align:left;min-height:122px}
+.zg-jelo:active{transform:scale(.985)}
+.zg-jelo.u-kos{border-color:var(--z-a)}
+.zg-jt{flex:1;min-width:0;display:flex;flex-direction:column}
+.zg-jt h3{font-size:16px;font-weight:750;line-height:1.25;letter-spacing:-.01em;color:var(--z-ink)}
+.zg-jt h3 .zg-kol{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:7px;background:var(--z-a);color:var(--z-a-ink);font-size:12.5px;margin-right:6px;vertical-align:1px}
+.zg-jt p{color:var(--z-mut);font-size:13.5px;line-height:1.4;margin-top:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.zg-jc{margin-top:auto;padding-top:8px;display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px}
+.zg-jc b{font-size:15.5px;font-weight:800;color:var(--z-ink)}
+.zg-oz{font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:999px;background:var(--bg2);color:var(--z-mut);border:1px solid var(--z-line);white-space:nowrap}
+.zg-oz.chef{background:#FFF6DB;color:#8A6100;border-color:#F3E2A8}
+.zg-oz.ljuto{background:#FFEDEA;color:#B42318;border-color:#F8D3CD}
+.zg-oz.veg{background:#EAF7EF;color:#17663F;border-color:#CDEBD8}
+body.zg-tamna .zg-oz.chef,body.zg-tamna .zg-oz.ljuto,body.zg-tamna .zg-oz.veg{background:var(--bg2);border-color:var(--z-line)}
+.zg-js{position:relative;flex:none;width:112px;align-self:center}
+.zg-js img,.zg-js .zg-nema{width:112px;height:112px;border-radius:14px;object-fit:cover;display:block;background:var(--bg2)}
+.zg-js .zg-nema{display:grid;place-items:center;color:var(--z-mut2);font-weight:800;font-size:26px}
+.zg-js.bez{width:44px;align-self:flex-end}
+.zg-plus{position:absolute;right:-4px;bottom:-4px;width:38px;height:38px;border-radius:50%;border:0;background:var(--z-card);color:var(--z-a);
+ display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.18);transition:transform .12s}
+.zg-plus svg{width:20px;height:20px}
+.zg-js.bez .zg-plus{position:static}
+.zg-plus:active{transform:scale(.9)}
+.zg-jelo.u-kos .zg-plus{background:var(--z-a);color:var(--z-a-ink)}
+.zg-jelo .sidr-ik,.zg-jelo .sidrena{font-size:12px}
+.zg-sidr{font-size:11.5px;color:var(--z-mut2);width:100%}
+
+/* ---- podnožje ---- */
+.zg-dno{max-width:760px;margin:14px auto 0;padding:0 12px calc(110px + env(safe-area-inset-bottom))}
+.zg-kartica{background:var(--z-card);border-radius:22px;box-shadow:var(--z-sjena);padding:16px}
+.zg-kartica+.zg-kartica{margin-top:12px}
+.zg-kartica>h3{font-size:17px;font-weight:800;margin-bottom:10px;letter-spacing:-.01em}
+.zg-red{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--z-line);color:var(--z-ink);text-decoration:none;font-size:14.5px}
+.zg-red:first-of-type{border-top:0}
+.zg-red svg{width:20px;height:20px;color:var(--z-mut);flex:none}
+.zg-red span{flex:1}.zg-red small{display:block;color:var(--z-mut);font-size:12.5px}
+.zg-pravno{margin-top:12px;background:var(--z-card);border-radius:22px;box-shadow:var(--z-sjena);overflow:hidden}
+.zg-pravno summary{list-style:none;cursor:pointer;padding:16px;font-weight:700;font-size:15px;display:flex;justify-content:space-between;align-items:center}
+.zg-pravno summary::-webkit-details-marker{display:none}
+.zg-pravno summary::after{content:"";width:9px;height:9px;border-right:2px solid var(--z-mut);border-bottom:2px solid var(--z-mut);transform:rotate(45deg);transition:transform .2s;margin-right:4px}
+.zg-pravno[open] summary::after{transform:rotate(-135deg)}
+body.zg .zg-pravno .pravno{padding:0 16px 16px;margin:0;border:0;background:none;color:var(--z-mut);font-size:13.5px;line-height:1.55;text-align:left}
+body.zg .zg-pravno .pravno h4{font-size:13px;font-weight:800;color:var(--z-ink);margin:14px 0 4px;letter-spacing:.02em}
+body.zg .zoom-powered{display:flex;justify-content:center;align-items:center;gap:6px;margin:22px auto 0;color:var(--z-mut);font-size:12.5px;text-decoration:none;opacity:.9}
+body.zg .zg-dno .recenzije,body.zg .zg-dno [data-ur="recenzije"]{margin-top:12px}
+
+/* ---- prozor jela (bottom sheet) ---- */
+.zg-omot{position:fixed;inset:0;z-index:90;background:rgba(12,14,18,.5);display:flex;align-items:flex-end;justify-content:center;animation:zgFade .2s ease}
+.zg-sheet{position:relative;width:100%;max-width:560px;max-height:92vh;max-height:92dvh;background:var(--z-card);border-radius:26px 26px 0 0;display:flex;flex-direction:column;overflow:hidden;
+ animation:zgGore .28s cubic-bezier(.2,.9,.3,1);box-shadow:0 -10px 40px rgba(0,0,0,.2)}
+@media (min-width:700px){.zg-omot{align-items:center}.zg-sheet{border-radius:26px;max-height:88vh}}
+@keyframes zgGore{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
+@keyframes zgFade{from{opacity:0}to{opacity:1}}
+.zg-x{position:absolute;top:12px;right:12px;z-index:3;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.95);color:#15171C;display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.zg-x svg{width:18px;height:18px}
+.zg-sh-scroll{overflow-y:auto;overscroll-behavior:contain;flex:1}
+.zg-sh-slika{width:100%;aspect-ratio:16/11;object-fit:cover;display:block;background:var(--bg2)}
+.zg-sh-in{padding:18px 18px 8px}
+.zg-sh-in.bez-slike{padding-top:58px}
+.zg-sh-in h2{font-size:23px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.zg-sh-in>p{color:var(--z-mut);font-size:15px;margin-top:6px;line-height:1.5}
+.zg-sh-cij{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px}
+.zg-sh-cij b{font-size:19px;font-weight:800}
+.zg-grupa{margin-top:20px}
+.zg-grupa h4{font-size:16px;font-weight:800;display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.zg-grupa h4 small{font-size:12px;font-weight:700;color:var(--z-mut);background:var(--bg2);padding:3px 8px;border-radius:999px}
+.zg-opcija{display:flex;align-items:center;gap:12px;padding:12px 2px;border-bottom:1px solid var(--z-line);cursor:pointer;font-size:15px;font-weight:600}
+.zg-opcija:last-child{border-bottom:0}
+.zg-opcija input{position:absolute;opacity:0;pointer-events:none}
+.zg-opcija .zg-kv{width:22px;height:22px;border-radius:7px;border:2px solid var(--line2);flex:none;display:grid;place-items:center;transition:all .15s}
+.zg-opcija input:checked+.zg-kv{background:var(--z-a);border-color:var(--z-a)}
+.zg-opcija input:checked+.zg-kv::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.zg-opcija span.n{flex:1}
+.zg-opcija span.c{color:var(--z-mut);font-weight:600;font-size:14px}
+.zg-sh-dno{display:flex;gap:10px;align-items:center;padding:12px 16px calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--z-line);background:var(--z-card)}
+.zg-koracnik{display:flex;align-items:center;gap:2px;background:var(--bg2);border-radius:14px;padding:4px;flex:none}
+.zg-koracnik button{width:40px;height:40px;border:0;border-radius:11px;background:var(--z-card);color:var(--z-ink);display:grid;place-items:center;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.zg-koracnik button svg{width:18px;height:18px}
+.zg-koracnik button:disabled{opacity:.35}
+.zg-koracnik b{min-width:30px;text-align:center;font-size:16px;font-weight:800}
+.zg-koracnik.mali button{width:32px;height:32px;border-radius:9px}
+.zg-koracnik.mali b{min-width:24px;font-size:14.5px}
+
+/* ---- gumbi ---- */
+.zg-btn{display:flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:14px;padding:14px 18px;font-weight:800;font-size:15.5px;
+ background:var(--z-a);color:var(--z-a-ink);width:100%;text-decoration:none;transition:transform .1s,filter .15s;cursor:pointer}
+.zg-btn:active{transform:scale(.98)}
+.zg-btn svg{width:18px;height:18px;flex:none}
+.zg-btn span{white-space:nowrap}
+.zg-btn:disabled{opacity:.55;cursor:default}
+.zg-btn.siv{background:var(--bg2);color:var(--z-ink);border:1px solid var(--z-line)}
+.zg-btn.zelen{background:var(--z-ok);color:#fff}
+.zg-btn .zg-btn-c{margin-left:auto;font-variant-numeric:tabular-nums}
+.zg-btn.razvuk{justify-content:space-between}
+
+/* ---- košarica (plutajući gumb na dnu) ---- */
+body.zg #bar{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));max-width:560px;margin:0 auto;border-radius:18px;padding:0;
+ background:var(--z-a);color:var(--z-a-ink);box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden;cursor:pointer;flex-wrap:wrap;animation:zgGore .3s ease}
+body.zg #bar .l{display:contents;font-family:var(--z-font);text-transform:none}
+body.zg #bar #bk{order:1;margin:14px 0 14px 14px;min-width:28px;height:28px;padding:0 7px;border-radius:9px;background:rgba(255,255,255,.22);display:grid;place-items:center;font-weight:800;font-size:14px}
+body.zg #bar .b-st{display:none}
+body.zg #bar button{order:2;flex:1;background:none;border:0;color:inherit;font-family:var(--z-font);text-transform:none;font-size:16px;font-weight:800;text-align:left;padding:14px 10px;box-shadow:none}
+body.zg #bar button::before,body.zg #bar button::after{display:none}
+body.zg #bar #bc{order:3;margin-right:16px;font-weight:800;font-size:16px;font-variant-numeric:tabular-nums}
+body.zg #bar #bmin{order:4;flex-basis:100%;font-style:normal;font-size:12.5px;font-weight:600;background:rgba(0,0,0,.14);padding:6px 14px;text-align:center}
+body.zg #bar #bmin:empty{display:none}
+body.zg #bar.bump{animation:zgBump .45s ease}
+@keyframes zgBump{0%{transform:scale(1)}35%{transform:scale(1.04)}100%{transform:scale(1)}}
+
+/* ---- obavijest (toast) ---- */
+.zg-toast{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top,0px));transform:translateX(-50%);width:max-content;z-index:120;background:var(--z-ink);color:var(--z-card);
+ padding:11px 16px;border-radius:14px;font-weight:700;font-size:14.5px;box-shadow:0 8px 24px rgba(0,0,0,.25);display:flex;gap:8px;align-items:center;animation:zgToast .25s ease;max-width:calc(100vw - 24px)}
+.zg-toast svg{width:18px;height:18px;color:#4ADE80;flex:none}
+@keyframes zgToast{from{opacity:0;transform:translate(-50%,-10px)}to{opacity:1;transform:translate(-50%,0)}}
+
+/* ---- stranice košarice i narudžbe ---- */
+.zg-str{max-width:640px;margin:0 auto;padding:0 12px calc(24px + env(safe-area-inset-bottom));min-height:100vh}
+.zg-glava{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:12px 4px;margin:0 -12px 6px;padding-left:12px;padding-right:12px;
+ background:color-mix(in srgb,var(--z-bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.zg-nazad{width:42px;height:42px;border-radius:50%;border:1px solid var(--z-line);background:var(--z-card);color:var(--z-ink);display:grid;place-items:center;flex:none;box-shadow:var(--z-sjena)}
+.zg-nazad svg{width:20px;height:20px}
+.zg-glava b{display:block;font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.2}
+.zg-glava small{display:block;color:var(--z-mut);font-size:13px;font-weight:600}
+.zg-koraci{display:flex;gap:6px;margin:0 0 12px}
+.zg-koraci i{flex:1;height:4px;border-radius:4px;background:var(--z-line)}
+.zg-koraci i.on{background:var(--z-a)}
+.zg-stavka{display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--z-line)}
+.zg-stavka:first-of-type{border-top:0;padding-top:2px}
+.zg-stavka img,.zg-stavka .zg-nema{width:58px;height:58px;border-radius:12px;object-fit:cover;flex:none;background:var(--bg2);display:grid;place-items:center;font-weight:800;color:var(--z-mut2)}
+.zg-st-t{flex:1;min-width:0}
+.zg-st-t b{display:block;font-size:15px;font-weight:750;line-height:1.3}
+.zg-st-t small{display:block;color:var(--z-mut);font-size:12.5px;line-height:1.4;margin-top:2px}
+.zg-st-t .zg-st-c{display:block;font-weight:800;font-size:14.5px;margin-top:4px}
+.zg-st-t .zg-gr{display:inline-block;font-size:11px;font-weight:800;color:var(--z-ok);background:#EAF7EF;padding:2px 7px;border-radius:999px;margin-top:4px}
+.zg-uz{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:2px 16px 4px}
+.zg-uz::-webkit-scrollbar{display:none}
+.zg-uz-k{flex:none;width:132px;border:1px solid var(--z-line);border-radius:16px;overflow:hidden;background:var(--z-card);text-align:left;padding:0;color:var(--z-ink);position:relative}
+.zg-uz-k img,.zg-uz-k .zg-nema{width:100%;height:88px;object-fit:cover;display:grid;place-items:center;background:var(--bg2);color:var(--z-mut2);font-weight:800}
+.zg-uz-k span{display:block;padding:8px 10px 2px;font-size:13px;font-weight:700;line-height:1.25;height:42px;overflow:hidden}
+.zg-uz-k b{display:block;padding:0 10px 10px;font-size:13.5px;font-weight:800}
+.zg-uz-k i{position:absolute;top:58px;right:8px;width:30px;height:30px;border-radius:50%;background:var(--z-card);color:var(--z-a);display:grid;place-items:center;box-shadow:0 2px 6px rgba(0,0,0,.18)}
+.zg-uz-k i svg{width:16px;height:16px}
+.zg-zbroj div{display:flex;justify-content:space-between;padding:5px 0;font-size:14.5px;color:var(--z-mut)}
+.zg-zbroj div.pop{color:var(--z-ok)}
+.zg-zbroj div.uk{color:var(--z-ink);font-size:18px;font-weight:800;border-top:1px solid var(--z-line);margin-top:6px;padding-top:12px}
+.zg-upoz{margin-top:12px;padding:12px 14px;border-radius:14px;background:#FFF4E5;color:#7A4B00;font-size:14px;font-weight:600}
+body.zg-tamna .zg-upoz{background:#2A2112;color:#F3D9A6}
+.zg-fiks{position:sticky;bottom:0;z-index:15;margin:12px -12px 0;padding:12px 12px calc(12px + env(safe-area-inset-bottom));
+ background:linear-gradient(180deg,transparent,var(--z-bg) 30%)}
+.zg-fiks .zg-btn{padding:16px 18px;font-size:16px;box-shadow:0 8px 22px color-mix(in srgb,var(--z-a) 35%,transparent)}
+.zg-fiks .zg-btn.siv{box-shadow:none}
+.zg-par{display:flex;gap:8px}
+.zg-lbl{display:block;font-size:13px;font-weight:700;color:var(--z-mut);margin:12px 0 6px}
+.zg-lbl:first-child{margin-top:0}
+.zg-lbl i{font-style:normal;font-weight:600;color:var(--z-mut2)}
+.zg-in{width:100%;border:1.5px solid var(--z-line);border-radius:13px;padding:13px 14px;font-size:16px;background:var(--bg2);color:var(--z-ink);font-weight:600;outline:none;transition:border-color .15s,background .15s;resize:vertical}
+.zg-in:focus{border-color:var(--z-a);background:var(--z-card)}
+.zg-in::placeholder{color:var(--z-mut2);font-weight:500}
+.zg-pomoc{font-size:13px;color:var(--z-mut);margin-top:6px}
+.zg-pomoc b{color:var(--z-ink)}
+.zg-cipovi{display:flex;flex-wrap:wrap;gap:8px}
+.zg-cipovi button{border:1.5px solid var(--z-line);background:var(--z-card);color:var(--z-ink);padding:10px 14px;border-radius:12px;font-weight:700;font-size:14px}
+.zg-cipovi button[aria-pressed="true"]{border-color:var(--z-a);background:color-mix(in srgb,var(--z-a) 10%,var(--z-card));color:var(--z-a)}
+.zg-placanje{display:flex;flex-direction:column;gap:8px}
+body.zg .zg-placanje .pl-opcija{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:14px;border-radius:14px;border:1.5px solid var(--z-line);background:var(--z-card);color:var(--z-ink);box-shadow:none;margin:0}
+body.zg .zg-placanje .pl-opcija::before,body.zg .zg-placanje .pl-opcija::after{display:none}
+body.zg .zg-placanje .pl-opcija[aria-pressed="true"]{border-color:var(--z-a);background:color-mix(in srgb,var(--z-a) 7%,var(--z-card))}
+body.zg .zg-placanje .pl-krug{width:22px;height:22px;border-radius:50%;border:2px solid var(--line2);flex:none;position:relative;background:none}
+body.zg .zg-placanje .pl-opcija[aria-pressed="true"] .pl-krug{border-color:var(--z-a)}
+body.zg .zg-placanje .pl-opcija[aria-pressed="true"] .pl-krug::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--z-a)}
+body.zg .zg-placanje .pl-t b{display:block;font-size:15px;font-weight:750;font-family:var(--z-font);text-transform:none;color:var(--z-ink)}
+body.zg .zg-placanje .pl-t small{display:block;font-size:12.5px;color:var(--z-mut);font-weight:500}
+body.zg .zg-placanje .pl-ik{width:36px;height:36px;border-radius:10px;background:var(--bg2);display:grid;place-items:center;flex:none;color:var(--z-ink)}
+body.zg .zg-placanje .pl-ik svg{width:20px;height:20px}
+body.zg .zg-placanje .pl-logo img{height:20px}
+body.zg .lok-gumb{border-bottom-width:1px!important;box-shadow:none!important;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--z-line);background:var(--bg2);color:var(--z-ink);text-decoration:none;margin:0 0 4px}
+body.zg .lok-gumb .lok-ik{color:var(--z-a)}
+body.zg .lok-gumb .lok-t b{display:block;font-family:var(--z-font);text-transform:none;font-size:15px}
+body.zg .lok-gumb .lok-t small{color:var(--z-mut)}
+body.zg .lok-gumb .lok-str{margin-left:auto;color:var(--z-mut)}
+.zg-kuc{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin-top:12px;color:var(--z-mut)}
+.zg-kuc input{width:20px;height:20px;accent-color:var(--z-a);flex:none;margin-top:1px}
+.zg-greska{margin-top:12px;padding:12px 14px;border-radius:14px;background:#FEECEB;color:#B42318;font-weight:700;font-size:14.5px}
+body.zg-tamna .zg-greska{background:#3A1A18;color:#FFB4AB}
+
+/* ---- praćenje narudžbe (postojeći sadržaj, novi izgled) ---- */
+body.zg .trk{max-width:640px;margin:0 auto;padding:18px 12px calc(30px + env(safe-area-inset-bottom));text-align:left;background:none;border:0}
+body.zg .trk>.big:first-child{padding:8px 0 2px;font-size:15px;font-weight:700;color:var(--z-mut);text-transform:none;font-family:var(--z-font)}
+body.zg .trk .big{font-family:var(--z-font);text-transform:none;font-weight:800;font-size:22px;letter-spacing:-.015em;color:var(--z-ink)}
+body.zg .trk .big em{font-style:normal;color:var(--z-a)}
+body.zg .trk .sub{color:var(--z-mut);font-size:14.5px}
+body.zg .trk .koraci{background:var(--z-card);border-radius:22px;padding:8px 18px;margin-top:12px;box-shadow:var(--z-sjena);border:0}
+body.zg .trk .korak{border:0;padding:12px 0}
+body.zg .trk .korak h4{font-family:var(--z-font);text-transform:none;font-size:15.5px;font-weight:750;color:var(--z-ink)}
+body.zg .trk .korak p{color:var(--z-mut);font-size:13.5px}
+body.zg .trk .korak .krug{border-radius:50%;font-family:var(--z-font);font-weight:800;background:var(--bg2);color:var(--z-mut);border:2px solid var(--z-line)}
+body.zg .trk .korak.ok .krug{background:var(--z-ok);border-color:var(--z-ok);color:#fff}
+body.zg .trk .korak.sad .krug{background:var(--z-a);border-color:var(--z-a);color:#fff;box-shadow:0 0 0 6px color-mix(in srgb,var(--z-a) 18%,transparent)}
+body.zg .trk .box{background:var(--z-card);border-radius:22px;box-shadow:var(--z-sjena);border:0;padding:16px}
+body.zg .trk .stanje-izmjena{background:var(--z-card);border-radius:22px;border:0;box-shadow:var(--z-sjena);padding:16px;margin-top:12px;text-align:left}
+body.zg .trk .stanje-izmjena b{font-family:var(--z-font);text-transform:none}
+body.zg .trk .stavka{border-color:var(--z-line);background:none}
+body.zg .trk .stavka .glavno{background:none!important;border:0!important;padding:4px 0!important;box-shadow:none!important}
+body.zg .trk .stavka .cij{font-family:var(--z-font)!important;font-weight:800;color:var(--z-ink)}
+body.zg .trk .l-dod,body.zg .trk .l-pice,body.zg .trk .l-des{background:none!important;border:0!important;padding:0 0 4px!important;margin:0!important;text-transform:none;color:var(--z-mut)}
+body.zg .trk .l-dod span,body.zg .trk .l-pice span,body.zg .trk .l-des span{text-transform:none;font-size:13px}
+body.zg .trk .l-dod b,body.zg .trk .l-pice b,body.zg .trk .l-des b{font-size:11px;color:var(--z-mut2)}
+body.zg .trk .stavka .ime{font-family:var(--z-font);text-transform:none;font-size:15px;font-weight:700}
+body.zg .trk .tot{font-family:var(--z-font);text-transform:none;font-weight:800}
+body.zg .trk .zovi,body.zg .trk .btn{display:flex;align-items:center;justify-content:center;width:100%;margin-top:12px;border-radius:14px;padding:14px;font-family:var(--z-font);text-transform:none;font-weight:800;font-size:15.5px;
+ background:var(--z-card);color:var(--z-ink);border:1px solid var(--z-line);box-shadow:none;text-decoration:none}
+body.zg .trk .zovi{background:var(--z-a);color:#fff;border:0}
+body.zg .trk .btn.crven{background:#FEECEB;color:#B42318;border:0}
+body.zg .trk .btn::before,body.zg .trk .btn::after{display:none}
+body.zg .trk .napom{border-radius:14px}
+body.zg .trk .l-dod,body.zg .trk .l-pice,body.zg .trk .l-des{font-size:13px}
+body.zg .trk .l-dod b,body.zg .trk .l-pice b,body.zg .trk .l-des b{font-family:var(--z-font)}
+body.zg .trk .nacin{font-family:var(--z-font);text-transform:none;border-radius:10px}
+
+@media (min-width:720px){
+ .zg-lista{grid-template-columns:1fr 1fr}
+ .zg-jelo{flex-direction:row}
+ .zg-info{padding:50px 28px 20px}
+ .zg-info h1{font-size:32px}
+ .zg-sekcija{padding:20px 16px 16px}
+}
+@media (prefers-reduced-motion:reduce){.zg-sheet,.zg-omot,.zg-toast,body.zg #bar{animation:none}}
+body.zg #meni.zg-meni{display:block;padding:6px 12px 0}
+@media (min-width:900px){
+ .zg-meni,.zg-dno,.zg-kat-in{max-width:960px}
+ .zg-hero{max-width:760px}
+ body.zg #meni.zg-meni{padding:6px 16px 0}
+}
+
 </style>
 </head>
 <body>
@@ -1722,8 +2043,8 @@ body.zoom-pl{background:#0E1013;color:#F3F4F6}
  <button class="tb-it tema" id="tema" onclick="prebaciTemu()" aria-label="Svijetli ili tamni način"><span class="tb-ik" id="tema-ik"></span><span class="tb-t" id="tema-t">Tema</span></button>
 </div></div>
 <div class="wrap" id="app"></div>
-<div class="bar" id="bar"><div class="l"><span id="bk">0</span> stavki · <span id="bc">0,00 €</span><i id="bmin"></i></div>
- <button onclick="naPregled()">Pregledaj</button></div>
+<div class="bar" id="bar" onclick="if(document.body.classList.contains('zg')&&!event.target.closest('button'))naPregled()"><div class="l"><span id="bk">0</span><span class="b-st"> stavki · </span><span id="bc">0,00 €</span><i id="bmin"></i></div>
+ <button onclick="naPregled()">Pregledaj narudžbu</button></div>
 <div class="veza" id="veza">spajam…</div>
 <div id="zum-omot" class="zum-omot" style="display:none">
  <div class="zum-vrh"><span></span><button onclick="zatvoriZum()">✕ Zatvori</button></div>
@@ -2005,7 +2326,7 @@ async function otkrijKadSpremno(){
   const fontovi=(async()=>{try{
    const l=document.querySelector('link[href*="fonts.googleapis"][media]');
    if(l&&l.media!=="all")await new Promise(r=>{l.addEventListener("load",r,{once:true});l.addEventListener("error",r,{once:true});setTimeout(r,1800);});
-   if(document.fonts&&document.fonts.load)await Promise.all(["400 40px Anton","600 20px Oswald","500 18px 'Barlow Semi Condensed'","700 18px 'Barlow Semi Condensed'"].map(f=>document.fonts.load(f).catch(()=>{})));
+   if(document.fonts&&document.fonts.load)await Promise.all(["400 40px Anton","600 20px Oswald","500 18px 'Barlow Semi Condensed'","700 18px 'Barlow Semi Condensed'","700 18px 'Plus Jakarta Sans'"].map(f=>document.fonts.load(f).catch(()=>{})));
   }catch(e){}})();
   const pec=izS("pec").slika||(lokal&&lokal.naslovna_url)||SLIKE.PEC;
   await Promise.all([fontovi,cekajSliku(pec),
@@ -3480,7 +3801,8 @@ function brendCSS(){
  const aL=jeSvijetla(a)?mijesaj(a,"#000000",.35):a, a2L=jeSvijetla(a2)?mijesaj(a2,"#000000",.4):a2;
  return `:root{--or:${a};--gold:${a2};--odab-bg:linear-gradient(180deg,${svj} 0%,${a} 50%,${tamna} 100%);--odab-rub:${mijesaj(a,"#000000",.4)}}`
   +`body.svijetlo{--or:${aL};--gold:${a2L}}`
-  +`.zh{--zh-a:${a}}`;}
+  +`.zh{--zh-a:${a}}`
+  +`body.zg{--z-a:${aL};--z-a-ink:${jeSvijetla(aL)?"#15171C":"#FFFFFF"}}body.zg.zg-tamna{--z-a:${a};--z-a-ink:${jeSvijetla(a)?"#15171C":"#FFFFFF"}}`;}
 
 /* ---------- što je isključeno (cijeli restoran ili dio sustava) ---------- */
 function zoomPorukaHTML(naslov,tekst,dodatak){
@@ -3736,7 +4058,7 @@ async function zoomNapravi(){
  zA.radi=true; zoomCrtaj();
  const g=adresa?await zGeokodiraj(adresa):null;
  const r=await sb.from("lokali").insert({naziv,slug,tip,adresa:adresa||null,tel1:tel||null,email:email||null,
-  lat:g?g.lat:null,lng:g?g.lng:null,moduli:paket.moduli,brend:{boja:"#E4572E",tema:"tamna"}}).select("id").single();
+  lat:g?g.lat:null,lng:g?g.lng:null,moduli:paket.moduli,brend:{boja:"#E4572E",tema:"svijetla"}}).select("id").single();
  if(r.error){zA.radi=false; zoomPoruka("Greška: "+(r.error.message.includes("duplicate")?"oznaka je već zauzeta":r.error.message)); return;}
  const id=r.data.id, lv=zLozinka(), lk=zLozinka();
  const cm=parseFloat(cijena.replace(",","."));
@@ -3763,7 +4085,7 @@ function vlBrendHTML(){
    ${b.logo_url?`<button class="btn sm tiho" onclick="brendNacrt.logo_url=null;crtaj(1)">Makni logo</button>`:""}
    <label class="btn sm ghost">🖼 ${lokal.naslovna_url?"Promijeni naslovnu sliku":"Dodaj naslovnu sliku"}<input type="file" accept="image/*" hidden onchange="brendNaslovna(this)"></label>
    ${lokal.naslovna_url?`<button class="btn sm tiho" onclick="spremiLokalPolja({naslovna_url:null},'Naslovna slika maknuta')">Makni naslovnu</button>`:""}</div>
-  <p class="savjet">Logo najbolje izgleda kvadratni (npr. 512×512) na prozirnoj ili jednobojnoj pozadini. Naslovna slika ide iza loga na vrhu stranice.</p>
+  <p class="savjet">Logo najbolje izgleda kvadratni (npr. 512×512) na prozirnoj ili jednobojnoj pozadini. Naslovna slika je pozadina stranice za goste — stoji iza jelovnika dok gost skrola, a jela su u svojim karticama preko nje. Najbolje izgleda svijetla fotografija hrane ili sastojaka snimljena odozgo.</p>
   <div class="vb-boje">
    <label>Glavna boja<input type="color" value="${esc(b.boja||"#E4572E")}" oninput="brendNacrt.boja=this.value;this.closest('.vl-brend').querySelector('.vb-pregled').style.setProperty('--a',this.value)"></label>
    <label>Druga boja<input type="color" value="${esc(b.boja2||"#F2C14E")}" oninput="brendNacrt.boja2=this.value"></label>
@@ -3998,7 +4320,7 @@ function crtaj(prisilno){
  if(gbVuca&&gbVuca.pocelo){gbCeka=true;return;}   // vlasnik upravo vuče gumb — ne ruši mu ekran ispod prsta
  if(uloga!=="vlasnik"&&urMod){urMod=false;document.body.classList.remove("ur-mod","ur-panel-otv");}
  document.body.classList.toggle("gost-str",uloga==="gost"||urMod);
- primijeniIzgled();
+ primijeniIzgled(); zgNakonCrtanja();
  const preskociVracanje = prisilno===2;
  const akt=preskociVracanje?null:document.activeElement, aktId=akt&&akt.id;
  const poz=akt&&akt.selectionStart!==undefined?akt.selectionStart:null;
@@ -4038,7 +4360,8 @@ function crtaj(prisilno){
   el("bk").textContent=kosarica.length;el("bc").textContent=eur(rr.ukupno);
   const bm=el("bmin");
   if(bm)bm.textContent=(!kosarica.every(s=>s.gratis)&&rr.bezDostave<najjeftinijaPizza())
-   ?` · još ${eur(najjeftinijaPizza()-rr.bezDostave)} do minimuma`:"";}
+   ?(document.body.classList.contains("zg")?`${tj("Još")} ${eur(najjeftinijaPizza()-rr.bezDostave)} ${tj("do minimalne narudžbe")}`:` · još ${eur(najjeftinijaPizza()-rr.bezDostave)} do minimuma`):"";}
+ zgNakonCrtanja();
 }
 
 
@@ -4365,8 +4688,9 @@ function gostHTML(){
   mojaId=null; spremiMojuNarudzbu(null);
  } else if(moja)return pracenje(moja);
  else if(mojaId){mojaId=null; spremiMojuNarudzbu(null);}
- if(korak==="pregled")return pregledHTML();
- if(korak==="podaci")return podaciHTML();}
+ if(korak==="pregled")return zgAktivan()?zgPregledHTML():pregledHTML();
+ if(korak==="podaci")return zgAktivan()?zgPodaciHTML():podaciHTML();}
+ if(zgAktivan())return zgMeniHTML();
  const vidljiva=jela.filter(j=>j.dostupno!==false);
  const kats=[...new Set(vidljiva.map(j=>j.kategorija))];
  const r=racun(kosarica);
@@ -7266,6 +7590,304 @@ function pultKartica(o){
   <button class="pult-gumb" onclick="stanje('${o.id}','spremno')">SPREMNO ✓</button>
  </div>`;}
 
+
+/* ==================== ZooM GOST — svijetli "pro" izgled (Wolt / Glovo stil) ====================
+   Gostinska stranica svakog restorana: fiksna pozadinska fotografija (naslovna_url), kartica restorana,
+   ljepljive kategorije, kartice jela sa slikom sa strane, prozor jela s dodacima i količinom,
+   košarica s +/−, završetak narudžbe. Logika narudžbe (racun, posalji, dostava…) ostaje ista. */
+const zgAktivan=()=>uloga==="gost"&&!urMod;
+const ZI={
+ plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
+ minus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14"/></svg>',
+ x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+ nazad:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>',
+ sat:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+ skuter:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="2.5"/><circle cx="18" cy="17" r="2.5"/><path d="M8.5 17h7M15 6h2l2.5 8.5M4 13h6l2 4M11 9H7"/></svg>',
+ vrecica:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>',
+ pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg>',
+ tel:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>',
+ info:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>',
+ kartica:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h3"/></svg>',
+ novac:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></svg>',
+ telefon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18h2"/></svg>',
+ kvaka:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'};
+
+const zgPozadina=()=>lokal&&lokal.naslovna_url;
+function zgOznake(j){
+ const o=j.oznaka||"", t=[];
+ if(o.includes("chef"))t.push('<span class="zg-oz chef">⭐ Preporuka kuće</span>');
+ if(o.includes("ljuto"))t.push('<span class="zg-oz ljuto">🌶 Ljuto</span>');
+ if(o==="veg")t.push('<span class="zg-oz veg">🌿 Vegetarijansko</span>');
+ if(o==="18+")t.push('<span class="zg-oz">18+</span>');
+ return t.join("");}
+const zgSlozeno=j=>jeCijela(j.kategorija)||dodaciZaJelo(j).length>0;
+const zgKomada=id=>kosarica.filter(s=>s.jeloId===id).length;
+const zgNema=t=>`<div class="zg-nema">${esc(inicijali(t))}</div>`;
+
+/* ---------- JELOVNIK ---------- */
+function zgMeniHTML(){
+ const vidljiva=jela.filter(j=>j.dostupno!==false);
+ const kats=[...new Set(vidljiva.map(j=>j.kategorija))];
+ const B=BREND(), nasl=zgPozadina(), tel=[lokal.tel1,lokal.tel2].filter(Boolean);
+ const narucuje=MOD("narudzbe");
+ const obaNacina=narucuje&&!bezDostave()&&!bezOsobnog();
+ const osobno=forma.nacin==="osobno"||bezDostave()||samoPreuzimanje();
+ const cipovi=[];
+ if(lokal.radno_vrijeme)cipovi.push(`<span class="zg-cip">${ZI.sat}${esc(lokal.radno_vrijeme)}</span>`);
+ if(narucuje){
+  if(narudzbePauzirane())cipovi.push(`<span class="zg-cip ne">⏸ ${tj("Narudžbe pauzirane")}</span>`);
+  if(!bezDostave()&&!samoPreuzimanje())cipovi.push(`<span class="zg-cip">${ZI.skuter}${DOSTAVA_PRAG_KM()>0?`${tj("Besplatna dostava do")} ${kmTxt(DOSTAVA_PRAG_KM())} km`:tj("Dostava")}</span>`);
+  else cipovi.push(`<span class="zg-cip">${ZI.vrecica}${tj("Osobno preuzimanje")}</span>`);
+  if(najjeftinijaPizza()>0)cipovi.push(`<span class="zg-cip">Min. ${eur(najjeftinijaPizza())}</span>`);}
+ const onama=lokal.o_nama?String(lokal.o_nama).split(/\n\s*\n/).map(p=>`<p>${esc(p.trim()).replace(/\n/g,"<br>")}</p>`).join(""):"";
+ const rec=MOD("recenzije")?recenzijeTraka():"";
+ return `<div class="zg-bg${nasl?" s-slikom":""}"${nasl?` style="background-image:url('${esc(nasl)}')"`:""}></div>
+ <header class="zg-hero">
+  <div class="zg-cover"></div>
+  <section class="zg-info">
+   <div class="zg-logo">${B.logo_url?`<img src="${esc(B.logo_url)}" alt="">`:esc(inicijali(lokal.naziv))}</div>
+   <h1>${esc(lokal.naziv)}</h1>
+   ${lokal.slogan?`<p class="zg-slogan">${esc(lokal.slogan)}</p>`:""}
+   ${cipovi.length?`<div class="zg-meta">${cipovi.join("")}</div>`:""}
+   ${obaNacina?`<div class="zg-nacin" role="group" aria-label="${tj("Način preuzimanja")}">
+     <button aria-pressed="${!osobno}" onclick="postaviNacin('dostava')" ${samoPreuzimanje()?"disabled":""}>${ZI.skuter}${tj("Dostava")}</button>
+     <button aria-pressed="${osobno}" onclick="postaviNacin('osobno')">${ZI.vrecica}${tj("Preuzimanje")}</button></div>`:""}
+   <div class="zg-akcije">
+    ${lokal.adresa?`<a href="${RIKYS_MAPS()}" target="_blank" rel="noopener">${ZI.pin}${tj("Lokacija")}</a>`:""}
+    ${tel.length?`<a href="${telH(tel[0])}">${ZI.tel}${tj("Nazovi")}</a>`:""}
+    ${onama?`<button type="button" onclick="oNamaOtvoreno=!oNamaOtvoreno;crtaj(1)" aria-expanded="${oNamaOtvoreno}">${ZI.info}${tj("O nama")}</button>`:""}
+   </div>
+   ${oNamaOtvoreno&&onama?`<div class="zg-onama">${onama}</div>`:""}
+  </section>
+  ${narudzbePauzirane()?`<div class="zg-obavijest" role="alert"><b>${tj("Trenutno ne primamo narudžbe")}</b>${tj("Kuhinja je trenutno puna.")} ${pauzaGostTekst()} ${tj("Jelovnik možete i dalje pregledavati.")}</div>`
+   :samoPreuzimanje()&&!bezDostave()?`<div class="zg-obavijest" role="alert"><b>${tj("Trenutno samo osobno preuzimanje")}</b>${tj("Zbog velike gužve dostava je privremeno isključena. Naručite ovdje i preuzmite narudžbu kod nas.")}</div>`:""}
+ </header>
+ <nav class="zg-kat" aria-label="${tj("Kategorije")}"><div class="zg-kat-in">${kats.map((k,i)=>`<button type="button" data-k="${katId(k)}" class="${i?"":"on"}" onclick="zgSkoci('${katId(k)}')">${esc(k)}</button>`).join("")}</div></nav>
+ <main class="zg-meni" id="meni">
+  ${kats.map(k=>{const lj=vidljiva.filter(j=>j.kategorija===k);
+   return `<section class="zg-sekcija" id="${katId(k)}"><h2>${esc(k)}<small>${lj.length}</small></h2>
+    <div class="zg-lista">${lj.map(zgJeloHTML).join("")}</div></section>`;}).join("")}
+ </main>
+ <footer class="zg-dno">
+  ${rec?`<div data-ur="recenzije">${rec}</div>`:""}
+  <div class="zg-kartica"><h3>${esc(lokal.naziv)}</h3>
+   ${lokal.adresa?`<a class="zg-red" href="${RIKYS_MAPS()}" target="_blank" rel="noopener">${ZI.pin}<span>${esc(lokal.adresa)}<small>${tj("Otvori u Google Maps")}</small></span></a>`:""}
+   ${lokal.radno_vrijeme?`<div class="zg-red">${ZI.sat}<span>${esc(lokal.radno_vrijeme)}<small>${tj("Radno vrijeme")}</small></span></div>`:""}
+   ${tel.map(t=>`<a class="zg-red" href="${telH(t)}">${ZI.tel}<span>${esc(t)}<small>${tj("Nazovite nas")}</small></span></a>`).join("")}
+  </div>
+  <details class="zg-pravno"><summary>${tj("Uvjeti narudžbe i informacije")}</summary>${pravno()}</details>
+  ${zoomPoweredHTML()}
+ </footer>
+ ${otvoreno&&jelo(otvoreno)?zgSheetHTML(jelo(otvoreno)):""}`;}
+
+function zgJeloHTML(j){
+ const kom=zgKomada(j.id), mozeNaruciti=MOD("narudzbe");
+ const sidr=MOD("sidrene")&&sidrenePrikaz()?sidrenaHTML(j):"";
+ return `<article class="zg-jelo${kom?" u-kos":""}" onclick="zgOtvori('${j.id}')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')zgOtvori('${j.id}')">
+  <div class="zg-jt">
+   <h3>${kom?`<span class="zg-kol">${kom}×</span>`:""}${esc(j.naziv)}</h3>
+   ${j.opis?`<p>${esc(j.opis)}</p>`:""}
+   <div class="zg-jc"><b>${eur(j.cijena)}</b>${sidrIkonaHTML(j)}${zgOznake(j)}${sidr?`<span class="zg-sidr">${sidr}</span>`:""}</div>
+  </div>
+  <div class="zg-js${j.slika_url?"":" bez"}">
+   ${j.slika_url?`<img src="${esc(j.slika_url)}" alt="" loading="lazy" decoding="async">`:""}
+   ${mozeNaruciti?`<button class="zg-plus" type="button" aria-label="${tj("Dodaj")} ${esc(j.naziv)}" onclick="event.stopPropagation();zgBrzo('${j.id}')">${ZI.plus}</button>`:""}
+  </div></article>`;}
+
+/* ---------- PROZOR JELA ---------- */
+let zgSel=null;   // {id, d:Set dodataka, u:Set pića/deserta uz jelo, kol}
+function zgOtvori(id){
+ const j=jelo(id); if(!j)return;
+ zgSel={id,d:new Set(),u:new Set(),kol:1}; otvoreno=id; crtaj(1);}
+function zgZatvori(){otvoreno=null; zgSel=null; crtaj(1);}
+function zgCijenaJedne(){
+ const s=zgSel; if(!s)return 0;
+ return +jelo(s.id).cijena+[...s.d].reduce((t,i)=>t+(+(dod(i)||{}).cijena||0),0)+[...s.u].reduce((t,i)=>t+(+(jelo(i)||{}).cijena||0),0);}
+function zgOsvjeziSheet(){
+ if(!zgSel)return;
+ const c=el("zg-sh-c"); if(c)c.textContent=eur(zgCijenaJedne()*zgSel.kol);
+ const k=el("zg-sh-kol"); if(k)k.textContent=zgSel.kol;
+ const m=el("zg-sh-minus"); if(m)m.disabled=zgSel.kol<=1;}
+function zgPrebaci(vrsta,id,da){if(!zgSel)return; const s=zgSel[vrsta]; if(da)s.add(id); else s.delete(id); zgOsvjeziSheet();}
+function zgKolicina(d){if(!zgSel)return; zgSel.kol=Math.max(1,Math.min(20,zgSel.kol+d)); zgOsvjeziSheet();}
+function zgSheetHTML(j){
+ if(!zgSel||zgSel.id!==j.id)zgSel={id:j.id,d:new Set(),u:new Set(),kol:1};
+ const s=zgSel, pizza=jeCijela(j.kategorija), moji=dodaciZaJelo(j), narucuje=MOD("narudzbe");
+ const pica=pizza?jela.filter(x=>x.kategorija==="Piće"&&x.dostupno!==false):[];
+ const des=pizza?jela.filter(x=>x.kategorija==="Deserti"&&x.dostupno!==false):[];
+ const red=(vrsta,x,c)=>`<label class="zg-opcija"><input type="checkbox" ${s[vrsta].has(x.id)?"checked":""} onchange="zgPrebaci('${vrsta}','${x.id}',this.checked)"><span class="zg-kv"></span>
+   <span class="n">${esc(x.naziv)}</span><span class="c">+${eur(c)}</span></label>`;
+ const grupa=(nasl,lista,vrsta)=>lista.length?`<div class="zg-grupa"><h4>${nasl}<small>${tj("Neobavezno")}</small></h4>${lista.map(x=>red(vrsta,x,x.cijena)).join("")}</div>`:"";
+ const nagrada=narucuje&&pizza&&pravoNaGratis()&&!kosarica.some(x=>x.gratis);
+ return `<div class="zg-omot" onclick="if(event.target===this)zgZatvori()">
+  <div class="zg-sheet" role="dialog" aria-modal="true" aria-label="${esc(j.naziv)}">
+   <button class="zg-x" type="button" onclick="zgZatvori()" aria-label="${tj("Zatvori")}">${ZI.x}</button>
+   <div class="zg-sh-scroll">
+    ${j.slika_url?`<img class="zg-sh-slika" src="${esc(j.slika_url)}" alt="">`:""}
+    <div class="zg-sh-in${j.slika_url?"":" bez-slike"}">
+     <h2>${esc(j.naziv)}</h2>
+     ${j.opis?`<p>${esc(j.opis)}</p>`:""}
+     <div class="zg-sh-cij"><b>${eur(j.cijena)}</b>${zgOznake(j)}</div>
+     ${MOD("sidrene")&&sidrenePrikaz()?`<div class="zg-sidr" style="margin-top:6px">${sidrenaHTML(j)}</div>`:""}
+     ${narucuje?grupa(tj("Dodaci po želji"),moji,"d")+grupa(tj("Dodaj piće"),pica,"u")+grupa(tj("Dodaj desert"),des,"u"):""}
+     ${nagrada?`<div style="margin-top:16px"><button class="zg-btn zelen" onclick="zgDodaj('${j.id}',1)">${tj("Uzmi kao nagradnu pizzu")} · 0,00 €</button></div>`:""}
+    </div>
+   </div>
+   ${narucuje?`<div class="zg-sh-dno">
+    <div class="zg-koracnik"><button type="button" id="zg-sh-minus" onclick="zgKolicina(-1)" ${s.kol<=1?"disabled":""} aria-label="${tj("Manje")}">${ZI.minus}</button><b id="zg-sh-kol">${s.kol}</b><button type="button" onclick="zgKolicina(1)" aria-label="${tj("Više")}">${ZI.plus}</button></div>
+    <button class="zg-btn razvuk" type="button" onclick="zgDodaj('${j.id}')" ${narudzbePauzirane()?"disabled":""}><span>${narudzbePauzirane()?tj("Pauzirano"):tj("Dodaj")}</span><span class="zg-btn-c" id="zg-sh-c">${eur(zgCijenaJedne()*s.kol)}</span></button>
+   </div>`:""}
+  </div></div>`;}
+function zgDodaj(id,gratis){
+ const s=zgSel&&zgSel.id===id?zgSel:{id,d:new Set(),u:new Set(),kol:1};
+ const d=dodaci.map(x=>x.id).filter(x=>s.d.has(x)), u=jela.map(x=>x.id).filter(x=>s.u.has(x));
+ if(!potvrdiAko18(je18(jelo(id))||u.some(i=>je18(jelo(i)))))return;
+ const n=gratis?1:s.kol;
+ for(let i=0;i<n;i++)kosarica.push({jeloId:id,dodaci:[...d],uz:[...u],gratis:!!gratis});
+ otvoreno=null; zgSel=null; crtaj(1);
+ zgToast(`${n}× ${jelo(id).naziv} — ${tj("dodano u narudžbu")}`); zgBump();}
+function zgBrzo(id){
+ const j=jelo(id); if(!j||!MOD("narudzbe"))return;
+ if(korak==="meni"&&zgSlozeno(j)){zgOtvori(id);return;}
+ if(narudzbePauzirane()){zgToast(tj("Trenutno ne primamo narudžbe"));return;}
+ if(!potvrdiAko18(je18(j)))return;
+ kosarica.push({jeloId:id,dodaci:[],uz:[]}); crtaj(1);
+ zgToast(`${j.naziv} — ${tj("dodano u narudžbu")}`); zgBump();}
+function zgSkoci(id){
+ const t=el(id), nav=document.querySelector(".zg-kat"); if(!t)return;
+ const h=nav?nav.offsetHeight:0;
+ scrollTo({top:t.getBoundingClientRect().top+scrollY-h-6,behavior:"smooth"});}
+
+/* ---------- KOŠARICA ---------- */
+function zgGrupe(){
+ const m=new Map();
+ kosarica.forEach((s,i)=>{const k=[s.jeloId,s.dodaci.join(","),s.uz.join(","),s.gratis?1:0].join("|");
+  if(!m.has(k))m.set(k,{s,idx:[]}); m.get(k).idx.push(i);});
+ return [...m.values()];}
+function zgMinus(gi){const g=zgGrupe()[gi]; if(g)izbaci(g.idx[g.idx.length-1]);}
+function zgPlus(gi){const g=zgGrupe()[gi]; if(!g||g.s.gratis)return;
+ kosarica.push({jeloId:g.s.jeloId,dodaci:[...g.s.dodaci],uz:[...g.s.uz]}); crtaj(1);}
+function zgGlava(naslov,podnaslov,natrag){
+ return `<header class="zg-glava"><button class="zg-nazad" type="button" onclick="${natrag}" aria-label="${tj("Natrag")}">${ZI.nazad}</button>
+  <div><b>${naslov}</b><small>${podnaslov}</small></div></header>`;}
+function zgZbrojHTML(r,uPodacima){
+ const osobno=forma.nacin==="osobno"||bezDostave();
+ return `<div class="zg-zbroj">
+  <div><span>${tj("Međuzbroj")}</span><span>${eur(r.puno)}</span></div>
+  ${r.popust?`<div class="pop"><span>${tj("Akcija 4+1")}</span><span>−${eur(r.popust)}</span></div>`:""}
+  ${r.lojalnost?`<div class="pop"><span>${tj("Nagradna pizza")}</span><span>−${eur(r.lojalnost)}</span></div>`:""}
+  ${r.gratisPice?`<div class="pop"><span>${r.gratisPice}× Coca-Cola 0,33 L</span><span>${tj("gratis")}</span></div>`:""}
+  ${osobno?`<div><span>${tj("Osobno preuzimanje")}</span><span>0,00 €</span></div>`
+   :r.dostava?`<div><span>${tj("Dostava")} (${kmTxt(dostavaKm()||0)} km)</span><span>+${eur(r.dostava)}</span></div>`
+   :forma.lat?`<div class="pop"><span>${tj("Dostava")}</span><span>${tj("besplatno")}</span></div>`
+   :`<div><span>${tj("Dostava")}</span><span>${uPodacima?tj("upišite adresu"):tj("u sljedećem koraku")}</span></div>`}
+  <div class="uk"><span>${tj("Ukupno")}</span><span>${eur(r.ukupno)}</span></div></div>`;}
+function zgPregledHTML(){
+ const r=racun(kosarica), grupe=zgGrupe();
+ const fali=!kosarica.every(s=>s.gratis)&&r.bezDostave<najjeftinijaPizza();
+ const uKos=new Set(kosarica.map(s=>s.jeloId));
+ const uz=jela.filter(j=>j.dostupno!==false&&/pi[ćc]e|desert|napit|sok/i.test(j.kategorija)&&!uKos.has(j.id)).slice(0,8);
+ return `<div class="zg-str">${zgGlava(tj("Vaša narudžba"),esc(lokal.naziv),"korak='meni';crtaj(1)")}
+  <div class="zg-koraci"><i class="on"></i><i></i></div>
+  <section class="zg-kartica">
+   ${grupe.map((g,gi)=>{const j=jelo(g.s.jeloId), n=g.idx.length;
+    const gr4=g.idx.filter(i=>r.gratisIdx.includes(i)).length;
+    const opis=[...g.s.dodaci.map(i=>dod(i)?dod(i).naziv:""),...g.s.uz.map(i=>jelo(i)?"+ "+jelo(i).naziv:"")].filter(Boolean).join(" · ");
+    const cij=g.idx.reduce((t,i)=>t+cijenaStavke(kosarica[i]),0);
+    return `<div class="zg-stavka">${j.slika_url?`<img src="${esc(j.slika_url)}" alt="">`:zgNema(j.naziv)}
+     <div class="zg-st-t"><b>${esc(j.naziv)}</b>${opis?`<small>${esc(opis)}</small>`:""}
+      <span class="zg-st-c">${eur(cij)}</span>
+      ${gr4?`<span class="zg-gr">${gr4}× ${tj("gratis po akciji 4+1")}</span>`:""}${g.s.gratis?`<span class="zg-gr">${tj("Nagradna pizza")}</span>`:""}</div>
+     <div class="zg-koracnik mali"><button type="button" onclick="zgMinus(${gi})" aria-label="${tj("Manje")}">${ZI.minus}</button><b>${n}</b><button type="button" onclick="zgPlus(${gi})" ${g.s.gratis?"disabled":""} aria-label="${tj("Više")}">${ZI.plus}</button></div></div>`;}).join("")}
+   <button class="zg-btn siv" type="button" style="margin-top:12px" onclick="korak='meni';crtaj(1)">${ZI.plus} ${tj("Dodaj još jela")}</button>
+  </section>
+  ${uz.length?`<section class="zg-kartica"><h3>${tj("Uz to možda želite")}</h3><div class="zg-uz">
+   ${uz.map(j=>`<button class="zg-uz-k" type="button" onclick="zgBrzo('${j.id}')">${j.slika_url?`<img src="${esc(j.slika_url)}" alt="" loading="lazy">`:zgNema(j.naziv)}<i>${ZI.plus}</i>
+    <span>${esc(j.naziv)}</span><b>${eur(j.cijena)}</b></button>`).join("")}</div></section>`:""}
+  <section class="zg-kartica">${zgZbrojHTML(r)}
+   ${fali?`<div class="zg-upoz">${tj("Minimalna narudžba je")} ${eur(najjeftinijaPizza())}. ${tj("Dodajte još")} ${eur(najjeftinijaPizza()-r.bezDostave)}.</div>`:""}</section>
+  <div class="zg-fiks"><button class="zg-btn razvuk" type="button" ${fali?"disabled":""} onclick="korak='podaci';crtaj(1);scrollTo(0,0)">
+   <span>${tj("Nastavi na plaćanje")}</span><span class="zg-btn-c">${eur(r.ukupno)}</span></button></div>
+ </div>`;}
+
+/* ---------- PODACI I SLANJE ---------- */
+function zgPodaciHTML(){
+ if(samoPreuzimanje()||bezDostave())forma.nacin="osobno";
+ if(bezOsobnog())forma.nacin="dostava";
+ const ima18=kosarica.some(s=>je18(jelo(s.jeloId))||s.uz.some(i=>je18(jelo(i))));
+ const osobno=forma.nacin==="osobno", r=racun(kosarica);
+ prikazanaNaknada=r.dostava;
+ const pl=(id,v,ik,nasl,pod)=>`<button class="pl-opcija" type="button" id="${id}" aria-pressed="${placanje===v}" onclick="odaberiPlacanje('${v}')">
+   <span class="pl-krug"></span><span class="pl-t"><b>${nasl}</b><small>${pod}</small></span><span class="pl-ik" style="margin-left:auto">${ik}</span></button>`;
+ return `<div class="zg-str">${zgGlava(tj("Završi narudžbu"),esc(lokal.naziv),"korak='pregled';crtaj(1)")}
+  <div class="zg-koraci"><i class="on"></i><i class="on"></i></div>
+  ${bezDostave()||bezOsobnog()?"":`<section class="zg-kartica"><div class="zg-nacin" style="margin:0;max-width:none">
+   <button aria-pressed="${!osobno}" type="button" onclick="postaviNacin('dostava')" ${samoPreuzimanje()?"disabled":""}>${ZI.skuter}${tj("Dostava")}</button>
+   <button aria-pressed="${osobno}" type="button" onclick="postaviNacin('osobno')">${ZI.vrecica}${tj("Preuzimanje")}</button></div>
+   ${samoPreuzimanje()?`<p class="zg-pomoc">${tj("Zbog velike gužve trenutno primamo samo narudžbe za osobno preuzimanje.")}</p>`:""}</section>`}
+  <section class="zg-kartica"><h3>${tj("Vaši podaci")}</h3>
+   <label class="zg-lbl" for="f-ime">${tj("Ime i prezime")}</label>
+   <input class="zg-in" id="f-ime" autocomplete="name" placeholder="${tj("npr. Ana Horvat")}" value="${esc(forma.ime)}" oninput="forma.ime=this.value">
+   <label class="zg-lbl" for="f-tel">${tj("Broj mobitela")}</label>
+   <input class="zg-in" id="f-tel" inputmode="tel" autocomplete="tel" placeholder="${tj("npr. 091 234 5678")}" value="${esc(forma.tel)}" oninput="forma.tel=this.value">
+   <p class="zg-pomoc">${tj("Nazvat ćemo vas samo ako bude potrebno oko narudžbe.")}</p></section>
+  ${osobno?`<section class="zg-kartica"><h3>${tj("Preuzimanje")}</h3>${lokacijaGumbHTML()}
+   <label class="zg-lbl">${tj("Kada dolazite po narudžbu?")}</label>
+   <div class="zg-cipovi">${PREUZ_OPCIJE.map(([m,n])=>`<button type="button" aria-pressed="${forma.preuzMin===m}" onclick="forma.preuzMin=${m};crtaj(1)">${tj(n)}</button>`).join("")}</div>
+   <p class="zg-pomoc">${tj("Pripremu tempiramo tako da je hrana svježa točno kad dođete.")}</p></section>`
+  :`<section class="zg-kartica"><h3>${tj("Adresa dostave")}</h3>
+   <label class="zg-lbl" for="f-adr">${tj("Ulica i kućni broj")}</label>
+   <input class="zg-in" id="f-adr" placeholder="${tj("npr. Ilica 25, Zagreb")}" value="${esc(forma.adr)}" autocomplete="off" oninput="forma.adr=this.value;forma.lat=null;provjeriAdresu(this.value)">
+   <p class="zg-pomoc" id="adr-stanje">${adrStanjeTekst()}</p>
+   <label class="zg-lbl" for="f-napd">${tj("Napomena za dostavljača")} <i>(${tj("nije obavezno")})</i></label>
+   <textarea class="zg-in" id="f-napd" rows="2" placeholder="${tj("Kat, stan, ulaz iz dvorišta, zvono…")}" oninput="forma.napD=this.value">${esc(forma.napD)}</textarea></section>`}
+  <section class="zg-kartica"><h3>${tj("Napomena za kuhinju")}</h3>
+   <textarea class="zg-in" id="f-nap" rows="2" placeholder="${tj("Alergije, bez luka, dobro pečeno… (nije obavezno)")}" oninput="forma.nap=this.value">${esc(forma.nap)}</textarea></section>
+  <section class="zg-kartica"><h3>${tj("Plaćanje")}</h3><div class="zg-placanje">
+   ${MOD("online_placanje")?pl("pl-o","online",ZI.telefon,tj("Plati odmah online"),tj("Apple Pay, Google Pay ili kartica")):""}
+   ${pl("pl-k","kartica",ZI.kartica,osobno?tj("Karticom u lokalu"):tj("Karticom pri dostavi"),osobno?tj("Plaćate kad dođete po narudžbu"):tj("Dostavljač nosi POS uređaj"))}
+   ${pl("pl-g","gotovina",ZI.novac,tj("Gotovinom"),osobno?tj("Plaćate u lokalu"):tj("Plaćate dostavljaču"))}</div>
+   ${ima18?`<label class="zg-kuc"><input type="checkbox" ${potvrda18?"checked":""} onchange="potvrda18=this.checked"><span>${tj("Potvrđujem da imam navršenih 18 godina. Alkoholna pića ne isporučujemo maloljetnim osobama.")}</span></label>`:""}</section>
+  <section class="zg-kartica">${zgZbrojHTML(r,1)}</section>
+  ${greska?`<div class="zg-greska" role="alert">${esc(greska)}</div>`:""}
+  <div class="zg-fiks">${narudzbePauzirane()?`<button class="zg-btn" disabled>${tj("Narudžbe trenutno pauzirane")}</button>`
+   :`<button class="zg-btn razvuk" id="salji" type="button" onclick="posalji()">${placanje==="online"?tj("Nastavi na plaćanje"):tj("Pošalji narudžbu")}</button>`}
+   <p class="zg-pomoc" style="text-align:center;margin-top:8px">${tj("Ukupno")} <b>${eur(r.ukupno)}</b> · ${tj("slanjem prihvaćate uvjete narudžbe")}</p></div>
+ </div>`;}
+
+/* ---------- sitnice ---------- */
+function zgToast(t){
+ document.querySelectorAll(".zg-toast").forEach(x=>x.remove());
+ const d=document.createElement("div"); d.className="zg-toast"; d.setAttribute("role","status");
+ d.innerHTML=ZI.kvaka+"<span></span>"; d.lastChild.textContent=t;
+ document.body.appendChild(d); setTimeout(()=>d.remove(),2200);}
+function zgBump(){const b=el("bar"); if(!b)return; b.classList.remove("bump"); void b.offsetWidth; b.classList.add("bump");}
+function zgOznaciKat(){
+ const nav=document.querySelector(".zg-kat"); if(!nav)return;
+ const r=nav.getBoundingClientRect();
+ nav.classList.toggle("zalijepljeno",r.top<=1&&scrollY>40);
+ const sek=[...document.querySelectorAll(".zg-sekcija")]; if(!sek.length)return;
+ let akt=sek[0]; const gran=r.bottom+40;
+ sek.forEach(s=>{if(s.getBoundingClientRect().top<=gran)akt=s;});
+ if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)akt=sek[sek.length-1];
+ nav.querySelectorAll("button").forEach(b=>{const on=b.dataset.k===akt.id;
+  if(on!==b.classList.contains("on")){b.classList.toggle("on",on);
+   if(on){const c=b.parentElement; c.scrollTo({left:b.offsetLeft-c.clientWidth/2+b.clientWidth/2,behavior:"smooth"});}}});}
+let zgRaf=0;
+addEventListener("scroll",()=>{if(zgRaf||!document.body.classList.contains("zg"))return;
+ zgRaf=requestAnimationFrame(()=>{zgRaf=0;zgOznaciKat();});},{passive:true});
+addEventListener("keydown",e=>{if(e.key==="Escape"&&otvoreno&&document.body.classList.contains("zg"))zgZatvori();});
+function zgNakonCrtanja(){
+ const da=zgAktivan()&&!!lokal&&!zoomBlokada();
+ document.body.classList.toggle("zg",da);
+ document.body.classList.toggle("zg-tamna",da&&BREND().tema==="tamna");
+ document.body.classList.toggle("zg-podstr",da&&(korak!=="meni"||!!mojaId));
+ const jm=el("jez-mjesto"); if(jm&&da)jm.style.display=MOD("jezici")?"":"none";
+ document.documentElement.classList.toggle("zg-lock",da&&!!otvoreno&&korak==="meni"&&!mojaId);
+ if(!da)return;
+ const vj=el("vj-btn"); if(vj)vj.style.display=MOD("vjernost")&&MOD("narudzbe")?"flex":"none";
+ const m=document.querySelector('meta[name="theme-color"]'); if(m)m.setAttribute("content",BREND().tema==="tamna"?"#0F1115":"#F3F1EE");
+ zgOznaciKat();}
 
 start();
 </script>
