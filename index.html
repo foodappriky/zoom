@@ -2408,6 +2408,166 @@ body.fpa-tijelo .wrap{max-width:none;padding:0}
 @media (max-width:720px){.fpa-kako{grid-template-columns:1fr}.fpa-za{font-size:13px}}
 .fpa-grad,.fpa-za{white-space:nowrap}
 @media (max-width:440px){.fpa-grad{display:none}.fpa-vrh .fp-logo{--v:24px!important}}
+/* ---- Analitika (vlasnik) ---- */
+.an{--an-novi:var(--or,#C9191A);--an-stari:#CBD2DC}
+.an-vrh{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin:6px 0 12px}
+.an-vrh h3{font-size:22px;font-weight:800;margin:0}.an-vrh p{margin:2px 0 0;color:var(--dim2);font-size:13.5px}
+.an-raz{margin:0!important;gap:6px}.an-raz button{padding:9px 14px!important;min-height:0!important;font-size:14px!important}
+.an-pls{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.an-pl{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:var(--fp-sjena,none);min-width:0}
+.an-pl span{display:block;color:var(--dim2);font-size:13px;font-weight:650}
+.an-pl b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;margin:4px 0 2px;white-space:nowrap}
+.an-pl small{display:block;color:var(--dim2);font-size:12px;margin-top:3px}
+.an-d{font-style:normal;font-size:12.5px;font-weight:800;color:var(--dim2)}.an-d.gore{color:#17803D}.an-d.dolje{color:#C2361B}
+.an-kart{padding:16px!important;margin-bottom:12px!important;min-width:0}
+.an-nas{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}.an-nas b{font-size:16px;font-weight:800}
+.an-leg{font-size:12.5px;color:var(--dim);display:flex;align-items:center;gap:6px}.an-leg i{width:11px;height:11px;border-radius:3px;display:inline-block;margin-left:8px}
+.an-leg .l-novi{background:var(--an-novi)}.an-leg .l-stari{background:var(--an-stari)}
+.an-svg{width:100%;height:auto;display:block}.an-svg .b-novi{fill:var(--an-novi)}.an-svg .b-stari{fill:var(--an-stari)}
+.an-svg .an-mreza{stroke:var(--line);stroke-width:1}.an-svg .an-os{font-size:10.5px;fill:#8A919C;font-family:var(--z-font)}
+.an-svg .an-vr{font-size:11px;fill:#4B5360;font-weight:700;font-family:var(--z-font)}
+.an-mali{margin:6px 0 0;color:var(--dim);font-size:13px}
+.an-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.an-2>.box{margin-bottom:12px!important}
+.an-tr{display:grid;grid-template-columns:minmax(0,1.3fr) 1fr 46px 52px;gap:8px;align-items:center;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.an-tr:first-of-type{border-top:0}.an-tr span{font-weight:650;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.an-tr-b{height:8px;border-radius:5px;background:#F0EEEA;overflow:hidden}.an-tr-b i{display:block;height:100%;background:var(--an-novi);border-radius:5px}
+.an-tr b{text-align:right;font-weight:800}.an-tr small{text-align:right;color:var(--dim2);font-size:12.5px}
+.an-tab{width:100%;border-collapse:collapse;font-size:14px}.an-tab th{text-align:left;color:var(--dim2);font-size:12px;font-weight:700;padding:4px 6px 6px 0}
+.an-tab td{padding:8px 6px 8px 0;border-top:1px solid var(--line);vertical-align:top}.an-tab td small{display:block;color:var(--dim2);font-size:12px}
+.an-tab th:not(:first-child),.an-tab td:not(:first-child){text-align:right;white-space:nowrap}
+.an-novi{font-size:11px;font-weight:800;color:#17663F;background:#E9F8EF;border-radius:999px;padding:1px 7px}
+.an-vrati{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#FFF6F3!important;border-color:#F6D9D0!important}
+.an-vrati b{font-size:16px}.an-vrati p{margin:4px 0 0;color:var(--dim);font-size:13.5px;line-height:1.45}
+@media(max-width:720px){.an-pls{grid-template-columns:1fr 1fr}.an-2{grid-template-columns:1fr;gap:0}.an-pl b{font-size:22px}
+ .an-vrati{flex-direction:column;align-items:stretch}.an-vrati .btn{width:100%!important}}
+/* ---- Marketing i dizajn (vlasnik) ---- */
+.mk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+.mk-k{all:unset;box-sizing:border-box;cursor:pointer;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:5px;box-shadow:var(--fp-sjena,none);transition:border-color .15s,transform .1s}
+.mk-k:hover{border-color:var(--line2)}.mk-k:active{transform:scale(.99)}
+.mk-k.on{border-color:var(--or,#C9191A);box-shadow:0 0 0 3px color-mix(in srgb,var(--or,#C9191A) 15%,transparent)}
+.mk-ik{font-size:24px}.mk-k b{font-size:16px;font-weight:800;color:#15171C}.mk-k small{color:var(--dim);font-size:13.5px;line-height:1.45}
+.mk-k em{font-style:normal;font-weight:800;font-size:13.5px;color:var(--or,#C9191A);margin-top:auto;padding-top:4px}
+.mk-forma>b{font-size:17px;display:block;margin-bottom:4px}
+@media(max-width:620px){.mk-grid{grid-template-columns:1fr}}
+.an-vrh,.an-pls{margin-left:18px;margin-right:18px}.an>.savjet{padding:0 18px}
+.an-2{margin:0 18px}.an-2>.box{margin:0 0 12px!important}
+.mk-grid{margin-left:18px;margin-right:18px}.mk>.fpu-ok{margin:12px 18px 0}
+.an-raz button{white-space:nowrap}
+/* ---- ikone (umjesto emotikona) ---- */
+.fpi{display:inline-block;vertical-align:-.2em;flex:none}
+.fpl-zn .ik{color:var(--fp)}.fpl-plut .ik{color:var(--fp)}
+.fpl-dokaz span{display:inline-flex;align-items:center;gap:6px}.fpl-dokaz .fpi{color:var(--fp)}
+.fpl-kont-info a{display:inline-flex;align-items:center;gap:8px}.fpl-kont-info .fpi{color:var(--fp)}
+.fpl-ok .ik .fpi{color:#fff}
+.fpu-akc a,.fpu-akc button{display:inline-flex;align-items:center;gap:6px}
+.zg-oz .fpi{vertical-align:-.15em}.zg-cip .fpi,.zg-stol-br .fpi{vertical-align:-.2em}
+.mk-ik{color:var(--or,#C9191A);width:42px;height:42px;border-radius:12px;background:color-mix(in srgb,var(--or,#C9191A) 9%,#fff);display:grid;place-items:center;margin-bottom:4px}
+.mk-k ul{list-style:none;padding:0;margin:6px 0 0;display:grid;gap:3px}.mk-k li{font-size:13px;color:#4B5360;font-weight:600;padding-left:14px;position:relative}
+.mk-k li::before{content:"";position:absolute;left:2px;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--or,#C9191A);opacity:.6}
+/* ---- naslovna: cijena i usluge ---- */
+.fpl-plan{display:grid;grid-template-columns:1.05fr 1fr;gap:20px;align-items:stretch;max-width:1020px;margin:0 auto}
+.fpl-prov{font-size:16px;font-weight:700;color:#5B4F49;margin-bottom:4px}.fpl-prov b{color:var(--fp);font-size:22px;font-weight:800}
+.fpl-uvod{background:linear-gradient(160deg,#FFF6F3,#FFFFFF 70%);border:1px solid #F3D9D1;border-radius:26px;padding:30px;display:flex;flex-direction:column}
+.fpl-uvod h3{font-size:26px;font-weight:800;line-height:1.15;margin-top:14px;letter-spacing:-.02em}
+.fpl-uvod>p{color:#5B4F49;font-size:15.5px;line-height:1.6;margin-top:10px}
+.fpl-usp-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.fpl-usp-mini div{background:#fff;border:1px solid rgba(23,18,15,.07);border-radius:16px;padding:14px;text-align:center}
+.fpl-usp-mini small{display:block;color:#8A7D77;font-size:12.5px;font-weight:700}.fpl-usp-mini b{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.fpl-usp-mini div:first-child b{color:#8A7D77;text-decoration:line-through;text-decoration-thickness:2px}.fpl-usp-mini div:not(:first-child) b{color:var(--fp)}
+.fpl-us{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fpl-us-k{background:#fff;border-radius:22px;padding:22px;border:1px solid rgba(23,18,15,.06);box-shadow:0 8px 24px rgba(60,20,10,.05)}
+.fpl-us-k .ik{width:46px;height:46px;border-radius:14px;background:var(--fp-s);display:grid;place-items:center;color:var(--fp)}
+.fpl-us-k h4{font-size:17px;font-weight:800;margin-top:14px}.fpl-us-k p{color:#5B4F49;font-size:14px;line-height:1.5;margin-top:6px}
+.fpl-us-k ul{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:5px;border-top:1px solid rgba(23,18,15,.07);padding-top:12px}
+.fpl-us-k li{font-size:13.5px;font-weight:650;color:#2E2622;padding-left:14px;position:relative}
+.fpl-us-k li::before{content:"";position:absolute;left:1px;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--fp)}
+@media(max-width:1000px){.fpl-us{grid-template-columns:1fr 1fr}.fpl-plan{grid-template-columns:1fr}}
+@media(max-width:560px){.fpl-us{grid-template-columns:1fr}.fpl-usp-mini b{font-size:21px}.fpl-uvod{padding:22px}}
+/* ---- cjenik u Upitima ---- */
+.fpu-pogled{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:12px;padding:3px;gap:2px}
+.fpu-vrh .desno .fpu-pogled button{border:0;padding:7px 12px;border-radius:9px}.fpu-vrh .desno .fpu-pogled button.on{background:#15171C;color:#fff}
+.fpc-pravila{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:12px}
+.fpc-pravila b{font-size:15px}.fpc-pravila ul{margin:8px 0 0 18px;display:grid;gap:4px;font-size:13.5px;color:#4B5360;line-height:1.45}
+.fpc-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(320px,1fr);gap:14px;align-items:start}
+.fpc-ponuda{position:sticky;top:12px}.fpc-ponuda .fpu-blok{margin-top:0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.fpc-kat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:12px}
+.fpc-kat-n{display:flex;align-items:center;gap:10px;margin-bottom:6px}.fpc-kat-n b{font-size:16.5px;font-weight:800}
+.fpc-ik{width:34px;height:34px;border-radius:10px;background:var(--fp-s,#FFF1EE);color:var(--fp);display:grid;place-items:center}
+.fpc-r{display:grid;grid-template-columns:minmax(0,1fr) 84px 92px 84px 36px;gap:8px;align-items:center;padding:9px 0;border-top:1px solid var(--line);font-size:14px}
+.fpc-r.gl{border-top:0;font-size:11.5px;font-weight:800;color:#8A919C;text-transform:uppercase;letter-spacing:.04em;padding:2px 0 4px}
+.fpc-r.on{background:#FFF8F6;margin:0 -8px;padding-left:8px;padding-right:8px;border-radius:8px}
+.fpc-r b{font-weight:700}.fpc-r small{display:block;color:#6B7280;font-size:12.5px;margin-top:2px;line-height:1.35}.fpc-r small.trz{color:#8A919C}
+.fpc-r .br{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.fpc-r .jak{font-weight:800}.fpc-r .zel{color:#17803D;font-weight:700}
+.fpc-r.gl span:nth-child(n+2){text-align:right}
+.fpc-dodaj{width:32px;height:32px;border-radius:9px;border:1px solid var(--line2,#DCD8D2);background:#fff;display:grid;place-items:center;cursor:pointer;color:#15171C}
+.fpc-dodaj.on{background:var(--fp);border-color:var(--fp);color:#fff}
+.fpc-izv{font-size:12.5px;color:#6B7280;line-height:1.6;margin:4px 2px 14px}.fpc-izv a{color:#4B5360}
+.fpc-stavke{display:grid;gap:6px}
+.fpc-st{display:grid;grid-template-columns:minmax(0,1fr) 46px 74px 14px 28px;gap:6px;align-items:center;font-size:13.5px;font-weight:650}
+.fpu-blok .fpc-st input{padding:7px 8px;text-align:right;font-size:14px}
+.fpc-st button{border:0;background:#F1EFEC;border-radius:8px;height:28px;cursor:pointer;font-size:16px;color:#4B5360}
+.fpc-zbroj{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.fpc-zbroj div{background:#FAF9F7;border:1px solid var(--line);border-radius:12px;padding:10px}.fpc-zbroj span{display:block;font-size:12px;color:#6B7280;font-weight:700}
+.fpc-zbroj b{font-size:18px;font-weight:800}.fpc-zbroj .zel b{color:#17803D}
+@media(max-width:900px){.fpc-grid{grid-template-columns:1fr}.fpc-ponuda{position:static}}
+@media(max-width:560px){.fpc-r{grid-template-columns:minmax(0,1fr) 78px 36px}.fpc-r>span:nth-child(2),.fpc-r>span:nth-child(4){display:none}.fpu-vrh .desno{flex-wrap:wrap}}
+.fpl-cij{font-size:48px;font-weight:800;letter-spacing:-.03em;margin:16px 0 2px;color:#17120F;font-family:inherit}
+.fpl-cij small{font-size:16px;font-weight:700;color:#8A7D77;letter-spacing:0}
+.fpl-usp-mini b{white-space:nowrap;font-size:24px}
+.fpc-r{grid-template-columns:minmax(0,1fr) 92px 104px 92px 36px}
+.fpc-isprazni{margin-top:10px;width:100%;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px;font-weight:700;color:#4B5360;cursor:pointer}
+@media(max-width:560px){.fpc-r{grid-template-columns:minmax(0,1fr) 96px 36px}}
+/* ---- društvene mreže na naslovnoj ---- */
+.fpl-mreze{display:flex;gap:6px;align-items:center}
+.fpl-mreze a{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;color:#4A403B;background:rgba(255,255,255,.7);border:1px solid rgba(23,18,15,.08);cursor:pointer;transition:color .15s,border-color .15s,transform .1s}
+.fpl-mreze a:hover{color:var(--fp);border-color:rgba(201,25,26,.3)}.fpl-mreze a:active{transform:scale(.95)}
+.fpl-mreze.vel{margin-top:18px;gap:10px}.fpl-mreze.vel a{width:46px;height:46px;border-radius:14px;background:#fff}
+@media(max-width:900px){.fpl-nav .fpl-mreze{margin-left:auto}.fpl-nav .fpl-mreze+.fpl-prij{margin-left:6px}}
+@media(max-width:420px){.fpl-nav .fpl-mreze a{width:32px;height:32px}.fpl-nav .fpl-mreze{gap:4px}}
+/* ---- vjernost (gost) ---- */
+body.zg .zg-vj{position:relative;z-index:2;max-width:760px;margin:12px auto 4px;background:var(--z-card,#fff);border:1px solid var(--z-line,rgba(20,20,20,.08));border-radius:20px;padding:16px 18px;box-shadow:0 6px 22px rgba(20,20,20,.06)}
+@media(max-width:800px){body.zg .zg-vj{margin:12px 14px 4px}}
+.zg-vj-glava{display:flex;align-items:center;gap:12px}
+.zg-vj-glava b{display:block;font-size:16px;font-weight:800}.zg-vj-glava small{display:block;font-size:13px;color:var(--z-mut,#6B7280);margin-top:1px}
+.zg-vj-ik{width:40px;height:40px;border-radius:12px;flex:none;display:grid;place-items:center;color:var(--z-a,#C9191A);background:color-mix(in srgb,var(--z-a,#C9191A) 10%,transparent)}
+.zg-vj-odj{margin-left:auto;border:0;background:none;color:var(--z-mut,#6B7280);font:inherit;font-size:13px;font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.zg-vj-traka{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin:14px 0 8px}
+.zg-vj-traka i{height:10px;border-radius:6px;background:color-mix(in srgb,var(--z-ink,#15171C) 9%,transparent);display:grid;place-items:center}
+.zg-vj-traka i.on{background:var(--z-a,#C9191A)}
+.zg-vj-traka i.zadnji{height:22px;margin-top:-6px;border-radius:8px;color:var(--z-mut,#6B7280)}.zg-vj-traka i.zadnji.on{color:#fff}
+.zg-vj-st{margin:0;font-size:14px;color:var(--z-mut,#4B5360);line-height:1.5}.zg-vj-st b{color:var(--z-ink,#15171C)}
+.zg-vj-nagrada{background:color-mix(in srgb,#1E9E57 10%,transparent);border:1px solid color-mix(in srgb,#1E9E57 30%,transparent);border-radius:14px;padding:11px 13px;font-size:14px}
+.zg-vj-nagrada b{display:block;color:#137A41}.zg-vj-nagrada span{color:var(--z-mut,#4B5360)}
+.zg-vj-unos{display:flex;gap:8px;margin-top:14px}
+.zg-vj-unos input{flex:1;min-width:0;border:1.5px solid var(--z-line,rgba(20,20,20,.12));border-radius:12px;padding:11px 12px;font:inherit;font-size:15px;background:transparent;color:inherit}
+.zg-vj-unos input:focus{outline:0;border-color:var(--z-a,#C9191A)}
+.zg-vj-unos button{border:0;border-radius:12px;padding:0 16px;font:inherit;font-weight:800;font-size:14px;background:var(--z-a,#C9191A);color:#fff;cursor:pointer;white-space:nowrap}
+.zg-vj-err{margin:6px 0 0;font-size:13px}
+.zg-vj-pod{margin:8px 0 0;font-size:12.5px;color:var(--z-mut,#6B7280)}.zg-vj-demo{display:inline-block;font-weight:700;color:var(--z-a,#C9191A)}
+/* ---- zakazivanje ---- */
+.zg-kad{display:grid;grid-template-columns:1.3fr 1fr;gap:10px;margin-top:12px}
+.zg-kad label span{display:block;font-size:12.5px;font-weight:700;color:var(--z-mut,#6B7280);margin-bottom:5px}
+.zg-kad select{width:100%;appearance:auto}
+.zg-nacin .fpi{margin-right:2px}
+.zg-zak-trk{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:8px 12px;border-radius:12px;background:color-mix(in srgb,var(--z-a,#C9191A) 9%,transparent);font-size:14px}
+.tag.t-zak{background:#EAF1FF;color:#1F4FB8;display:inline-flex;align-items:center;gap:4px}
+/* ---- demo plaćanje ---- */
+.zg-dp-omot{position:fixed;inset:0;z-index:200;background:rgba(10,10,12,.45);display:flex;align-items:flex-end;justify-content:center;animation:zgdp .2s ease}
+@keyframes zgdp{from{opacity:0}}
+.zg-dp{width:100%;max-width:440px;background:#fff;color:#15171C;border-radius:22px 22px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom));font-family:var(--z-font,inherit);box-shadow:0 -10px 40px rgba(0,0,0,.2)}
+@media(min-width:600px){.zg-dp-omot{align-items:center}.zg-dp{border-radius:22px}}
+.zg-dp-vrh{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:700;color:#4B5360}
+.zg-dp-vrh span{display:inline-flex;gap:6px;align-items:center}.zg-dp-vrh button{border:0;background:#F1EFEC;width:32px;height:32px;border-radius:50%;font-size:20px;cursor:pointer;color:#4B5360}
+.zg-dp-iznos{text-align:center;margin:10px 0 14px}.zg-dp-iznos small{display:block;color:#6B7280;font-size:13px}.zg-dp-iznos b{font-size:32px;font-weight:800;letter-spacing:-.02em}
+.zg-dp-pay{width:100%;height:48px;border-radius:12px;border:0;display:flex;align-items:center;justify-content:center;gap:4px;font:inherit;font-size:18px;font-weight:600;cursor:pointer;margin-bottom:8px}
+.zg-dp-pay.apple{background:#000;color:#fff}.zg-dp-pay.google{background:#fff;color:#3C4043;border:1px solid #DADCE0}
+.zg-dp-ili{display:flex;align-items:center;gap:10px;color:#8A919C;font-size:12.5px;margin:10px 0}.zg-dp-ili::before,.zg-dp-ili::after{content:"";flex:1;height:1px;background:#ECE9E4}
+.zg-dp-pol{display:block;margin-bottom:8px}.zg-dp-pol span{display:block;font-size:12px;font-weight:700;color:#6B7280;margin-bottom:4px}
+.zg-dp-pol input{width:100%;box-sizing:border-box}
+.zg-dp-dva{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.zg-dp .zg-btn{margin-top:6px}
+.zg-dp-demo{font-size:12px;color:#6B7280;text-align:center;margin:10px 0 0;line-height:1.45}
+@media(max-width:480px){.fpl-nav .fpl-prij{display:none}.fpl-nav .fp-logo{--v:26px!important}}
 
 .fp-logo{display:inline-flex;align-items:center;gap:calc(var(--v)*.32);font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-weight:800;
  font-size:calc(var(--v)*.86);letter-spacing:-.02em;line-height:1;text-transform:none;white-space:nowrap;vertical-align:middle}
@@ -2445,7 +2605,7 @@ const ZK="zoom-"+(ZOOM_SLUG||ZOOM_HOST)+"-";     // sve što se pamti na uređaj
 const ZOOM_BAZA=()=>location.origin+(ZOOM_SLUG?"/"+ZOOM_SLUG:"");
 const ZOOM_KORIJEN=()=>location.origin+"/";
 const ZOOM_MOD_ZADANO={narudzbe:true,dostava:true,osobno:true,kuhinja:true,pult:false,vozac:false,normativi:false,troskovi:false,
- izvjestaji:true,voznipark:false,vjernost:false,akcija:false,recenzije:true,chat:true,online_placanje:false,cola:false,sidrene:true,jezici:true,gumbi:true,stol:false,nabava:false,app:false};
+ izvjestaji:true,voznipark:false,vjernost:false,akcija:false,recenzije:true,chat:true,online_placanje:false,cola:false,sidrene:true,jezici:true,gumbi:true,stol:false,nabava:false,app:false,zakazivanje:true};
 /* moduli: što je Foodpoint admin uključio ovom restoranu (vlasnik restorana ih ne može sam mijenjati) */
 const MOD=k=>{const m=lokal&&lokal.moduli; return m&&typeof m[k]==="boolean"?m[k]:!!ZOOM_MOD_ZADANO[k];};
 const BREND=()=>(lokal&&lokal.brend)||{};
@@ -4269,14 +4429,15 @@ const ZOOM_MODULI=[
  ["akcija","Akcija 4+1","peta pizza gratis"],
  ["recenzije","Recenzije","ocjene gostiju nakon dostave"],
  ["chat","Chat s gostom","poruke kuhinja ↔ gost"],
- ["online_placanje","Online plaćanje","Teya — treba upisati ključeve restorana"],
+ ["online_placanje","Online plaćanje","Apple Pay, Google Pay i kartice preko Teye — podaci se upisuju niže, u Kartično plaćanje"],
  ["cola","Gratis piće uz pizzu","Coca-Cola 0,33 L uz svaku pizzu"],
  ["sidrene","Sidrene cijene","zakonska obveza od 17. 11. 2026."],
  ["jezici","Više jezika","EN/DE/IT/FR za strane goste"],
  ["gumbi","Gumbi i mreže","društvene mreže i vlastiti gumbi na početnoj"],
  ["stol","Narudžbe sa stola (QR)","gost skenira QR na stolu, narudžba ide na šank — kodovi za ispis na /oznaka#qr"],
  ["nabava","Nabava","dobavljači i narudžbe namirnica (kartica Nabava kod vlasnika)"],
- ["app","Prikaz u Foodpoint aplikaciji","restoran se vidi na /app (testna verzija)"]];
+ ["app","Prikaz u Foodpoint aplikaciji","restoran se vidi na /app (testna verzija)"],
+ ["zakazivanje","Zakazivanje termina","gost bira dan i vrijeme dostave ili preuzimanja (do 7 dana unaprijed)"]];
 const ZOOM_PAKETI={
  osnovni:{naziv:"Start",moduli:{stol:true,narudzbe:true,dostava:true,osobno:true,kuhinja:true,pult:false,vozac:false,normativi:false,troskovi:false,izvjestaji:true,voznipark:false,vjernost:false,akcija:false,recenzije:true,chat:true,online_placanje:false,cola:false,sidrene:true,jezici:true,gumbi:true}},
  standard:{naziv:"Pro",moduli:{stol:true,narudzbe:true,dostava:true,osobno:true,kuhinja:true,pult:true,vozac:true,normativi:false,troskovi:false,izvjestaji:true,voznipark:false,vjernost:true,akcija:false,recenzije:true,chat:true,online_placanje:false,cola:false,sidrene:true,jezici:true,gumbi:true}},
@@ -4301,7 +4462,7 @@ async function zoomUcitaj(){
  const r=await sb.rpc("zoom_pregled");
  if(r.error){zA.greska="Ne mogu učitati restorane: "+r.error.message; return;}
  zA.lista=r.data||[];
- await fpUcitajUpite();}
+ await fpUcitajUpite(); await zoomUcitajPlacanja();}
 function zoomPoruka(t){zA.poruka=t; zoomCrtaj(); setTimeout(()=>{if(zA.poruka===t){zA.poruka="";zoomCrtaj();}},3500);}
 
 function zoomAdminHTML(){
@@ -4369,6 +4530,7 @@ function zoomUrediHTML(l){
    ${zPolje("Telefon","tel1",l.tel1||"")}${zPolje("E-mail","email",l.email||"")}</div>
   <h4>Lozinke restorana</h4>
   <div class="z-polja">${zPolje("Vlasnik","loz_vlasnik",t.loz_vlasnik||"")}${zPolje("Kuhinja","loz_kuhinja",t.loz_kuhinja||"")}</div>
+  ${zoomPlacanjeHTML(l)}
   <h4>Pretplata (vidiš samo ti)</h4>
   <div class="z-polja">${zPolje("Plaćeno do","pretplata_do",a.pretplata_do||"","date")}${zPolje("Cijena mjesečno (€)","cijena_mjesecno",a.cijena_mjesecno??"","text")}
    ${zPolje("Kontakt osoba","kontakt",a.kontakt||"")}${zPolje("Bilješka","napomena",a.napomena||"")}</div>
@@ -4395,6 +4557,7 @@ async function zoomSpremi(id){
  const cm=parseFloat(String(o.cijena_mjesecno).replace(",","."));
  const r3=await sb.from("lokali_admin").upsert({lokal_id:id,pretplata_do:o.pretplata_do||null,cijena_mjesecno:isNaN(cm)?null:cm,kontakt:o.kontakt||null,napomena:o.napomena||null});
  if(r2.error||r3.error){zoomPoruka("Djelomično spremljeno: "+((r2.error||r3.error).message));return;}
+ const r4=await zoomSpremiPlacanje(id,o,el("zu-"+id)); if(r4){zoomPoruka("Kartično plaćanje nije spremljeno: "+r4);return;}
  await zoomUcitaj(); zoomPoruka("Spremljeno ✓");}
 async function zoomAktivan(id,da){
  const r=await sb.from("lokali").update({aktivan:da}).eq("id",id);
@@ -4603,6 +4766,7 @@ let realtimeKanal=null, realtimePokusaj=0, realtimeTajmer=null;
 function pokreniRealtime(){
  if(realtimeKanal){try{sb.removeChannel(realtimeKanal)}catch(e){}}
  clearTimeout(realtimeTajmer);
+ if(!jeOsoblje()){realtimeKanal=null; const v=el("veza"); if(v)v.style.display="none"; return;}
  let kanal=sb.channel("sve-"+Date.now());
  // gost i pult nisu prijavljeni — narudžbe im dolaze preko svojih funkcija (osvježavanje svakih 5 s),
  // a ne preko ovog kanala koji bi im inače slao tuđe narudžbe
@@ -5588,7 +5752,8 @@ async function posalji(){
    naselje:osobno?null:(forma.naselje||null),napomena:nap,placanje,
    iznos:r.ukupno,popust:r.popust,gratis_pice:r.gratisPice,stanje:"novo",
    lat:osobno?null:g.lat,lng:osobno?null:g.lng,
-   nacin:zaStol?"stol":osobno?"osobno":"dostava",preuzimanje_min:zaStol?null:osobno?forma.preuzMin:null};
+   nacin:zaStol?"stol":osobno?"osobno":"dostava",preuzimanje_min:zaStol||forma.zakazano?null:osobno?forma.preuzMin:null,
+   zakazano_za:!zaStol&&forma.zakazano&&MOD("zakazivanje")?forma.zakazano:null};
  narudzba.napomena_dostava=osobno?null:(napD||null); narudzba.lojalnost=r.lojalnost;
  const redovi=kosarica.map(st=>({
    naziv:jelo(st.jeloId).naziv,cijena:cijenaStavke(st),gratis:!!st.gratis,
@@ -5616,6 +5781,7 @@ async function posalji(){
    samo na serveru (funkcija "teya"), nikad u ovoj datoteci. */
 let placanjeProvjeraOd=0;
 async function zapocniPlacanje(id){
+ if(lokal&&lokal.slug==="demo"){await zgDemoPlacanje(id); return;}
  const bt=el("pl-plati"); if(bt){bt.disabled=true; bt.textContent=tj("Otvaram plaćanje…");}
  try{
   const r=await sb.functions.invoke("teya?a=start",{body:{narudzba_id:id,povratak:ZOOM_BAZA()}});
@@ -5723,6 +5889,7 @@ function pracenje(o){
  return `<div class="trk">
   <div class="big">Narudžba <em>#${o.broj}</em></div>
   <div class="sub">${esc(o.adresa)}</div>
+  ${o.zakazano_za?`<div class="zg-zak-trk">${fpIk("kalendar",16)} ${tj("Zakazano za")} <b>${zakTxt(o.zakazano_za)}</b></div>`:""}
   ${kad?`<div class="big" style="margin-top:20px">${osobno?"Preuzimanje oko":"Dostava oko"} <em>${kad}</em></div>
    <div class="sub">otprilike ${uk} minuta</div>`
    :/^Stol /.test(o.adresa||"")&&o.stanje!=="novo"?`<div class="big" style="margin-top:20px">${o.stanje==="spremno"||o.stanje==="u_dostavi"||o.stanje==="dostavljeno"?"Stiže na vaš stol":"Pripremamo vašu narudžbu"}</div>`
@@ -5843,9 +6010,9 @@ const mjesecSad=()=>new Date().toISOString().slice(0,7);
 const hrMjesec=m=>["siječanj","veljača","ožujak","travanj","svibanj","lipanj","srpanj",
  "kolovoz","rujan","listopad","studeni","prosinac"][+m.split("-")[1]-1]+" "+m.split("-")[0];
 
-const VL_TABOVI=()=>[["pregled","Pregled"],["jelovnik","Jelovnik"],["pocetna","Izgled"],["dodaci","Dodaci"],["normativi","Normativi","normativi"],["nabava","Nabava","nabava"],["troskovi","Troškovi","troskovi"],
+const VL_TABOVI=()=>[["pregled","Pregled"],["analitika","Analitika"],["jelovnik","Jelovnik"],["pocetna","Izgled"],["dodaci","Dodaci"],["normativi","Normativi","normativi"],["nabava","Nabava","nabava"],["troskovi","Troškovi","troskovi"],
  ["recenzije","Recenzije","recenzije"],["vozaci","Vozači","vozac"],["voznipark","Vozni park","voznipark"],["nadzor",MOD("vozac")?"Kuhinja i vozači":"Kuhinja","kuhinja"],
- ["izvjestaj","Izvještaji","izvjestaji"],["postavke","Postavke"]].filter(x=>!x[2]||MOD(x[2]));
+ ["izvjestaj","Izvještaji","izvjestaji"],["marketing","Marketing i dizajn"],["postavke","Postavke"]].filter(x=>!x[2]||MOD(x[2]));
 function vlasnikHTML(){
  if(vlUlaz&&!VL_TABOVI().some(x=>x[0]===vlTab))vlTab="pregled";
  if(!vlUlaz)return `<div class="login"><h2>Vlasnik</h2><p>Pristup svemu</p>
@@ -5855,6 +6022,8 @@ function vlasnikHTML(){
  let h=`${osobljeUloga==="zoom"?`<div class="z-adm-traka">${ZOOM_LOGO(16)} admin · uređuješ <b>${esc(lokal.naziv)}</b> <a href="/#zoom">← svi restorani</a></div>`:""}${historijaIzmjena.length?`<button class="undo" onclick="ponistiZadnju()">↩ Poništi zadnju izmjenu (${historijaIzmjena.length})</button>`:""}<div class="podtab">
   ${VL_TABOVI().map(([k,n])=>`<button aria-selected="${vlTab===k}" onclick="vlNa('${k}')">${n}</button>`).join("")}</div>`;
  if(vlTab==="pregled")   h+=vlPregled();
+ if(vlTab==="analitika") h+=vlAnalitika();
+ if(vlTab==="marketing") h+=vlMarketing();
  if(vlTab==="jelovnik")  h+=vlJelovnik();
  if(vlTab==="pocetna")   h+=vlGumbi();
  if(vlTab==="dodaci")    h+=vlDodaci();
@@ -5868,7 +6037,7 @@ function vlasnikHTML(){
  if(vlTab==="izvjestaj") h+=vlIzvjestaj();
  if(vlTab==="postavke")  h+=vlPostavke();
  return h;}
-function vlNa(k){vlTab=k; if(k==="nabava")nb.ucitano=false;
+function vlNa(k){vlTab=k; if(k==="nabava")nb.ucitano=false; if(k==="analitika")an.ucitano=false; if(k==="marketing")mk.poruka="";
  if(k==="pregled"||k==="izvjestaj")ucitajVl(); else crtaj(1);}
 async function ulazVl(){
  const e=el("vle"); if(e)e.classList.remove("on");
@@ -6988,7 +7157,8 @@ function kartica(o,gumbi){
    <div class="ord-t mono">${sat(o.stvoreno)}${o.eta?` · iz peći za ${o.eta}′`:""}</div></div>
    <div style="display:flex;gap:8px;align-items:center">
     ${novaP?`<span class="tag" style="background:rgba(62,156,201,.25);color:var(--pice)">poruka</span>`:""}
-    ${osobno?(/^Stol /.test(o.adresa||"")?`<span class="tag t-osobno">🪑 ${esc(String(o.adresa).split(" —")[0]).toUpperCase()}</span>`:`<span class="tag t-osobno">🏠 OSOBNO${vrijemeDo?" · dolazi "+vrijemeDo:""}</span>`):""}
+    ${osobno?(/^Stol /.test(o.adresa||"")?`<span class="tag t-osobno">${fpIk("stolica",14)} ${esc(String(o.adresa).split(" —")[0]).toUpperCase()}</span>`:`<span class="tag t-osobno">🏠 OSOBNO${vrijemeDo?" · dolazi "+vrijemeDo:""}</span>`):""}
+    ${o.zakazano_za?`<span class="tag t-zak">${fpIk("kalendar",13)} ${zakTxt(o.zakazano_za).toUpperCase()}</span>`:""}
     <span class="tag ${t[0]}">${t[1]}</span>
     <span class="strelica">${otv?"▲":"▼"}</span></div></div>
   ${bedzGosta(o)}
@@ -7008,7 +7178,7 @@ function kartica(o,gumbi){
     <div class="cij">0,00 €</div></div></div>`:""}
   <div class="tot"><span>Naplatiti</span><span>${eur(o.iznos)}</span></div>
   <div class="nacin ${plKlasa(o)}">${o.placeno?"✓ PLAĆENO ONLINE — ne naplaćuje se":"Naplata: "+esc(plNaziv(o))}</div>
-  ${osobno&&/^Stol /.test(o.adresa||"")?`<div class="kratko"><span class="tag t-osobno">🪑 ${esc(String(o.adresa).split(" —")[0])} — gost sjedi u lokalu, nosi se na stol</span></div>`
+  ${osobno&&/^Stol /.test(o.adresa||"")?`<div class="kratko"><span class="tag t-osobno">${fpIk("stolica",14)} ${esc(String(o.adresa).split(" —")[0])} — gost sjedi u lokalu, nosi se na stol</span></div>`
    :osobno?`<div class="kratko"><span class="tag t-osobno">🏠 Osobno preuzimanje${vrijemeDo?" — dolazi oko "+vrijemeDo:""}</span></div>`
    :`<div class="kratko">${o.naselje?`<span class="kvart-oz">${esc(o.naselje)}</span>`:""}
    <span class="adr-kratko">${esc(o.adresa)}</span></div>`}
@@ -8006,9 +8176,9 @@ const ZI={
 const zgPozadina=()=>lokal&&lokal.naslovna_url;
 function zgOznake(j){
  const o=j.oznaka||"", t=[];
- if(o.includes("chef"))t.push('<span class="zg-oz chef">⭐ Preporuka kuće</span>');
- if(o.includes("ljuto"))t.push('<span class="zg-oz ljuto">🌶 Ljuto</span>');
- if(o==="veg")t.push('<span class="zg-oz veg">🌿 Vegetarijansko</span>');
+ if(o.includes("chef"))t.push('<span class="zg-oz chef">'+fpIk("nagrada",13)+' Preporuka kuće</span>');
+ if(o.includes("ljuto"))t.push('<span class="zg-oz ljuto">'+fpIk("plamen",13)+' Ljuto</span>');
+ if(o==="veg")t.push('<span class="zg-oz veg">'+fpIk("list",13)+' Vegetarijansko</span>');
  if(o==="18+")t.push('<span class="zg-oz">18+</span>');
  return t.join("");}
 const zgSlozeno=j=>jeCijela(j.kategorija)||dodaciZaJelo(j).length>0;
@@ -8026,7 +8196,7 @@ function zgMeniHTML(){
  const osobno=forma.nacin==="osobno"||bezDostave()||samoPreuzimanje();
  const cipovi=[];
  if(lokal.radno_vrijeme)cipovi.push(`<span class="zg-cip">${ZI.sat}${esc(lokal.radno_vrijeme)}</span>`);
- if(narucuje&&stol){cipovi.unshift(`<span class="zg-cip stol">🪑 ${tj("Stol")} ${esc(stol)} · ${tj("narudžba za stol")}</span>`);}
+ if(narucuje&&stol){cipovi.unshift(`<span class="zg-cip stol">${fpIk("stolica",14)} ${tj("Stol")} ${esc(stol)} · ${tj("narudžba za stol")}</span>`);}
  else if(narucuje){
   if(narudzbePauzirane())cipovi.push(`<span class="zg-cip ne">⏸ ${tj("Narudžbe pauzirane")}</span>`);
   if(!bezDostave()&&!samoPreuzimanje())cipovi.push(`<span class="zg-cip">${ZI.skuter}${DOSTAVA_PRAG_KM()>0?`${tj("Besplatna dostava do")} ${kmTxt(DOSTAVA_PRAG_KM())} km`:tj("Dostava")}</span>`);
@@ -8056,6 +8226,7 @@ function zgMeniHTML(){
   ${narudzbePauzirane()?`<div class="zg-obavijest" role="alert"><b>${tj("Trenutno ne primamo narudžbe")}</b>${tj("Kuhinja je trenutno puna.")} ${pauzaGostTekst()} ${tj("Jelovnik možete i dalje pregledavati.")}</div>`
    :samoPreuzimanje()&&!bezDostave()?`<div class="zg-obavijest" role="alert"><b>${tj("Trenutno samo osobno preuzimanje")}</b>${tj("Zbog velike gužve dostava je privremeno isključena. Naručite ovdje i preuzmite narudžbu kod nas.")}</div>`:""}
  </header>
+ ${MOD("vjernost")&&narucuje&&!stol?zgVjernostHTML():""}
  <nav class="zg-kat" aria-label="${tj("Kategorije")}"><div class="zg-kat-in">${kats.map((k,i)=>`<button type="button" data-k="${katId(k)}" class="${i?"":"on"}" onclick="zgSkoci('${katId(k)}')">${esc(k)}</button>`).join("")}</div></nav>
  <main class="zg-meni" id="meni">
   ${kats.map(k=>{const lj=vidljiva.filter(j=>j.kategorija===k);
@@ -8226,10 +8397,11 @@ function zgPodaciHTML(){
    <label class="zg-lbl" for="f-tel">${tj("Broj mobitela")}</label>
    <input class="zg-in" id="f-tel" inputmode="tel" autocomplete="tel" placeholder="${tj("npr. 091 234 5678")}" value="${esc(forma.tel)}" oninput="forma.tel=this.value">
    <p class="zg-pomoc">${tj("Nazvat ćemo vas samo ako bude potrebno oko narudžbe.")}</p></section>
+  ${MOD("zakazivanje")?zgKadHTML(osobno):""}
   ${osobno?`<section class="zg-kartica"><h3>${tj("Preuzimanje")}</h3>${lokacijaGumbHTML()}
-   <label class="zg-lbl">${tj("Kada dolazite po narudžbu?")}</label>
+   ${forma.zakazano?"":`<label class="zg-lbl">${tj("Kada dolazite po narudžbu?")}</label>
    <div class="zg-cipovi">${PREUZ_OPCIJE.map(([m,n])=>`<button type="button" aria-pressed="${forma.preuzMin===m}" onclick="forma.preuzMin=${m};crtaj(1)">${tj(n)}</button>`).join("")}</div>
-   <p class="zg-pomoc">${tj("Pripremu tempiramo tako da je hrana svježa točno kad dođete.")}</p></section>`
+   <p class="zg-pomoc">${tj("Pripremu tempiramo tako da je hrana svježa točno kad dođete.")}</p>`}</section>`
   :`<section class="zg-kartica"><h3>${tj("Adresa dostave")}</h3>
    <label class="zg-lbl" for="f-adr">${tj("Ulica i kućni broj")}</label>
    <input class="zg-in" id="f-adr" placeholder="${tj("npr. Ilica 25, Zagreb")}" value="${esc(forma.adr)}" autocomplete="off" oninput="forma.adr=this.value;forma.lat=null;provjeriAdresu(this.value)">
@@ -8246,7 +8418,7 @@ function zgPodaciHTML(){
   <section class="zg-kartica">${zgZbrojHTML(r,1)}</section>
   ${greska?`<div class="zg-greska" role="alert">${esc(greska)}</div>`:""}
   <div class="zg-fiks">${narudzbePauzirane()?`<button class="zg-btn" disabled>${tj("Narudžbe trenutno pauzirane")}</button>`
-   :`<button class="zg-btn razvuk" id="salji" type="button" onclick="posalji()">${placanje==="online"?tj("Nastavi na plaćanje"):tj("Pošalji narudžbu")}</button>`}
+   :`<button class="zg-btn razvuk" id="salji" type="button" onclick="posalji()">${placanje==="online"?tj("Nastavi na plaćanje"):forma.zakazano?tj("Zakaži narudžbu"):tj("Pošalji narudžbu")}</button>`}
    <p class="zg-pomoc" style="text-align:center;margin-top:8px">${tj("Ukupno")} <b>${eur(r.ukupno)}</b> · ${tj("slanjem prihvaćate uvjete narudžbe")}</p></div>
  </div>`;}
 
@@ -8293,37 +8465,43 @@ const FP_SLIKE={
 /* Cijene paketa — promijeni ovdje (mjesečno, €). Ključevi odgovaraju paketima u adminu. */
 const FP_CIJENE=[
  {k:"osnovni",naziv:"Start",cij:39,za:"Za kafiće i manje lokale koji kreću s online narudžbama.",
-  st:["Vaša stranica s jelovnikom i narudžbom","Ekran za kuhinju ili šank","Dostava i osobno preuzimanje","Vaš logo, boje i adresa","Izvještaji o prometu"]},
+  st:["Vaša stranica s jelovnikom i narudžbom","Ekran za kuhinju ili šank","Dostava i osobno preuzimanje","Vaš logo, boje i adresa","Analitika: novi i stalni kupci, promet, najprodavanije"]},
  {k:"standard",naziv:"Pro",cij:69,za:"Za restorane i pizzerije s vlastitom dostavom.",istaknut:true,
-  st:["Sve iz paketa Start","Aplikacija za vozače s kartom ture","Pult za pripremu","Program vjernosti","Narudžbe sa stola preko QR koda"]},
+  st:["Sve iz paketa Start","Aplikacija za vaše vozače s turama","Pult za pripremu","Program vjernosti","Narudžbe sa stola preko QR koda"]},
  {k:"sve",naziv:"Premium",cij:99,za:"Za lokale koji žele voditi cijelo poslovanje na jednom mjestu.",
   st:["Sve iz paketa Pro","Normativi, nabava i marže po jelu","Troškovi, plaće i vozni park","Narudžbe dobavljačima jednim klikom","Prioritetna podrška"]}];
 const FP_ZNACAJKE=[
- ["🧾","Jelovnik koji prodaje","Velike slike jela, dodaci, preporuke i košarica — kao Wolt, ali s vašim imenom."],
- ["🔔","Narudžba odmah u kuhinji","Zvuk, vrijeme pripreme, pauza u gužvi i poruke s gostom."],
- ["🛵","Vaši vozači, vaša ruta","Vozač vidi turu na karti, redoslijed adresa i naplatu."],
- ["📱","QR na stolu","Gost u kafiću naruči s mobitela, konobar dobije narudžbu na tablet."],
- ["📊","Promet i marže","Izvještaji, normativi, troškovi i plaće u vlasničkom sučelju."],
- ["🛒","Nabava","Popis namirnica i narudžba dobavljaču jednim klikom."],
- ["⚖️","Usklađeno sa zakonom","Sidrene cijene i strojno čitljiv cjenik objavljuju se sami."],
- ["🎨","Vaš brend","Vaš logo, vaše boje, vaša domena. Bez tuđeg imena na vrhu."]];
+ ["jelovnik","Jelovnik koji prodaje","Velike slike jela, dodaci, preporuke i košarica — kao Wolt, ali s vašim imenom."],
+ ["zvono","Narudžba odmah u kuhinji","Zvuk, vrijeme pripreme, pauza u gužvi i poruke s gostom."],
+ ["dostava","Vaši vozači, vaša ruta","Vaš vozač vidi svoju turu, redoslijed adresa i naplatu, a navigaciju otvara jednim klikom."],
+ ["qr","QR na stolu","Gost u kafiću naruči s mobitela, konobar dobije narudžbu na tablet."],
+ ["graf","Analitika i marže","Novi i stalni kupci, promet, najprodavanije, normativi, troškovi i plaće."],
+ ["kosarica","Nabava","Popis namirnica i narudžba dobavljaču jednim klikom."],
+ ["vaga","Usklađeno sa zakonom","Sidrene cijene i strojno čitljiv cjenik objavljuju se sami."],
+ ["paleta","Vaš brend","Vaš logo, vaše boje, vaša domena. Bez tuđeg imena na vrhu."]];
 const FP_EKRANI=[
  {oz:"Gost",n:"Stranica restorana koju gosti vole",t:"Gost otvori vaš link ili skenira QR kod i vidi vaš jelovnik s fotografijama. Bira dodatke, količinu, dostavu ili preuzimanje i naručuje za manje od minute — bez registracije i bez aplikacije.",
-  l:["Kartice jela s fotografijama i dodacima","Košarica, preporuke i praćenje narudžbe uživo","Dostava, preuzimanje ili narudžba sa stola"],zivo:true},
+  l:["Kartice jela s fotografijama i dodacima","Košarica, preporuke i status narudžbe uživo","Dostava, preuzimanje ili narudžba sa stola"],zivo:true},
  {oz:"Kuhinja",n:"Kuhinja vidi sve u trenutku",t:"Nova narudžba zazvoni na tabletu u kuhinji. Kuhar potvrdi i upiše vrijeme pripreme, a gost odmah vidi kad mu stiže hrana.",
   l:["Zvuk i treptanje za svaku novu narudžbu","Pauza primanja kad je gužva","Narudžba telefonom upisuje se u 20 sekundi"],sl:"fp-ekran-kuhinja.png"},
- {oz:"Dostava",n:"Aplikacija za vaše vozače",t:"Vozač na mobitelu vidi svoju turu: adrese poredane po ruti, što nosi i koliko naplaćuje. Bez papirića i bez zvanja kuhinje.",
-  l:["Ture i redoslijed adresa na karti","Naplata gotovinom ili karticom","Vlasnik vidi tko vozi i koliko"],sl:"fp-ekran-vozac.png",mob:true},
- {oz:"Vlasnik",n:"Cijeli lokal na jednom ekranu",t:"Mijenjate jelovnik, cijene i slike sami, kad god želite. Pratite promet, marže po jelu, troškove i plaće — i naručujete namirnice od dobavljača.",
-  l:["Jelovnik, dodaci i izgled stranice","Izvještaji, normativi i troškovi","Nabava i narudžbe dobavljačima"],sl:"fp-ekran-vlasnik.png"}];
+ {oz:"Dostava",n:"Aplikacija za vaše vozače",t:"Vozač kojeg zapošljavate na mobitelu vidi svoju turu: adrese poredane po ruti, što nosi i koliko naplaćuje. Bez papirića i bez zvanja kuhinje.",
+  l:["Ture i redoslijed adresa, navigacija jednim klikom","Naplata gotovinom ili karticom","Vlasnik vidi tko vozi i koliko"],sl:"fp-ekran-vozac.png",mob:true},
+ {oz:"Vlasnik",n:"Cijeli lokal na jednom ekranu",t:"Mijenjate jelovnik, cijene i slike sami, kad god želite. Pratite promet, nove i stalne kupce, marže po jelu, troškove i plaće — i naručujete namirnice od dobavljača.",
+  l:["Jelovnik, dodaci i izgled stranice","Analitika kupaca, izvještaji, normativi i troškovi","Nabava i narudžbe dobavljačima"],sl:"fp-ekran-vlasnik.png"}];
+const FP_ZANIMA=[["partner","Foodpoint sustav — narudžbe i vođenje lokala"],["usluge","Dizajn, tisak, ambalaža ili oglasi"],["sve","Sve zajedno"]];
+const fpZanimaNaziv=k=>((FP_ZANIMA.find(x=>x[0]===k)||[])[1])||(k==="usluga"?"Usluga iz vlasničkog sučelja":((FP_CIJENE.find(x=>x.k===k)||{}).naziv||""));
 const FP_FAQ=[
  ["Trebaju li moji gosti instalirati aplikaciju?","Ne. Stranica se otvara u pregledniku s linka, QR koda ili Instagrama. Tko želi, može je jednim klikom dodati na početni zaslon mobitela."],
- ["Uzimate li proviziju po narudžbi?","Ne. Plaćate fiksnu mjesečnu pretplatu. Novac od narudžbi ide izravno vama — gotovinom, karticom pri dostavi ili online."],
- ["Mogu li zadržati Wolt i Glovo?","Možete. Foodpoint je vaš vlastiti kanal za stalne goste. Svaka narudžba koja dođe preko vaše stranice umjesto preko agregatora štedi vam 25–30 %."],
+ ["Koliko košta?","49 € mjesečno i 10 % na online narudžbe koje stignu preko Foodpointa. Prva 3 mjeseca provizija je samo 5 %. Novac od narudžbi ide izravno vama, a proviziju vam šaljemo jednom mjesečno na računu."],
+ ["Mogu li zadržati Wolt i Glovo?","Možete. Foodpoint je vaš vlastiti kanal za stalne goste. Svaka narudžba koja dođe preko vaše stranice umjesto preko Wolta ili Glova košta vas 10 % umjesto 25–30 %."],
  ["Koliko traje postavljanje?","Obično 2 do 5 radnih dana. Mi unesemo jelovnik, slike, logo i boje, a vi dobijete gotove linkove, QR kodove i kratku obuku za osoblje."],
  ["Treba li mi posebna oprema?","Ne. Dovoljan je bilo koji tablet ili mobitel za kuhinju i mobiteli vozača. Sve radi u pregledniku."],
+ ["Mogu li gosti platiti karticom online?","Da. Uz modul Online plaćanje gost plaća Apple Payom, Google Payom ili karticom preko Teye. Novac ide izravno na vaš račun, mi ga nikad ne držimo."],
+ ["Tko vozi hranu?","Vaši dostavljači — oni koje sami zapošljavate. Foodpoint im daje aplikaciju s turama i adresama, a vama pregled tko je što vozio i naplatio."],
+ ["Možete li nam napraviti i letke, jelovnik ili oglase?","Da. Imamo vlastiti studio za dizajn i web: fotografiranje jela, jelovnike, letke s tiskom, plakate, izlog i oglase na Instagramu i Facebooku. Naručujete ih i iz svog vlasničkog sučelja."],
  ["Mogu li otkazati?","Da, bez ugovorne obveze — pretplata je mjesečna."]];
 
+const fpVi=t=>t.replace(/plaćaš/g,"plaćate").replace(/Tvoj restoran/g,"Vaš restoran").replace(/tvoj jelovnik/g,"vaš jelovnik").replace(/tvom stilu/g,"vašem stilu").replace(/tvojoj/g,"vašoj");
 /* ---------- uvodni crveni ekran ---------- */
 function fpUvod(){
  const s=el("fp-splash"); if(!s||!document.documentElement.classList.contains("fp-uvod"))return;
@@ -8334,28 +8512,29 @@ function fpSkoci(id){const t=el(id); if(t)scrollTo({top:t.getBoundingClientRect(
 let fpUpitStanje={salje:false,ok:false,greska:""};
 function fpLandingHTML(){
  const k=ZOOM_KONTAKT, demo=ZOOM_KORIJEN()+"demo";
- const nav=[["kako","Kako radi"],["sucelja","Sučelja"],["usteda","Ušteda"],["cijene","Cijene"],["kontakt","Kontakt"]];
+ const nav=[["kako","Kako radi"],["sucelja","Sučelja"],["usluge","Usluge"],["cijene","Cijene"],["kontakt","Kontakt"]];
  return `<div class="fpl">
  <div class="fpl-poz" style="background-image:url('${FP_U(FP_SLIKE.pozadina,1800)}')"></div>
  <header class="fpl-nav"><div class="fpl-in">${ZOOM_LOGO(30)}
   <nav>${nav.map(([i,n])=>`<a onclick="fpSkoci('${i}')">${n}</a>`).join("")}</nav>
+  ${fpMrezeHTML()}
   <a class="fpl-prij" href="#zoom">Prijava</a>
   <a class="fpl-b mali" onclick="fpSkoci('kontakt')">Zatraži ponudu</a></div></header>
 
  <section class="fpl-hero"><div class="fpl-in">
   <div>
    <span class="fpl-oz"><i></i>Za restorane, pizzerije i kafiće u Zagrebu</span>
-   <h1>Vaša dostava.<br>Vaši gosti.<br><span>Bez provizije.</span></h1>
-   <p class="pod">Foodpoint je vaš vlastiti sustav za online narudžbe — stranica s jelovnikom koju gosti vole, ekran za kuhinju, aplikacija za vozače i vlasničko sučelje. U vašim bojama, s vašim logom, za fiksnu mjesečnu cijenu.</p>
+   <h1>Sve za vaš lokal.<br><span>Na jednom mjestu.</span></h1>
+   <p class="pod">Foodpoint je partner za ugostitelje. Umjesto starog telefona gosti naručuju na modernoj stranici u vašim bojama, a vi vodite kuhinju, dostavljače, analitiku i troškove na jednom mjestu. Kad zatreba, radimo i dizajn, tisak, ambalažu i oglase. Vi zaposlite dostavljača, mi radimo sve ostalo.</p>
    <div class="fpl-cta"><a class="fpl-b" href="${demo}" target="_blank" rel="noopener">Isprobaj demo restoran →</a>
     <a class="fpl-b bijeli" onclick="fpSkoci('kontakt')">Zatraži ponudu</a></div>
-   <div class="fpl-dokaz"><span>✓ <b>0 %</b> provizije</span><span>✓ Gotovo za <b>2–5 dana</b></span><span>✓ Bez ugovorne obveze</span></div>
+   <div class="fpl-dokaz"><span>${fpIk("kvaka",16)} <b>${FP_PLAN.mj} €</b>/mj + <b>${FP_PLAN.prov} %</b></span><span>${fpIk("kvaka",16)} Prva ${FP_PLAN.uvodMj} mjeseca <b>${FP_PLAN.uvodProv} %</b></span><span>${fpIk("kvaka",16)} Gotovo za <b>2–5 dana</b></span></div>
   </div>
   <div class="fpl-vizual">
    <div class="foto" style="background-image:url('${FP_U(FP_SLIKE.hero,1000,1200)}')"></div>
    <div class="fpl-mob"><div class="ekran"><iframe src="${demo}" title="Demo restoran Casa Lume" loading="lazy"></iframe></div></div>
-   <div class="fpl-plut p1"><span class="ik">🔔</span><span><b>Nova narudžba #128</b>2× Margherita · 24,20 €</span></div>
-   <div class="fpl-plut p2"><span class="ik">🛵</span><span><b>Vozač je krenuo</b>Stiže za oko 12 min</span></div>
+   <div class="fpl-plut p1"><span class="ik">${fpIk("zvono",20)}</span><span><b>Nova narudžba #128</b>2× Margherita · 24,20 €</span></div>
+   <div class="fpl-plut p2"><span class="ik">${fpIk("dostava",20)}</span><span><b>Vozač je krenuo</b>Stiže za oko 12 min</span></div>
   </div></div></section>
 
  <section class="fpl-sek" id="kako"><div class="fpl-in">
@@ -8364,7 +8543,7 @@ function fpLandingHTML(){
   <div class="fpl-tri">
    ${[[FP_SLIKE.gost,"Gost naruči","Otvori vaš link ili skenira QR kod, odabere jela i naruči — dostava, preuzimanje ili za stol."],
       [FP_SLIKE.kuhinja,"Kuhinja priprema","Narudžba zazvoni na tabletu. Kuhar potvrdi vrijeme, gost ga odmah vidi."],
-      [FP_SLIKE.dostava,"Vozač dostavlja","Vozač vidi turu i adrese na karti, gost prati dostavu uživo."]]
+      [FP_SLIKE.dostava,"Vaš vozač dostavlja","Vozač kojeg vi zapošljavate vidi turu i redoslijed adresa, a gost vidi status narudžbe uživo."]]
      .map(([s,n,t],i)=>`<div class="fpl-korak"><div class="sl" style="background-image:url('${FP_U(s,800,500)}')"><span class="br">${i+1}</span></div>
       <div class="tx"><h3>${n}</h3><p>${t}</p></div></div>`).join("")}</div></div></section>
 
@@ -8381,32 +8560,40 @@ function fpLandingHTML(){
  </div></section>
 
  <section class="fpl-sek"><div class="fpl-in">
-  <div class="fpl-nas"><span class="fpl-oz"><i></i>Mogućnosti</span><h2>Uključite samo ono što vam treba</h2>
-   <p>Kafić s QR narudžbama, pizzerija s vlastitom dostavom ili restoran s cijelom nabavom — svaki modul se pali po potrebi.</p></div>
-  <div class="fpl-mreza">${FP_ZNACAJKE.map(([i,n,t])=>`<div class="fpl-zn"><div class="ik">${i}</div><h4>${n}</h4><p>${t}</p></div>`).join("")}</div>
+  <div class="fpl-nas"><span class="fpl-oz"><i></i>Mogućnosti</span><h2>Sve je uključeno, koristite što trebate</h2>
+   <p>Kafić s QR narudžbama, pizzerija s vlastitom dostavom ili restoran s cijelom nabavom — sve je u cijeni, a svaki dio se uključuje po potrebi.</p></div>
+  <div class="fpl-mreza">${FP_ZNACAJKE.map(([i,n,t])=>`<div class="fpl-zn"><div class="ik">${fpIk(i,22)}</div><h4>${n}</h4><p>${t}</p></div>`).join("")}</div>
  </div></section>
 
  <section class="fpl-sek" id="usteda"><div class="fpl-in"><div class="fpl-tamna"><div class="fpl-kalk">
   <div><span class="fpl-oz" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:#FF8A80"><i></i>Kalkulator uštede</span>
    <h2 style="font-size:clamp(28px,3.4vw,42px);line-height:1.1;margin-top:14px;font-weight:800">Koliko vam provizija stvarno uzima?</h2>
-   <p style="margin-top:12px;font-size:16.5px;line-height:1.6">Agregatori dostave restoranima naplaćuju 25–30 % svake narudžbe. Pomaknite klizač na svoj mjesečni promet od dostave.</p></div>
+   <p style="margin-top:12px;font-size:16.5px;line-height:1.6">Wolt i Glovo restoranima naplaćuju 25–30 % svake narudžbe. Pomaknite klizač na svoj mjesečni promet od dostave.</p></div>
   <div><label for="fp-kalk">Mjesečni promet od online narudžbi</label>
    <div class="iznos" id="fp-kalk-iznos">6.000 €</div>
    <input type="range" id="fp-kalk" min="1000" max="40000" step="500" value="6000" oninput="fpKalk(this.value)">
    <div class="fpl-usp" style="margin-top:18px">
-    <div class="los"><small>Provizija 25–30 % mjesečno</small><b id="fp-k-prov">1.500–1.800 €</b></div>
-    <div class="dob"><small>Foodpoint Pro mjesečno</small><b>${FP_CIJENE[1].cij} €</b></div>
-    <div class="fpl-usteda"><small style="color:#FFE1DC">Ostaje vama godišnje</small><b id="fp-k-god">17.172 €+</b></div></div></div>
+    <div class="los"><small>Provizija 25–30 % mjesečno</small><b id="fp-k-prov">1.500–1.800 €</b></div>
+    <div class="dob"><small>Foodpoint: ${FP_PLAN.prov} % + ${FP_PLAN.mj} €</small><b id="fp-k-fp">649 €</b></div>
+    <div class="fpl-usteda"><small style="color:#FFE1DC">Ostaje vama godišnje</small><b id="fp-k-god">10.212 €+</b></div></div></div>
  </div></div></div></section>
 
+ ${fpUslugeHTML()}
+
  <section class="fpl-sek" id="cijene"><div class="fpl-in">
-  <div class="fpl-nas"><span class="fpl-oz"><i></i>Cijene</span><h2>Fiksna cijena. Bez provizije.</h2>
-   <p>Bez ugovorne obveze. Postavljanje, unos jelovnika i obuka osoblja su uključeni.</p></div>
-  <div class="fpl-cijene">${FP_CIJENE.map(p=>`<div class="fpl-paket${p.istaknut?" istaknut":""}"><h3>${p.naziv}</h3><p class="za">${p.za}</p>
-   <div class="cij">${p.cij} €<small> / mjesečno</small></div>
-   <ul class="fpl-lista">${p.st.map(x=>`<li>${x}</li>`).join("")}</ul>
-   <a class="fpl-b${p.istaknut?"":" bijeli"}" onclick="fpOdaberiPaket('${p.k}')">Zatraži ponudu</a></div>`).join("")}</div>
-  <p class="fpl-napom">Cijene su informativne. Točnu ponudu šaljemo nakon kratkog razgovora o vašem lokalu.</p>
+  <div class="fpl-nas"><span class="fpl-oz"><i></i>Cijena</span><h2>Jedna cijena. Sve uključeno.</h2>
+   <p>Bez ugovorne obveze. Plaćate malu mjesečnu pretplatu i proviziju samo na online narudžbe — tri puta manju nego na Woltu i Glovu.</p></div>
+  <div class="fpl-plan">
+   <div class="fpl-paket istaknut"><h3>Foodpoint partner</h3><p class="za">Za restorane, pizzerije, kafiće i pekare s vlastitom dostavom ili preuzimanjem.</p>
+    <div class="fpl-cij">${FP_PLAN.mj} €<small> / mjesečno</small></div>
+    <div class="fpl-prov"><b>+ ${FP_PLAN.prov} %</b> na online narudžbe</div>
+    <ul class="fpl-lista">${FP_PLAN.st.map(x=>`<li>${x}</li>`).join("")}</ul>
+    <a class="fpl-b" onclick="fpOdaberiPaket('partner')">Zatraži ponudu</a></div>
+   <div class="fpl-uvod"><span class="fpl-oz"><i></i>Uvodna ponuda</span>
+    <h3>Prva ${FP_PLAN.uvodMj} mjeseca samo ${FP_PLAN.uvodProv} % provizije</h3>
+    <p>Dok se vi i vaše osoblje upoznajete sa sustavom, plaćate ${FP_PLAN.mj} € mjesečno i ${FP_PLAN.uvodProv} % na online narudžbe. Postavljanje, unos jelovnika i obuka su besplatni.</p>
+    <div class="fpl-usp-mini"><div><small>Wolt i Glovo</small><b>25–30 %</b></div><div><small>Foodpoint</small><b>${FP_PLAN.prov} %</b></div><div><small>Prva ${FP_PLAN.uvodMj} mjeseca</small><b>${FP_PLAN.uvodProv} %</b></div></div>
+    <p class="fpl-napom" style="text-align:left;margin-top:16px">Dizajn, tisak, ambalaža, oglasi i ostale usluge naplaćuju se posebno, prema ponudi. Foodpoint partneri imaju 10 % popusta.</p></div></div>
  </div></section>
 
  <section class="fpl-sek"><div class="fpl-in">
@@ -8416,20 +8603,21 @@ function fpLandingHTML(){
 
  <section class="fpl-sek" id="kontakt"><div class="fpl-in fpl-kontakt">
   <div><span class="fpl-oz"><i></i>Kontakt</span>
-   <h2 style="font-size:clamp(30px,3.6vw,46px);line-height:1.08;font-weight:800;margin-top:14px">Pokrenimo vaše online narudžbe</h2>
+   <h2 style="font-size:clamp(30px,3.6vw,46px);line-height:1.08;font-weight:800;margin-top:14px">Postanite Foodpoint partner</h2>
    <p style="color:#5B4F49;font-size:17px;line-height:1.6;margin-top:12px">Ostavite podatke i javit ćemo vam se u roku jednog radnog dana s ponudom i kratkim prikazom sustava uživo.</p>
    <div class="fpl-kont-info">
-    ${k.tel?`<a href="tel:${esc(k.tel.replace(/\s/g,""))}">📞 ${esc(k.tel)}</a>`:""}
-    ${k.email?`<a href="mailto:${esc(k.email)}">✉️ ${esc(k.email)}</a>`:""}
-    <a href="${demo}" target="_blank" rel="noopener">🍕 Pogledaj demo restoran Casa Lume</a></div></div>
+    ${k.tel?`<a href="tel:${esc(k.tel.replace(/\s/g,""))}">${fpIk("telefon",17)} ${esc(k.tel)}</a>`:""}
+    ${k.email?`<a href="mailto:${esc(k.email)}">${fpIk("mail",17)} ${esc(k.email)}</a>`:""}
+    <a href="${demo}" target="_blank" rel="noopener">${fpIk("jelovnik",17)} Pogledaj demo restoran Casa Lume</a></div>
+   ${fpMrezeHTML("vel")}</div>
   <div class="fpl-forma" id="fp-forma">${fpFormaHTML()}</div>
  </div></section>
 
- <footer class="fpl-dno"><div class="fpl-in">${ZOOM_LOGO(22)}<span>© ${new Date().getFullYear()} Foodpoint · online narudžbe za restorane</span>
+ <footer class="fpl-dno"><div class="fpl-in">${ZOOM_LOGO(22)}<span>© ${new Date().getFullYear()} Foodpoint · partner za ugostitelje</span>
   <a href="#zoom">Prijava za partnere</a></div></footer></div>`;}
 function fpFormaHTML(){
  const s=fpUpitStanje;
- if(s.ok)return `<div class="fpl-ok"><div class="ik">✓</div><h3 style="font-size:22px;font-weight:800">Hvala, upit je poslan!</h3>
+ if(s.ok)return `<div class="fpl-ok"><div class="ik">${fpIk("kvaka",26)}</div><h3 style="font-size:22px;font-weight:800">Hvala, upit je poslan!</h3>
   <p style="color:#5B4F49;margin-top:8px">Javit ćemo vam se u roku jednog radnog dana.</p></div>`;
  return `<h3 style="font-size:21px;font-weight:800">Zatražite ponudu</h3>
   <div class="dva"><div><label for="fu-ime">Ime i prezime *</label><input id="fu-ime" autocomplete="name"></div>
@@ -8437,7 +8625,7 @@ function fpFormaHTML(){
   <div class="dva"><div><label for="fu-tel">Mobitel *</label><input id="fu-tel" inputmode="tel" autocomplete="tel" placeholder="091 234 5678"></div>
    <div><label for="fu-email">E-mail</label><input id="fu-email" inputmode="email" autocomplete="email"></div></div>
   <div class="dva"><div><label for="fu-tip">Vrsta lokala</label><select id="fu-tip"><option>Pizzeria</option><option>Restoran</option><option>Kafić / bar</option><option>Brza hrana</option><option>Pekara / slastičarnica</option><option>Drugo</option></select></div>
-   <div><label for="fu-paket">Paket</label><select id="fu-paket"><option value="">Još ne znam</option>${FP_CIJENE.map(p=>`<option value="${p.k}">${p.naziv} — ${p.cij} €/mj</option>`).join("")}</select></div></div>
+   <div><label for="fu-paket">Zanima me</label><select id="fu-paket"><option value="">Još ne znam</option>${FP_ZANIMA.map(([k,n])=>`<option value="${k}">${n}</option>`).join("")}</select></div></div>
   <label for="fu-grad">Grad / kvart</label><input id="fu-grad" placeholder="npr. Zagreb, Trešnjevka">
   <label for="fu-por">Poruka</label><textarea id="fu-por" rows="3" placeholder="Imate li vlastitu dostavu, koliko narudžbi dnevno, što vam je najvažnije…"></textarea>
   ${s.greska?`<p class="fpl-greska">${esc(s.greska)}</p>`:""}
@@ -8446,10 +8634,11 @@ function fpFormaHTML(){
 function fpOdaberiPaket(k){fpSkoci("kontakt"); setTimeout(()=>{const s=el("fu-paket"); if(s)s.value=k;},400);}
 function fpKalk(v){
  v=+v; const f=n=>Math.round(n).toLocaleString("hr-HR");
- const a=v*.25,b=v*.30, mj=FP_CIJENE[1].cij;
+ const a=v*.25,b=v*.30, fp=v*FP_PLAN.prov/100+FP_PLAN.mj;
  const i=el("fp-kalk-iznos"); if(i)i.textContent=f(v)+" €";
  const p=el("fp-k-prov"); if(p)p.textContent=f(a)+"–"+f(b)+" €";
- const g=el("fp-k-god"); if(g)g.textContent=f((a-mj)*12)+" €+";}
+ const q=el("fp-k-fp"); if(q)q.textContent=f(fp)+" €";
+ const g=el("fp-k-god"); if(g)g.textContent=f((a-fp)*12)+" €+";}
 async function fpPosaljiUpit(){
  const v=id=>((el(id)||{}).value||"").trim();
  const p={ime:v("fu-ime"),restoran:v("fu-rest"),tel:v("fu-tel"),email:v("fu-email"),tip:v("fu-tip"),paket:v("fu-paket"),grad:v("fu-grad"),poruka:v("fu-por")};
@@ -8466,7 +8655,7 @@ async function fpPosaljiUpit(){
 /* ---------- UPITI I PONUDE (samo Foodpoint admin) ---------- */
 const FP_STATUSI=[["novo","Novi"],["u_obradi","U obradi"],["ponuda","Ponuda poslana"],["dogovoreno","Dogovoreno"],["odbijeno","Odbijeno"]];
 const fpStNaziv=s=>(FP_STATUSI.find(x=>x[0]===s)||[s,s])[1];
-let fpU={lista:[],filt:"aktivni",odabran:null,ucitano:false,poruka:""};
+let fpU={lista:[],filt:"aktivni",odabran:null,ucitano:false,poruka:"",pogled:"upiti"};
 async function fpUcitajUpite(){
  if(!sb)return;
  const r=await sb.from("upiti").select("*").order("stvoreno",{ascending:false});
@@ -8488,20 +8677,24 @@ const fpDatum=d=>{const x=new Date(d); return x.toLocaleDateString("hr-HR",{day:
 function fpPotpis(){try{return localStorage.getItem("fp-potpis")||"";}catch(e){return "";}}
 function fpPonudaIzForme(u){
  const v=id=>((el(id)||{}).value||"").trim();
- const pk=v("fp-p-paket")||u.paket||"standard", P=FP_CIJENE.find(x=>x.k===pk)||FP_CIJENE[1];
- return {paket:pk,naziv:P.naziv,cijena:v("fp-p-cij")||String(P.cij),postavljanje:v("fp-p-post")||"0",proba:v("fp-p-proba")||"14",napomena:v("fp-p-nap"),potpis:v("fp-p-potpis")||fpPotpis()};}
+ return {paket:"partner",naziv:"Foodpoint partner",cijena:v("fp-p-cij")||String(FP_PLAN.mj),prov:v("fp-p-prov")||String(FP_PLAN.prov),uvodMj:v("fp-p-umj")||"0",uvodProv:v("fp-p-uprov")||String(FP_PLAN.prov),
+  postavljanje:v("fp-p-post")||"0",napomena:v("fp-p-nap"),potpis:v("fp-p-potpis")||fpPotpis()};}
 function fpPonudaTekst(u,p){
- const P=FP_CIJENE.find(x=>x.k===p.paket)||FP_CIJENE[1];
+ const uvod=+p.uvodMj>0&&String(p.uvodProv)!==String(p.prov);
  return `Poštovani/a ${u.ime},
 
-hvala na upitu${u.restoran?` za ${u.restoran}`:""}. Šaljem ponudu za Foodpoint — vaš vlastiti sustav za online narudžbe i vođenje lokala, bez provizije po narudžbi.
+hvala na upitu${u.restoran?` za ${String(u.restoran).split(" · ")[0]}`:""}. Šaljem ponudu za Foodpoint — partnera za ugostitelje: vaš sustav za online narudžbe i vođenje cijelog lokala na jednom mjestu.
 
-PAKET: ${P.naziv}
-${P.st.map(x=>"• "+x).join("\n")}
+ŠTO DOBIVATE
+${FP_PLAN.st.map(x=>"• "+x).join("\n")}
 
-Mjesečna pretplata: ${p.cijena} €
-Postavljanje (unos jelovnika, slika, logo, obuka): ${+p.postavljanje?p.postavljanje+" €":"besplatno"}
-${+p.proba?`Probno razdoblje: ${p.proba} dana besplatno\n`:""}Bez ugovorne obveze — pretplata je mjesečna.
+CIJENA
+Mjesečno: ${p.cijena} €
+Provizija na online narudžbe kroz Foodpoint: ${p.prov} %
+${uvod?`Prva ${p.uvodMj} mjeseca: ${p.cijena} € mjesečno i samo ${p.uvodProv} % provizije\n`:""}Postavljanje, unos jelovnika i obuka: ${+p.postavljanje?p.postavljanje+" €":"besplatno"}
+Bez ugovorne obveze. Novac od narudžbi ide izravno vama, a proviziju šaljemo jednom mjesečno na računu.
+
+Uz sustav radimo i dizajn, tisak, ambalažu s logom, brendiranje vozila, oglase na društvenim mrežama i nabavu — Foodpoint partneri imaju 10 % popusta na sve usluge.
 ${p.napomena?`\n${p.napomena}\n`:""}
 Kako izgleda za goste: ${ZOOM_KORIJEN()}demo
 
@@ -8527,12 +8720,11 @@ async function fpPonudaKopiraj(){
  catch(e){alert("Kopiranje nije uspjelo — označi tekst i kopiraj ručno.");}}
 function fpUNapraviRestoran(id){
  const u=fpU.lista.find(x=>x.id===id); if(!u)return;
- const P=FP_CIJENE.find(x=>x.k===(u.ponuda&&u.ponuda.paket||u.paket))||FP_CIJENE[1];
  zA.novi=true; zA.nova=null; location.hash="#zoom";
  setTimeout(()=>{const s=(i,x)=>{const e=el(i); if(e&&x!=null)e.value=x;};
   s("zn-naziv",u.restoran||u.ime); const sl=el("zn-slug"); if(sl)sl.value=zSlug(u.restoran||u.ime);
   s("zn-tel",u.tel); s("zn-email",u.email); s("zn-adresa",u.grad||"");
-  s("zn-paket",P.k); s("zn-cijena",(u.ponuda&&u.ponuda.cijena)||P.cij);
+  s("zn-paket","sve"); s("zn-cijena",(u.ponuda&&u.ponuda.cijena)||FP_PLAN.mj);
   const n=el("z-novi"); if(n)n.scrollIntoView({behavior:"smooth",block:"start"});},120);}
 function fpUpitiHTML(){
  if(!sb)return `<div class="fpu"><p class="savjet">Spajam se…</p></div>`;
@@ -8543,8 +8735,10 @@ function fpUpitiHTML(){
  const u=L.find(x=>x.id===fpU.odabran);
  return `<div class="fpu${u?" s-detaljem":""}">
   ${fpU.poruka?`<div class="fpu-ok">${esc(fpU.poruka)}</div>`:""}
-  <div class="fpu-vrh">${ZOOM_LOGO(26)}<span class="ozn">Upiti i ponude</span>
-   <div class="desno"><button onclick="fpUcitajUpite().then(zoomCrtaj)">↻ Osvježi</button><a href="#zoom">Restorani</a></div></div>
+  <div class="fpu-vrh">${ZOOM_LOGO(26)}<span class="ozn">${fpU.pogled==="cjenik"?"Cjenik usluga":"Upiti i ponude"}</span>
+   <div class="desno"><div class="fpu-pogled"><button class="${fpU.pogled!=="cjenik"?"on":""}" onclick="fpU.pogled='upiti';zoomCrtaj()">Upiti${fpNovih()?` · ${fpNovih()}`:""}</button><button class="${fpU.pogled==="cjenik"?"on":""}" onclick="fpU.pogled='cjenik';zoomCrtaj()">Cjenik</button></div>
+    <button onclick="fpUcitajUpite().then(zoomCrtaj)">↻ Osvježi</button><a href="#zoom">Restorani</a></div></div>
+  ${fpU.pogled==="cjenik"?fpCjenikHTML()+zoomPoweredHTML()+"</div>":`
   <div class="fpu-stat"><div><b>${br("novo")}</b><span>novih upita</span></div><div><b>${br("u_obradi")}</b><span>u obradi</span></div>
    <div><b>${br("ponuda")}</b><span>poslanih ponuda</span></div><div><b>${br("dogovoreno")}</b><span>dogovoreno</span></div></div>
   <div class="fpu-filt">${filt.map(([k,n,c])=>`<button class="${fpU.filt===k?"on":""}" onclick="fpU.filt='${k}';zoomCrtaj()">${n}<i>${c}</i></button>`).join("")}</div>
@@ -8555,39 +8749,40 @@ function fpUpitiHTML(){
      ${x.poruka?`<small>${esc(x.poruka)}</small>`:""}</button>`).join("")
     :`<div class="fpu-prazno">${L.length?"Nema upita u ovoj skupini.":"Još nema upita. Stići će s obrasca na naslovnoj stranici."}</div>`}</div>
    <div class="fpu-det">${u?fpUDetaljHTML(u):`<div class="fpu-prazno" style="border:0">Odaberi upit s popisa.</div>`}</div>
-  </div>${zoomPoweredHTML()}</div>`;}
+  </div>${zoomPoweredHTML()}</div>`}`;}
 function fpUDetaljHTML(u){
- const p=u.ponuda||{}, pk=p.paket||u.paket||"standard", P=FP_CIJENE.find(x=>x.k===pk)||FP_CIJENE[1];
+ const p=u.ponuda||{};
  setTimeout(fpPonudaOsvjezi,0);
  return `<button class="fpu-natrag zg-nazad" style="margin-bottom:10px;width:auto;padding:0 14px;border-radius:12px;height:38px;gap:6px;font-weight:700" onclick="fpU.odabran=null;zoomCrtaj()">← Svi upiti</button>
   <div style="display:flex;gap:10px;align-items:flex-start;justify-content:space-between">
    <div><h2>${esc(u.restoran||u.ime)}</h2><div class="pod">${esc(u.ime)} · stiglo ${fpDatum(u.stvoreno)}</div></div>
    <span class="fpu-st ${u.status}">${fpStNaziv(u.status)}</span></div>
   <div class="fpu-akc">
-   ${u.tel?`<a href="tel:${esc(String(u.tel).replace(/\s/g,""))}">📞 Nazovi</a><a class="wa" href="https://wa.me/${fpTelInt(u.tel)}" target="_blank" rel="noopener">💬 WhatsApp</a>`:""}
-   ${u.email?`<a href="mailto:${esc(u.email)}">✉️ E-mail</a>`:""}
-   <button onclick="fpUNapraviRestoran('${u.id}')">＋ Napravi restoran</button></div>
+   ${u.tel?`<a href="tel:${esc(String(u.tel).replace(/\s/g,""))}">${fpIk("telefon",17)} Nazovi</a><a class="wa" href="https://wa.me/${fpTelInt(u.tel)}" target="_blank" rel="noopener">${fpIk("poruka",17)} WhatsApp</a>`:""}
+   ${u.email?`<a href="mailto:${esc(u.email)}">${fpIk("mail",17)} E-mail</a>`:""}
+   <button onclick="fpCIzUpita('${u.id}')">${fpIk("paleta",17)} Ponuda iz cjenika</button><button onclick="fpUNapraviRestoran('${u.id}')">${fpIk("plus",17)} Napravi restoran</button></div>
   <div class="fpu-pod">
    <div><small>Mobitel</small><b>${esc(u.tel||"—")}</b></div><div><small>E-mail</small><b>${esc(u.email||"—")}</b></div>
    <div><small>Vrsta lokala</small><b>${esc(u.tip||"—")}</b></div><div><small>Grad / kvart</small><b>${esc(u.grad||"—")}</b></div>
-   <div><small>Željeni paket</small><b>${esc((FP_CIJENE.find(x=>x.k===u.paket)||{}).naziv||"nije odabrano")}</b></div>
+   <div><small>Zanima ga</small><b>${esc(fpZanimaNaziv(u.paket)||"nije odabrano")}</b></div>
    <div><small>Zadnja promjena</small><b>${u.azurirano?fpDatum(u.azurirano):"—"}</b></div></div>
   ${u.poruka?`<div class="fpu-poruka">${esc(u.poruka)}</div>`:""}
   <div class="fpu-blok"><h3>Status i bilješka</h3>
    <div class="dva"><div><label>Status</label><select onchange="fpUSpremi('${u.id}',{status:this.value})">${FP_STATUSI.map(([k,n])=>`<option value="${k}" ${u.status===k?"selected":""}>${n}</option>`).join("")}</select></div>
     <div><label>Bilješka (vidiš samo ti)</label><input id="fp-bilj" value="${esc(u.biljeska||"")}" placeholder="npr. nazvati u utorak" onchange="fpUSpremi('${u.id}',{biljeska:this.value},1);fpUPoruka('Bilješka spremljena')"></div></div></div>
   <div class="fpu-blok"><h3>Ponuda${p.poslano?` <span style="font-weight:600;color:#6B7280;font-size:13px">· poslana ${fpDatum(p.poslano)}</span>`:""}</h3>
-   <div class="dva"><div><label>Paket</label><select id="fp-p-paket" onchange="const P=FP_CIJENE.find(x=>x.k===this.value);el('fp-p-cij').value=P.cij;fpPonudaOsvjezi()">${FP_CIJENE.map(x=>`<option value="${x.k}" ${x.k===pk?"selected":""}>${x.naziv}</option>`).join("")}</select></div>
-    <div><label>Mjesečno (€)</label><input id="fp-p-cij" inputmode="decimal" value="${esc(p.cijena||P.cij)}" oninput="fpPonudaOsvjezi()"></div>
-    <div><label>Postavljanje (€, 0 = besplatno)</label><input id="fp-p-post" inputmode="decimal" value="${esc(p.postavljanje||"0")}" oninput="fpPonudaOsvjezi()"></div>
-    <div><label>Besplatno probno (dana)</label><input id="fp-p-proba" inputmode="numeric" value="${esc(p.proba||"14")}" oninput="fpPonudaOsvjezi()"></div></div>
-   <label>Dodatna napomena</label><textarea id="fp-p-nap" rows="2" oninput="fpPonudaOsvjezi()" placeholder="npr. Prva 3 mjeseca 50 % popusta za lokale u Zagrebu.">${esc(p.napomena||"")}</textarea>
+   <div class="dva"><div><label>Mjesečno (€)</label><input id="fp-p-cij" inputmode="decimal" value="${esc(p.cijena||FP_PLAN.mj)}" oninput="fpPonudaOsvjezi()"></div>
+    <div><label>Provizija (%)</label><input id="fp-p-prov" inputmode="decimal" value="${esc(p.prov||FP_PLAN.prov)}" oninput="fpPonudaOsvjezi()"></div>
+    <div><label>Uvodno razdoblje (mjeseci, 0 = bez)</label><input id="fp-p-umj" inputmode="numeric" value="${esc(p.uvodMj??FP_PLAN.uvodMj)}" oninput="fpPonudaOsvjezi()"></div>
+    <div><label>Uvodna provizija (%)</label><input id="fp-p-uprov" inputmode="decimal" value="${esc(p.uvodProv||FP_PLAN.uvodProv)}" oninput="fpPonudaOsvjezi()"></div>
+    <div><label>Postavljanje (€, 0 = besplatno)</label><input id="fp-p-post" inputmode="decimal" value="${esc(p.postavljanje||"0")}" oninput="fpPonudaOsvjezi()"></div></div>
+   <label>Dodatna napomena</label><textarea id="fp-p-nap" rows="2" oninput="fpPonudaOsvjezi()" placeholder="npr. Uz sustav vam za otvorenje radimo i 5.000 letaka s QR kodom za 380 €.">${esc(p.napomena||"")}</textarea>
    <label>Potpis</label><input id="fp-p-potpis" value="${esc(p.potpis||fpPotpis())}" oninput="fpPonudaOsvjezi()" placeholder="npr. Rik · Foodpoint · 091 …">
    <div class="fpu-pregled" id="fp-p-pregled"></div>
    <div class="fpu-gumbi">
-    ${u.email?`<a id="fp-p-mail" href="#" onclick="fpPonudaPoslana('email')">✉️ Pošalji e-mailom</a>`:""}
-    ${u.tel?`<a id="fp-p-wa" class="wa" href="#" target="_blank" rel="noopener" onclick="fpPonudaPoslana('whatsapp')">💬 Pošalji WhatsAppom</a>`:""}
-    <button class="siv" onclick="fpPonudaKopiraj()">📋 Kopiraj tekst</button></div>
+    ${u.email?`<a id="fp-p-mail" href="#" onclick="fpPonudaPoslana('email')">${fpIk("mail",17)} Pošalji e-mailom</a>`:""}
+    ${u.tel?`<a id="fp-p-wa" class="wa" href="#" target="_blank" rel="noopener" onclick="fpPonudaPoslana('whatsapp')">${fpIk("poruka",17)} Pošalji WhatsAppom</a>`:""}
+    <button class="siv" onclick="fpPonudaKopiraj()">${fpIk("kopiraj",17)} Kopiraj tekst</button></div>
    <p class="savjet" style="color:#6B7280;font-weight:500">E-mail i WhatsApp otvaraju se s gotovim tekstom ponude — samo pritisneš Pošalji. Upit se automatski označi kao „Ponuda poslana”.</p></div>`;}
 
 /* ==================== FOODPOINT 2: narudžbe sa stola (QR), nabava, Foodpoint app ==================== */
@@ -8606,10 +8801,10 @@ function zgStolPodaciHTML(){
    <span class="pl-krug"></span><span class="pl-t"><b>${nasl}</b><small>${pod}</small></span><span class="pl-ik" style="margin-left:auto">${ik}</span></button>`;
  return `<div class="zg-str">${zgGlava(tj("Narudžba za stol")+" "+esc(st),esc(lokal.naziv),"korak='pregled';crtaj(1)")}
   <div class="zg-koraci"><i class="on"></i><i class="on"></i></div>
-  <section class="zg-kartica zg-stol-info"><span class="zg-stol-br">🪑 ${esc(st)}</span>
+  <section class="zg-kartica zg-stol-info"><span class="zg-stol-br">${fpIk("stolica",18)} ${esc(st)}</span>
    <div><b>${tj("Sjedite za stolom")} ${esc(st)}</b><small>${tj("Narudžba ide ravno na šank — donosimo je za vaš stol.")}</small></div></section>
   <section class="zg-kartica"><h3>${tj("Vaši podaci")}</h3>
-   ${z.ime?`<p class="zg-pomoc" style="margin:-4px 0 10px">✓ ${tj("Prepoznali smo vas na ovom mobitelu.")}</p>`:""}
+   ${z.ime?`<p class="zg-pomoc" style="margin:-4px 0 10px">${fpIk("kvaka",14)} ${tj("Prepoznali smo vas na ovom mobitelu.")}</p>`:""}
    <label class="zg-lbl" for="f-ime">${tj("Ime")}</label>
    <input class="zg-in" id="f-ime" autocomplete="name" placeholder="${tj("npr. Ana")}" value="${esc(forma.ime)}" oninput="forma.ime=this.value">
    <label class="zg-lbl" for="f-tel">${tj("Broj mobitela")}</label>
@@ -8640,7 +8835,7 @@ function zgQrHTML(){
  return `<div class="zg-qr-str"><div class="zg-qr-alati">
    <div><b>${tj("QR kodovi za stolove")}</b><small>${esc(lokal.naziv)} · ${MOD("stol")?tj("narudžbe sa stola su uključene"):tj("modul „Narudžbe sa stola” nije uključen — QR vodi na običan jelovnik")}</small></div>
    <label>${tj("Broj stolova")} <input type="number" min="1" max="60" value="${n}" onchange="zgQrBroj=this.value;crtaj(1)"></label>
-   <button class="zg-btn" style="width:auto" onclick="print()">🖨 ${tj("Ispiši")}</button></div>
+   <button class="zg-btn" style="width:auto" onclick="print()">${fpIk("printer",18)} ${tj("Ispiši")}</button></div>
   <div class="zg-qr-mreza">${Array.from({length:n},(_,i)=>{const url=`${baza}?stol=${i+1}`;
    return `<div class="zg-qr-k">${B.logo_url?`<img class="lg" src="${esc(B.logo_url)}" alt="">`:`<div class="ini">${esc(inicijali(lokal.naziv))}</div>`}
     <b>${esc(lokal.naziv)}</b><span class="poz">${tj("Skenirajte i naručite")}</span>
@@ -8700,7 +8895,7 @@ function nbPonovi(id){const x=nb.nab.find(n=>n.id===id); if(!x)return; (x.stavke
 function vlNabava(){
  if(!nb.ucitano){nbUcitaj().then(()=>crtaj(1)); return `<div class="sec"><p class="savjet">${tj("Učitavam…")}</p></div>`;}
  const grupe=[...nb.dob.map(d=>({d,lista:namirnice.filter(n=>n.dobavljac_id===d.id)})),{d:null,lista:namirnice.filter(n=>!n.dobavljac_id||!nbDob(n.dobavljac_id))}].filter(g=>g.d||g.lista.length);
- const ik={whatsapp:"💬 WhatsApp",email:"✉️ E-mail",telefon:"📞 Telefon"};
+ const ik={whatsapp:fpIk("poruka",15)+" WhatsApp",email:fpIk("mail",15)+" E-mail",telefon:fpIk("telefon",15)+" Telefon"};
  const ured=nb.uredi?(nb.uredi==="novi"?{}:nbDob(nb.uredi)||{}):null;
  return `<div class="nb">
   ${nb.poruka?`<div class="fpu-ok">${esc(nb.poruka)}</div>`:""}
@@ -8793,11 +8988,473 @@ function fpaCrtaj(){
    <section class="fpa-kako">
     <div><span>🤝</span><b>Izravno s restoranom</b><p>Problem s narudžbom? Pišeš izravno restoranu iz praćenja narudžbe — bez čekanja na podršku.</p></div>
     <div><span>⭐</span><b>Ocjene samo od stvarnih narudžbi</b><p>Ocijeniti može samo onaj tko je stvarno naručio. Restorani odgovaraju javno.</p></div>
-    <div><span>🛵</span><b>Restoran vozi sam</b><p>Hranu ti donosi dostavljač restorana — prati narudžbu uživo od kuhinje do vrata.</p></div></section>
+    <div><span>🛵</span><b>Restoran vozi sam</b><p>Hranu ti donosi restoranov dostavljač, a status narudžbe vidiš uživo od kuhinje do vrata.</p></div></section>
   </div>
   <footer class="fpa-dno">${ZOOM_LOGO(20)}<span>Foodpoint · testna verzija</span><a href="/">Želite svoj restoran ovdje?</a></footer></div>`;}
 function fpaListaCrtaj(){const L=fpaFilt(), m=el("fpa-mreza"), b=el("fpa-br");
  if(m)m.innerHTML=L.length?L.map(fpaKarta).join(""):`<p class="fpa-prazno">Nema restorana za „${esc(fpa.trazi)}”.</p>`; if(b)b.textContent=L.length;}
+
+/* ===== FOODPOINT 3: analitika za vlasnika, marketing i dizajn, kartice (Teya) u adminu ===== */
+
+/* ---------- ANALITIKA (kao Wolt Merchant) ---------- */
+let an={ucitano:false,radi:false,dana:30,sve:[]};
+async function anUcitaj(){
+ if(an.radi)return; an.radi=true;
+ const od=new Date(Date.now()-400*864e5).toISOString();
+ const r=await sb.from("narudzbe").select("id,broj,ime,telefon,kupac_tel,iznos,stanje,stvoreno,placanje,nacin,adresa,izvor,razlog,stavke(naziv,cijena)")
+  .eq("lokal_id",lokal.id).gte("stvoreno",od).order("stvoreno",{ascending:true}).limit(5000);
+ an.sve=r.error?[]:(r.data||[]); an.ucitano=true; an.radi=false;}
+const anKljuc=o=>{const t=String(o.kupac_tel||o.telefon||"").replace(/\D/g,"").replace(/^385/,"0"); return t.length>=8?t:("ime:"+String(o.ime||"").trim().toLowerCase());};
+const anKanal=o=>/^Stol /.test(o.adresa||"")?"stol":(o.izvor==="telefon"?"telefon":(o.nacin==="osobno"?"osobno":"dostava"));
+const AN_KANALI={dostava:"Dostava",osobno:"Osobno preuzimanje",stol:"Sa stola (QR)",telefon:"Telefonom"};
+const AN_PLAC={gotovina:"Gotovina",kartica:"Kartica pri preuzimanju",online:"Online (Apple/Google Pay, kartica)"};
+function anRazdoblje(dana,pomak){
+ const kraj=new Date(); kraj.setHours(23,59,59,999); kraj.setTime(kraj.getTime()-pomak*dana*864e5);
+ const poc=new Date(kraj.getTime()-dana*864e5+1); return [poc,kraj];}
+function anIzracun(dana,pomak){
+ const [poc,kraj]=anRazdoblje(dana,pomak), prvi={};
+ an.sve.forEach(o=>{if(o.stanje==="otkazano")return; const k=anKljuc(o), t=new Date(o.stvoreno); if(!prvi[k]||t<prvi[k])prvi[k]=t;});
+ const u=an.sve.filter(o=>{const t=new Date(o.stvoreno); return t>=poc&&t<=kraj;});
+ const ok=u.filter(o=>o.stanje!=="otkazano"&&o.stanje!=="ceka_placanje"), otk=u.filter(o=>o.stanje==="otkazano");
+ const promet=ok.reduce((s,o)=>s+ +o.iznos,0), kupci={}, poDanu={}, poSatu=Array(24).fill(0), poDanuTj=Array(7).fill(0), kan={}, pla={}, jela={};
+ for(let i=0;i<dana;i++){const d=new Date(poc.getTime()+i*864e5); poDanu[anDan(d)]={novi:0,stari:0,eur:0};}
+ ok.forEach(o=>{
+  const k=anKljuc(o), t=new Date(o.stvoreno), nov=prvi[k]&&prvi[k]>=poc;
+  kupci[k]=kupci[k]||{ime:o.ime||"—",tel:o.kupac_tel||o.telefon||"",n:0,eur:0,zadnja:t,novi:nov};
+  const kk=kupci[k]; kk.n++; kk.eur+= +o.iznos; if(t>kk.zadnja){kk.zadnja=t; if(o.ime)kk.ime=o.ime;}
+  const dd=poDanu[anDan(t)]; if(dd){dd[nov?"novi":"stari"]++; dd.eur+= +o.iznos;}
+  poSatu[t.getHours()]++; poDanuTj[(t.getDay()+6)%7]++;
+  const c=anKanal(o); kan[c]=(kan[c]||0)+1;
+  const p=o.placanje||"gotovina"; pla[p]=(pla[p]||0)+1;
+  (o.stavke||[]).forEach(s=>{jela[s.naziv]=jela[s.naziv]||{kom:0,eur:0}; jela[s.naziv].kom++; jela[s.naziv].eur+= +s.cijena;});});
+ const K=Object.values(kupci), novi=K.filter(x=>x.novi).length;
+ // kupci koji su prije naručivali, a u ovom razdoblju nisu
+ const zadnja={}; an.sve.forEach(o=>{if(o.stanje==="otkazano")return; const k=anKljuc(o), t=new Date(o.stvoreno); if(!zadnja[k]||t>zadnja[k].t)zadnja[k]={t,ime:o.ime,tel:o.kupac_tel||o.telefon||""};});
+ const izgubljeni=Object.entries(zadnja).filter(([k,v])=>v.t<poc&&v.t>new Date(poc.getTime()-120*864e5)).map(([k,v])=>v);
+ return {poc,kraj,ok,otk,promet,n:ok.length,kos:ok.length?promet/ok.length:0,kupci:K,brKupaca:K.length,novi,stari:K.length-novi,
+  povratni:K.filter(x=>!x.novi).length,ponovili:K.filter(x=>x.n>1).length,poDanu,poSatu,poDanuTj,kan,pla,jela,izgubljeni};}
+const anDan=d=>{const x=new Date(d); return x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")+"-"+String(x.getDate()).padStart(2,"0");};
+function anPromjena(a,b){
+ if(!b)return a?`<i class="an-d gore">novo</i>`:"";
+ const p=Math.round((a-b)/b*100); if(!p)return `<i class="an-d">0 %</i>`;
+ return `<i class="an-d ${p>0?"gore":"dolje"}">${p>0?"▲":"▼"} ${Math.abs(p)} %</i>`;}
+const anEur=v=>Math.round(v).toLocaleString("hr-HR")+" €";
+function vlAnalitika(){
+ if(!an.ucitano){anUcitaj().then(()=>crtaj(1)); return `<div class="sec"><p class="savjet">${tj("Učitavam…")}</p></div>`;}
+ const a=anIzracun(an.dana,0), b=anIzracun(an.dana,1);
+ const pct=(x,y)=>y?Math.round(x/y*100):0;
+ const plocica=(n,v,d,pod)=>`<div class="an-pl"><span>${n}</span><b>${v}</b>${d}${pod?`<small>${pod}</small>`:""}</div>`;
+ const traka=(obj,naz,uk)=>Object.entries(obj).sort((x,y)=>y[1]-x[1]).map(([k,v])=>`<div class="an-tr"><span>${esc(naz[k]||k)}</span>
+   <div class="an-tr-b"><i style="width:${Math.max(3,pct(v,uk))}%"></i></div><b>${pct(v,uk)} %</b><small>${v}</small></div>`).join("")||`<p class="savjet">—</p>`;
+ const topK=a.kupci.slice().sort((x,y)=>y.n-x.n||y.eur-x.eur).slice(0,8);
+ const topJ=Object.entries(a.jela).sort((x,y)=>y[1].kom-x[1].kom).slice(0,8), mxJ=topJ.length?topJ[0][1].kom:1;
+ const fmtD=d=>d.toLocaleDateString("hr-HR",{day:"numeric",month:"numeric"});
+ return `<div class="an">
+  <div class="an-vrh"><div><h3>${tj("Analitika")}</h3><p>${fmtD(a.poc)} – ${fmtD(a.kraj)} · ${tj("usporedba s prethodnih")} ${an.dana} ${tj("dana")}</p></div>
+   <div class="izbor an-raz">${[7,30,90].map(d=>`<button aria-pressed="${an.dana===d}" onclick="an.dana=${d};crtaj(1)">${d} ${tj("dana")}</button>`).join("")}</div></div>
+  <div class="an-pls">
+   ${plocica(tj("Narudžbe"),a.n,anPromjena(a.n,b.n))}
+   ${plocica(tj("Promet"),anEur(a.promet),anPromjena(a.promet,b.promet))}
+   ${plocica(tj("Prosječna košarica"),eur(a.kos),anPromjena(a.kos,b.kos))}
+   ${plocica(tj("Kupci"),a.brKupaca,anPromjena(a.brKupaca,b.brKupaca))}
+   ${plocica(tj("Novi kupci"),a.novi,anPromjena(a.novi,b.novi),tj("prva narudžba ikad"))}
+   ${plocica(tj("Vraćaju se"),pct(a.ponovili,a.brKupaca)+" %",anPromjena(pct(a.ponovili,a.brKupaca),pct(b.ponovili,b.brKupaca)),a.ponovili+" "+tj("kupaca s 2+ narudžbe"))}</div>
+  <div class="box an-kart"><div class="an-nas"><b>${tj("Narudžbe po danu")}</b>
+    <span class="an-leg"><i class="l-novi"></i>${tj("novi kupci")}<i class="l-stari"></i>${tj("stalni kupci")}</span></div>
+   ${anStupciSVG(a.poDanu)}</div>
+  <div class="an-2">
+   <div class="box an-kart"><div class="an-nas"><b>${tj("Kad naručuju — po satu")}</b></div>${anSatiSVG(a.poSatu)}</div>
+   <div class="box an-kart"><div class="an-nas"><b>${tj("Po danu u tjednu")}</b></div>${anTjedanSVG(a.poDanuTj)}</div></div>
+  <div class="an-2">
+   <div class="box an-kart"><div class="an-nas"><b>${tj("Kako naručuju")}</b></div>${traka(a.kan,AN_KANALI,a.n)}</div>
+   <div class="box an-kart"><div class="an-nas"><b>${tj("Kako plaćaju")}</b></div>${traka(a.pla,AN_PLAC,a.n)}</div></div>
+  <div class="an-2">
+   <div class="box an-kart"><div class="an-nas"><b>${tj("Najvjerniji kupci")}</b></div>
+    ${topK.length?`<table class="an-tab"><tr><th>${tj("Kupac")}</th><th>${tj("Narudžbi")}</th><th>${tj("Potrošio")}</th><th>${tj("Zadnja")}</th></tr>
+     ${topK.map(k=>`<tr><td><b>${esc(k.ime)}</b>${k.novi?` <span class="an-novi">${tj("novi")}</span>`:""}<small>${esc(anSkrijTel(k.tel))}</small></td><td>${k.n}</td><td>${eur(k.eur)}</td><td>${fmtD(k.zadnja)}</td></tr>`).join("")}</table>`:`<p class="savjet">—</p>`}</div>
+   <div class="box an-kart"><div class="an-nas"><b>${tj("Najprodavanije")}</b></div>
+    ${topJ.map(([n,v])=>`<div class="an-tr"><span>${esc(n)}</span><div class="an-tr-b"><i style="width:${Math.max(3,v.kom*100/mxJ)}%"></i></div><b>${v.kom}×</b><small>${anEur(v.eur)}</small></div>`).join("")||`<p class="savjet">—</p>`}</div></div>
+  <div class="box an-kart an-vrati">
+   <div><b>${a.izgubljeni.length} ${tj("kupaca nije naručilo u ovom razdoblju")}</b>
+    <p>${tj("Naručivali su u zadnja 4 mjeseca, ali ne u odabranom razdoblju. Pošalji im popust ili ih vrati oglasom — to radimo za tebe u kartici Marketing.")}</p></div>
+   <button class="btn" style="width:auto;margin:0" onclick="vlNa('marketing')">${tj("Vrati ih")} →</button></div>
+  ${a.otk.length?`<p class="savjet">${tj("Otkazano u razdoblju")}: <b>${a.otk.length}</b> (${pct(a.otk.length,a.otk.length+a.n)} %)</p>`:""}
+ </div>`;}
+const anSkrijTel=t=>{const d=String(t||"").replace(/\s/g,""); return d.length>6?d.slice(0,3)+" ••• "+d.slice(-3):d;};
+function anStupciSVG(poDanu){
+ const uski=innerWidth<720, D=Object.entries(poDanu), W=uski?380:760, H=uski?190:200, p=28, n=D.length, bw=(W-p-8)/n;
+ const mx=Math.max(1,...D.map(([k,v])=>v.novi+v.stari)), y=v=>H-22-(v/mx)*(H-40);
+ const korak=n>40?(uski?30:14):n>14?(uski?7:5):(uski&&n>7?2:1);
+ return `<svg class="an-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Narudžbe po danu">
+  ${[0,.5,1].map(f=>`<line x1="${p}" x2="${W}" y1="${y(mx*f)}" y2="${y(mx*f)}" class="an-mreza"/><text x="${p-6}" y="${y(mx*f)+4}" text-anchor="end" class="an-os">${Math.round(mx*f)}</text>`).join("")}
+  ${D.map(([k,v],i)=>{const x=p+4+i*bw, w=Math.max(2,bw-(n>40?1:3)), ys=y(v.stari), yn=y(v.stari+v.novi);
+   return `<g><title>${k.slice(8)}.${k.slice(5,7)}. — ${v.novi+v.stari} narudžbi (${v.novi} novih), ${Math.round(v.eur)} €</title>
+    <rect x="${x}" y="${ys}" width="${w}" height="${H-22-ys}" class="b-stari" rx="2"/>
+    ${v.novi?`<rect x="${x}" y="${yn}" width="${w}" height="${ys-yn}" class="b-novi" rx="2"/>`:""}
+    ${i%korak===0?`<text x="${x+w/2}" y="${H-6}" text-anchor="middle" class="an-os">${+k.slice(8)}.${+k.slice(5,7)}.</text>`:""}</g>`;}).join("")}</svg>`;}
+function anSatiSVG(s){
+ const od=9, sati=s.slice(od).concat([]), W=360, H=150, bw=(W-10)/sati.length, mx=Math.max(1,...sati), vrh=sati.indexOf(Math.max(...sati));
+ return `<svg class="an-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Narudžbe po satu">
+  ${sati.map((v,i)=>{const h=(v/mx)*(H-40), x=5+i*bw;
+   return `<g><title>${od+i}:00 — ${v}</title><rect x="${x+1}" y="${H-22-h}" width="${bw-3}" height="${Math.max(h,1)}" rx="2" class="${i===vrh&&v?"b-novi":"b-stari"}"/>
+    ${(od+i)%3===0?`<text x="${x+bw/2}" y="${H-6}" text-anchor="middle" class="an-os">${od+i}h</text>`:""}</g>`;}).join("")}</svg>
+  ${Math.max(...sati)?`<p class="an-mali">${tj("Najviše narudžbi oko")} <b>${od+vrh}:00</b></p>`:""}`;}
+function anTjedanSVG(d){
+ const N=["pon","uto","sri","čet","pet","sub","ned"], W=360, H=150, bw=(W-10)/7, mx=Math.max(1,...d), vrh=d.indexOf(Math.max(...d));
+ return `<svg class="an-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Narudžbe po danu u tjednu">
+  ${d.map((v,i)=>{const h=(v/mx)*(H-40), x=5+i*bw;
+   return `<g><title>${N[i]} — ${v}</title><rect x="${x+4}" y="${H-22-h}" width="${bw-8}" height="${Math.max(h,1)}" rx="3" class="${i===vrh&&v?"b-novi":"b-stari"}"/>
+    <text x="${x+bw/2}" y="${H-22-h-5}" text-anchor="middle" class="an-vr">${v||""}</text>
+    <text x="${x+bw/2}" y="${H-6}" text-anchor="middle" class="an-os">${N[i]}</text></g>`;}).join("")}</svg>`;}
+
+/* ---------- MARKETING I DIZAJN: vidi fp4.js ---------- */
+let mk={odabrano:null,poruka:"",salje:false,napomena:""};
+
+/* ---------- ADMIN: kartično plaćanje (Teya) po restoranu ---------- */
+const TEYA_URL={test:"https://test.borgun.is/securepay/default.aspx",live:"https://securepay.borgun.is/securepay/default.aspx"};
+async function zoomUcitajPlacanja(){
+ const r=await sb.from("placanje_postavke").select("lokal_id,merchant_id,gateway_id,url,aktivno,secret_key");
+ zA.plac={}; (r.data||[]).forEach(x=>{zA.plac[x.lokal_id]={...x,ima_kljuc:!!x.secret_key,secret_key:undefined};});}
+function zoomPlacanjeHTML(l){
+ const p=(zA.plac||{})[l.id]||{}, test=p.url===TEYA_URL.test;
+ return `<h4>Kartično plaćanje — Teya (Apple Pay, Google Pay, kartice)</h4>
+  <p class="savjet" style="color:var(--dim)">Restoran otvori svoj račun kod Teye za online plaćanje i dobije Merchant ID, Gateway ID i tajni ključ. Novac ide izravno restoranu. Uz ovo uključi modul <b>Online plaćanje</b>.</p>
+  <div class="z-polja">${zPolje("Merchant ID","t_merchant",p.merchant_id||"")}${zPolje("Payment Gateway ID","t_gateway",p.gateway_id||"")}
+   <label class="z-polje"><span>Tajni ključ ${p.ima_kljuc?"(spremljen — upiši samo za promjenu)":""}</span><input class="f" data-p="t_kljuc" type="password" autocomplete="off" value=""></label>
+   <label class="z-polje"><span>Način</span><select class="f" data-p="t_url"><option value="live" ${!test?"selected":""}>Pravo plaćanje</option><option value="test" ${test?"selected":""}>Testno (bez pravog novca)</option></select></label></div>
+  <label class="z-mod-r" style="margin-top:6px"><input type="checkbox" data-p2="t_aktivno" ${p.aktivno!==false&&p.merchant_id?"checked":""}><span><b>Plaćanje karticom uključeno</b><small>isključi ako restoran privremeno ne želi online plaćanje</small></span></label>`;}
+async function zoomSpremiPlacanje(id,o,box){
+ const akt=box&&box.querySelector("[data-p2=t_aktivno]");
+ if(!o.t_merchant&&!o.t_gateway&&!o.t_kljuc&&!((zA.plac||{})[id]))return null;
+ const pod={lokal_id:id,merchant_id:o.t_merchant||null,gateway_id:o.t_gateway||null,url:TEYA_URL[o.t_url]||TEYA_URL.live,aktivno:!!(akt&&akt.checked)};
+ if(o.t_kljuc)pod.secret_key=o.t_kljuc;
+ else if(!((zA.plac||{})[id]||{}).ima_kljuc){if(pod.aktivno)return "Upiši tajni ključ za Teyu."; }
+ const r=await sb.from("placanje_postavke").upsert(pod,{onConflict:"lokal_id"});
+ return r.error?r.error.message:null;}
+
+/* ===== FOODPOINT 4: ikone, cjenik usluga, ponude iz cjenika, nova cijena (49 € + 10 %) ===== */
+
+/* ---------- IKONE (tanke linije, bez emotikona) ---------- */
+const FPI={
+ jelovnik:'<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>',
+ zvono:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',
+ dostava:'<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
+ qr:'<rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/>',
+ graf:'<path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>',
+ kosarica:'<circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>',
+ vaga:'<path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>',
+ paleta:'<circle cx="13.5" cy="6.5" r=".6" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".6" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".6" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".6" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.55-2.5 5.55-5.55C21.97 6.01 17.46 2 12 2z"/>',
+ megafon:'<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',
+ kamera:'<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>',
+ pero:'<path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.59 7.59"/><circle cx="11" cy="11" r="2"/>',
+ printer:'<path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/>',
+ paket:'<path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/>',
+ auto:'<path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>',
+ web:'<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
+ trgovina:'<path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2 2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/>',
+ sustav:'<rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/>',
+ kupci:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+ telefon:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>',
+ mail:'<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+ poruka:'<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+ kopiraj:'<rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+ plus:'<path d="M5 12h14"/><path d="M12 5v14"/>',
+ kvaka:'<path d="M20 6 9 17l-5-5"/>',
+ stolica:'<path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/><path d="M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/><path d="M5 18v2"/><path d="M19 18v2"/>',
+ plamen:'<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>',
+ list:'<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
+ nagrada:'<circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/>',
+ lokacija:'<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+ video:'<path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.87a.5.5 0 0 0-.75-.43L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/>',
+ cilj:'<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>'};
+const fpIk=(n,v,kl)=>`<svg class="fpi${kl?" "+kl:""}" viewBox="0 0 24 24" width="${v||20}" height="${v||20}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${FPI[n]||""}</svg>`;
+
+/* ---------- CIJENA FOODPOINTA ---------- */
+/* Promijeni ovdje: mjesečno (€), provizija (%) i uvodna ponuda. */
+const FP_PLAN={mj:49,prov:10,uvodMj:3,uvodProv:5,
+ st:["Vaša stranica za narudžbe u vašim bojama, s logom","Ekran za kuhinju, šank i pult","Aplikacija za vaše dostavljače","Narudžbe sa stola preko QR koda","Zakazivanje termina i program vjernosti","Analitika: novi i stalni kupci, promet, najprodavanije","Normativi, troškovi, plaće i nabava","Online plaćanje karticom, Apple Payom i Google Payom","Postavljanje, unos jelovnika i obuka osoblja"]};
+
+/* ---------- CJENIK USLUGA ----------
+   Cijene su BEZ PDV-a, u eurima. nab = tvoja nabavna cijena (tiskara, folije, ambalaža), cij = što naplaćuješ.
+   Tvoj rad (dizajn, vođenje, fotografija) nema nabavnu cijenu. Vanjski posao: nabava × 1,6–2,0.
+   trz = tržišne cijene koje sam pronašao (listopad 2026.), da znaš gdje si. Gostima i restoranima nabava se nikad ne prikazuje. */
+const FP_CJENIK=[
+ {k:"sustav",n:"Foodpoint sustav",ik:"sustav",o:"Online narudžbe, kuhinja, dostavljači, analitika i vođenje lokala.",s:[
+  {k:"partner",n:"Foodpoint partner — cijeli sustav",j:"mj.",nab:[3,5],cij:[49,49],x:"+ 10 % na online narudžbe; prva 3 mjeseca 5 %",trz:"Wolt i Glovo: 25–30 % provizije"},
+  {k:"domena",n:"Spajanje vlastite domene (.hr)",j:"jednokratno",nab:[0,0],cij:[49,79],x:"domena kod registra ~20–30 €/god. plaća restoran"},
+  {k:"velikijel",n:"Unos velikog jelovnika (60+ jela, više jezika)",j:"jednokratno",cij:[49,99]}]},
+ {k:"dizajn",p:["Letci i jelovnici","Plakati i roll-upi","Logo i vizualni identitet","Grafike za društvene mreže"],n:"Grafički dizajn",ik:"pero",o:"Letci, jelovnici, plakati, logo i cijeli vizualni identitet.",s:[
+  {k:"letak",n:"Dizajn letka (A5 ili DL)",cij:[80,120],trz:"100 € A5 jednostrano (Inventum); 30–50 € u tiskarama (Printaonica)"},
+  {k:"jelovnik",n:"Dizajn jelovnika sa sidrenim cijenama (do 4 str.)",cij:[120,250],trz:"100 € do 2 str. (Inventum)"},
+  {k:"plakat",n:"Dizajn plakata ili roll-upa",cij:[80,150],trz:"od 50 € (Printaonica), od 300 € (Inventum)"},
+  {k:"logo",n:"Logo (3 prijedloga, 2 kruga izmjena)",cij:[250,450],trz:"88–250 € (Trebam.hr), 260 € (Inventum), od 300 € (HM Promotion)"},
+  {k:"identitet",n:"Vizualni identitet (logo, boje, fontovi, vizitke, pravila)",cij:[600,1200],trz:"od 160 € (Inventum), 1.000 € paket (HM Promotion)"},
+  {k:"objave",n:"Grafike za društvene mreže (paket 8 objava)",cij:[120,200]},
+  {k:"amb",n:"Dizajn ambalaže (kutija, vrećica, naljepnica)",cij:[100,250]},
+  {k:"sat",n:"Izmjene i sitni poslovi",j:"sat",cij:[30,40],trz:"40 €/sat banneri (Inventum)"}]},
+ {k:"tisak",p:["Letci (1.000–10.000 kom)","Plakati","Jelovnici za stol","Dostava na adresu lokala"],n:"Tisak",ik:"printer",o:"Letci, plakati i jelovnici, s dostavom na adresu lokala.",s:[
+  {k:"a5_5000",n:"Letci A5, 5.000 kom, jednostrano",nab:[165,165],cij:[300,380],trz:"165 € + PDV offset (Tiskara Kralj)"},
+  {k:"a5_5000o",n:"Letci A5, 5.000 kom, obostrano",nab:[250,403],cij:[450,650],trz:"403 € digitalno (Printaonica)"},
+  {k:"dl_5000",n:"Letci DL, 5.000 kom",nab:[150,224],cij:[280,400],trz:"150 € jednostrano (Kralj), 224 € obostrano (Printaonica)"},
+  {k:"a5_1000",n:"Letci A5, 1.000 kom",nab:[110,182],cij:[190,300],trz:"110 € jednostrano (Kralj), 182 € obostrano (Printaonica)"},
+  {k:"b2_10",n:"Plakati B2, 10 kom",nab:[60,60],cij:[110,140],trz:"60 € (Printaonica)"},
+  {k:"b1_1",n:"Plakat B1, 1 kom",nab:[18,18],cij:[35,45],trz:"18 € (Printaonica)"},
+  {k:"jel_tisak",n:"Tisak jelovnika (plastificirano, 20 kom)",nab:[40,80],cij:[70,140],x:"procjena — traži ponudu tiskare"}]},
+ {k:"ambalaza",p:["Kutije za pizzu s logom","Papirnate vrećice","Naljepnice za ambalažu"],n:"Ambalaža s logom",ik:"paket",o:"Kutije za pizzu, vrećice i naljepnice s vašim logom.",s:[
+  {k:"pizza",n:"Kutije za pizzu s logom, 1.000 kom (do 2 boje)",nab:[263,263],cij:[400,480],x:"+ kliše jednokratno (~8 €/dm²), naplati ga posebno",trz:"262,50 € / 1.000 kom (Horecaklik)"},
+  {k:"vrecice",n:"Papirnate vrećice s logom",x:"na upit; obično najmanje 1.000 kom — nabava × 1,6–1,8"},
+  {k:"naljepnice",n:"Naljepnice s logom za ambalažu",x:"na upit — nabava × 1,8–2,0"}]},
+ {k:"vozila",p:["Logo i tekst na autu","Djelomično ili cijelo vozilo","Kombiji","Skuteri i kutije za dostavu"],n:"Brendiranje vozila",ik:"auto",o:"Logo na autu dostave, djelomično ili cijelo vozilo, skuteri i kutije.",s:[
+  {k:"auto_logo",n:"Logo i tekst na autu",nab:[70,200],cij:[150,350],trz:"70–200 € (Cut-Click)"},
+  {k:"auto_dj",n:"Djelomično brendiranje auta",nab:[300,600],cij:[500,900],trz:"300–600 € (Cut-Click)"},
+  {k:"auto_cijeli",n:"Cijelo vozilo (full wrap)",nab:[1100,1800],cij:[1600,2500],trz:"1.100–1.800 € (Cut-Click)"},
+  {k:"kombi",n:"Kombi — veće grafike s laminacijom",nab:[600,1100],cij:[900,1600],trz:"600–1.100 € (Cut-Click)"},
+  {k:"skuter",n:"Skuter i kutija za dostavu (naljepnice)",nab:[40,120],cij:[90,220],x:"procjena"}]},
+ {k:"mreze",p:["Vođenje Instagrama i Facebooka","Oglasi s ciljanjem na vaš kvart","Kampanje za otvorenje i akcije","Mjesečni izvještaj"],n:"Društvene mreže i oglasi",ik:"megafon",o:"Objave, oglasi s ciljanjem na vaš kvart i izvještaj svaki mjesec.",s:[
+  {k:"vodjenje",n:"Vođenje Instagrama i Facebooka (12–16 objava)",j:"mj.",cij:[200,350],trz:"od 200 € + PDV za 4 objave tjedno (Atauctus)"},
+  {k:"oglasi",n:"Vođenje oglasa (ciljanje, postavljanje, izvještaj)",j:"mj.",cij:[100,150],x:"ili 15–20 % budžeta; budžet za oglase plaća restoran posebno (preporuka od 150 €/mj.)"},
+  {k:"boost",n:"Oglašavanje njihovih objava (boost + ciljanje)",j:"mj.",cij:[80,120],x:"+ budžet za oglase"},
+  {k:"kampanja",n:"Jednokratna kampanja (otvorenje, nova ponuda)",cij:[150,250],x:"+ budžet za oglase"},
+  {k:"profil",n:"Sređivanje profila (opis, istaknute priče, linkovi)",cij:[80,150]}]},
+ {k:"foto",p:["Fotografiranje jela","Fotografije lokala","Kratki videi za Reels i TikTok"],n:"Fotografija i video",ik:"kamera",o:"Fotografije jela za jelovnik, web i mreže, kratki videi.",s:[
+  {k:"foto",n:"Fotografiranje jela (do 15 jela, obrada)",cij:[200,350],trz:"od 290 € (TopFoto)"},
+  {k:"video",n:"Kratki videi za Reels i TikTok (3 kom)",cij:[150,300],x:"procjena"}]},
+ {k:"web",p:["Web stranica lokala","Održavanje i izmjene","Vlastita domena"],n:"Web",ik:"web",o:"Web stranica lokala izvan Foodpointa i njeno održavanje.",s:[
+  {k:"web",n:"Web stranica (do 5 stranica)",cij:[600,1200],trz:"940–1.300 € do 10 str. (Trebam.hr)"},
+  {k:"odrz",n:"Održavanje weba",j:"sat",cij:[35,50],trz:"34–63 €/sat (Trebam.hr)"}]},
+ {k:"nabava",p:["Jeftiniji dobavljači namirnica","Piće i ambalaža","Usporedba cijena"],n:"Nabava i dobavljači",ik:"trgovina",o:"Tražimo jeftinije dobavljače za namirnice, piće i ambalažu.",s:[
+  {k:"dobavljaci",n:"Pronalazak jeftinijih dobavljača",x:"prijedlog: 150 € analiza ili 20 % ostvarene uštede prvih 6 mjeseci"}]}];
+const FP_CJ_IZVORI=[["Tiskara Kralj","https://www.tiskara-kralj.hr/letak_ponuda.html"],["Printaonica — letci","https://www.printaonica.com.hr/tisak/izrada-letaka.html"],
+ ["Printaonica — plakati","https://www.printaonica.com.hr/tisak/izrada-plakata.html"],["Inventum — dizajn","https://www.inventum.hr/dizajn/cjenik-usluga-grafikog-dizajna"],
+ ["HM Promotion — dizajn","https://hm-promotion.com/cjenik-usluga-grafickog-dizajna/"],["Trebam.hr — web","https://www.trebam.hr/cijene/izrada-web-stranica/cijena-izrade-web-stranice"],
+ ["Atauctus — društvene mreže","https://atauctus.hr/drustvene-mreze/vodenje/cijene/"],["Cut-Click — vozila","https://cut-click.hr/oslikavanje-vozila-i-obljepljivanje-folijom-vodic/"],
+ ["TopFoto — fotografija","https://topfoto.hr/fotografiranje-hrane-i-jela/"],["Horecaklik — kutije za pizzu","https://horecaklik.hr/shop/potrosni-materijal/kutije-i-pakiranja-za-van/kutija-za-pizzu-logo-bijelasmeda-10001-26cm-32cm-45cm"]];
+const FP_CJ_PRAVILA=["Svoj rad (dizajn, vođenje mreža, fotografija) naplaćuješ punom cijenom — nema nabave.",
+ "Vanjski posao (tisak, folije, ambalaža): nabavna cijena × 1,6–2,0. Restoran vidi samo konačnu cijenu.",
+ "Dizajn i tisak u ponudi uvijek kao jedan iznos: npr. „5.000 letaka s dizajnom — 420 €”.",
+ "Foodpoint partnerima 10 % popusta na usluge — to je razlog da sve naruče kod tebe.",
+ "Sve cijene su bez PDV-a. Ako si u sustavu PDV-a, na ponudu dodaj 25 %.",
+ "Plaćanje: do 300 € unaprijed, iznad toga 50 % avans i 50 % po isporuci.",
+ "Rokovi: dizajn 3–5 radnih dana, tisak još 3–7 dana."];
+const fpRaspon=(a)=>!a?"—":a[0]===a[1]?fpE(a[0]):Math.round(a[0]).toLocaleString("hr-HR")+"–"+fpE(a[1]);
+const fpE=v=>Math.round(v).toLocaleString("hr-HR")+" €";
+const fpCjStavka=k=>{for(const c of FP_CJENIK){const s=c.s.find(x=>x.k===k); if(s)return {...s,kat:c};} return null;};
+
+/* ---------- CJENIK U SUČELJU UPITI (vidiš samo ti) ---------- */
+let fpC={kat:"sve",odabrano:{},kome:"",kome_tel:"",kome_mail:"",nap:"",popust:0};
+function fpCjenikHTML(){
+ setTimeout(fpCOsvjezi,0);
+ const kats=fpC.kat==="sve"?FP_CJENIK:FP_CJENIK.filter(c=>c.k===fpC.kat);
+ const odab=Object.entries(fpC.odabrano).map(([k,v])=>({...fpCjStavka(k),kol:v.kol,cij:v.cij})).filter(x=>x.n);
+ return `<div class="fpc">
+  <div class="fpc-pravila"><b>Kako naplaćivati</b><ul>${FP_CJ_PRAVILA.map(p=>`<li>${esc(p)}</li>`).join("")}</ul></div>
+  <div class="fpu-filt">${[["sve","Sve"],...FP_CJENIK.map(c=>[c.k,c.n])].map(([k,n])=>`<button class="${fpC.kat===k?"on":""}" onclick="fpC.kat='${k}';zoomCrtaj()">${n}</button>`).join("")}</div>
+  <div class="fpc-grid"><div>
+  ${kats.map(c=>`<div class="fpc-kat"><div class="fpc-kat-n"><span class="fpc-ik">${fpIk(c.ik,20)}</span><b>${esc(c.n)}</b></div>
+   <div class="fpc-tab"><div class="fpc-r gl"><span>Usluga</span><span>Nabava</span><span>Naplati</span><span>Zarada</span><span></span></div>
+   ${c.s.map(s=>{const z=s.cij&&s.nab?[Math.max(0,s.cij[0]-s.nab[1]),s.cij[1]-s.nab[0]]:s.cij;const on=!!fpC.odabrano[s.k];
+    return `<div class="fpc-r${on?" on":""}"><span><b>${esc(s.n)}</b>${s.j?`<small>${s.j==="jednokratno"?"jednokratno":"po "+esc(s.j)}</small>`:""}${s.x?`<small>${esc(s.x)}</small>`:""}${s.trz?`<small class="trz">Tržište: ${esc(s.trz)}</small>`:""}</span>
+     <span class="br">${s.nab?fpRaspon(s.nab):"—"}</span><span class="br jak">${s.cij?fpRaspon(s.cij):"na upit"}</span><span class="br zel">${z?fpRaspon(z):"—"}</span>
+     <span><button class="fpc-dodaj${on?" on":""}" title="${on?"Makni iz ponude":"Dodaj u ponudu"}" onclick="fpCOdaberi('${s.k}')">${fpIk(on?"kvaka":"plus",16)}</button></span></div>`;}).join("")}</div></div>`).join("")}
+  <p class="fpc-izv">Tržišne cijene (bez PDV-a, listopad 2026.): ${FP_CJ_IZVORI.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${esc(n)}</a>`).join(" · ")}. Gdje piše „procjena”, nisam našao javnu cijenu — prije ponude pitaj svog dobavljača.</p>
+  </div>
+  <div class="fpc-ponuda"><div class="fpu-blok"><h3>Ponuda iz cjenika</h3>
+   ${odab.length?`<div class="fpc-stavke">${odab.map(x=>`<div class="fpc-st"><span>${esc(x.n)}</span>
+     <input inputmode="numeric" value="${esc(x.kol)}" title="Količina" onchange="fpC.odabrano['${x.k}'].kol=Math.max(1,parseInt(this.value)||1);fpCOsvjezi()">
+     <input inputmode="decimal" value="${esc(x.cij)}" title="Cijena (€)" onchange="fpC.odabrano['${x.k}'].cij=parseFloat(String(this.value).replace(',','.'))||0;fpCOsvjezi()"><b>€</b>
+     <button title="Makni" onclick="fpCOdaberi('${x.k}')">×</button></div>`).join("")}</div>`
+    :`<p class="savjet" style="color:#6B7280;font-weight:500">Klikni ${fpIk("plus",14)} uz usluge koje želiš ponuditi. Cijena se predloži sama (sredina raspona), a možeš je promijeniti.</p>`}
+   <div class="dva"><div><label>Kome</label><input value="${esc(fpC.kome)}" placeholder="npr. Pizzeria Mario" oninput="fpC.kome=this.value;fpCOsvjezi()"></div>
+    <div><label>Popust (%)</label><input inputmode="numeric" value="${esc(fpC.popust||"")}" placeholder="0" oninput="fpC.popust=parseFloat(this.value)||0;fpCOsvjezi()"></div></div>
+   <div class="dva"><div><label>Mobitel</label><input value="${esc(fpC.kome_tel)}" oninput="fpC.kome_tel=this.value;fpCOsvjezi()"></div>
+    <div><label>E-mail</label><input value="${esc(fpC.kome_mail)}" oninput="fpC.kome_mail=this.value;fpCOsvjezi()"></div></div>
+   <label>Napomena</label><textarea rows="2" oninput="fpC.nap=this.value;fpCOsvjezi()" placeholder="npr. Isporuka letaka do petka.">${esc(fpC.nap)}</textarea>
+   <div class="fpc-zbroj" id="fpc-zbroj"></div>
+   <div class="fpu-pregled" id="fpc-pregled"></div>
+   <div class="fpu-gumbi">
+    <a id="fpc-mail" href="#">${fpIk("mail",17)} Pošalji e-mailom</a>
+    <a id="fpc-wa" class="wa" href="#" target="_blank" rel="noopener">${fpIk("poruka",17)} Pošalji WhatsAppom</a>
+    <button class="siv" onclick="fpCKopiraj()">${fpIk("kopiraj",17)} Kopiraj tekst</button></div>
+   ${odab.length?`<button class="fpc-isprazni" onclick="fpC.odabrano={};zoomCrtaj()">Isprazni ponudu</button>`:""}
+  </div></div></div></div>`;}
+function fpCOdaberi(k){
+ if(fpC.odabrano[k])delete fpC.odabrano[k];
+ else{const s=fpCjStavka(k); fpC.odabrano[k]={kol:1,cij:s&&s.cij?Math.round((s.cij[0]+s.cij[1])/2/5)*5:0};}
+ zoomCrtaj();}
+function fpCIzracun(){
+ const st=Object.entries(fpC.odabrano).map(([k,v])=>({...fpCjStavka(k),kol:v.kol,cij:v.cij})).filter(x=>x.n);
+ const uk=st.reduce((a,x)=>a+x.kol*x.cij,0), pop=uk*(fpC.popust||0)/100;
+ const nab=st.reduce((a,x)=>a+x.kol*(x.nab?(x.nab[0]+x.nab[1])/2:0),0);
+ return {st,uk,pop,zaPlatiti:uk-pop,zarada:uk-pop-nab,nab};}
+function fpCTekst(){
+ const r=fpCIzracun(), f=v=>(Math.round(v*100)/100).toLocaleString("hr-HR",{minimumFractionDigits:2,maximumFractionDigits:2})+" €";
+ return `Poštovani${fpC.kome?" — "+fpC.kome:""},
+
+šaljem ponudu Foodpointa:
+
+${r.st.map(x=>`• ${x.n}${x.kol>1?` × ${x.kol}`:""}${x.j&&x.j!=="jednokratno"?` (po ${x.j})`:""} — ${f(x.kol*x.cij)}`).join("\n")}
+${r.pop?`\nPopust ${fpC.popust} %: −${f(r.pop)}`:""}
+UKUPNO: ${f(r.zaPlatiti)} (bez PDV-a)
+${fpC.nap?`\n${fpC.nap}\n`:""}
+Dizajn je gotov za 3–5 radnih dana, a tisak i isporuka za još 3–7 dana. Do 300 € plaća se unaprijed, iznad toga 50 % avans.
+
+Srdačan pozdrav,
+${fpPotpis()||"Foodpoint"}`;}
+function fpCOsvjezi(){
+ const r=fpCIzracun(), t=fpCTekst();
+ const z=el("fpc-zbroj"); if(z)z.innerHTML=r.st.length?`<div><span>Restoran plaća</span><b>${fpE(r.zaPlatiti)}</b></div><div><span>Nabava (procjena)</span><b>${fpE(r.nab)}</b></div><div class="zel"><span>Tvoja zarada</span><b>${fpE(r.zarada)}</b></div>`:"";
+ const p=el("fpc-pregled"); if(p)p.textContent=r.st.length?t:"";
+ const m=el("fpc-mail"); if(m)m.href=`mailto:${encodeURIComponent(fpC.kome_mail||"")}?subject=${encodeURIComponent("Foodpoint — ponuda"+(fpC.kome?" za "+fpC.kome:""))}&body=${encodeURIComponent(t)}`;
+ const w=el("fpc-wa"); if(w)w.href=`https://wa.me/${fpTelInt(fpC.kome_tel)}?text=${encodeURIComponent(t)}`;}
+function fpCKopiraj(){try{navigator.clipboard.writeText(fpCTekst()); fpUPoruka("Tekst ponude kopiran");}catch(e){fpUPoruka("Označi tekst i kopiraj ručno");}}
+function fpCIzUpita(id){
+ const u=fpU.lista.find(x=>x.id===id); if(!u)return;
+ fpC.kome=u.restoran?String(u.restoran).split(" · ")[0]:u.ime; fpC.kome_tel=u.tel||""; fpC.kome_mail=u.email||"";
+ fpU.pogled="cjenik"; zoomCrtaj(); scrollTo(0,0);}
+
+/* ---------- VLASNIK: Marketing i dizajn (bez cijena — ponudu šalješ ti) ---------- */
+function vlMarketing(){
+ const kat=FP_CJENIK.filter(c=>c.k!=="sustav"), u=mk.odabrano?kat.find(x=>x.k===mk.odabrano):null;
+ return `<div class="mk">
+  ${mk.poruka?`<div class="fpu-ok">${esc(mk.poruka)}</div>`:""}
+  <div class="sec"><h3>${tj("Marketing i dizajn")}</h3><p class="savjet" style="color:var(--dim)">${tj("Sve što tvom lokalu treba, na jednom mjestu: dizajn, tisak, ambalaža, brendiranje vozila, društvene mreže, fotografije, web i nabava. Odaberi što trebaš i pošalji upit — šaljemo ti ponudu, a Foodpoint partneri imaju 10 % popusta.")}</p></div>
+  <div class="mk-grid">${kat.map(x=>`<div role="button" tabindex="0" class="mk-k ${mk.odabrano===x.k?"on":""}" onclick="mk.odabrano='${x.k}';mk.poruka='';crtaj(1);setTimeout(()=>{const f=el('mk-forma');if(f)f.scrollIntoView({behavior:'smooth',block:'center'})},50)">
+    <span class="mk-ik">${fpIk(x.ik,22)}</span><b>${esc(x.n)}</b><small>${esc(x.o)}</small>
+    <ul>${(x.p||[]).map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>`).join("")}</div>
+  ${u?`<div class="box mk-forma" id="mk-forma"><b>${esc(u.n)}</b>
+   <label class="f">${tj("Što točno trebaš?")}</label>
+   <textarea class="f" id="mk-nap" rows="3" placeholder="${tj("npr. 5.000 letaka s novim sidrenim cijenama, dostava za Trešnjevku…")}" oninput="mk.napomena=this.value">${esc(mk.napomena)}</textarea>
+   <label class="f">${tj("Kontakt broj")}</label><input class="f" id="mk-tel" value="${esc(lokal.tel1||"")}">
+   <button class="btn" onclick="mkPosalji()" ${mk.salje?"disabled":""}>${mk.salje?tj("Šaljem…"):tj("Pošalji upit Foodpointu")}</button></div>`:""}
+ </div>`;}
+async function mkPosalji(){
+ const u=FP_CJENIK.find(x=>x.k===mk.odabrano); if(!u)return;
+ const tel=((el("mk-tel")||{}).value||"").trim();
+ if(tel.replace(/\D/g,"").length<8&&!lokal.email){mk.poruka=tj("Upiši broj mobitela da te možemo nazvati."); crtaj(1); return;}
+ mk.salje=true; crtaj(1);
+ const p={ime:lokal.naziv+" (vlasnik)",restoran:lokal.naziv+" · /"+lokal.slug,tel,email:lokal.email||"",grad:lokal.adresa||"",
+  tip:("Usluga: "+u.n).slice(0,40),paket:"usluga",poruka:u.n+"\n\n"+(mk.napomena||"")};
+ let ok=false; try{const r=await sb.rpc("gost_upit",{p}); ok=!r.error&&r.data===true;}catch(e){}
+ mk.salje=false; mk.poruka=ok?tj("Poslano. Javit ćemo ti se s ponudom, obično isti dan."):tj("Slanje nije uspjelo — pokušaj ponovno za par minuta.");
+ if(ok){mk.odabrano=null; mk.napomena="";} crtaj(1); scrollTo(0,0);}
+
+/* ---------- NASLOVNA: usluge (bez cijena) ---------- */
+function fpUslugeHTML(){
+ return `<section class="fpl-sek" id="usluge"><div class="fpl-in">
+  <div class="fpl-nas"><span class="fpl-oz"><i></i>Foodpoint partner</span><h2>Sve za vaš lokal, na jednom mjestu</h2>
+   <p>Vi zaposlite dostavljača, mi radimo sve ostalo — koliko god želite. Uz sustav imamo vlastiti studio za dizajn i web, tiskare, folije i ambalažu. Svaka usluga naručuje se posebno, a Foodpoint partneri imaju 10 % popusta.</p></div>
+  <div class="fpl-us">${FP_CJENIK.filter(c=>c.k!=="sustav").map(c=>`<div class="fpl-us-k"><div class="ik">${fpIk(c.ik,22)}</div><h4>${esc(c.n)}</h4><p>${esc(fpVi(c.o))}</p>
+    <ul>${(c.p||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`).join("")}</div>
+  <div style="text-align:center;margin-top:26px"><a class="fpl-b" onclick="fpSkoci('kontakt')">Zatražite ponudu za usluge</a></div>
+ </div></section>`;}
+
+/* ===== FOODPOINT 5: vjernost (novi izgled), zakazivanje termina, demo online plaćanje, društvene mreže na naslovnoj ===== */
+Object.assign(FPI,{
+ kalendar:'<rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/>',
+ poklon:'<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C9.5 3 12 8 12 8s2.5-5 4.5-5a2.5 2.5 0 0 1 0 5"/>',
+ instagram:'<rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/>',
+ facebook:'<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+ whatsapp:'<path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9.5 8.6c0 3.2 2.7 5.9 5.9 5.9l.9-1.4-1.9-1-.9.8a4 4 0 0 1-2.4-2.4l.8-.9-1-1.9z"/>',
+ kartica:'<rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/>',
+ lokot:'<rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'});
+
+/* ---------- VJERNOST (gost) ---------- */
+function zgVjernostHTML(){
+ const PR=PRAG||10, ime=lokal.naziv;
+ const skup=kupac?Math.max(0,(kupac.dostavljenih||0)-(kupac.iskoristeno||0)*PR):0;
+ const pravo=!!kupac&&!kupac.novi&&skup>=PR, pun=pravo?PR:skup%PR;
+ const seg=Array.from({length:PR},(_,i)=>`<i class="${i<pun?"on":""}${i===PR-1?" zadnji":""}">${i===PR-1?fpIk("poklon",13):""}</i>`).join("");
+ const ostalo=PR-pun;
+ return `<section class="zg-vj" id="vj-sekcija">
+  <div class="zg-vj-glava"><span class="zg-vj-ik">${fpIk("poklon",20)}</span>
+   <div><b>${tj("Program vjernosti")}</b><small>${tj("Svaka")} ${PR}. ${tj("pizza je gratis — bez registracije i kartica")}</small></div>
+   ${kupac?`<button type="button" class="zg-vj-odj" onclick="kupac=null;crtaj(1)">${tj("Promijeni broj")}</button>`:""}</div>
+  ${kupac?`<div class="zg-vj-traka" aria-label="${pun} / ${PR}">${seg}</div>
+   ${pravo?`<div class="zg-vj-nagrada"><b>${tj("Besplatna pizza je vaša")}</b><span>${tj("Otvorite bilo koju pizzu i odaberite „Uzmi kao nagradnu pizzu”.")}</span></div>`
+    :`<p class="zg-vj-st"><b>${esc(kupac.ime||tj("Vi"))}</b>, ${tj("imate")} <b>${pun} ${tj("od")} ${PR}</b>. ${tj("Još")} ${ostalo} ${ostalo===1?tj("narudžba"):ostalo<5?tj("narudžbe"):tj("narudžbi")} ${tj("do besplatne pizze.")}</p>`}`
+  :`<div class="zg-vj-unos"><input id="k-tel" inputmode="tel" autocomplete="tel" placeholder="${tj("Vaš broj mobitela")}" value="${esc(kupacUnos||"")}" oninput="kupacUnos=this.value" onkeydown="if(event.key==='Enter')prijaviKupca()">
+    <button type="button" onclick="prijaviKupca()">${tj("Provjeri bodove")}</button></div>
+   <p class="err zg-vj-err" id="k-err"></p>
+   <p class="zg-vj-pod">${tj("Narudžbe brojimo po broju mobitela koji upišete pri narudžbi.")}${lokal.slug==="demo"?` <span class="zg-vj-demo">${tj("Demo: upišite")} 091 123 4567</span>`:""}</p>`}
+ </section>`;}
+
+/* ---------- ZAKAZIVANJE (gost) ---------- */
+function zgRadnoVrijeme(){
+ const m=String(lokal.radno_vrijeme||"").match(/(\d{1,2})[:.](\d{2})\s*[–—-]\s*(\d{1,2})[:.](\d{2})/);
+ let o=11*60, c=22*60;
+ if(m){o=+m[1]*60+ +m[2]; c=+m[3]*60+ +m[4]; if(c<=o)c+=24*60;}
+ return [o,c];}
+const zgDanKljuc=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+function zgTermini(danKljuc){
+ const [o,c]=zgRadnoVrijeme(), [y,mo,da]=danKljuc.split("-").map(Number), sad=Date.now()+45*60000, out=[];
+ for(let t=o+30;t<=c-15;t+=15){const d=new Date(y,mo-1,da,0,0,0,0); d.setMinutes(t); if(d.getTime()>=sad)out.push(d);}
+ return out;}
+function zgDani(){
+ const out=[], d0=new Date(); d0.setHours(12,0,0,0);
+ const N=["ned","pon","uto","sri","čet","pet","sub"];
+ for(let i=0;i<7;i++){const d=new Date(d0.getTime()+i*864e5), k=zgDanKljuc(d);
+  if(zgTermini(k).length)out.push([k,i===0?tj("Danas"):i===1?tj("Sutra"):`${tj(N[d.getDay()])} ${d.getDate()}. ${d.getMonth()+1}.`]);}
+ return out;}
+const zgSat=d=>String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0");
+function zakTxt(iso){
+ const d=new Date(iso), N=["ned","pon","uto","sri","čet","pet","sub"], danas=zgDanKljuc(new Date()), k=zgDanKljuc(d);
+ const sut=zgDanKljuc(new Date(Date.now()+864e5));
+ return (k===danas?tj("danas"):k===sut?tj("sutra"):`${tj(N[d.getDay()])} ${d.getDate()}. ${d.getMonth()+1}.`)+" "+tj("u")+" "+zgSat(d);}
+function zgKad(zak){
+ if(!zak){forma.zakazano=null; forma.zakDan=null;}
+ else{const dani=zgDani(); if(dani.length){forma.zakDan=forma.zakDan||dani[0][0]; const t=zgTermini(forma.zakDan); forma.zakazano=t.length?t[0].toISOString():null;}}
+ crtaj(1);}
+function zgKadDan(k){forma.zakDan=k; const t=zgTermini(k); forma.zakazano=t.length?t[0].toISOString():null; crtaj(1);}
+function zgKadHTML(osobno){
+ const zak=!!forma.zakazano, dani=zak?zgDani():[];
+ if(zak&&forma.zakDan&&!dani.some(x=>x[0]===forma.zakDan)){forma.zakDan=dani[0]?dani[0][0]:null;}
+ const ter=zak&&forma.zakDan?zgTermini(forma.zakDan):[];
+ return `<section class="zg-kartica"><h3>${osobno?tj("Kada preuzimate?"):tj("Kada želite dostavu?")}</h3>
+  <div class="zg-nacin" style="margin:0;max-width:none" role="group">
+   <button type="button" aria-pressed="${!zak}" onclick="zgKad(0)">${fpIk("dostava",16)}${tj("Što prije")}</button>
+   <button type="button" aria-pressed="${zak}" onclick="zgKad(1)">${fpIk("kalendar",16)}${tj("Zakaži termin")}</button></div>
+  ${zak?`<div class="zg-kad">
+    <label><span>${tj("Dan")}</span><select class="zg-in" id="f-dan" onchange="zgKadDan(this.value)">${dani.map(([k,n])=>`<option value="${k}" ${k===forma.zakDan?"selected":""}>${n}</option>`).join("")}</select></label>
+    <label><span>${tj("Vrijeme")}</span><select class="zg-in" id="f-sat" onchange="forma.zakazano=this.value;crtaj(1)">${ter.map(d=>`<option value="${d.toISOString()}" ${d.toISOString()===forma.zakazano?"selected":""}>${zgSat(d)}</option>`).join("")}</select></label></div>
+   <p class="zg-pomoc">${tj("Narudžba odmah stiže u restoran, a hranu pripremamo za")} <b>${zakTxt(forma.zakazano)}</b>.</p>`:""}
+ </section>`;}
+
+/* ---------- DEMO ONLINE PLAĆANJE (samo /demo — ništa se ne naplaćuje) ---------- */
+let zgDP={id:null,radi:false,nacin:"kartica"};
+async function zgDemoPlacanje(id){zgDP={id,radi:false,nacin:"kartica",o:{}}; zgDemoCrtaj();
+ try{const r=await sb.rpc("gost_narudzba",{p_id:id}); if(r.data&&r.data.narudzba){zgDP.o=r.data.narudzba; zgDemoCrtaj();}}catch(e){}}
+function zgDemoCrtaj(){
+ let w=el("zg-dp"); if(!w){w=document.createElement("div"); w.id="zg-dp"; document.body.appendChild(w);}
+ const o=zgDP.o||{}, iznos=o.iznos!=null?eur(o.iznos):"";
+ w.innerHTML=`<div class="zg-dp-omot" onclick="if(event.target===this)zgDemoZatvori()"><div class="zg-dp" role="dialog" aria-label="${tj("Plaćanje")}">
+  <div class="zg-dp-vrh"><span>${fpIk("lokot",15)} ${tj("Sigurno plaćanje")}</span><button type="button" onclick="zgDemoZatvori()" aria-label="${tj("Zatvori")}">×</button></div>
+  <div class="zg-dp-iznos"><small>${esc(lokal.naziv)}${o.broj?` · #${o.broj}`:""}</small><b>${iznos}</b></div>
+  <button type="button" class="zg-dp-pay apple" onclick="zgDemoPlati('Apple Pay')"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.7zM14.1 5.6c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3z"/></svg>Pay</button>
+  <button type="button" class="zg-dp-pay google" onclick="zgDemoPlati('Google Pay')"><b style="color:#4285F4">G</b>&nbsp;Pay</button>
+  <div class="zg-dp-ili"><span>${tj("ili karticom")}</span></div>
+  <label class="zg-dp-pol"><span>${tj("Broj kartice")}</span><input class="zg-in" inputmode="numeric" value="4242 4242 4242 4242"></label>
+  <div class="zg-dp-dva"><label class="zg-dp-pol"><span>${tj("Vrijedi do")}</span><input class="zg-in" value="12/28"></label><label class="zg-dp-pol"><span>CVC</span><input class="zg-in" value="123"></label></div>
+  <button type="button" class="zg-btn razvuk" onclick="zgDemoPlati('kartica')" ${zgDP.radi?"disabled":""}>${zgDP.radi?tj("Plaćam…"):tj("Plati")+" "+iznos}</button>
+  <p class="zg-dp-demo">${tj("Demo restoran: novac se ne naplaćuje. U pravom restoranu ovdje se otvara Teyina stranica za plaćanje, a novac ide izravno na račun restorana.")}</p>
+ </div></div>`;}
+function zgDemoZatvori(){const w=el("zg-dp"); if(w)w.remove(); osvjezi().then(()=>crtaj(1));}
+async function zgDemoPlati(n){
+ if(zgDP.radi)return; zgDP.radi=true; zgDemoCrtaj();
+ let ok=false; try{const r=await sb.rpc("gost_demo_plati",{p_id:zgDP.id}); ok=!r.error&&r.data===true;}catch(e){}
+ await new Promise(r=>setTimeout(r,700));
+ const w=el("zg-dp"); if(w)w.remove();
+ await osvjezi(); crtaj(1);
+ if(typeof zgToast==="function")zgToast(ok?(n==="kartica"?tj("Plaćeno karticom"):tj("Plaćeno")+" — "+n):tj("Plaćanje nije uspjelo — pokušajte ponovno."));}
+
+/* ---------- NASLOVNA: e-mail, WhatsApp, Facebook, Instagram ---------- */
+/* Upiši svoje: e-mail i broj (isti su i u ZOOM_KONTAKT), te linkove na Facebook i Instagram stranicu. */
+const FP_MREZE={email:"",whatsapp:"",facebook:"",instagram:""};
+function fpMrezeHTML(kl){
+ const k=ZOOM_KONTAKT||{}, em=FP_MREZE.email||k.email, wa=FP_MREZE.whatsapp||k.tel;
+ const L=[["mail","E-mail",em?`mailto:${em}`:""],["whatsapp","WhatsApp",wa?`https://wa.me/${fpTelInt(wa)}`:""],
+  ["facebook","Facebook",FP_MREZE.facebook],["instagram","Instagram",FP_MREZE.instagram]];
+ return `<div class="fpl-mreze${kl?" "+kl:""}">${L.map(([i,n,u])=>u?`<a href="${esc(u)}" target="_blank" rel="noopener" aria-label="${n}" title="${n}">${fpIk(i,18)}</a>`
+  :`<a onclick="fpSkoci('kontakt')" aria-label="${n}" title="${n}">${fpIk(i,18)}</a>`).join("")}</div>`;}
 
 start();
 </script>
