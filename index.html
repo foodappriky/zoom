@@ -2568,6 +2568,70 @@ body.zg .zg-vj{position:relative;z-index:2;max-width:760px;margin:12px auto 4px;
 .zg-dp .zg-btn{margin-top:6px}
 .zg-dp-demo{font-size:12px;color:#6B7280;text-align:center;margin:10px 0 0;line-height:1.45}
 @media(max-width:480px){.fpl-nav .fpl-prij{display:none}.fpl-nav .fp-logo{--v:26px!important}}
+/* ---- sidrene cijene: traka na naslovnoj ---- */
+.fpl-sidr{background:#17120F;color:#F3E9E4;font-size:13.5px;position:relative;z-index:31}
+.fpl-sidr .fpl-in{display:flex;align-items:center;gap:10px;min-height:42px;padding-top:6px;padding-bottom:6px}
+.fpl-sidr .fpi{color:#FF7A6E}.fpl-sidr b{color:#fff;margin-right:6px}
+.fpl-sidr a{margin-left:auto;color:#FF9C92;font-weight:800;white-space:nowrap;cursor:pointer;text-decoration:none}
+@media(max-width:700px){.fpl-sidr .fpl-in{flex-wrap:wrap;gap:4px 8px;font-size:12.5px}.fpl-sidr span{flex:1 1 80%}.fpl-sidr a{margin-left:26px}}
+/* ---- objave za društvene mreže (1080×1080, sve u cqw) ---- */
+.fpo-mreza{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:12px}
+.fpo-kart{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;min-width:0}
+.fpo-okvir{container-type:inline-size;border-radius:10px;overflow:hidden}
+.fpo-akc{display:flex;align-items:center;gap:6px;margin:10px 2px 6px}.fpo-akc span{font-weight:800;color:#8A919C;font-size:13px;margin-right:auto}
+.fpo-akc button{border:1px solid var(--line);background:#fff;border-radius:10px;height:34px;min-width:34px;display:inline-flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;color:#15171C;font-weight:700;font-size:13px;padding:0 9px}
+.fpo-akc button.tx{background:#15171C;color:#fff;border-color:#15171C}
+.fpo-cap{font-size:13px;line-height:1.5;color:#4B5360;margin:4px 2px 2px}.fpo-cap span{color:#8A919C}
+.fpo-post{position:relative;width:100cqw;height:100cqw;overflow:hidden;font-family:"Plus Jakarta Sans",system-ui,sans-serif;text-transform:none;letter-spacing:-.01em;box-sizing:border-box}
+.fpo-post *{box-sizing:border-box}
+.fpo-sad{position:absolute;inset:0;padding:7cqw;display:flex;flex-direction:column;z-index:2}
+.fpo-logo{display:flex;align-items:center;gap:1.6cqw;font-size:3.6cqw;font-weight:800}
+.fpo-logo img{width:5.4cqw;height:5.4cqw;border-radius:1.4cqw}
+.fpo-sidr{position:absolute;z-index:3;top:7cqw;right:7cqw;display:flex;align-items:center;gap:1cqw;font-size:2.1cqw;font-weight:800;padding:1.3cqw 2.2cqw;border-radius:99cqw;background:#fff;color:#A80F12;box-shadow:0 .6cqw 2cqw rgba(0,0,0,.12)}
+.fpo-sidr .fpi{width:2.4cqw;height:2.4cqw}
+.fpo-oz{display:inline-block;align-self:flex-start;margin-top:auto;font-size:2.4cqw;font-weight:800;padding:1.1cqw 2.2cqw;border-radius:99cqw;background:rgba(201,25,26,.1);color:#C9191A;text-transform:uppercase;letter-spacing:.04em}
+.fpo-post h2{font-size:7.6cqw;line-height:1.04;font-weight:800;letter-spacing:-.035em;margin:2.6cqw 0 0}
+.fpo-post h2 em{font-style:normal;color:#C9191A}
+.fpo-post p{font-size:3.1cqw;line-height:1.4;margin:2.6cqw 0 0;opacity:.82;max-width:78cqw}
+.fpo-cta{align-self:flex-start;margin-top:4cqw;font-size:2.9cqw;font-weight:800;padding:2.2cqw 3.8cqw;border-radius:2.2cqw;background:#C9191A;color:#fff}
+.fpo-ik{width:12cqw;height:12cqw;border-radius:3.4cqw;display:grid;place-items:center;margin-top:9cqw;background:#FFE4DE;color:#C9191A}
+.fpo-ik .fpi{width:6.4cqw;height:6.4cqw}
+.fpo-ik+.fpo-oz{margin-top:auto}
+/* predlošci */
+.fpo-post.t-crvena{background:radial-gradient(90cqw 70cqw at 100% 0%,#E8383A 0%,transparent 60%),linear-gradient(150deg,#D41D1F,#A30E11);color:#fff}
+.t-crvena .fpo-oz{background:rgba(255,255,255,.16);color:#fff}.t-crvena h2 em{color:#FFD3CC}.t-crvena .fpo-cta{background:#fff;color:#B5121A}
+.t-crvena .fpo-ik{background:rgba(255,255,255,.14);color:#fff}.t-crvena .fpo-logo img{box-shadow:0 0 0 .4cqw rgba(255,255,255,.55)}
+.fpo-post.t-svijetla,.fpo-post.t-usporedba,.fpo-post.t-lista,.fpo-post.t-ekran{background:radial-gradient(80cqw 60cqw at 100% 0%,#FFE1D9 0%,transparent 65%),#FFF7F3;color:#17120F}
+.fpo-post.t-tamna{background:radial-gradient(80cqw 60cqw at 0% 100%,rgba(201,25,26,.38) 0%,transparent 60%),#17120F;color:#fff}
+.t-tamna .fpo-oz{background:rgba(255,107,94,.16);color:#FF8A80}.t-tamna h2 em{color:#FF6B5E}.t-tamna .fpo-ik{background:rgba(255,255,255,.08);color:#FF6B5E}
+.fpo-post.t-foto{color:#fff;background:#17120F}
+.fpo-foto{position:absolute;inset:0;background-size:cover;background-position:center}
+.fpo-sjena{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 28%,rgba(0,0,0,.15) 45%,rgba(10,6,4,.88) 100%)}
+.t-foto .fpo-dno{margin-top:auto;display:flex;flex-direction:column}.t-foto .fpo-oz{margin-top:0;background:#C9191A;color:#fff}.t-foto h2 em{color:#FF9C92}
+.t-foto .fpo-logo img{box-shadow:0 0 0 .4cqw rgba(255,255,255,.5)}
+.fpo-usp{display:grid;grid-template-columns:1fr 1fr;gap:3cqw;margin-top:5cqw}
+.fpo-usp div{border-radius:3.4cqw;padding:4cqw;background:#fff;box-shadow:0 1cqw 3cqw rgba(60,20,10,.08)}
+.fpo-usp small{display:block;font-size:2.8cqw;font-weight:700;color:#8A7D77}.fpo-usp b{display:block;font-size:10cqw;font-weight:800;letter-spacing:-.04em;margin-top:1cqw;white-space:nowrap}
+.fpo-usp .los b{color:#8A7D77;text-decoration:line-through;text-decoration-thickness:.7cqw}.fpo-usp .dob{background:#C9191A}.fpo-usp .dob small{color:#FFD3CC}.fpo-usp .dob b{color:#fff}
+.t-usporedba .fpo-oz{margin-top:9cqw}.t-usporedba h2{font-size:6.6cqw}
+.t-ekran .fpo-oz{margin-top:9cqw}.t-ekran h2{font-size:6.6cqw}.t-ekran p{max-width:70cqw}
+.fpo-ekran{position:absolute;left:9cqw;right:9cqw;bottom:-6cqw;height:42cqw;border-radius:3cqw 3cqw 0 0;overflow:hidden;border:1.2cqw solid #17120F;border-bottom:0;background:#fff;box-shadow:0 2cqw 6cqw rgba(0,0,0,.18)}
+.fpo-ekran img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
+.fpo-ekran.mob{left:auto;right:8cqw;width:30cqw;height:50cqw;border-radius:4.4cqw 4.4cqw 0 0;bottom:-4cqw}
+.t-ekran .fpo-sad:has(.fpo-ekran.mob) p{max-width:52cqw}.t-ekran .fpo-sad:has(.fpo-ekran.mob) h2{max-width:56cqw}
+.t-lista .fpo-oz{margin-top:9cqw}
+.t-lista ul{list-style:none;padding:0;margin:4cqw 0 0;display:grid;grid-template-columns:1fr 1fr;gap:2.4cqw}
+.t-lista li{display:flex;align-items:center;gap:1.8cqw;font-size:3.1cqw;font-weight:700;background:#fff;border-radius:2.4cqw;padding:2.6cqw;box-shadow:0 .6cqw 2cqw rgba(60,20,10,.06)}
+.t-lista li .fpi{flex:none;width:3.4cqw;height:3.4cqw;color:#fff;background:#C9191A;border-radius:50%;padding:.6cqw}
+/* puni zaslon i izvoz */
+.fpo-puni{position:fixed;inset:0;z-index:300;background:rgba(10,10,12,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+.fpo-puni-okvir{container-type:inline-size;width:min(94vw,calc(100vh - 90px))}
+.fpo-puni-akc{display:flex;gap:8px;align-items:center;color:#fff;font-weight:700}
+.fpo-puni-akc button{border:0;border-radius:10px;height:38px;padding:0 14px;font-weight:800;cursor:pointer;background:rgba(255,255,255,.12);color:#fff}
+.fpo-izvoz{position:fixed;left:-20000px;top:0;width:1080px;container-type:inline-size}
+body .fpo-post h2{letter-spacing:-.035em!important}body .fpo-post .fpo-oz{letter-spacing:.04em!important;text-transform:uppercase!important}
+.fpo-ik{margin-top:4cqw;margin-bottom:2cqw}
+.t-lista .fpo-oz{margin-top:5cqw}.t-lista ul{gap:1.8cqw;margin-top:3cqw}.t-lista li{padding:2cqw 2.4cqw;font-size:2.9cqw}.t-lista .fpo-cta{margin-top:3cqw}
 
 .fp-logo{display:inline-flex;align-items:center;gap:calc(var(--v)*.32);font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-weight:800;
  font-size:calc(var(--v)*.86);letter-spacing:-.02em;line-height:1;text-transform:none;white-space:nowrap;vertical-align:middle}
@@ -8477,7 +8541,7 @@ const FP_ZNACAJKE=[
  ["qr","QR na stolu","Gost u kafiću naruči s mobitela, konobar dobije narudžbu na tablet."],
  ["graf","Analitika i marže","Novi i stalni kupci, promet, najprodavanije, normativi, troškovi i plaće."],
  ["kosarica","Nabava","Popis namirnica i narudžba dobavljaču jednim klikom."],
- ["vaga","Usklađeno sa zakonom","Sidrene cijene i strojno čitljiv cjenik objavljuju se sami."],
+ ["sidro","Spremni za sidrene cijene","Sidrene cijene na jelovniku i webu, strojno čitljiv cjenik se objavljuje sam. Postojeće jelovnike obrađujemo, nove izrađujemo."],
  ["paleta","Vaš brend","Vaš logo, vaše boje, vaša domena. Bez tuđeg imena na vrhu."]];
 const FP_EKRANI=[
  {oz:"Gost",n:"Stranica restorana koju gosti vole",t:"Gost otvori vaš link ili skenira QR kod i vidi vaš jelovnik s fotografijama. Bira dodatke, količinu, dostavu ili preuzimanje i naručuje za manje od minute — bez registracije i bez aplikacije.",
@@ -8515,6 +8579,7 @@ function fpLandingHTML(){
  const nav=[["kako","Kako radi"],["sucelja","Sučelja"],["usluge","Usluge"],["cijene","Cijene"],["kontakt","Kontakt"]];
  return `<div class="fpl">
  <div class="fpl-poz" style="background-image:url('${FP_U(FP_SLIKE.pozadina,1800)}')"></div>
+ ${fpSidreneTrakaHTML()}
  <header class="fpl-nav"><div class="fpl-in">${ZOOM_LOGO(30)}
   <nav>${nav.map(([i,n])=>`<a onclick="fpSkoci('${i}')">${n}</a>`).join("")}</nav>
   ${fpMrezeHTML()}
@@ -8528,7 +8593,7 @@ function fpLandingHTML(){
    <p class="pod">Foodpoint je partner za ugostitelje. Umjesto starog telefona gosti naručuju na modernoj stranici u vašim bojama, a vi vodite kuhinju, dostavljače, analitiku i troškove na jednom mjestu. Kad zatreba, radimo i dizajn, tisak, ambalažu i oglase. Vi zaposlite dostavljača, mi radimo sve ostalo.</p>
    <div class="fpl-cta"><a class="fpl-b" href="${demo}" target="_blank" rel="noopener">Isprobaj demo restoran →</a>
     <a class="fpl-b bijeli" onclick="fpSkoci('kontakt')">Zatraži ponudu</a></div>
-   <div class="fpl-dokaz"><span>${fpIk("kvaka",16)} <b>${FP_PLAN.mj} €</b>/mj + <b>${FP_PLAN.prov} %</b></span><span>${fpIk("kvaka",16)} Prva ${FP_PLAN.uvodMj} mjeseca <b>${FP_PLAN.uvodProv} %</b></span><span>${fpIk("kvaka",16)} Gotovo za <b>2–5 dana</b></span></div>
+   <div class="fpl-dokaz"><span>${fpIk("kvaka",16)} <b>${FP_PLAN.mj} €</b>/mj + <b>${FP_PLAN.prov} %</b></span><span>${fpIk("kvaka",16)} Prva ${FP_PLAN.uvodMj} mjeseca <b>${FP_PLAN.uvodProv} %</b></span><span>${fpIk("kvaka",16)} Gotovo za <b>2–5 dana</b></span><span>${fpIk("sidro",16)} Spremni za <b>sidrene cijene</b></span></div>
   </div>
   <div class="fpl-vizual">
    <div class="foto" style="background-image:url('${FP_U(FP_SLIKE.hero,1000,1200)}')"></div>
@@ -8735,10 +8800,10 @@ function fpUpitiHTML(){
  const u=L.find(x=>x.id===fpU.odabran);
  return `<div class="fpu${u?" s-detaljem":""}">
   ${fpU.poruka?`<div class="fpu-ok">${esc(fpU.poruka)}</div>`:""}
-  <div class="fpu-vrh">${ZOOM_LOGO(26)}<span class="ozn">${fpU.pogled==="cjenik"?"Cjenik usluga":"Upiti i ponude"}</span>
-   <div class="desno"><div class="fpu-pogled"><button class="${fpU.pogled!=="cjenik"?"on":""}" onclick="fpU.pogled='upiti';zoomCrtaj()">Upiti${fpNovih()?` · ${fpNovih()}`:""}</button><button class="${fpU.pogled==="cjenik"?"on":""}" onclick="fpU.pogled='cjenik';zoomCrtaj()">Cjenik</button></div>
+  <div class="fpu-vrh">${ZOOM_LOGO(26)}<span class="ozn">${fpU.pogled==="cjenik"?"Cjenik usluga":fpU.pogled==="objave"?"Objave za mreže":"Upiti i ponude"}</span>
+   <div class="desno"><div class="fpu-pogled"><button class="${fpU.pogled==="upiti"?"on":""}" onclick="fpU.pogled='upiti';zoomCrtaj()">Upiti${fpNovih()?` · ${fpNovih()}`:""}</button><button class="${fpU.pogled==="cjenik"?"on":""}" onclick="fpU.pogled='cjenik';zoomCrtaj()">Cjenik</button><button class="${fpU.pogled==="objave"?"on":""}" onclick="fpU.pogled='objave';zoomCrtaj()">Objave</button></div>
     <button onclick="fpUcitajUpite().then(zoomCrtaj)">↻ Osvježi</button><a href="#zoom">Restorani</a></div></div>
-  ${fpU.pogled==="cjenik"?fpCjenikHTML()+zoomPoweredHTML()+"</div>":`
+  ${fpU.pogled==="objave"?fpObjaveHTML()+zoomPoweredHTML()+"</div>":fpU.pogled==="cjenik"?fpCjenikHTML()+zoomPoweredHTML()+"</div>":`
   <div class="fpu-stat"><div><b>${br("novo")}</b><span>novih upita</span></div><div><b>${br("u_obradi")}</b><span>u obradi</span></div>
    <div><b>${br("ponuda")}</b><span>poslanih ponuda</span></div><div><b>${br("dogovoreno")}</b><span>dogovoreno</span></div></div>
   <div class="fpu-filt">${filt.map(([k,n,c])=>`<button class="${fpU.filt===k?"on":""}" onclick="fpU.filt='${k}';zoomCrtaj()">${n}<i>${c}</i></button>`).join("")}</div>
@@ -9183,9 +9248,10 @@ const FP_CJENIK=[
   {k:"partner",n:"Foodpoint partner — cijeli sustav",j:"mj.",nab:[3,5],cij:[49,49],x:"+ 10 % na online narudžbe; prva 3 mjeseca 5 %",trz:"Wolt i Glovo: 25–30 % provizije"},
   {k:"domena",n:"Spajanje vlastite domene (.hr)",j:"jednokratno",nab:[0,0],cij:[49,79],x:"domena kod registra ~20–30 €/god. plaća restoran"},
   {k:"velikijel",n:"Unos velikog jelovnika (60+ jela, više jezika)",j:"jednokratno",cij:[49,99]}]},
- {k:"dizajn",p:["Letci i jelovnici","Plakati i roll-upi","Logo i vizualni identitet","Grafike za društvene mreže"],n:"Grafički dizajn",ik:"pero",o:"Letci, jelovnici, plakati, logo i cijeli vizualni identitet.",s:[
+ {k:"dizajn",p:["Jelovnici sa sidrenim cijenama","Letci i plakati","Logo i vizualni identitet","Grafike za društvene mreže"],n:"Grafički dizajn",ik:"pero",o:"Letci, jelovnici, plakati, logo i cijeli vizualni identitet.",s:[
   {k:"letak",n:"Dizajn letka (A5 ili DL)",cij:[80,120],trz:"100 € A5 jednostrano (Inventum); 30–50 € u tiskarama (Printaonica)"},
   {k:"jelovnik",n:"Dizajn jelovnika sa sidrenim cijenama (do 4 str.)",cij:[120,250],trz:"100 € do 2 str. (Inventum)"},
+  {k:"sidrene",n:"Obrada postojećeg jelovnika — sidrene cijene",cij:[40,90],x:"upis sidrenih cijena, provjera i priprema za tisak i web"},
   {k:"plakat",n:"Dizajn plakata ili roll-upa",cij:[80,150],trz:"od 50 € (Printaonica), od 300 € (Inventum)"},
   {k:"logo",n:"Logo (3 prijedloga, 2 kruga izmjena)",cij:[250,450],trz:"88–250 € (Trebam.hr), 260 € (Inventum), od 300 € (HM Promotion)"},
   {k:"identitet",n:"Vizualni identitet (logo, boje, fontovi, vizitke, pravila)",cij:[600,1200],trz:"od 160 € (Inventum), 1.000 € paket (HM Promotion)"},
@@ -9455,6 +9521,133 @@ function fpMrezeHTML(kl){
   ["facebook","Facebook",FP_MREZE.facebook],["instagram","Instagram",FP_MREZE.instagram]];
  return `<div class="fpl-mreze${kl?" "+kl:""}">${L.map(([i,n,u])=>u?`<a href="${esc(u)}" target="_blank" rel="noopener" aria-label="${n}" title="${n}">${fpIk(i,18)}</a>`
   :`<a onclick="fpSkoci('kontakt')" aria-label="${n}" title="${n}">${fpIk(i,18)}</a>`).join("")}</div>`;}
+
+/* ===== FOODPOINT 6: sidrene cijene na naslovnoj, 30 gotovih objava za društvene mreže (Upiti → Objave) ===== */
+FPI.sidro='<path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/>';
+FPI.puni='<path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/>';
+FPI.preuzmi='<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/>';
+FPI.sat='<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>';
+const FP_SIDRENE_DATUM="17. studenoga 2026.";
+
+/* ---------- traka na vrhu naslovne ---------- */
+function fpSidreneTrakaHTML(){
+ return `<div class="fpl-sidr"><div class="fpl-in">${fpIk("sidro",16)}<span><b>Sidrene cijene — obveza od ${FP_SIDRENE_DATUM}</b> Spremni smo: obrađujemo vaše postojeće jelovnike i izrađujemo nove.</span>
+  <a onclick="fpSkoci('kontakt')">Zatražite pripremu →</a></div></div>`;}
+
+/* ---------- 30 objava ----------
+   t = predložak: crvena | foto | svijetla | usporedba | ekran | lista | tamna
+   Na svakoj objavi je oznaka „Spremni za sidrene cijene”. cap = tekst ispod objave (opis + oznake). */
+const FP_OZNAKE="#Foodpoint #Zagreb #ugostitelji #restorani #sidrenecijene #onlinenarudžbe";
+const FP_OBJAVE=[
+ {t:"crvena",oz:"Sidrene cijene",ik:"sidro",h:"Sidrene cijene od 17. studenoga. <em>Jeste li spremni?</em>",p:"Uz svaku cijenu gost mora vidjeti i cijenu od 10. rujna. Mi to sredimo za vas — na jelovniku, webu i u strojno čitljivom cjeniku.",cta:"Pošaljite nam jelovnik",
+  cap:"Od 17. studenoga 2026. uz svaku cijenu na jelovniku mora stajati i sidrena cijena. Foodpoint priprema i obrađuje vaše postojeće jelovnike i izrađuje nove — usklađene, pregledne i spremne za tisak i web. Javite nam se na vrijeme."},
+ {t:"svijetla",oz:"Sidrene cijene",ik:"jelovnik",h:"Imate jelovnik? <em>Mi ga uskladimo.</em>",p:"Pošaljite postojeći jelovnik — upisujemo sidrene cijene, provjeravamo svaku stavku i vraćamo vam ga spremnog za tisak.",cta:"Obrada postojećeg jelovnika",
+  cap:"Ne treba vam novi jelovnik da biste bili usklađeni. Pošaljite nam postojeći, a mi dodajemo sidrene cijene i šaljemo vam ga gotovog za tisak i web."},
+ {t:"foto",foto:"hero",oz:"Novi jelovnik",h:"Novi jelovnik, <em>odmah usklađen.</em>",p:"Dizajn u vašem stilu, sa sidrenim cijenama, za stol i za web.",cta:"Zatražite ponudu",
+  cap:"Vrijeme je za novi jelovnik? Izrađujemo ga u vašem stilu, sa sidrenim cijenama od prvog dana — za stol, izlog i web."},
+ {t:"tamna",oz:"Sidrene cijene",ik:"graf",h:"Strojno čitljiv cjenik? <em>Objavljuje se sam.</em>",p:"S Foodpointom se sidrene cijene i cjenik za web ažuriraju sami nakon svake promjene cijene. Bez tablica i bez brige.",cta:"Pogledajte kako radi",
+  cap:"Uz sidrene cijene web stranica mora imati i strojno čitljiv cjenik. U Foodpointu se objavljuje sam, nakon svake promjene cijene."},
+ {t:"usporedba",oz:"Provizija",h:"Koliko vam uzima dostava?",a:["Wolt i Glovo","25–30 %"],b:["Foodpoint","10 %"],p:"Plus 49 € mjesečno. Prva 3 mjeseca samo 5 %.",cta:"Izračunajte uštedu",
+  cap:"Platforme za dostavu uzimaju 25–30 % svake narudžbe. S Foodpointom plaćate 49 € mjesečno i 10 % na online narudžbe — a prva 3 mjeseca samo 5 %."},
+ {t:"crvena",oz:"Uvodna ponuda",ik:"poklon",h:"Prva 3 mjeseca <em>samo 5 %</em>",p:"49 € mjesečno, postavljanje, unos jelovnika i obuka osoblja besplatni. Bez ugovorne obveze.",cta:"Postanite partner",
+  cap:"Uvodna ponuda za nove Foodpoint partnere: prva 3 mjeseca samo 5 % provizije. Postavljanje, unos jelovnika i obuka su besplatni."},
+ {t:"ekran",oz:"Vaša stranica",sl:"fp-ekran-vlasnik.png",h:"Vaš logo. Vaše boje. <em>Vaši gosti.</em>",p:"Moderna stranica za narudžbe na vašoj adresi — bez tuđeg imena na vrhu.",cta:"Pogledajte demo",
+  cap:"Gosti naručuju na vašoj stranici, u vašim bojama i s vašim logom. Moderno, brzo i bez tuđeg imena na vrhu."},
+ {t:"svijetla",oz:"Umjesto telefona",ik:"telefon",h:"Telefon zvoni, a kuhinja <em>ne stigne.</em>",p:"Prebacite narudžbe na stranicu: gost sam bira jela, dodatke i vrijeme, a vi dobivate točnu narudžbu bez zapisivanja.",cta:"Bez propuštenih poziva",
+  cap:"Manje telefoniranja, manje grešaka. Gosti naručuju sami, a kuhinja dobiva točnu narudžbu — s napomenama, adresom i načinom plaćanja."},
+ {t:"ekran",oz:"Kuhinja",sl:"fp-ekran-kuhinja.png",h:"Narudžba <em>zazvoni</em> u kuhinji.",p:"Kuhar potvrdi vrijeme pripreme jednim klikom, a gost ga odmah vidi na mobitelu.",cta:"Kuhinja bez papirića",
+  cap:"Svaka nova narudžba zazvoni na tabletu u kuhinji. Kuhar potvrdi vrijeme, gost ga odmah vidi. Kad je gužva, primanje narudžbi pauzirate jednim klikom."},
+ {t:"foto",foto:"stol",oz:"Kafići",h:"Gost sjedne, skenira <em>i naruči.</em>",p:"QR kod na stolu, narudžba stiže na šank. Konobar samo nosi.",cta:"QR narudžbe za kafiće",
+  cap:"Narudžbe sa stola preko QR koda: gost skenira kod na stolu i naruči s mobitela, a narudžba stiže ravno na šank."},
+ {t:"ekran",oz:"Vaši dostavljači",sl:"fp-ekran-vozac.png",mob:true,h:"Vaš dostavljač, <em>vaša ruta.</em>",p:"Ture, redoslijed adresa i naplata na mobitelu. Navigacija jednim klikom.",cta:"Aplikacija za dostavljače",
+  cap:"Vi zaposlite dostavljača, Foodpoint mu daje aplikaciju: ture, adrese po redu, naplata i navigacija jednim klikom. Vi vidite tko je što vozio i naplatio."},
+ {t:"tamna",oz:"Analitika",ik:"kupci",h:"Koliko vam se gostiju <em>vratilo</em> ovaj mjesec?",p:"Novi i stalni kupci, najprodavanija jela i najjači sati — na jednom ekranu.",cta:"Upoznajte svoje goste",
+  cap:"Znate li koji gosti se vraćaju, a koji su prestali naručivati? Foodpoint analitika pokazuje nove i stalne kupce, najprodavanija jela i kad naručuju."},
+ {t:"svijetla",oz:"Zakazivanje",ik:"kalendar",h:"Ručak za petak u 13 h? <em>Zakazano.</em>",p:"Gosti biraju dan i vrijeme dostave ili preuzimanja do 7 dana unaprijed.",cta:"Narudžbe unaprijed",
+  cap:"Gosti mogu zakazati narudžbu za točan dan i vrijeme — idealno za ručkove, proslave i uredske narudžbe."},
+ {t:"crvena",oz:"Plaćanje",ik:"kartica",h:"Apple Pay. Google Pay. <em>Kartica.</em>",p:"Gost plaća odmah online, a novac ide izravno na vaš račun.",cta:"Online plaćanje",
+  cap:"Online plaćanje Apple Payom, Google Payom ili karticom. Novac ide izravno vama, a kuhinja narudžbu vidi tek kad je plaćena."},
+ {t:"svijetla",oz:"Vjernost",ik:"poklon",h:"Svaka 10. pizza <em>gratis.</em>",p:"Program vjernosti bez kartica i aplikacija — gosti skupljaju narudžbe po broju mobitela.",cta:"Nagradite stalne goste",
+  cap:"Program vjernosti koji gosti stvarno koriste: bez kartica i registracije, narudžbe se broje po broju mobitela."},
+ {t:"foto",foto:"gost",oz:"Letci",h:"5.000 letaka <em>s QR kodom.</em>",p:"Dizajn, tisak i dostava na adresu lokala. Gost skenira i naruči.",cta:"Letci za vaš kvart",
+  cap:"Letci koji donose narudžbe: dizajn, tisak i dostava, s QR kodom koji vodi ravno na vaš jelovnik. Naravno, sa sidrenim cijenama."},
+ {t:"svijetla",oz:"Ambalaža",ik:"paket",h:"Kutije za pizzu <em>s vašim logom.</em>",p:"Svaka dostava je i reklama. Kutije, vrećice i naljepnice s vašim imenom.",cta:"Ambalaža s logom",
+  cap:"Kutije za pizzu, vrećice i naljepnice s vašim logom — svaka dostava postaje mala reklama za vaš lokal."},
+ {t:"tamna",oz:"Vozila",ik:"auto",h:"Vaš auto dostave <em>vozi reklamu.</em>",p:"Logo na autu, djelomično ili cijelo vozilo, skuteri i kutije za dostavu.",cta:"Brendiranje vozila",
+  cap:"Auto dostave po cijelom kvartu — idealno mjesto za vaš logo i broj. Radimo logo, djelomično i cijelo brendiranje vozila."},
+ {t:"crvena",oz:"Društvene mreže",ik:"megafon",h:"Objave i oglasi <em>za vaš kvart.</em>",p:"Vodimo Instagram i Facebook, ciljamo ljude u krugu dostave i šaljemo izvještaj svaki mjesec.",cta:"Vođenje mreža",
+  cap:"Nemate vremena za Instagram i Facebook? Mi radimo objave i oglase s ciljanjem na vaš kvart, a vi svaki mjesec dobivate izvještaj."},
+ {t:"foto",foto:"kuhinja",oz:"Fotografija",h:"Hrana koja se <em>prodaje očima.</em>",p:"Profesionalne fotografije jela za jelovnik, web i društvene mreže.",cta:"Fotografiranje jela",
+  cap:"Dobra fotografija prodaje jelo prije prvog zalogaja. Fotografiramo jela za vaš jelovnik, web i mreže — i odmah ih stavljamo u vašu Foodpoint stranicu."},
+ {t:"svijetla",oz:"Nabava",ik:"trgovina",h:"Plaćate namirnice <em>preskupo?</em>",p:"Tražimo jeftinije dobavljače za namirnice, piće i ambalažu, a narudžbu šaljete jednim klikom.",cta:"Jeftinija nabava",
+  cap:"Uspoređujemo cijene i tražimo jeftinije dobavljače za vaš lokal. U Foodpointu narudžbu dobavljaču šaljete jednim klikom."},
+ {t:"lista",oz:"Sve na jednom mjestu",h:"Sve za vaš lokal",l:["Online narudžbe i kuhinja","Aplikacija za dostavljače","Analitika i troškovi","Jelovnici sa sidrenim cijenama","Letci, ambalaža, vozila","Oglasi na mrežama"],cta:"Foodpoint partner",
+  cap:"Narudžbe, kuhinja, dostavljači, analitika, jelovnici sa sidrenim cijenama, tisak, ambalaža i oglasi — sve na jednom mjestu, kod jednog partnera."},
+ {t:"tamna",oz:"Foodpoint partner",ik:"kupci",h:"Vi zaposlite dostavljača. <em>Mi radimo sve ostalo.</em>",p:"Od narudžbi i kuhinje do letaka, jelovnika i oglasa.",cta:"Postanite partner",
+  cap:"Foodpoint je partner za ugostitelje: vi zaposlite dostavljača, a mi radimo sve ostalo — koliko god želite."},
+ {t:"crvena",oz:"Brzo",ik:"sat",h:"Gotovo za <em>2–5 dana.</em>",p:"Unesemo jelovnik, slike i logo, postavimo QR kodove i obučimo osoblje.",cta:"Krenite ovaj tjedan",
+  cap:"Od prvog razgovora do prve narudžbe za 2–5 radnih dana. Mi unosimo jelovnik, slike i logo, a vi dobivate gotove linkove i QR kodove."},
+ {t:"svijetla",oz:"Bez obveze",ik:"kvaka",h:"Bez ugovorne <em>obveze.</em>",p:"Pretplata je mjesečna. Ostajete jer vam se isplati, a ne zbog ugovora.",cta:"Isprobajte",
+  cap:"Bez dugih ugovora: Foodpoint plaćate mjesečno i otkazujete kad želite."},
+ {t:"usporedba",oz:"Primjer",h:"300 narudžbi po 20 € mjesečno",a:["Na Woltu","1.680 €"],b:["Foodpoint","649 €"],p:"Ušteda oko 1.000 € mjesečno.",cta:"Izračunajte svoju",
+  cap:"Primjer: 300 online narudžbi mjesečno po 20 €. Na platformi za dostavu provizija je oko 1.680 €, a s Foodpointom 649 € (49 € + 10 %)."},
+ {t:"foto",foto:"dostava",oz:"Demo",h:"Isprobajte kao <em>vaš gost.</em>",p:"Otvorite demo restoran Casa Lume i naručite od početka do kraja.",cta:"foodpoint · demo",
+  cap:"Želite vidjeti kako to izgleda vašim gostima? Otvorite naš demo restoran Casa Lume i prođite cijelu narudžbu."},
+ {t:"svijetla",oz:"Troškovi",ik:"vaga",h:"Znate li maržu <em>svakog jela?</em>",p:"Normativi, nabava, troškovi i plaće — vidite koliko vam stvarno ostaje.",cta:"Kontrola poslovanja",
+  cap:"Koliko vam stvarno ostaje od svake pizze? Normativi, troškovi i nabava u Foodpointu pokazuju maržu svakog jela."},
+ {t:"tamna",oz:"Sidrene cijene",ik:"sidro",h:"Inspekcija pita za <em>sidrene cijene?</em>",p:"S Foodpointom su istaknute na jelovniku i webu, a cjenik je uvijek ažuran.",cta:"Budite mirni",
+  cap:"Sidrene cijene istaknute na jelovniku i webu, strojno čitljiv cjenik uvijek ažuran. Pripremamo postojeće i izrađujemo nove jelovnike."},
+ {t:"crvena",oz:"Zagreb",ik:"lokacija",h:"Partner za ugostitelje <em>u Zagrebu.</em>",p:"Restorani, pizzerije, kafići i pekare. Javite nam se za ponudu.",cta:"Zatražite ponudu",
+  cap:"Foodpoint — partner za ugostitelje u Zagrebu. Online narudžbe, kontrola poslovanja, jelovnici sa sidrenim cijenama i sve što vašem lokalu treba."}];
+
+let fpO={puni:null};
+function fpObjavaHTML(o,i){
+ const L=`<div class="fpo-logo"><img src="/foodpoint-ikona-192.png" alt="">Foodpoint</div>`;
+ const S=`<div class="fpo-sidr">${fpIk("sidro",12)}Spremni za sidrene cijene</div>`;
+ const oz=`<div class="fpo-oz">${esc(o.oz)}</div>`;
+ const cta=`<div class="fpo-cta">${esc(o.cta)} →</div>`;
+ let tijelo="";
+ if(o.t==="foto")tijelo=`<div class="fpo-foto" style="background-image:url('${FP_U(FP_SLIKE[o.foto],1080,1080)}')"></div><div class="fpo-sjena"></div>
+  <div class="fpo-sad">${L}<div class="fpo-dno">${oz}<h2>${o.h}</h2><p>${o.p}</p>${cta}</div></div>`;
+ else if(o.t==="usporedba")tijelo=`<div class="fpo-sad">${L}${oz}<h2>${o.h}</h2>
+  <div class="fpo-usp"><div class="los"><small>${esc(o.a[0])}</small><b>${o.a[1]}</b></div><div class="dob"><small>${esc(o.b[0])}</small><b>${o.b[1]}</b></div></div>
+  <p>${o.p}</p>${cta}</div>`;
+ else if(o.t==="ekran")tijelo=`<div class="fpo-sad">${L}${oz}<h2>${o.h}</h2><p>${o.p}</p>
+  <div class="fpo-ekran${o.mob?" mob":""}"><img src="/${o.sl}" alt=""></div></div>`;
+ else if(o.t==="lista")tijelo=`<div class="fpo-sad">${L}${oz}<h2>${o.h}</h2>
+  <ul>${o.l.map(x=>`<li>${fpIk("kvaka",16)}${esc(x)}</li>`).join("")}</ul>${cta}</div>`;
+ else tijelo=`<div class="fpo-sad">${L}${o.ik?`<div class="fpo-ik">${fpIk(o.ik,40)}</div>`:""}${oz}<h2>${o.h}</h2><p>${o.p}</p>${cta}</div>`;
+ return `<div class="fpo-post t-${o.t}" data-i="${i}">${tijelo}${S}</div>`;}
+function fpObjaveHTML(){
+ return `<div class="fpo">
+  <div class="fpc-pravila"><b>30 objava za Instagram i Facebook</b><ul>
+   <li>Svaka objava je kvadrat 1080 × 1080. Klikni ${fpIk("puni",14)} za prikaz preko cijelog ekrana i napravi screenshot, ili ${fpIk("preuzmi",14)} za preuzimanje slike.</li>
+   <li>Ispod svake objave je gotov tekst s oznakama — klikni „Kopiraj tekst” i zalijepi ga u objavu.</li>
+   <li>Na svakoj objavi piše „Spremni za sidrene cijene”, a 5 objava je posvećeno samo sidrenim cijenama.</li></ul></div>
+  <div class="fpo-mreza">${FP_OBJAVE.map((o,i)=>`<div class="fpo-kart">
+   <div class="fpo-okvir">${fpObjavaHTML(o,i)}</div>
+   <div class="fpo-akc"><span>#${i+1}</span>
+    <button onclick="fpObjavaPuni(${i})" title="Preko cijelog ekrana">${fpIk("puni",16)}</button>
+    <button onclick="fpObjavaPreuzmi(${i},this)" title="Preuzmi sliku">${fpIk("preuzmi",16)}</button>
+    <button class="tx" onclick="fpObjavaKopiraj(${i})">${fpIk("kopiraj",15)} Kopiraj tekst</button></div>
+   <p class="fpo-cap">${esc(o.cap)}<br><span>${esc(FP_OZNAKE)}</span></p></div>`).join("")}</div></div>`;}
+function fpObjavaPuni(i){
+ const w=document.createElement("div"); w.className="fpo-puni"; w.id="fpo-puni";
+ w.innerHTML=`<div class="fpo-puni-okvir">${fpObjavaHTML(FP_OBJAVE[i],i)}</div>
+  <div class="fpo-puni-akc"><button onclick="fpObjavaPuni(${(i+FP_OBJAVE.length-1)%FP_OBJAVE.length});this.closest('.fpo-puni').remove()">←</button><span>${i+1} / ${FP_OBJAVE.length}</span>
+   <button onclick="fpObjavaPuni(${(i+1)%FP_OBJAVE.length});this.closest('.fpo-puni').remove()">→</button><button onclick="this.closest('.fpo-puni').remove()">Zatvori</button></div>`;
+ const st=el("fpo-puni"); if(st)st.remove(); document.body.appendChild(w);}
+function fpObjavaKopiraj(i){const o=FP_OBJAVE[i]; try{navigator.clipboard.writeText(o.cap+"\n\n"+FP_OZNAKE); fpUPoruka("Tekst objave kopiran");}catch(e){fpUPoruka("Označi tekst i kopiraj ručno");}}
+function fpUcitajH2C(){return new Promise((ok,ne)=>{if(window.html2canvas)return ok();
+ const s=document.createElement("script"); s.src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"; s.onload=()=>ok(); s.onerror=ne; document.head.appendChild(s);});}
+async function fpObjavaPreuzmi(i,btn){
+ if(btn)btn.disabled=true;
+ const w=document.createElement("div"); w.className="fpo-izvoz"; w.innerHTML=fpObjavaHTML(FP_OBJAVE[i],i); document.body.appendChild(w);
+ try{await fpUcitajH2C(); await new Promise(r=>setTimeout(r,400));
+  const c=await html2canvas(w.firstElementChild,{useCORS:true,backgroundColor:null,scale:1,width:1080,height:1080});
+  const a=document.createElement("a"); a.download=`foodpoint-objava-${String(i+1).padStart(2,"0")}.png`; a.href=c.toDataURL("image/png"); a.click();
+ }catch(e){fpUPoruka("Preuzimanje nije uspjelo — otvori objavu preko cijelog ekrana i napravi screenshot.");}
+ w.remove(); if(btn)btn.disabled=false;}
 
 start();
 </script>
