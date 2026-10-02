@@ -2798,6 +2798,41 @@ body.zg .zg-vj{position:relative;z-index:2;max-width:760px;margin:12px auto 4px;
 @media(max-width:380px){.fpl-nav .fpl-mreze a:first-child{display:none}}
 html[lang=en] .fpl-paket.istaknut::before{content:"Most popular"}
 
+/* ---- reels 31–80: titlovi, razgovor, kartica ---- */
+.fpr-titl .fpr-bg::after{background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 26%,rgba(0,0,0,.15) 45%,rgba(0,0,0,.82) 72%,rgba(0,0,0,.9) 100%)}
+.fpr-cap{position:absolute;left:8cqw;right:14cqw;top:40cqw;bottom:58cqw;display:flex;flex-direction:column;justify-content:flex-end;z-index:2}
+.fpr-cap .kic{align-self:flex-start;background:#C9191A;color:#fff;font-size:3.6cqw;font-weight:800;padding:1.6cqw 3.2cqw;border-radius:99px;margin-bottom:3.5cqw;opacity:0}
+.fpr-titl.on .kic{animation:fprGore .5s .1s ease-out both}
+.fpr-cap p{margin:0;font-size:7.4cqw;line-height:1.24;font-weight:800;letter-spacing:-.02em;color:#fff;text-shadow:0 .4cqw 2cqw rgba(0,0,0,.55)}
+.fpr-cap .w{opacity:.0}
+.fpr-titl.on .w{animation:fprRijec .35s ease-out both;animation-delay:calc(.45s + var(--i)*.24s)}
+@keyframes fprRijec{from{opacity:0;transform:translateY(1.6cqw)}to{opacity:1;transform:none}}
+.fpr-cap .w.ist{background:#C9191A;color:#fff;padding:0 1.4cqw;border-radius:1.4cqw;text-shadow:none;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.fpr-razg{background:#FFF8F4;color:#17120F}
+.fpr-razg .fpr-tx{top:36cqw;bottom:56cqw}
+.fpr-razg .raz{display:flex;flex-direction:column;gap:2.8cqw}
+.fpr-razg .bub{max-width:80%;font-size:4.7cqw;line-height:1.35;font-weight:600;padding:3cqw 4cqw;border-radius:5cqw;opacity:0;box-shadow:0 1cqw 3cqw rgba(23,18,15,.08)}
+.fpr-razg .bub small{display:block;font-size:2.7cqw;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.8cqw;opacity:.7}
+.fpr-razg .bub.v{align-self:flex-start;background:#fff;border:.3cqw solid #EFE4DE;border-bottom-left-radius:1.4cqw}
+.fpr-razg .bub.f{align-self:flex-end;background:#C9191A;color:#fff;border-bottom-right-radius:1.4cqw}
+.fpr-razg.on .bub{animation-name:fprBub;animation-duration:.45s;animation-timing-function:cubic-bezier(.2,.9,.3,1.2);animation-fill-mode:both}
+@keyframes fprBub{from{opacity:0;transform:translateY(4cqw) scale(.92)}to{opacity:1;transform:none}}
+.fpr-reel:has(.fpr-razg.on) .fpr-wm,.fpr-reel:has(.fpr-kart.on) .fpr-wm{filter:none;content:url(/foodpoint-vodoravno-crveni.png)}
+.fpr-kart{background:#FFF8F4;color:#17120F}
+.fpr-kart .kk{background:#fff;border-radius:6cqw;padding:7cqw 6.5cqw;box-shadow:0 4cqw 10cqw rgba(23,18,15,.1);border:.3cqw solid #F0E5DF;opacity:0}
+.fpr-kart .ik{width:15cqw;height:15cqw;border-radius:4.5cqw;background:#C9191A;color:#fff;display:grid;place-items:center;margin-bottom:4.5cqw}
+.fpr-kart .ik svg{width:8cqw;height:8cqw}
+.fpr-kart h4{margin:0 0 2.6cqw;font-size:7cqw;line-height:1.1;font-weight:800;letter-spacing:-.025em;color:#17120F;text-transform:none;font-family:inherit}
+.fpr-kart p{margin:0;font-size:4.7cqw;line-height:1.45;color:#4A403B;font-weight:500}
+.fpr-kart.on .kk{animation:fprGore .6s .15s cubic-bezier(.2,.9,.3,1.1) both}
+.fpr-kart.on .ik{animation:fprPop .6s .5s cubic-bezier(.2,.9,.3,1.25) both}
+.fpr-broj .fpr-tx.dug .b{font-size:21cqw}
+.fpr-razg .fpr-tx,.fpr-kart .fpr-tx,.fpr-lista .fpr-tx{top:32cqw;bottom:52cqw}
+.fpr-razg .bub{font-size:4.4cqw}
+.fpr-cap p{font-size:8.2cqw}
+.fpr-razg .bub{font-size:5cqw;max-width:84%}
+.fpr-razg .bub small{font-size:2.9cqw}
+
 .fp-logo{display:inline-flex;align-items:center;gap:calc(var(--v)*.32);font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-weight:800;
  font-size:calc(var(--v)*.86);letter-spacing:-.02em;line-height:1;text-transform:none;white-space:nowrap;vertical-align:middle}
 .fp-logo img{width:calc(var(--v)*1.3);height:calc(var(--v)*1.3);border-radius:28%;display:block;flex:none}
@@ -9916,7 +9951,7 @@ const FP_REELS=[
 
 /* ---------- zajednički dijelovi ---------- */
 let fpO={skup:"a",puni:null};
-const FP_O_SKUPOVI=[["a","Objave 1–30"],["b","Objave 31–60"],["r","Reels 1–30"]];
+const FP_O_SKUPOVI=[["a","Objave 1–30"],["b","Objave 31–60"],["r","Reels 1–30"],["r2","Reels 31–80"]];
 const fpOSidr=()=>`<span class="fpo-sidr">${fpIk("sidro",14)}Spremni za sidrene cijene</span>`;
 const fpOLogo=(bijeli,kl)=>`<img class="fpo-logo${kl?" "+kl:""}" src="${FP_LOGO_V(bijeli)}" alt="Foodpoint" crossorigin="anonymous">`;
 const fpODno=(o,bijeli)=>`<div class="fpo-dno"><span class="fpo-cta">${esc(o.cta||"Foodpoint partner")} <b>→</b></span>${fpOSidr()}</div>`;
@@ -9958,9 +9993,10 @@ function fpOPostB(o){
 /* reel: scene + odjava */
 const fpRRijeci=t=>esc(t).split(" ").map((w,i)=>`<span class="w" style="--i:${i}">${w}</span>`).join(" ");
 function fpRScena(s){
+ if(s.v==="t"||s.v==="r"||s.v==="k") return fpRScena2(s);
  if(s.v==="foto") return `<div class="fpr-sc fpr-foto" data-t="2700"><div class="fpr-bg" style="${fpBg(s.f,1080,1920)}"></div><div class="fpr-tx dno"><h3>${fpRRijeci(s.h)}</h3></div></div>`;
  if(s.v==="naslov") return `<div class="fpr-sc fpr-naslov" data-t="${1900+s.h.split(" ").length*130}"><div class="fpr-tx"><h3>${fpRRijeci(s.h)}</h3></div></div>`;
- if(s.v==="broj") return `<div class="fpr-sc fpr-broj" data-t="3200"><div class="fpr-tx"><div class="a">${esc(s.a)}</div><div class="b">${esc(s.b)}</div>${s.p?`<p>${esc(s.p)}</p>`:""}</div></div>`;
+ if(s.v==="broj") return `<div class="fpr-sc fpr-broj" data-t="3200"><div class="fpr-tx${s.b.length>4?" dug":""}"><div class="a">${esc(s.a)}</div><div class="b">${esc(s.b)}</div>${s.p?`<p>${esc(s.p)}</p>`:""}</div></div>`;
  if(s.v==="lista") return `<div class="fpr-sc fpr-lista" data-t="${1400+s.l.length*420}"><div class="fpr-tx"><ul>${s.l.map((x,i)=>`<li style="--i:${i}">${fpIk("kvaka",20)}<span>${esc(x)}</span></li>`).join("")}</ul></div></div>`;
  if(s.v==="ekran") return `<div class="fpr-sc fpr-ekran" data-t="3000"><div class="fpr-tel${s.mob?" mob":""}"><img src="/${s.sl}" alt=""></div>
    <div class="fpr-not">${fpIk("zvono",18)}<span><b>Foodpoint</b>${esc(s.n||"")}</span></div></div>`;
@@ -9970,7 +10006,7 @@ function fpRScena(s){
 function fpReelHTML(r){
  return `<div class="fpr-reel">${r.s.map(fpRScena).join("")}
   <div class="fpr-sc fpr-odjava" data-t="3600"><div class="fpr-tx"><img class="znak" src="${FP_LOGO_K}" alt="Foodpoint">
-   <div class="tag">Partner za ugostitelje</div><div class="cta">${esc(r.cta||"Javite nam se")} →</div>${fpOSidr()}</div></div>
+   <div class="tag">${esc(r.tag||"Partner za ugostitelje")}</div><div class="cta">${esc(r.cta||"Javite nam se")} →</div>${fpOSidr()}</div></div>
   <img class="fpr-wm" src="${FP_LOGO_V(1)}" alt=""><div class="fpr-prog"><i></i></div></div>`;}
 
 /* ---------- pokretanje reelova: igraju samo kad su na ekranu ---------- */
@@ -9989,12 +10025,13 @@ function fpRInit(){
  document.querySelectorAll(".fpr-reel:not([data-ok])").forEach(el=>{el.dataset.ok=1; if(fpRObs)fpRObs.observe(el); else {el._vid=true; fpRKorak(el);}});}
 
 /* ---------- prikaz u Upiti → Objave ---------- */
-function fpOLista(){return fpO.skup==="b"?FP_OBJAVE2:fpO.skup==="r"?FP_REELS:FP_OBJAVE;}
-function fpOStavka(o){return fpO.skup==="r"?fpReelHTML(o):fpO.skup==="b"?fpOPostB(o):fpOPostA(o);}
+const fpOJeR=()=>fpO.skup==="r"||fpO.skup==="r2";
+function fpOLista(){return fpO.skup==="b"?FP_OBJAVE2:fpO.skup==="r"?FP_REELS:fpO.skup==="r2"?FP_REELS2:FP_OBJAVE;}
+function fpOStavka(o){return fpOJeR()?fpReelHTML(o):fpO.skup==="b"?fpOPostB(o):fpOPostA(o);}
 const FP_O_NAZ={crvena:"Crvena",svijetla:"Svijetla",tamna:"Tamna",foto:"Fotografija",usporedba:"Usporedba",ekran:"Ekran",lista:"Popis",
  lf:"Logo + fotografija",split:"Podijeljena",okvir:"Okvir",kolaz:"Kolaž",potpis:"Znak",traka:"Traka"};
 function fpObjaveHTML(){
- const r=fpO.skup==="r", L=fpOLista(), od=fpO.skup==="b"?30:0;
+ const r=fpOJeR(), L=fpOLista(), od=fpO.skup==="b"||fpO.skup==="r2"?30:0;
  setTimeout(fpRInit,0);
  return `<div class="fpo-uvod"><div><h2>${r?"Reels za Instagram i TikTok":"Objave za Instagram i Facebook"}</h2>
    <p>${r?"Format 1080×1920 (9:16). Tekst je unutar sigurne zone, pa ga gumbi i opis na Reelsu ne prekrivaju. Za video: otvorite reel preko cijelog ekrana, pokrenite snimanje ekrana na mobitelu i dodirnite reel — krene od početka.":
@@ -10003,14 +10040,14 @@ function fpObjaveHTML(){
   <div class="fpo-skup">${FP_O_SKUPOVI.map(([k,n])=>`<button class="${fpO.skup===k?"on":""}" onclick="fpO.skup='${k}';zoomCrtaj()">${n}</button>`).join("")}</div></div>
  <div class="fpo-mreza${r?" r":""}">${L.map((o,i)=>`<div class="fpo-kart">
   <div class="fpo-okvir${r?" fpr-okvir":""}">${fpOStavka(o)}</div>
-  <div class="fpo-info"><span class="br">${r?"Reel":"#"}${i+1+od}</span><span class="tip">${esc(r?o.n:FP_O_NAZ[o.t]||o.t)}</span>
+  <div class="fpo-info"><span class="br">${r?"Reel":"#"}${i+1+od}</span><span class="tip">${esc(r?o.n:FP_O_NAZ[o.t]||o.t)}${r?` · ${fpRTrajanje(o)} s`:""}</span>
    <span class="gumbi"><button title="Preko cijelog ekrana" onclick="fpOPuni(${i})">${fpIk("puni",16)}</button>
    <button title="Kopiraj tekst objave" onclick="fpOKopiraj(${i},this)">${fpIk("kopiraj",16)}</button>
    ${r?"":`<button title="Preuzmi PNG 1080×1350" onclick="fpOPreuzmi(${i},this)">${fpIk("preuzmi",16)}</button>`}</span></div>
   <details class="fpo-cap"><summary>Tekst objave</summary><p>${esc(o.cap||"")}</p><p class="oz">${FP_OZNAKE}</p></details></div>`).join("")}</div>`;}
 
 function fpOPuni(i){
- const r=fpO.skup==="r", o=fpOLista()[i]; fpOZatvori();
+ const r=fpOJeR(), o=fpOLista()[i]; fpOZatvori();
  const d=document.createElement("div"); d.id="fpo-puni"; d.className=r?"r":"";
  d.innerHTML=`<div class="fpo-puni-in${r?" fpr-okvir":" fpo-okvir"}">${fpOStavka(o)}${r?`<div class="fpr-kreni">${fpIk("igraj",34)}<span>Pokrenite snimanje ekrana,<br>pa dodirnite za početak</span></div>`:""}</div>
   <div class="fpo-puni-gumbi"><button onclick="fpOPuni(${(i+fpOLista().length-1)%fpOLista().length})">‹</button><button onclick="fpOZatvori()">${fpIk("zatvori",18)}</button><button onclick="fpOPuni(${(i+1)%fpOLista().length})">›</button></div>`;
@@ -10272,6 +10309,320 @@ function fpPrevediTekst(n){
   const t=fpEnTekst(document.title); if(t)document.title=t;
   const k=document.getElementById("fp-kalk"); if(k&&!k.dataset.en){k.dataset.en=1; fpKalk(k.value);}
  }).observe(app,{childList:true,subtree:true});})();
+
+/* ===== FOODPOINT 9: 50 dužih reelova s titlovima — toplije, jasnije, s novim fotografijama =====
+   Nove scene:  t = fotografija + titl koji se pojavljuje riječ po riječ (kao da netko priča); *riječ* = istaknuto
+                r = razgovor u porukama (v: vlasnik lokala, f: Foodpoint)
+                k = kartica s objašnjenjem (ikona, naslov, kratko objašnjenje) */
+Object.assign(FP_FOTO,{
+ vlasnica:"1599816434832-ac339dd3bc61",konobarica:"1775403834269-ca05a5d3609e",vlasnik_ulaz:"1723210732697-b5d9d6fdef93",vlasnik_pregaca:"1569683236049-bc137196a02a",
+ kuharica:"1685721867706-0e44bce97d0d",barista:"1718791985055-e1b06ef5961d",barista2:"1631270275227-0abd3ad56b34",kava_stol:"1693572292294-2f80e1d03cf1",
+ kava_toci:"1515860734122-e0d771b36d3e",pekara:"1571942948809-74637bfc59b9",pekara_peciva:"1705972018470-a89eda1c6ce4",kruh:"1515182629504-727d7753751f",
+ kolaci:"1686515266396-080c4939e6b4",kruh_stol:"1598390475281-9eb7782fb4cf",pekara2:"1753012234431-1e45e90977b0",mob_narudzba:"1760888549280-4aef010720bd",
+ foto_hrane:"1564697364552-7f25dd160f2f",stol_jelovnik:"1773929279046-353db49d8bfe",mob_kutija:"1609405978461-63be963705b5",dostavljac_ulica:"1623652621708-e641fe4810f1",
+ vrecica:"1720827965169-13ba59a6ebc8",vrecica2:"1720827965137-e11e49ac6fa3",prijatelji_tv:"1772724317967-9e244a157ac9",prijatelji_pizza:"1772724317931-5b92c842ab53",
+ pizza_mob:"1614442042855-e17d53875286",pizza_ponos:"1772724317818-04ac3d16f768",pizza_kutija:"1622883618971-97068745dc6c",kuhinja_ekipa:"1739970469578-3311c916a65d",
+ kuhar_lonac:"1565608087341-404b25492fee",kuhar_noc:"1769955817432-641929f613f0",bistro:"1583354608715-177553a4035e",restoran_drvo:"1636405189493-181ecf851006",
+ restoran_sala:"1652195960911-c9f55224bd89",blagovaona:"1679312061521-d7d619a8cfb7",konobar:"1719573019827-d06944a0c2be",pladanj:"1511421661275-e389971ff6ba",
+ konobar_tanjur:"1653643629459-d7ed043ad799",konobar_burgeri:"1751810105833-001843080aa1",obitelj:"1627662166825-a860471632e4",jelovnik_papir:"1625173616412-7b403d49a41e",
+ gost_jelovnik:"1676299806240-cc1686ef06b5",jelovnik_stol:"1710732652617-264d6f860546",jelovnik_blizu:"1670954951673-da8efc637ca7",raznjici:"1603360946369-dc9bb6258143",
+ meso:"1611171711791-b34fa42e9fc2",meso2:"1576511053046-7e445c5b95af",tanjur:"1670508183158-d1a3cbf5239a"});
+
+/* ---------- prikaz novih scena ---------- */
+const fpRBroj=t=>t.trim().split(/\s+/).length;
+function fpRTitl(t){let i=0;
+ return esc(t).split(/\s+/).map(w=>{const ist=/^\*.*\*[.,!?:]?$/.test(w); const c=w.replace(/\*/g,""); return `<span class="w${ist?" ist":""}" style="--i:${i++}">${c}</span>`;}).join(" ");}
+function fpRScena2(s){
+ if(s.v==="t"){const n=fpRBroj(s.t);
+  return `<div class="fpr-sc fpr-titl" data-t="${2000+n*270}"><div class="fpr-bg" style="${fpBg(s.f,1080,1920)}"></div>
+   <div class="fpr-cap">${s.k?`<div class="kic">${esc(s.k)}</div>`:""}<p>${fpRTitl(s.t)}</p></div></div>`;}
+ if(s.v==="r"){let d=.35;
+  const b=s.m.map(x=>{const f=x.startsWith("f:"), t=x.slice(2).trim(), h=`<div class="bub ${f?"f":"v"}" style="animation-delay:${d.toFixed(2)}s"><small>${f?"Foodpoint":"Vlasnik lokala"}</small>${esc(t)}</div>`;
+   d+=.85+fpRBroj(t)*.13; return h;}).join("");
+  return `<div class="fpr-sc fpr-razg" data-t="${Math.round((d+1.6)*1000)}"><div class="fpr-tx"><div class="raz">${b}</div></div></div>`;}
+ if(s.v==="k") return `<div class="fpr-sc fpr-kart" data-t="${2400+fpRBroj(s.n+" "+s.t)*210}"><div class="fpr-tx"><div class="kk">
+   <div class="ik">${fpIk(s.ik||"kvaka",26)}</div><h4>${esc(s.n)}</h4><p>${esc(s.t)}</p></div></div></div>`;
+ return "";}
+function fpRTrajanje(r){const d=document.createElement("div"); d.innerHTML=fpReelHTML(r);
+ return Math.round([...d.querySelectorAll(".fpr-sc")].reduce((a,x)=>a+(+x.dataset.t||2700),0)/1000);}
+
+/* ---------- 50 reelova ---------- */
+const FP_REELS2=(()=>{
+ const T=(f,t,k)=>({v:"t",f,t,k}), R=(...m)=>({v:"r",m}), K=(ik,n,t)=>({v:"k",ik,n,t}), N=h=>({v:"naslov",h}),
+  L=l=>({v:"lista",l}), B=(a,b,p)=>({v:"broj",a,b,p}), S=(j,c,z)=>({v:"sidro",j,c,z}), E=(sl,n,mob)=>({v:"ekran",sl,n,mob});
+ return [
+ {n:"Tko smo mi",cta:"Javite nam se",tag:"Popijmo kavu i pokažemo vam sve",s:[
+  T("vlasnik_ulaz","Imate lokal. Znate kako je: *kuhinja*, gosti, nabava, telefon koji ne staje."),
+  T("kuhinja_ekipa","Mi smo Foodpoint. Mala ekipa koja ugostiteljima *skida posao s leđa*."),
+  T("mob_narudzba","Napravimo vam stranicu za narudžbe s vašim imenom, povežemo je s kuhinjom i dostavljačem."),
+  T("pizza_ponos","A vi radite ono što najbolje znate — *kuhate*.")],
+  cap:"Tko smo? Ekipa koja ugostiteljima pomaže da manje vremena troše na telefon i papiriće, a više na ono što vole — hranu i goste. Javite se, rado ćemo vam sve pokazati uživo."},
+ {n:"Narudžba od početka do kraja",cta:"Pogledajte demo",s:[
+  K("telefon","1. Gost naruči","Otvori vašu stranicu ili skenira QR kod, odabere jela i pošalje narudžbu. Bez registracije i bez aplikacije."),
+  K("zvono","2. Kuhinja dobije narudžbu","Tablet u kuhinji zazvoni. Kuhar potvrdi koliko će trebati, a gost to odmah vidi na mobitelu."),
+  K("dostava","3. Vaš dostavljač je odveze","Vozač na mobitelu vidi adresu, što nosi i koliko naplaćuje. Navigacija se otvara jednim klikom."),
+  T("pizza_kutija","I to je to. Bez zapisivanja na papir i bez *krivo shvaćenih* adresa.")],
+  cap:"Kako izgleda jedna narudžba s Foodpointom? Gost naruči na vašoj stranici, kuhinja je odmah vidi, a vaš dostavljač je odveze. Jednostavno, bez papirića."},
+ {n:"Provizija objašnjena",cta:"Izračunajte svoju uštedu",s:[
+  T("pizza_ruke","Gost naruči za *20 €*. Koliko od toga ostaje vama?","Jednostavna računica"),
+  B("5–6 €","2 €","toliko ide platformi, a toliko nama"),
+  T("konobar_tanjur","Na velikim platformama za dostavu plaćate *25–30 %* od svake narudžbe."),
+  T("pizza_ponos","S Foodpointom je to *10 %* i 49 € mjesečno. Ostatak ostaje u vašem lokalu.")],
+  cap:"Na narudžbi od 20 € platforme za dostavu uzmu 5–6 €. S Foodpointom je to 2 € (10 %) uz 49 € mjesečno. Razlika ostaje vama — svaki dan, svaku narudžbu."},
+ {n:"Što su sidrene cijene",cta:"Pošaljite nam jelovnik",s:[
+  T("gost_jelovnik","Od *17. studenoga* na jelovnicima se mijenja jedna važna stvar.","Sidrene cijene, jednostavno"),
+  K("sidro","Što je sidrena cijena?","Uz današnju cijenu jela mora stajati i njegova cijena od 10. rujna. Tako gost odmah vidi je li cijena porasla."),
+  S("Pizza Margherita","9,50 €","9,00 €"),
+  T("jelovnik_stol","Mi to *upišemo za vas* — na jelovnik za stol, na web i u cjenik koji država traži.")],
+  cap:"Sidrene cijene objašnjene u 20 sekundi: uz svaku cijenu na jelovniku mora pisati i cijena od 10. rujna. Mi to uredimo za vas, na papiru i na webu."},
+ {n:"Do 17. studenoga u 3 koraka",cta:"Krenimo na vrijeme",s:[
+  N("Tri koraka do usklađenog jelovnika."),
+  K("jelovnik","Pošaljete nam jelovnik","Slika mobitelom, PDF ili Word — kako god vam je lakše."),
+  K("sidro","Mi upišemo sidrene cijene","Provjerimo svaku stavku i složimo uredan, pregledan jelovnik."),
+  K("printer","Vi dobijete gotov jelovnik","Spreman za tisak i objavljen na webu. Ako želite, i isprintamo ga."),
+  T("chef_tanjur","Vi se brinete o hrani, a mi o *papirologiji*.")],
+  cap:"Kako se pripremiti za sidrene cijene? Pošaljite nam postojeći jelovnik, mi upišemo sidrene cijene i vratimo vam ga gotovog za tisak i web."},
+ {n:"Petak navečer",cta:"Narudžbe bez telefona",s:[
+  T("kuhar_noc","Petak, 20 h. Pećnica puna, a *telefon zvoni* po peti put."),
+  R("v: Halo? Možete ponoviti adresu?","v: Bez luka na jednoj, s duplim sirom na drugoj…","f: A da gosti to sami upišu?"),
+  T("mob_narudzba","Gost sam odabere jela, dodatke i adresu. Sve stigne *napisano*, bez greške."),
+  E("fp-ekran-kuhinja.png","Nova narudžba · 2 pizze, bez luka")],
+  cap:"Petak navečer i telefon koji ne staje — znamo to. S Foodpointom gosti sami upisuju narudžbu, a kuhinja je dobiva točnu i napisanu."},
+ {n:"Vaš dostavljač, naša aplikacija",cta:"Aplikacija za vozače",s:[
+  T("dostava_skuter","Foodpoint *nije* služba za dostavu. Dostavljač je vaš — vi ga zaposlite."),
+  T("dostavljac_ulica","Mi mu damo aplikaciju na mobitelu: *adrese po redu*, što nosi i koliko naplaćuje."),
+  E("fp-ekran-vozac.png","Tura · 3 adrese po redu",true),
+  T("vlasnik_pregaca","A vi u svakom trenutku vidite tko je što odvezao i koliko je naplatio.")],
+  cap:"Vi zaposlite dostavljača, a Foodpoint mu daje aplikaciju s turama i adresama po redu. Vi imate pregled tko je što vozio i naplatio."},
+ {n:"QR za kafiće",cta:"QR narudžbe za vaš kafić",s:[
+  T("kava_stol","Gost sjedne i čeka konobara. Konobar je na terasi, s *punim pladnjem*."),
+  K("qr","Na stolu je QR kod","Gost ga skenira mobitelom, vidi cjenik i naruči. Ništa ne mora instalirati."),
+  T("barista","Narudžba stiže *ravno na šank*, s brojem stola."),
+  T("konobar","Konobar samo nosi. Manje trčanja, manje grešaka, više zadovoljnih gostiju.")],
+  cap:"QR kod na stolu: gost skenira, naruči s mobitela, a narudžba stiže na šank s brojem stola. Konobar samo nosi."},
+ {n:"Pekara i narudžbe unaprijed",cta:"Narudžbe unaprijed",s:[
+  T("pekara","Ured naruči 30 kifli za *ponedjeljak u 7 h*. Kako to danas ide? Poziv, papirić, nada."),
+  T("pekara_peciva","S Foodpointom gost sam odabere *dan i sat*, do 7 dana unaprijed."),
+  K("kalendar","Vi vidite sve zakazano","Kuhinja zna točno što i kada treba biti gotovo. Ništa se ne zaboravi."),
+  T("kruh","Svježe, na vrijeme i bez stresa.")],
+  cap:"Pekare, ovo je za vas: gosti mogu zakazati narudžbu za točan dan i sat, do 7 dana unaprijed. Vi sve vidite na vrijeme."},
+ {n:"Program vjernosti",cta:"Nagradite stalne goste",s:[
+  T("prijatelji_pizza","Imate goste koji naručuju *svaki tjedan*? Zaslužuju nešto zauzvrat."),
+  K("poklon","Kako radi?","Gost kod narudžbe upiše broj mobitela. Svaka narudžba se broji, a nakon desete dobije nagradu."),
+  L(["Bez plastičnih kartica","Bez posebne aplikacije","Vi birate nagradu"]),
+  T("pizza_kutija","Mala gesta, a gost se *vraća baš vama*.")],
+  cap:"Program vjernosti bez kartica i aplikacija: gost upiše broj mobitela, narudžbe se same broje, a vi birate nagradu."},
+ {n:"Gdje ide novac",cta:"Online plaćanje",s:[
+  T("mob_narudzba","Gost plati odmah: *Apple Pay, Google Pay* ili karticom.","Pitanje koje svi postave"),
+  R("v: Čekaj, a gdje završi novac?","f: Izravno na vaš račun, preko Teye.","f: Mi ga nikad ne držimo."),
+  T("vlasnica","Kuhinja vidi narudžbu tek kad je *plaćena*. Nema praznih dostava.")],
+  cap:"Kod online plaćanja novac ide izravno vama, preko Teye — Foodpoint ga nikad ne drži. A kuhinja narudžbu vidi tek kad je plaćena."},
+ {n:"Tko su vaši stalni gosti",cta:"Upoznajte svoje goste",s:[
+  T("restoran_sala","Znate li *tko vam je najvjerniji gost*? A tko je prestao naručivati?"),
+  E("fp-ekran-vlasnik.png","Stalni gosti ovaj mjesec: +18 %"),
+  K("graf","Što vidite u analitici","Nove i stalne goste, najprodavanija jela, najjače sate i dane. Sve na jednom ekranu."),
+  T("vlasnik_pregaca","Kad znate brojke, lakše odlučite što dalje.")],
+  cap:"Foodpoint analitika pokazuje nove i stalne goste, najprodavanija jela i najjače sate. Kad znate brojke, lakše donosite odluke."},
+ {n:"Marža svakog jela",cta:"Kontrola troškova",s:[
+  T("pizza_tijesto","Pizza košta 9 €. Ali koliko vas *stvarno košta* napraviti je?","Normativi, jednostavno"),
+  K("vaga","Upišete recept jednom","Brašno, sir, šunka… Foodpoint sam izračuna trošak svakog jela."),
+  B("9,00 €","6,40 €","ostaje vam po pizzi"),
+  T("chef_muz","Odmah vidite koje jelo zarađuje, a koje *samo radi gužvu*.")],
+  cap:"Normativi u Foodpointu: recept upišete jednom, a sustav izračuna trošak i maržu svakog jela. Brojke u primjeru su ilustrativne."},
+ {n:"Nabava bez papira",cta:"Jednostavna nabava",s:[
+  T("kuharica","Kraj smjene. Treba naručiti brašno, sir, pića… i *ne zaboraviti* ništa."),
+  K("kosarica","Popis se slaže sam","Iz normativa i prodaje vidite što nestaje i što treba naručiti."),
+  K("poruka","Narudžba dobavljaču jednim klikom","Pošaljete je dobavljaču porukom ili e-mailom, odmah iz sustava."),
+  T("kuhinja_ekipa","Mi vam po želji tražimo i *jeftinije dobavljače*.")],
+  cap:"Nabava u Foodpointu: popis namirnica i narudžba dobavljaču jednim klikom. A ako želite, tražimo vam i povoljnije dobavljače."},
+ {n:"Gužva u kuhinji",cta:"Kuhinja pod kontrolom",s:[
+  T("kuhar_lonac","Nekad je jednostavno *previše*. I to je u redu."),
+  K("sat","Pauza jednim klikom","Kuhinja pauzira primanje narudžbi na 20 ili 30 minuta. Gosti vide kad opet primate."),
+  E("fp-ekran-kuhinja.png","Primanje pauzirano 20 min"),
+  T("kuhinja_ekipa","Bolje je reći *pričekajte* nego kasniti sat vremena.")],
+  cap:"Kad je kuhinja zatrpana, primanje narudžbi pauzirate jednim klikom. Gosti vide kad ponovno primate — bez ljutnje i hladne hrane."},
+ {n:"Kako izgleda postavljanje",cta:"Krenimo ovaj tjedan",s:[
+  N("Od prvog razgovora do prve narudžbe."),
+  K("poruka","1. dan: upoznamo se","Pogledamo vaš lokal, jelovnik i način rada. Bez obveze."),
+  K("jelovnik","2.–3. dan: mi sve unesemo","Jelovnik, fotografije, logo, boje, radno vrijeme i zonu dostave."),
+  K("qr","4.–5. dan: krećete","Dobijete linkove i QR kodove, a osoblje kratku obuku."),
+  T("pizza_ponos","Vi ne morate ništa *tipkati*. To je naš posao.")],
+  cap:"Postavljanje traje 2–5 radnih dana i sve radimo mi: unos jelovnika, fotografija i boja, QR kodovi i obuka osoblja."},
+ {n:"Bez ugovora",cta:"Isprobajte bez obveze",s:[
+  T("bistro","Bez dugih ugovora i *sitnih slova*."),
+  K("kvaka","Plaćate mjesec po mjesec","Ako vam ne odgovara, otkažete. Toliko je jednostavno."),
+  T("vlasnica","Želimo da ostanete zato što vam se *isplati*, a ne zato što morate.")],
+  cap:"Foodpoint se plaća mjesečno, bez ugovorne obveze. Ostajete jer vam se isplati, ne zato što morate."},
+ {n:"Prva 3 mjeseca",cta:"Postanite partner",s:[
+  T("kuhinja_ekipa","Novi ste? Prva *3 mjeseca* plaćate upola manju proviziju.","Uvodna ponuda"),
+  B("10 %","5 %","provizija prva 3 mjeseca"),
+  K("graf","Primjer","300 narudžbi po 20 € = 6.000 € prometa. Provizija 300 € + 49 € mjesečno, umjesto 1.500–1.800 € na platformama."),
+  T("vlasnik_ulaz","Postavljanje, unos jelovnika i obuka su *besplatni*.")],
+  cap:"Uvodna ponuda: prva 3 mjeseca samo 5 % provizije uz 49 € mjesečno. Postavljanje, unos jelovnika i obuka su besplatni."},
+ {n:"Ne morate ugasiti Wolt",cta:"Vaš vlastiti kanal",s:[
+  R("v: Moram li izaći s Wolta i Glova?","f: Ne morate. Neka vam dovode nove goste.","f: A stalne goste pozovite na svoju stranicu."),
+  T("prijatelji_tv","Svaki gost koji naruči *izravno kod vas* košta vas 10 % umjesto 25–30 %."),
+  T("pizza_kutija","Letak u kutiji s QR kodom i gost sljedeći put zna *gdje naručiti*.")],
+  cap:"Ne morate izaći s platformi za dostavu. Neka vam dovode nove goste, a stalne preusmjerite na svoju stranicu — tamo plaćate 10 % umjesto 25–30 %."},
+ {n:"Vaše ime, ne naše",cta:"Vaša stranica",s:[
+  T("stol_jelovnik","Kad gost naruči preko velike aplikacije, zapamti *aplikaciju*. Ne vas."),
+  T("mob_narudzba","Na Foodpointu je na vrhu *vaš logo*, vaše boje i vaša adresa."),
+  T("restoran_drvo","Gost pamti vaše ime i vraća se *vama*.")],
+  cap:"Stranica za narudžbe s vašim logom i bojama. Gost pamti vaš lokal, a ne aplikaciju preko koje je naručio."},
+ {n:"Letci koji donose narudžbe",cta:"Letci za vaš kvart",s:[
+  T("mob_kutija","Letak u poštanskom sandučiću? Većina završi u smeću. Osim ako *ima razlog* da ga zadrže."),
+  K("qr","QR kod vodi ravno na jelovnik","Gost skenira i za minutu naruči. Bez traženja broja telefona."),
+  L(["Dizajn u vašem stilu","Tisak od 1.000 komada","Dostava na adresu lokala"]),
+  T("pizza_stol","Letak koji gost zadrži na *frižideru*. Za svaku sljedeću narudžbu.")],
+  cap:"Letci s QR kodom vode gosta ravno na vaš jelovnik. Radimo dizajn, tisak i dostavu na adresu lokala."},
+ {n:"Kutija koja prodaje",cta:"Ambalaža s logom",s:[
+  T("pizza_kutija","Vaša pizza putuje kroz grad. Pitanje je samo: *zna li itko čija je?*"),
+  T("vrecica","Kutije, vrećice i naljepnice s vašim logom, brojem i QR kodom."),
+  T("prijatelji_pizza","Gost otvori kutiju, a sljedeća narudžba je *jedan sken daleko*.")],
+  cap:"Ambalaža s vašim logom: kutije, vrećice i naljepnice. Svaka dostava je i mala reklama za vaš lokal."},
+ {n:"Auto koji radi reklamu",cta:"Brendiranje vozila",s:[
+  T("dostava_noc","Vaš dostavni auto svaki dan prođe *desetke ulica*."),
+  K("auto","Logo na autu","Od naljepnice s logom i brojem do cijelog vozila u vašim bojama. Skuteri i kutije također."),
+  T("dostava_skuter","Reklama koja se plati jednom, a radi *svaki dan*.")],
+  cap:"Dostavno vozilo vozi po cijelom kvartu — idealno mjesto za vaš logo i broj. Radimo naljepnice, djelomično i cijelo brendiranje."},
+ {n:"Hrana se prvo jede očima",cta:"Fotografiranje jela",s:[
+  T("foto_hrane","Gost na mobitelu ne može pomirisati vašu pizzu. Može je samo *vidjeti*."),
+  T("chef_tanjur2","Dobra fotografija jela proda više od najboljeg opisa."),
+  K("kamera","Dolazimo u vaš lokal","Fotografiramo jela, prostor i ekipu. Slike odmah stavimo na vašu stranicu i mreže."),
+  T("tanjur","Neka vaša hrana izgleda *jednako dobro* kao što je ukusna.")],
+  cap:"Profesionalne fotografije jela za jelovnik, web i mreže. Dolazimo u vaš lokal, a slike odmah stavljamo na vašu Foodpoint stranicu."},
+ {n:"Instagram umjesto vas",cta:"Vođenje mreža",s:[
+  R("v: Znam da trebam objavljivati…","v: Ali kad? Radim od 8 do ponoći.","f: Prepustite to nama."),
+  L(["Objave svaki tjedan","Oglasi za ljude u vašem kvartu","Izvještaj svaki mjesec"]),
+  T("barista2","Vi radite, a gosti vas *svejedno vide* na mobitelu.")],
+  cap:"Nemate vremena za Instagram i Facebook? Radimo objave i oglase ciljane na vaš kvart, a vi svaki mjesec dobijete izvještaj."},
+ {n:"Nemam vremena za novi program",cta:"Mi sve postavimo",s:[
+  R("v: Nemam vremena učiti još jedan program.","f: Razumijemo. Zato sve postavimo mi."),
+  R("f: Vi samo pogledate kratku obuku.","v: Koliko traje?","f: Pola sata. Uz kavu."),
+  T("vlasnik_pregaca","Sučelje je jednostavno kao *poruke na mobitelu*.")],
+  cap:"Nemate vremena za novi program? Ne trebate ga ni učiti sami — sve postavimo mi, a obuka traje oko pola sata."},
+ {n:"Moji gosti ne naručuju online",cta:"Za sve goste",s:[
+  R("v: Moji gosti su stariji. Oni zovu telefonom.","f: I neka zovu!","f: Kuhinja telefonsku narudžbu upiše u 20 sekundi."),
+  T("obitelj","Mlađi naruče sami, stariji nazovu. Sve završi *na istom mjestu*.")],
+  cap:"Gosti koji radije zovu i dalje mogu zvati. Kuhinja telefonsku narudžbu upiše u 20 sekundi, pa sve narudžbe završe na istom mjestu."},
+ {n:"Trebam li novu opremu?",cta:"Bez nove opreme",s:[
+  R("v: Moram li kupiti blagajnu ili poseban ekran?","f: Ne morate.","f: Dovoljan je bilo koji tablet ili mobitel."),
+  T("kuharica","Sve radi u *pregledniku*. Uključite i radite."),
+  L(["Tablet za kuhinju","Mobitel za vozača","Vaš mobitel za pregled"])],
+  cap:"Za Foodpoint ne trebate posebnu opremu — dovoljan je tablet ili mobitel. Sve radi u pregledniku."},
+ {n:"Koliko stvarno košta",cta:"Zatražite ponudu",s:[
+  R("v: Dobro, recite mi iskreno. Koliko to košta?","f: 49 € mjesečno.","f: I 10 % samo na online narudžbe."),
+  R("v: A narudžbe telefonom i u lokalu?","f: Na njih nema provizije."),
+  T("vlasnica","Bez skrivenih troškova i *bez iznenađenja* na računu.")],
+  cap:"Foodpoint košta 49 € mjesečno i 10 % samo na online narudžbe. Na telefonske narudžbe i one u lokalu nema provizije."},
+ {n:"Isprobajte sami",cta:"Pogledajte demo",s:[
+  T("pizza_mob","Ne morate nam vjerovati na riječ. *Isprobajte* kao pravi gost."),
+  E("fp-ekran-gost.jpg","Casa Lume · demo restoran",true),
+  T("prijatelji_pizza","Naručite u demo restoranu Casa Lume i pogledajte kako narudžba stiže u *kuhinju*.")],
+  cap:"Isprobajte Foodpoint kao gost: otvorite naš demo restoran Casa Lume i prođite cijelu narudžbu, od jelovnika do kuhinje."},
+ {n:"Dan u pizzeriji",cta:"Vaš dan, lakši",s:[
+  T("pec","*10 h* — vlasnik na mobitelu mijenja dnevnu ponudu. Gotovo za minutu."),
+  T("pizza_tijesto","*12 h* — prve narudžbe za ručak stižu same, s adresama i napomenama."),
+  T("dostava_skuter","*19 h* — vozač ima turu od 4 adrese, poredanih po ruti."),
+  T("vlasnik_pregaca","*23 h* — vlasnik pogleda promet dana i ide kući *mirno*.")],
+  cap:"Jedan dan u pizzeriji s Foodpointom: ponuda se mijenja s mobitela, narudžbe stižu same, vozač ima posložene ture, a navečer vidite promet dana."},
+ {n:"Ručak za cijeli ured",cta:"Narudžbe za urede",s:[
+  T("blagovaona","Firma naruči ručak za 15 ljudi, za *četvrtak u 12:30*."),
+  K("kalendar","Zakazano i plaćeno","Narudžba je zakazana unaprijed i plaćena online. Kuhinja zna točno kada počinje."),
+  T("pladanj","Bez zvanja, bez potvrđivanja, *bez stresa*.")],
+  cap:"Uredi mogu naručiti ručak unaprijed, za točan dan i sat, i odmah ga platiti online. Kuhinja zna točno kada treba krenuti."},
+ {n:"Ana naručuje petkom",cta:"Stalni gosti",s:[
+  T("prijatelji_tv","Ana naručuje *svaki petak*. Uvijek istu pizzu, za cijelu obitelj."),
+  T("mob_narudzba","Svaka njezina narudžba se broji. Nakon desete, pizza je *na kuću*."),
+  T("obitelj","Ana je sretna. A vi ste dobili gosta *za godine*.")],
+  cap:"Ana naručuje svaki petak. S programom vjernosti svaka narudžba se broji, a deseta je na kuću. Tako se stvaraju stalni gosti."},
+ {n:"Strojno čitljiv cjenik",cta:"Sidrene cijene",s:[
+  T("jelovnik_papir","Uz sidrene cijene, web mora imati i *strojno čitljiv cjenik*. Zvuči komplicirano?","Što je to?"),
+  K("web","To je samo datoteka","Popis vaših jela i cijena koji računala mogu pročitati. Gost ga ne mora ni vidjeti."),
+  T("vlasnica","U Foodpointu se ta datoteka *objavljuje sama*, svaki put kad promijenite cijenu.")],
+  cap:"Strojno čitljiv cjenik je datoteka s vašim jelima i cijenama koju računala mogu pročitati. U Foodpointu se objavljuje sama nakon svake promjene cijene."},
+ {n:"Novi jelovnik",cta:"Novi jelovnik",s:[
+  T("jelovnik_blizu","Jelovnik je *prvo što gost pogleda*. I često zadnje što se mijenja."),
+  K("paleta","Dizajniramo novi jelovnik","U vašem stilu, pregledan i sa sidrenim cijenama od prvog dana. Za stol, izlog i web."),
+  T("gost_jelovnik","Lijep jelovnik prodaje *bez riječi*.")],
+  cap:"Vrijeme je za novi jelovnik? Dizajniramo ga u vašem stilu, pregledno i sa sidrenim cijenama — za stol, izlog i web."},
+ {n:"Recenzije na vašoj stranici",cta:"Recenzije gostiju",s:[
+  T("konobarica","Zadovoljan gost je vaša *najbolja reklama*."),
+  K("nagrada","Gosti ostavljaju recenzije","Nakon narudžbe gost može ocijeniti hranu. Vi odlučujete što se objavljuje."),
+  T("restoran_drvo","Novi gosti čitaju dojmove *pravih ljudi* iz vašeg kvarta.")],
+  cap:"Gosti mogu ostaviti recenziju nakon narudžbe, a vi odlučujete što se objavljuje na vašoj stranici."},
+ {n:"Poruka gostu",cta:"Poruke s gostom",s:[
+  T("kuhar_noc","Kasnite 10 minuta. Gost to *ne zna* i počinje se brinuti."),
+  R("f: Poštovani, narudžba kasni oko 10 minuta. Hvala na strpljenju!","v: Hvala što ste javili, ništa strašno :)"),
+  T("vrecica2","Jedna poruka i gost je *miran*. Poruke šaljete iz kuhinje, jednim klikom.")],
+  cap:"Kuhinja gostu može poslati poruku izravno iz sustava — na primjer, da narudžba kasni 10 minuta. Jedna poruka i gost je miran."},
+ {n:"Gost zna gdje je narudžba",cta:"Status narudžbe",s:[
+  T("pizza_mob","Najčešće pitanje na telefonu? *Gdje mi je hrana?*"),
+  L(["Zaprimljeno","U pripremi","Krenulo prema vama"]),
+  T("dostavljac_ulica","Gost na mobitelu vidi u kojoj je fazi narudžba. *Manje poziva* za vas.")],
+  cap:"Gost na mobitelu vidi status narudžbe: zaprimljeno, u pripremi, krenulo. Manje poziva tipa „gdje mi je hrana”."},
+ {n:"Mali lokal",cta:"Za male lokale",s:[
+  T("kava_toci","Nemate veliki restoran? *Još bolje.*"),
+  T("pekara2","Foodpoint je napravljen za obiteljske lokale, male pizzerije, kafiće i pekare."),
+  T("vlasnica","Dobivate sve što imaju veliki, a plaćate *koliko mali mogu*.")],
+  cap:"Foodpoint je napravljen za male i obiteljske lokale: kafiće, pekare i pizzerije. Sve što imaju veliki, po cijeni koja ima smisla."},
+ {n:"Kamo ide vaš euro",cta:"Izračunajte uštedu",s:[
+  N("Jedna narudžba od 30 €."),
+  B("9 €","3 €","platforma uzme ovoliko, a Foodpoint ovoliko"),
+  T("konobar_burgeri","Razlika od *6 €* po narudžbi. Sto narudžbi mjesečno — 600 €."),
+  T("vlasnik_ulaz","To je plaća za pola radnika. Ili *nova pećnica*.")],
+  cap:"Na narudžbi od 30 € platforma uzme oko 9 €, a Foodpoint 3 €. Sto takvih narudžbi mjesečno je oko 600 € razlike."},
+ {n:"Akcije koje sami uključite",cta:"Vaše akcije",s:[
+  T("pizza_stol2","Sporiji utorak? Uključite *akciju* i pokrenite narudžbe."),
+  L(["4 + 1 gratis","Gratis piće uz narudžbu","Program vjernosti"]),
+  T("vlasnik_pregaca","Uključite i isključite kad želite, *s mobitela*.")],
+  cap:"Akcije poput 4 + 1 gratis ili pića uz narudžbu, kao i program vjernosti, uključujete i isključujete sami, s mobitela."},
+ {n:"Vi postavljate pravila",cta:"Vaša pravila",s:[
+  T("restoran_sala","Vaš lokal, *vaša pravila*."),
+  K("lokacija","Zona i cijena dostave","Odredite dokle dostavljate i koliko dostava košta."),
+  K("kosarica","Minimalna narudžba","Postavite iznos ispod kojeg se ne dostavlja."),
+  K("sat","Radno vrijeme","Stranica sama zna kad radite, a izvan toga gosti mogu zakazati za kasnije.")],
+  cap:"Vi određujete zonu i cijenu dostave, minimalnu narudžbu i radno vrijeme. Stranica se sama ravna prema tome."},
+ {n:"Vlasnik na godišnjem",cta:"Sve na mobitelu",s:[
+  T("kava_stol","Konačno godišnji. Ali glava je *i dalje u lokalu*."),
+  T("mob_narudzba","Na mobitelu vidite narudžbe i promet. *Uživo.*"),
+  T("vlasnica","Lokal radi, a vi ste *mirni*.")],
+  cap:"I s godišnjeg na mobitelu vidite narudžbe, promet i što se događa u lokalu. Lokal radi, a vi ste mirni."},
+ {n:"Od Osijeka do Dubrovnika",cta:"Zatražite ponudu",s:[
+  T("dostava_zelena","Nismo samo za velike gradove."),
+  L(["Zagreb i Split","Rijeka i Osijek","Zadar i Pula","Dubrovnik i Varaždin","i svako mjesto između"]),
+  T("vlasnik_ulaz","Gdje god radili, *javite se*. Sve se može postaviti na daljinu.")],
+  cap:"Foodpoint radi s ugostiteljima u cijeloj Hrvatskoj. Sve se može postaviti na daljinu, a obuku radimo uživo ili preko videopoziva."},
+ {n:"Partner, ne aplikacija",cta:"Upoznajmo se",s:[
+  T("vlasnik_ulaz","Aplikaciju skinete i ostavite. *Partnera* nazovete kad zatreba."),
+  K("telefon","Kad trebate pomoć, javite se","Promjena jelovnika, novi letak, problem na blagdan — tu smo."),
+  T("kuhinja_ekipa","Mi rastemo samo ako *vi rastete*.")],
+  cap:"Foodpoint nije samo aplikacija nego partner: kad trebate novi jelovnik, letak ili pomoć — javite se, tu smo."},
+ {n:"Što dobijete prvi dan",cta:"Krenite s nama",s:[
+  N("Prvi dan s Foodpointom."),
+  L(["Vaša stranica za narudžbe","QR kodovi za stolove i letke","Pristup za kuhinju i vozače","Kratka obuka osoblja","Naš broj za pomoć"]),
+  T("vlasnica","Sve spremno. Vi samo *otvorite vrata*.")],
+  cap:"Prvi dan dobijete gotovu stranicu za narudžbe, QR kodove, pristupe za kuhinju i vozače, obuku osoblja i naš broj za pomoć."},
+ {n:"Inspekcija i sidrene cijene",cta:"Budite spremni",s:[
+  T("chef_priprema","Inspektor ulazi i traži *jelovnik*. Jeste li mirni?"),
+  S("Ćevapi s lepinjom","11,00 €","10,50 €"),
+  T("jelovnik_stol","S Foodpointom su sidrene cijene na jelovniku i webu, a cjenik je *uvijek ažuran*.")],
+  cap:"Sidrene cijene na jelovniku i webu, a strojno čitljiv cjenik uvijek ažuran. Kad inspekcija dođe, vi ste mirni."},
+ {n:"Popijmo kavu",cta:"Javite nam se",tag:"Javite se i dogovorimo kavu",s:[
+  T("kava_toci","Ne volimo slati PDF-ove od 40 stranica."),
+  T("barista","Radije dođemo do vas, popijemo kavu i *pokažemo sve uživo* — na vašem jelovniku."),
+  T("vlasnica","Bez obveze i bez pritiska. Ako vam se svidi, krećemo *isti tjedan*.")],
+  cap:"Najbolje je vidjeti uživo. Javite se, popijemo kavu i pokažemo vam kako bi Foodpoint izgledao baš za vaš lokal. Bez obveze."},
+ {n:"Restoran s roštiljem",cta:"Za restorane",s:[
+  T("raznjici","Roštilj, ćevapi, ražnjići — jela koja se *naručuju za doma*."),
+  T("meso","Na vašoj stranici gost bira prilog, umak i količinu. Kuhinja dobije *sve jasno napisano*."),
+  T("meso2","Manje grešaka, manje vraćanja, *više zadovoljnih* gostiju.")],
+  cap:"Za restorane s roštiljem: gost na vašoj stranici bira prilog, umak i količinu, a kuhinja dobiva sve jasno napisano."},
+ {n:"Dodaci i napomene",cta:"Bez zabune",s:[
+  R("v: Gost je rekao bez gljiva. Ili je rekao s gljivama?","f: S Foodpointom to piše crno na bijelo."),
+  T("chef_priprema","Svaki dodatak i napomena stižu *napisani*, uz cijenu."),
+  T("pizza_ponos","Gost dobije *točno ono* što je naručio.")],
+  cap:"Dodaci i napomene stižu napisani, uz cijenu. Gost dobije točno ono što je naručio, a kuhinja ne mora pogađati."}];})();
 
 start();
 </script>
