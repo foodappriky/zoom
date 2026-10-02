@@ -2993,18 +2993,17 @@ html[lang=en] .fpl-paket.istaknut::before{content:"Most popular"}
 .fp-del-dno{text-align:center;padding:24px 0 8px;opacity:.85}.fp-del-dno .fp-del-logo{height:30px;margin:0 auto}
 
 /* ===== FOODPOINT 11: video reklame — pozicioniranje i animacije fpc-* widgeta u reelu ===== */
-.fpr-reklama .fpr-cap{justify-content:center}
-.fpr-reklama .fpr-cap{top:32cqw;bottom:52cqw}
+.fpr-reklama .fpr-cap{justify-content:center;top:32cqw;bottom:52cqw}
+.fpr-reklama .fpc-not,.fpr-reklama .fpc-chat>div:not(.vrh),.fpr-reklama .fpc-racun,.fpr-reklama .fpc-kviz div,.fpr-reklama .fpc-trazi,
+.fpr-reklama .fpc-bingo div,.fpr-reklama .fpc-papir,.fpr-reklama .fpc-oglas,.fpr-reklama .fpc-postit div{color:#17120F}
 .fpr-reklama .fpc-not,.fpr-reklama .fpc-chat,.fpr-reklama .fpc-racun,.fpr-reklama .fpc-kviz,.fpr-reklama .fpc-trazi,
 .fpr-reklama .fpc-bingo,.fpr-reklama .fpc-broj,.fpr-reklama .fpc-papir,.fpr-reklama .fpc-oglas,.fpr-reklama .fpc-postit{margin:0 0 3cqw}
 .fpr-reklama .fpo-h{color:#fff;text-shadow:0 .4cqw 2cqw rgba(0,0,0,.55);font-size:5.6cqw}
 .fpr-rk-p{font-size:3.9cqw;font-weight:600;color:#fff;text-shadow:0 .3cqw 1.5cqw rgba(0,0,0,.6);margin:2.2cqw 0 0;line-height:1.3}
-.fpr-reklama .fpc-broj{margin-bottom:1.5cqw}
-.fpr-reklama .fpc-not,.fpr-reklama .fpc-chat>div:not(.vrh),.fpr-reklama .fpc-racun,.fpr-reklama .fpc-kviz div,.fpr-reklama .fpc-trazi,
-.fpr-reklama .fpc-bingo div,.fpr-reklama .fpc-papir,.fpr-reklama .fpc-oglas,.fpr-reklama .fpc-postit div{color:#17120F}
 .fpr-reklama .fpc-kviz{gap:1.8cqw;margin-top:2.2cqw}
 .fpr-reklama .fpc-kviz div{padding:2cqw 3cqw;font-size:3.3cqw;gap:2.6cqw}
 .fpr-reklama .fpc-kviz i{width:5.6cqw;height:5.6cqw;font-size:2.6cqw}
+.fpr-reklama .fpc-broj{margin-bottom:1.5cqw}
 .fpr-reklama .fpc-broj b{font-size:24cqw}
 .fpr-reklama .fpc-broj b:only-child{font-size:24cqw}
 .fpr-reklama .fpc-broj span{font-size:6.6cqw}
@@ -10240,7 +10239,7 @@ function fpObjaveHTML(){
  const r=fpOJeR(), L=fpOLista(), od=fpOOd();
  setTimeout(fpRInit,0);
  return `<div class="fpo-uvod"><div><h2>${r?"Reels za Instagram i TikTok":"Objave za Instagram i Facebook"}</h2>
-   <p>${r?"Format 1080×1920 (9:16). Tekst je unutar sigurne zone, pa ga gumbi i opis na Reelsu ne prekrivaju. Za video: otvorite reel preko cijelog ekrana, pokrenite snimanje ekrana na mobitelu i dodirnite reel — krene od početka.":
+   <p>${r?"Format 1080×1920 (9:16). Tekst je unutar sigurne zone, pa ga gumbi i opis na Reelsu ne prekrivaju. Gumb kamere sam snimi video (webm) — na računalu u Chromeu ili Edgeu, bez dodatnih aplikacija. Gumb preuzimanja HTML-a sprema reel kao samostalnu datoteku za ručnu obradu. Može i snimka ekrana preko cijelog ekrana ako ništa od toga ne odgovara.":
     "Format 1080×1350 (4:5). Rubovi su prazni, pa se ništa važno ne odreže u prikazu na mobitelu i na profilu. Gumb za preuzimanje sprema PNG 1080×1350; može i snimka ekrana preko cijelog ekrana."}
    Tekst ispod svake ${r?"snimke":"objave"} kopirate gumbom.</p></div>
   <div class="fpo-skup">${FP_O_SKUPOVI.map(([k,n])=>`<button class="${fpO.skup===k?"on":""}" onclick="fpO.skup='${k}';zoomCrtaj()">${n}</button>`).join("")}</div></div>
@@ -10249,7 +10248,9 @@ function fpObjaveHTML(){
   <div class="fpo-info"><span class="br">${r?"Reel":"#"}${i+1+od}</span><span class="tip">${esc(r?o.n:FP_O_NAZ[o.t]||o.t)}${r?` · ${fpRTrajanje(o)} s`:""}</span>
    <span class="gumbi"><button title="Preko cijelog ekrana" onclick="fpOPuni(${i})">${fpIk("puni",16)}</button>
    <button title="Kopiraj tekst objave" onclick="fpOKopiraj(${i},this)">${fpIk("kopiraj",16)}</button>
-   ${r?"":`<button title="Preuzmi PNG 1080×1350" onclick="fpOPreuzmi(${i},this)">${fpIk("preuzmi",16)}</button>`}</span></div>
+   ${r?`<button title="Snimi video (webm)" onclick="fpRSnimi(${i},this)">${fpIk("video",16)}</button>
+   <button title="Preuzmi kao HTML" onclick="fpRPreuzmiHTML(${i},this)">${fpIk("preuzmi",16)}</button>`:
+    `<button title="Preuzmi PNG 1080×1350" onclick="fpOPreuzmi(${i},this)">${fpIk("preuzmi",16)}</button>`}</span></div>
   <details class="fpo-cap"><summary>Tekst objave</summary><p>${esc(o.cap||"")}</p><p class="oz">${FP_OZNAKE}</p></details></div>`).join("")}</div>`;}
 
 function fpOPuni(i){
@@ -10279,6 +10280,65 @@ async function fpOPreuzmi(i,b){
   const a=document.createElement("a"); a.download=`foodpoint-objava-${i+1+fpOOd()}.png`; a.href=c.toDataURL("image/png"); a.click();}
  catch(e){alert("Preuzimanje nije uspjelo. Otvorite objavu preko cijelog ekrana i napravite snimku ekrana.");}
  d.remove(); b.disabled=false; b.innerHTML=st;}
+
+/* ---------- reel: snimi stvaran video (webm) kroz snimanje kartice preglednika ---------- */
+async function fpRSnimi(i,b){
+ if(!(navigator.mediaDevices&&navigator.mediaDevices.getDisplayMedia)){
+  alert("Snimanje videa izravno ovdje nije dostupno u ovom pregledniku ili uređaju (radi samo na računalu, u Chromeu ili Edgeu). Otvorite reel preko cijelog ekrana (gumb ‹ ›) i snimite ekran — na mobitelu ugrađenom snimku ekrana, na računalu bilo kojim alatom za snimanje ekrana.");
+  return;}
+ b.disabled=true; const st=b.innerHTML; b.innerHTML="…";
+ let stream=null;
+ try{
+  stream=await navigator.mediaDevices.getDisplayMedia({video:{frameRate:30},audio:false,preferCurrentTab:true,selfBrowserSurface:"include"});
+ }catch(e){ b.disabled=false; b.innerHTML=st; return;}
+ try{
+  fpOPuni(i);
+  const d=document.getElementById("fpo-puni"), el=d.querySelector(".fpr-reel"), k=d.querySelector(".fpr-kreni");
+  if(k)k.remove();
+  d.classList.add("snima");
+  await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
+  const mime=["video/webm;codecs=vp9","video/webm;codecs=vp8","video/webm"].find(m=>window.MediaRecorder&&MediaRecorder.isTypeSupported(m))||"";
+  const rec=new MediaRecorder(stream,mime?{mimeType:mime}:undefined);
+  const delovi=[]; rec.ondataavailable=e=>{if(e.data&&e.data.size)delovi.push(e.data);};
+  const gotov=new Promise(res=>rec.onstop=res);
+  rec.start();
+  el._vid=true; el._i=-1; fpRKorak(el);
+  const sc=el.querySelectorAll(".fpr-sc"), uk=[...sc].reduce((a,s)=>a+(+s.dataset.t||2700),0);
+  await new Promise(r=>setTimeout(r,uk+500));
+  if(rec.state!=="inactive")rec.stop();
+  await gotov;
+  const blob=new Blob(delovi,{type:"video/webm"});
+  const a=document.createElement("a"); a.download=`foodpoint-reel-${i+1+fpOOd()}.webm`; a.href=URL.createObjectURL(blob); a.click();
+  fpOZatvori();
+  alert("Video je snimljen i preuzet kao .webm (oko "+Math.round(uk/1000)+" s). Ako je oko reela ostao crni rub (zbog oblika ekrana), ili za Instagram treba .mp4, pretvorite datoteku besplatno na cloudconvert.com — učitate .webm, odaberete .mp4 kao izlaz, preuzmete i objavite.");
+ }catch(e){
+  alert("Snimanje nije uspjelo. Otvorite reel preko cijelog ekrana i snimite ekran ručno.");
+  fpOZatvori();
+ } finally {
+  if(stream)stream.getTracks().forEach(t=>{try{t.stop();}catch(e){}});
+  b.disabled=false; b.innerHTML=st;}}
+
+/* ---------- reel: preuzmi kao samostalnu HTML datoteku ---------- */
+function fpRPreuzmiHTML(i,b){
+ const o=fpOLista()[i];
+ const css=[...document.querySelectorAll("style")].map(s=>s.textContent).join("\n");
+ const fontovi=[...document.querySelectorAll('link[rel="stylesheet"]')].map(l=>`<link rel="stylesheet" href="${l.href}">`).join("\n");
+ const skripta=`${fpRKorak.toString()}\n${typeof fpRVideo==="function"?fpRVideo.toString():"function fpRVideo(){}"}\n`+
+  `document.addEventListener("DOMContentLoaded",function(){var el=document.querySelector(".fpr-reel");el._vid=true;el._i=-1;fpRKorak(el);});`;
+ const html=`<!doctype html><html lang="hr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Foodpoint reel ${i+1+fpOOd()}</title>
+${fontovi}
+<style>${css}
+html,body{margin:0;background:#0B0807;min-height:100vh;display:flex;align-items:center;justify-content:center}
+.fpr-drzac{width:min(100vw,56.25vh);container-type:inline-size}
+</style></head><body class="fpr-export">
+<div class="fpr-drzac">${fpReelHTML(o)}</div>
+<script>${skripta}<\/script>
+</body></html>`;
+ const blob=new Blob([html],{type:"text/html"}); const a=document.createElement("a");
+ a.download=`foodpoint-reel-${i+1+fpOOd()}.html`; a.href=URL.createObjectURL(blob); a.click();
+ if(b){b.classList.add("ok"); setTimeout(()=>b.classList.remove("ok"),1400);}
+ setTimeout(()=>alert("HTML je preuzet. Otvorite ga u pregledniku (sam kreće od početka) pa ga ondje po želji snimite ekranom, ili ga pošaljite nekome tko video pretvara alatima poput ffmpeg-a / Puppeteera. Za brže rješenje probajte i gumb kamere pored — on sam snimi gotov .webm video."),300);}
 
 /* ===== FOODPOINT 8: engleski prijevod naslovne stranice (HR / EN) =====
    Naslovna se uvijek slaže na hrvatskom; kad je odabran engleski, svaki tekst se zamijeni prijevodom iz FP_EN.
