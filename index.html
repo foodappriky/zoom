@@ -2992,6 +2992,52 @@ html[lang=en] .fpl-paket.istaknut::before{content:"Most popular"}
 .fp-del-logo{display:block;height:44px;width:auto;margin:6px auto 18px}
 .fp-del-dno{text-align:center;padding:24px 0 8px;opacity:.85}.fp-del-dno .fp-del-logo{height:30px;margin:0 auto}
 
+/* ===== FOODPOINT 11: video reklame — pozicioniranje i animacije fpc-* widgeta u reelu ===== */
+.fpr-reklama .fpr-cap{justify-content:center}
+.fpr-reklama .fpr-cap{top:32cqw;bottom:52cqw}
+.fpr-reklama .fpc-not,.fpr-reklama .fpc-chat,.fpr-reklama .fpc-racun,.fpr-reklama .fpc-kviz,.fpr-reklama .fpc-trazi,
+.fpr-reklama .fpc-bingo,.fpr-reklama .fpc-broj,.fpr-reklama .fpc-papir,.fpr-reklama .fpc-oglas,.fpr-reklama .fpc-postit{margin:0 0 3cqw}
+.fpr-reklama .fpo-h{color:#fff;text-shadow:0 .4cqw 2cqw rgba(0,0,0,.55);font-size:5.6cqw}
+.fpr-rk-p{font-size:3.9cqw;font-weight:600;color:#fff;text-shadow:0 .3cqw 1.5cqw rgba(0,0,0,.6);margin:2.2cqw 0 0;line-height:1.3}
+.fpr-reklama .fpc-broj{margin-bottom:1.5cqw}
+.fpr-reklama .fpc-not,.fpr-reklama .fpc-chat>div:not(.vrh),.fpr-reklama .fpc-racun,.fpr-reklama .fpc-kviz div,.fpr-reklama .fpc-trazi,
+.fpr-reklama .fpc-bingo div,.fpr-reklama .fpc-papir,.fpr-reklama .fpc-oglas,.fpr-reklama .fpc-postit div{color:#17120F}
+.fpr-reklama .fpc-kviz{gap:1.8cqw;margin-top:2.2cqw}
+.fpr-reklama .fpc-kviz div{padding:2cqw 3cqw;font-size:3.3cqw;gap:2.6cqw}
+.fpr-reklama .fpc-kviz i{width:5.6cqw;height:5.6cqw;font-size:2.6cqw}
+.fpr-reklama .fpc-broj b{font-size:24cqw}
+.fpr-reklama .fpc-broj b:only-child{font-size:24cqw}
+.fpr-reklama .fpc-broj span{font-size:6.6cqw}
+.fpr-reklama .fpc-papir{padding:4.2cqw 4.4cqw}
+.fpr-reklama .fpc-papir .z{font-size:6cqw}
+.fpr-reklama .fpc-papir p{font-size:4.2cqw;line-height:1.28;margin-top:2cqw}
+.fpr-reklama .fpc-papir .pot{font-size:4.4cqw;margin-top:2cqw}
+.fpr-reklama .fpc-oglas{padding:3cqw}
+.fpr-reklama .fpc-oglas .nn{font-size:2.3cqw;padding-bottom:1.6cqw;margin-bottom:2.2cqw}
+.fpr-reklama .fpc-oglas b{font-size:5cqw}
+.fpr-reklama .fpc-oglas p{font-size:3.3cqw;line-height:1.3;margin:1.8cqw 0}
+.fpr-reklama .fpc-oglas small{font-size:2.6cqw}
+.fpr-reklama .fpc-bingo{gap:1cqw;margin-top:0}
+.fpr-reklama .fpc-bingo div{padding:.8cqw;font-size:2cqw;aspect-ratio:1/.55}
+.fpr-reklama.on .kic{animation:fprGore .5s .1s ease-out both}
+.fpr-reklama.on .fpc-not div{animation:fprNot .5s cubic-bezier(.2,.9,.3,1.2) both;animation-delay:calc(.3s + var(--i)*.35s)}
+.fpr-reklama.on .fpc-chat .vrh{animation:fprGore .4s .15s ease-out both}
+.fpr-reklama.on .fpc-chat>div:not(.vrh){animation:fprBub .45s cubic-bezier(.2,.9,.3,1.2) both;animation-delay:calc(.4s + var(--i)*.55s)}
+.fpr-reklama.on .fpc-racun .red{animation:fprLijevo .4s cubic-bezier(.2,.9,.3,1.15) both;animation-delay:calc(.3s + var(--i)*.4s)}
+.fpr-reklama.on .fpc-racun .fp{animation:fprPop .5s 1.2s cubic-bezier(.2,.9,.3,1.25) both}
+.fpr-reklama.on .fpc-kviz .fpo-h{animation:fprGore .4s .1s ease-out both}
+.fpr-reklama.on .fpc-kviz div{animation:fprGore .4s cubic-bezier(.2,.9,.3,1.1) both;animation-delay:calc(.5s + var(--i)*.35s)}
+.fpr-reklama.on .fpc-kviz .da{animation-name:fprZig;animation-duration:.6s}
+.fpr-reklama.on .fpc-trazi .polje{animation:fprGore .4s .15s ease-out both}
+.fpr-reklama.on .fpc-trazi .rez{animation:fprGore .5s 1.3s ease-out both}
+.fpr-reklama.on .fpc-bingo .fpo-h{animation:fprGore .4s .1s ease-out both}
+.fpr-reklama.on .fpc-bingo div{animation:fprPop .45s cubic-bezier(.2,.9,.3,1.25) both;animation-delay:calc(.35s + var(--i)*.16s)}
+.fpr-reklama.on .fpr-rk-p{animation:fprGore .5s 2s ease-out both}
+.fpr-reklama.on .fpc-broj b{animation:fprPop .7s .2s cubic-bezier(.2,.9,.3,1.25) both}
+.fpr-reklama.on .fpc-papir{animation:fprGore .5s ease-out both}
+.fpr-reklama.on .fpc-oglas{animation:fprGore .5s ease-out both}
+.fpr-reklama.on .fpc-postit div{animation:fprPop .45s cubic-bezier(.2,.9,.3,1.25) both;animation-delay:calc(.3s + var(--i)*.25s)}
+
 .fp-logo{display:inline-flex;align-items:center;gap:calc(var(--v)*.32);font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-weight:800;
  font-size:calc(var(--v)*.86);letter-spacing:-.02em;line-height:1;text-transform:none;white-space:nowrap;vertical-align:middle}
 .fp-logo img{width:calc(var(--v)*1.3);height:calc(var(--v)*1.3);border-radius:28%;display:block;flex:none}
@@ -10110,8 +10156,8 @@ const FP_REELS=[
 
 /* ---------- zajednički dijelovi ---------- */
 let fpO={skup:"a",puni:null};
-const FP_O_SKUPOVI=[["a","Objave 1–30"],["b","Objave 31–60"],["r","Reels 1–30"],["r2","Reels 31–80"],["c","Reklame 61–90"],["r3","Video reels 81–110"]];
-const fpOOd=()=>({b:30,r2:30,c:60,r3:80})[fpO.skup]||0;
+const FP_O_SKUPOVI=[["a","Objave 1–30"],["b","Objave 31–60"],["r","Reels 1–30"],["r2","Reels 31–80"],["c","Reklame 61–90"],["r3","Video reels 81–110"],["r4","Video reklame 111–140"]];
+const fpOOd=()=>({b:30,r2:30,c:60,r3:80,r4:110})[fpO.skup]||0;
 const fpOSidr=()=>`<span class="fpo-sidr">${fpIk("sidro",14)}Spremni za sidrene cijene</span>`;
 const fpOLogo=(bijeli,kl)=>`<img class="fpo-logo${kl?" "+kl:""}" src="${FP_LOGO_V(bijeli)}" alt="Foodpoint" crossorigin="anonymous">`;
 const fpODno=(o,bijeli)=>`<div class="fpo-dno"><span class="fpo-cta">${esc(o.cta||"Foodpoint partner")} <b>→</b></span>${fpOSidr()}</div>`;
@@ -10185,8 +10231,8 @@ function fpRInit(){
  document.querySelectorAll(".fpr-reel:not([data-ok])").forEach(el=>{el.dataset.ok=1; if(fpRObs)fpRObs.observe(el); else {el._vid=true; fpRKorak(el);}});}
 
 /* ---------- prikaz u Upiti → Objave ---------- */
-const fpOJeR=()=>fpO.skup==="r"||fpO.skup==="r2"||fpO.skup==="r3";
-function fpOLista(){return fpO.skup==="b"?FP_OBJAVE2:fpO.skup==="r"?FP_REELS:fpO.skup==="r2"?FP_REELS2:fpO.skup==="r3"?FP_REELS3:fpO.skup==="c"?FP_REKLAME:FP_OBJAVE;}
+const fpOJeR=()=>fpO.skup==="r"||fpO.skup==="r2"||fpO.skup==="r3"||fpO.skup==="r4";
+function fpOLista(){return fpO.skup==="b"?FP_OBJAVE2:fpO.skup==="r"?FP_REELS:fpO.skup==="r2"?FP_REELS2:fpO.skup==="r3"?FP_REELS3:fpO.skup==="r4"?FP_VREKLAME:fpO.skup==="c"?FP_REKLAME:FP_OBJAVE;}
 function fpOStavka(o){return fpOJeR()?fpReelHTML(o):fpO.skup==="b"?fpOPostB(o):fpO.skup==="c"?fpOPostC(o):fpOPostA(o);}
 const FP_O_NAZ={crvena:"Crvena",svijetla:"Svijetla",tamna:"Tamna",foto:"Fotografija",usporedba:"Usporedba",ekran:"Ekran",lista:"Popis",
  lf:"Logo + fotografija",split:"Podijeljena",okvir:"Okvir",kolaz:"Kolaž",potpis:"Znak",traka:"Traka"};
@@ -10999,6 +11045,86 @@ function fpOPostC(o){
  return `<a class="zoom-powered" href="${ZOOM_KORIJEN()}" target="_blank" rel="noopener"><span>powered by</span>${ZOOM_LOGO(15)}<b class="fp-del">Delivery</b></a>`;};}
 {const st=vozacHTML; vozacHTML=function(){const h=st(), L=`<img class="fp-del-logo" src="/foodpoint-delivery-vodoravno-crveni.png" alt="Foodpoint Delivery">`;
  return h.startsWith('<div class="login">')?h.replace('<div class="login">','<div class="login">'+L):h+`<div class="fp-del-dno">${L}</div>`;};}
+
+/* ===== FOODPOINT 11: 30 "video reklame" — video pozadina + animirani elementi iz Reklama =====
+   Isti duh kao Reklame 61–90, ali kao reel: video u pozadini, a preko njega jedan od igrivih
+   elemenata animira se uživo — obavijesti padaju, chat se tipka, račun izlazi, kviz se rješava,
+   pretraga se tipka, bingo dobiva pečate, broj odbrojava, pismo/oglas/post-it se pojavljuju. */
+
+function fpRkWidget(o){
+ if(o.t==="tel") return `<div class="fpc-not">${o.n.map((x,i)=>`<div style="--i:${i}">${fpIk("zvono",18)}<span><b>Foodpoint · sada</b>${esc(x)}</span></div>`).join("")}</div>`;
+ if(o.t==="chat") return `<div class="fpc-chat"><div class="vrh"><i>${esc((o.oz||"F")[0])}</i><b>${esc(o.oz)}</b></div>${o.m.map((x,i)=>`<div class="${x[0]==="f"?"ja":"on"}" style="--i:${i}">${esc(x.slice(2))}</div>`).join("")}</div>`;
+ if(o.t==="racun") return `<div class="fpc-racun">${o.r.map(([a,b],i)=>`<div class="red${i===o.r.length-1?" zad":""}" style="--i:${i}"><span>${esc(a)}</span><b>${esc(b)}</b></div>`).join("")}<div class="fp"><span>${esc(o.z[0])}</span><b>${esc(o.z[1])}</b></div></div>`;
+ if(o.t==="kviz") return `<h3 class="fpo-h fpo-h-m">${esc(o.q)}</h3><div class="fpc-kviz">${o.o.map((x,i)=>`<div class="${i===o.tocno?"da":""}" style="--i:${i}"><i>${"ABC"[i]}</i><span>${esc(x)}</span></div>`).join("")}</div>`;
+ if(o.t==="trazi") return `<div class="fpc-trazi"><div class="polje">${fpIk("cilj",20)}<span>${esc(o.q)}</span><i></i></div><div class="rez"><small>foodpoint.hr</small><b>${esc(o.r[0])}</b><span>${esc(o.r[1])}</span></div></div>`;
+ if(o.t==="bingo") return `<div class="fpc-bingo">${o.l.map((x,i)=>`<div style="--i:${i}"><span>${esc(x)}</span></div>`).join("")}</div><p class="fpr-rk-p">${esc(o.p)}</p>`;
+ if(o.t==="broj") return `<div class="fpc-broj">${o.odbr?`<b data-odbr>${fpDanaDo()}</b><span>${esc(o.b)}</span>`:`<b>${esc(o.b)}</b>`}</div><p class="fpr-rk-p">${esc(o.p)}</p>`;
+ if(o.t==="pismo") return `<div class="fpc-papir"><div class="z">${esc(o.h)}</div><p>${esc(o.p)}</p><div class="pot">— ${esc(o.pot)}</div></div>`;
+ if(o.t==="oglas") return `<div class="fpc-oglas"><div class="nn">MALI OGLASI</div><div class="okv"><b>${esc(o.nas)}</b><p>${esc(o.txt)}</p><small>${esc(o.pot)}</small></div></div>`;
+ if(o.t==="postit") return `<div class="fpc-postit">${o.n.map((x,i)=>`<div style="--i:${i}">${esc(x)}</div>`).join("")}${o.z?`<div class="vel">${esc(o.z)}</div>`:""}</div>`;
+ return "";}
+function fpRkTrajanje(o){
+ const n={tel:(o.n||[]).length||3,chat:(o.m||[]).length||3,racun:(o.r||[]).length||3,kviz:(o.o||[]).length||3,
+  bingo:(o.l||[]).length||9,postit:(o.n||[]).length||4,pismo:fpRBroj(o.p||""),oglas:fpRBroj(o.txt||"")}[o.t]||3;
+ const po={tel:420,chat:600,racun:480,kviz:420,bingo:190,postit:330,pismo:95,oglas:95,trazi:0,broj:0}[o.t]||400;
+ const baza={trazi:3600,broj:3400}[o.t]||2400;
+ return Math.max(3400,baza+n*po);}
+function fpRVoScena(s){const [a,b]=FP_VID(s.id);
+ return `<div class="fpr-sc fpr-reklama fpr-vid" data-t="${fpRkTrajanje(s.o)}">
+  <video class="fpr-bg" muted playsinline loop preload="none" poster="${fpF(s.f||"pizza_ruke",720,1280)}" onerror="this.classList.add('greska')"><source src="${a}" type="video/mp4"><source src="${b}" type="video/mp4"></video>
+  <div class="fpr-sjena"></div>
+  <div class="fpr-cap">${s.h?`<div class="kic">${esc(s.h)}</div>`:""}${fpRkWidget(s.o)}</div></div>`;}
+{const st=fpRScena2; fpRScena2=function(sc){return sc.v==="vo"?fpRVoScena(sc):st(sc);};}
+{const st=fpRScena; fpRScena=function(sc){return sc.v==="vo"?fpRVoScena(sc):st(sc);};}
+
+const FP_VREKLAME=(()=>{
+ const VO=(id,f,h,o)=>({n:o.n_,cta:o.cta,tag:o.tag,s:[{v:"vo",id,f,h,o}]});
+ const TEL=(n,p)=>({t:"tel",n,...p}), CHAT=(oz,m,p)=>({t:"chat",oz,m,...p}), RACUN=(r,z,p)=>({t:"racun",r,z,...p}),
+  KVIZ=(q,o,tocno,p)=>({t:"kviz",q,o,tocno,...p}), TRAZI=(q,r,p)=>({t:"trazi",q,r,...p}), BINGO=(l,p2,p)=>({t:"bingo",l,p:p2,...p}),
+  BROJ=(b,p2,odbr,p)=>({t:"broj",b,p:p2,odbr,...p}), PISMO=(h,p2,pot,p)=>({t:"pismo",h,p:p2,pot,...p}),
+  OGLAS=(nas,txt,pot,p)=>({t:"oglas",nas,txt,pot,...p}), POSTIT=(n,z,p)=>({t:"postit",n,z,...p});
+ return [
+ /* obavijesti koje padaju */
+ VO(42481,"pec","Zvuk",TEL(["Nova narudžba · 2× Margherita","Nova narudžba · Capricciosa + Cola","Nova narudžba · Pizza Diavola"],{n_:"Zvono u gužvi",cta:"Izravno vama",tag:"Čujte sami na demo stranici"})),
+ VO(24785,"burger3","Zvuk",TEL(["Nova narudžba · Burger Classic","Nova narudžba · 2× Cheeseburger","Nova narudžba · Pomfrit + Cola"],{n_:"Dok se burger radi",cta:"Narudžbe bez telefona",tag:"Javite nam se"})),
+ VO(15875,"kuhar_lonac","Zvuk",TEL(["Nova narudžba · 3× Pasta Carbonara","Gost: „Bez luka, hvala”","Plaćeno karticom"],{n_:"Kuhinja ne diže slušalicu",cta:"Kuhinja bez papirića",tag:"Pogledajte demo"})),
+ /* chat koji se tipka */
+ VO(4915,"mob_narudzba","Gost",CHAT("Gost",["g:Je li moja narudžba krenula?","f:Da! Status pratite uživo na stranici.","g:Super, hvala 🙌"],{n_:"Gost pita, stranica odgovara",cta:"Pratite narudžbu uživo",tag:"Gost uvijek zna gdje je hrana"})),
+ VO(15867,"chef_priprema","Kuhinja",CHAT("Kuhinja",["k:Stol 5 traži bez luka!","v:Već piše u napomeni 😄","k:Ma stvarno, super je ovo."],{n_:"Konobar i kuhinja",cta:"Sve jasno napisano",tag:"Bez vikanja kroz kuhinju"})),
+ VO(3572,"kava_toci","WhatsApp",CHAT("Prijatelj",["p:Kak posao?","v:Bolje. Gosti sad naruče sami.","p:Čekaj, pa to je pod cijenu kave?","v:49 € mjesečno + 10 %. Baš."],{n_:"Vlasnik i prijatelj",cta:"Pogledajte cijenu",tag:"Bez skrivenih troškova"})),
+ /* račun koji izlazi */
+ VO(42481,"pec","Račun",RACUN([["18× pizza, prosjek 16 €","288,00 €"],["Provizija platforme 28 %","−80,64 €"],["Vama ostaje","207,36 €"]],["S Foodpointom (10 %)","259,20 €"],{n_:"Petak navečer",cta:"Izračunajte svoju",tag:"Razlika se osjeti"})),
+ VO(31155,"dostava_skuter","Račun",RACUN([["420 narudžbi × 19 €","7.980,00 €"],["Provizija platforme 30 %","−2.394,00 €"]],["Foodpoint: 49 € + 10 %","6.787,00 €"],{n_:"Mjesec dana dostave",cta:"Pošaljite nam brojke",tag:"Vidimo se na kavi"})),
+ VO(44007,"pizza_stol","Račun",RACUN([["Capricciosa","11,50 €"],["Provizija platforme 25 %","−2,88 €"],["Vama ostaje","8,62 €"]],["S Foodpointom","10,35 €"],{n_:"Jedna Capricciosa",cta:"Ista pizza, veća zarada",tag:"Provjerite i vi"})),
+ /* kviz koji se rješava */
+ VO(24785,"burger2","Kviz",KVIZ("Koliko stvarno platite provizije na narudžbu od 20 €?",["2 €","6 €","Ne znam, bojim se pogledati"],1,{n_:"Brzi kviz za ugostitelje",cta:"Doznajte točan iznos",tag:"Javite se za izračun"})),
+ VO(44012,"pizza_stol2","Kviz",KVIZ("Što je zapravo „sidrena cijena”?",["Cijena sidra u marini","Cijena od 10. rujna, uz današnju","Caka za advokate"],1,{n_:"Kviz: sidrene cijene",cta:"Pošaljite jelovnik",tag:"Mi je upišemo za vas"})),
+ VO(42467,"pizza_tijesto","Kviz",KVIZ("Koliko treba da vam postavimo stranicu za narudžbe?",["Mjesec dana","Tjedan dana","2–5 dana"],2,{n_:"Kviz: koliko traje postavljanje",cta:"Krenimo odmah",tag:"Postavljanje je besplatno"})),
+ /* Google pretraga koja se tipka */
+ VO(42136,"mob_narudzba","Pretraga",TRAZI("pizzerija blizu mene dostava",["Vaša pizzerija — naručite izravno","Vaša stranica, vaše ime, 10 % provizije"],{n_:"Kad gost pita Google",cta:"Neka nađu vas",tag:"Pod vašim imenom, ne tuđim"})),
+ VO(42133,"mob_kutija","Pretraga",TRAZI("kako smanjiti proviziju dostave",["Foodpoint — partner za ugostitelje","49 € mjesečno + 10 % — bez ugovora"],{n_:"Ako ste ovo ikad guglali",cta:"Pogledajte ponudu",tag:"Bez ugovorne obveze"})),
+ VO(51123,"mob_narudzba","Pretraga",TRAZI("najbolja aplikacija za narudžbe restorana",["Vaša vlastita stranica > tuđa aplikacija","Foodpoint je napravi za 2–5 dana"],{n_:"Odgovor na pravo pitanje",cta:"Pogledajte demo",tag:"Vaš logo, vaše boje"})),
+ /* bingo s pečatima */
+ VO(4678,"raznjici","Bingo",BINGO(["Telefon zvoni u gužvi","Papirić nitko ne razumije","„Gdje mi je hrana?”","Kriva adresa","25 % provizije","Vozač zove kuhinju","Bez luka ili ipak s lukom","Sidrene cijene?!","Konobar trči treći put"],"Foodpoint briše cijelu karticu.",{n_:"Ugostiteljski bingo",cta:"Igrajte s nama",tag:"Pogodili smo?"})),
+ VO(39535,"kuhar_lonac","Bingo",BINGO(["Dvije platforme, dvije lozinke","Treća aplikacija za dostavu","Excel koji nitko ne ažurira","Stalni gost traži popust","Printer bez papira","Kuhar broji na prste","Jelovnik star dvije godine","Vikend bez pauze","Novi zaposlenik, stari kaos"],"Zvuči poznato? Pozdrav od Foodpointa.",{n_:"Bingo kaosa",cta:"Dosta je kaosa",tag:"Javite nam se"})),
+ VO(219,"kava_stol","Bingo",BINGO(["Gost zove da pita je li otvoreno","Papirić pao na pod","Vozač ne zna broj stana","Dvostruka narudžba, jedna greška","Kuhinja čeka potvrdu uplate","Netko pojeo deseti gratis kebab","Jelovnik na tri jezika, ručno","QR kod koji ne radi","Telefon na 1 % baterije"],"Devet od devet? Vrijeme je za razgovor.",{n_:"Bingo petka navečer",cta:"Riješimo zajedno",tag:"Popijmo kavu"})),
+ /* odbrojavanje */
+ VO(44012,"pizza_stol2","Odbrojavanje",BROJ("DANA","Do sidrenih cijena. Mi ih upisujemo umjesto vas.",1,{n_:"Sat otkucava",cta:"Pošaljite jelovnik",tag:"Ne čekajte zadnji dan"})),
+ VO(42473,"pizza_ruke","Provizija",BROJ("10%","Toliko je naša provizija. Ne 25, ne 30.",0,{n_:"Ista cijena, drugačiji broj",cta:"Usporedite sami",tag:"Računica je jasna"})),
+ VO(42467,"pizza_tijesto","Postavljanje",BROJ("0 €","Postavljanje, jelovnik i obuka — besplatno.",0,{n_:"Koliko košta start",cta:"Krenimo",tag:"Besplatno od početka"})),
+ /* pismo */
+ VO(3574,"kava_stol","Pismo",PISMO("Dragi telefone,","zvoniš mi od 19 do 21 i nikad ne prestaješ. Upoznao sam stranicu za narudžbe koja prima goste umjesto tebe. Nemoj se uvrijediti, ali trebam pauzu.","Tvoj umorni ugostitelj",{n_:"Pismo telefonu",cta:"I vi zaslužujete pauzu",tag:"Javite se"})),
+ VO(43941,"kava_toci","Pismo",PISMO("Draga provizijo od 28 %,","svaki mjesec uzmeš više nego što daš. Upoznao sam nekoga tko traži 10 % i dođe na kavu razgovarati. Mislim da je ovo kraj.","Tvoj bivši ugostitelj",{n_:"Pismo proviziji",cta:"Prekinite i vi",tag:"Bez drame, bez ugovora"})),
+ VO(15875,"kuhar_lonac","Pismo",PISMO("Dragi papiriću,","služio si mi vjerno, ali te više nitko ne može pročitati, pogotovo ne ti sam poslije 22 h. Hvala na svemu. Sad narudžbe stižu tipkane.","Kuhinja",{n_:"Pismo papiriću",cta:"Bez papirića",tag:"Kuhinja vam zahvaljuje"})),
+ /* mali oglas */
+ VO(222,"kava_toci","Mali oglasi",OGLAS("TRAŽI SE","Partner koji se javlja na telefon, ne uzima 30 % i dolazi na kavu. Iskustvo s petkom navečer obavezno.","Javiti se: Foodpoint",{n_:"Oglas: traži se partner",cta:"Javite se",tag:"Čekamo poziv"})),
+ VO(12016,"burger2","Mali oglasi",OGLAS("PRODAJEM","Blok za narudžbe, malo korišten. Olovka koja piše samo petkom. Razlog prodaje: prešli smo na Foodpoint.","Cijena: po dogovoru",{n_:"Oglas: prodajem blok",cta:"Prijeđite i vi",tag:"Bez papirića"})),
+ VO(51123,"mob_narudzba","Mali oglasi",OGLAS("MIJENJAM","Tri aplikacije za dostavu i jedan telefon koji ne staje — za jednu stranicu za narudžbe i mirne petke.","Javiti se: Foodpoint",{n_:"Oglas: mijenjam kaos za mir",cta:"Dogovorimo zamjenu",tag:"Vrijedi probati"})),
+ /* post-it */
+ VO(42123,"mob_kutija","Popis",POSTIT(["Nazvati dobavljača!!","Novi jelovnik??","Sidrene cijene???","Provizija 1.800 €!!"],"Ili samo: Foodpoint.",{n_:"Popis koji raste",cta:"Skratite popis",tag:"Riješimo ga zajedno"})),
+ VO(4915,"mob_narudzba","Popis",POSTIT(["Stranica za narudžbe","Kuhinja i šank","Aplikacija za vozače","Jelovnik sa sidrenim"],"Sve u jednom paketu.",{n_:"Popis koji se sam križa",cta:"Pogledajte pakete",tag:"Jedan partner, sve riješeno"})),
+ VO(20913,"pizza_ruke","Popis želja",POSTIT(["Manje telefona","Manje papirića","Manje provizije","Više vremena za kuhanje"],"To je ideja.",{n_:"Popis želja svakog ugostitelja",cta:"Ostvarimo ga",tag:"Javite nam se"}))];
+})();
 
 start();
 </script>
