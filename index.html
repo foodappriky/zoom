@@ -249,10 +249,19 @@ body.bljesak{animation:bl .35s steps(1) 4}
    već stoje gore desno na pojedinim ekranima (npr. pultu). */
 .zvuk-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:0;padding:10px 18px 0}
 .zvuk-wrap.ugnijezdeno{padding:0}
-.zvuk-ikona{width:40px;height:40px;border-radius:50%;flex:none;font-size:17px;line-height:1;
+.zvuk-ikona{position:relative;width:44px;height:44px;border-radius:50%;flex:none;line-height:1;
  display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,.3)}
+.zvuk-ikona svg{width:22px;height:22px;display:block}
 .zvuk-ikona.off{border:2px solid var(--red);background:var(--bg2);color:var(--red)}
 .zvuk-ikona.on{border:var(--bw) solid var(--line2);background:var(--bg2);color:var(--or)}
+/* ugašen zvuk tiho pulsira da ga se primijeti u gužvi; uključen ima mirne valove */
+.zvuk-ikona.off::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid var(--red);
+ animation:zvPuls 2.4s ease-out infinite;pointer-events:none}
+@keyframes zvPuls{0%{transform:scale(1);opacity:.55}70%{transform:scale(1.45);opacity:0}100%{opacity:0}}
+.zvuk-ikona.on .zv-val{animation:zvVal 2.6s ease-in-out infinite;transform-origin:8px 12px}
+.zvuk-ikona.on .zv-val2{animation-delay:.22s}
+@keyframes zvVal{0%,70%,100%{opacity:.35}18%,45%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.zvuk-ikona.off::after,.zvuk-ikona.on .zv-val{animation:none}}
 /* ---- gornja traka: jezik / tema / vjernost / instalacija ----
    Korisnik: ranije su ovo bili kružići koji lebde preko naslovne fotografije — ružno i
    nejasno čemu služe. Sad je to prava traka na samom vrhu stranice (dio normalnog toka,
@@ -3037,6 +3046,35 @@ html[lang=en] .fpl-paket.istaknut::before{content:"Most popular"}
 .fpr-reklama.on .fpc-oglas{animation:fprGore .5s ease-out both}
 .fpr-reklama.on .fpc-postit div{animation:fprPop .45s cubic-bezier(.2,.9,.3,1.25) both;animation-delay:calc(.3s + var(--i)*.25s)}
 
+/* ===== RIKY'S REELOVI — brend klijenta (narančasta #FF4106, zlatna #F6BE2C) ===== */
+.fpr-rikys{--rk:#FF4106;--rk2:#F6BE2C}
+.fpr-rikys .fpr-prog i{background:var(--rk)}
+.fpr-rikys .fpr-cap .kic{background:var(--rk);color:#fff}
+.fpr-rikys .fpr-titl em,.fpr-rikys .fpr-naslov em,.fpr-rikys .fpr-tx h3 em{color:var(--rk2)}
+.fpr-rikys .fpr-odjava{background:linear-gradient(165deg,#1A0F0A 0%,#0B0908 60%,#2A1206 100%)}
+.fpr-rikys .fpr-odjava .znak{max-width:46cqw;height:auto;filter:drop-shadow(0 1cqw 3cqw rgba(0,0,0,.55))}
+.fpr-rikys .fpr-odjava .tag{color:var(--rk2);letter-spacing:.06em}
+.fpr-rikys .fpr-odjava .cta{background:var(--rk);color:#fff}
+.fpr-rikys .fpr-broj .b{color:var(--rk2)}
+.fpr-rikys .fpr-lista li svg{color:var(--rk2)}
+.fpr-wm-rk{height:auto;width:22cqw;top:19cqw;left:7cqw;border-radius:2cqw}
+.fpr-rk-dno{opacity:0;margin-top:4cqw;display:flex;flex-wrap:wrap;justify-content:center;gap:1.6cqw;
+ font-size:3.1cqw;font-weight:600;letter-spacing:.01em;color:rgba(255,255,255,.72);text-align:center}
+.fpr-rk-dno b{font-weight:600}
+.fpr-rk-dno span{color:var(--rk);font-weight:800}
+.fpr-rk-dno.adr{margin-top:1cqw;font-size:2.9cqw;color:rgba(255,255,255,.58)}
+.fpr-odjava.on .fpr-rk-dno.adr{animation-delay:2.12s}
+.fpr-odjava.on .fpr-rk-dno{animation:fprGore .5s 2s ease-out both}
+/* kartica jela: naziv, kratki opis i cijena preko fotografije */
+.fpr-jelo .fpr-tx{position:absolute;left:0;right:0;bottom:24cqw;padding:0 8cqw;z-index:5}
+.fpr-jkar{background:rgba(11,9,8,.82);backdrop-filter:blur(8px);border:.5cqw solid rgba(246,190,44,.45);
+ border-radius:4cqw;padding:5cqw 5.5cqw;text-align:left;box-shadow:0 2cqw 6cqw rgba(0,0,0,.45)}
+.fpr-jelo.on .fpr-jkar{animation:fprPop .62s cubic-bezier(.2,.9,.25,1.05) both}
+.fpr-jkar .j{font-family:"Anton",system-ui,sans-serif;font-size:7.4cqw;line-height:1.02;color:#fff;letter-spacing:.01em}
+.fpr-jkar .o{margin-top:1.8cqw;font-size:3.5cqw;line-height:1.35;color:rgba(255,255,255,.76);font-weight:500}
+.fpr-jkar .c{margin-top:3cqw;display:inline-block;background:#FF4106;color:#fff;
+ font-size:6.2cqw;font-weight:800;line-height:1;padding:2.2cqw 4cqw;border-radius:2.4cqw;letter-spacing:-.01em}
+
 .fp-logo{display:inline-flex;align-items:center;gap:calc(var(--v)*.32);font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-weight:800;
  font-size:calc(var(--v)*.86);letter-spacing:-.02em;line-height:1;text-transform:none;white-space:nowrap;vertical-align:middle}
 .fp-logo img{width:calc(var(--v)*1.3);height:calc(var(--v)*1.3);border-radius:28%;display:block;flex:none}
@@ -4489,13 +4527,20 @@ document.addEventListener("pointerup",skiniPritisak);
 document.addEventListener("pointercancel",skiniPritisak);
 document.addEventListener("pointerleave",skiniPritisak,true);
 
+/* Ikona zvuka: zvonce u istoj liniji kao ostale ikone sučelja (tanka linija, zaobljeni krajevi).
+   Uključeno = zvonce s dva vala; isključeno = zvonce prekriženo kosom crtom. */
+function ZV_IKONA(ukljucen){
+ const o=`viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"`;
+ const zvono=`<path d="M17.5 10.2a5.5 5.5 0 0 0-11 0c0 5.2-2.1 6.6-2.1 6.6h15.2s-2.1-1.4-2.1-6.6Z"/><path d="M10.3 20a2 2 0 0 0 3.4 0"/>`;
+ if(ukljucen) return `<svg ${o}>${zvono}<path class="zv-val" d="M19.6 5.4a7.8 7.8 0 0 1 2 3.1"/><path class="zv-val zv-val2" d="M22.1 3.3a11 11 0 0 1 1.5 2.4" transform="translate(-1.6 .3)"/></svg>`;
+ return `<svg ${o}>${zvono}<path d="M4 3.6 20 20.4"/></svg>`;}
 function zvukGumb(ugnijezdeno){
  const kl="zvuk-wrap"+(ugnijezdeno?" ugnijezdeno":"");
  if(!zvukOK)return `<div class="${kl}"><button class="zvuk-ikona off" onclick="upaliZvuk()"
-   aria-label="Uključi zvučnu obavijest" title="Uključi zvučnu obavijest">🔕</button>
+   aria-label="Uključi zvučnu obavijest" title="Uključi zvučnu obavijest">${ZV_IKONA(0)}</button>
   ${zvukPoruka?`<div class="zv-greska">${esc(zvukPoruka)}</div>`:""}</div>`;
  return `<div class="${kl}"><button class="zvuk-ikona on" onclick="postavkeOtvorene=!postavkeOtvorene;crtaj(1)"
-   aria-label="Zvuk uključen — postavke" title="Zvuk uključen — postavke">🔔</button>
+   aria-label="Zvuk uključen — postavke" title="Zvuk uključen — postavke">${ZV_IKONA(1)}</button>
   ${postavkeOtvorene?postavkeZvuka():""}</div>`;}
 function postavkeZvuka(){
  const izbor=(polje,naslov)=>`<div class="zv-red"><span>${naslov}</span>
@@ -10155,7 +10200,7 @@ const FP_REELS=[
 
 /* ---------- zajednički dijelovi ---------- */
 let fpO={skup:"a",puni:null};
-const FP_O_SKUPOVI=[["a","Objave 1–30"],["b","Objave 31–60"],["r","Reels 1–30"],["r2","Reels 31–80"],["c","Reklame 61–90"],["r3","Video reels 81–110"],["r4","Video reklame 111–140"]];
+const FP_O_SKUPOVI=[["a","Objave 1–30"],["b","Objave 31–60"],["r","Reels 1–30"],["r2","Reels 31–80"],["c","Reklame 61–90"],["r3","Video reels 81–110"],["r4","Video reklame 111–140"],["rk","Riky's 1–20"]];
 const fpOOd=()=>({b:30,r2:30,c:60,r3:80,r4:110})[fpO.skup]||0;
 const fpOSidr=()=>`<span class="fpo-sidr">${fpIk("sidro",14)}Spremni za sidrene cijene</span>`;
 const fpOLogo=(bijeli,kl)=>`<img class="fpo-logo${kl?" "+kl:""}" src="${FP_LOGO_V(bijeli)}" alt="Foodpoint" crossorigin="anonymous">`;
@@ -10230,8 +10275,8 @@ function fpRInit(){
  document.querySelectorAll(".fpr-reel:not([data-ok])").forEach(el=>{el.dataset.ok=1; if(fpRObs)fpRObs.observe(el); else {el._vid=true; fpRKorak(el);}});}
 
 /* ---------- prikaz u Upiti → Objave ---------- */
-const fpOJeR=()=>fpO.skup==="r"||fpO.skup==="r2"||fpO.skup==="r3"||fpO.skup==="r4";
-function fpOLista(){return fpO.skup==="b"?FP_OBJAVE2:fpO.skup==="r"?FP_REELS:fpO.skup==="r2"?FP_REELS2:fpO.skup==="r3"?FP_REELS3:fpO.skup==="r4"?FP_VREKLAME:fpO.skup==="c"?FP_REKLAME:FP_OBJAVE;}
+const fpOJeR=()=>fpO.skup==="r"||fpO.skup==="r2"||fpO.skup==="r3"||fpO.skup==="r4"||fpO.skup==="rk";
+function fpOLista(){return fpO.skup==="b"?FP_OBJAVE2:fpO.skup==="r"?FP_REELS:fpO.skup==="r2"?FP_REELS2:fpO.skup==="r3"?FP_REELS3:fpO.skup==="r4"?FP_VREKLAME:fpO.skup==="rk"?FP_RIKYS:fpO.skup==="c"?FP_REKLAME:FP_OBJAVE;}
 function fpOStavka(o){return fpOJeR()?fpReelHTML(o):fpO.skup==="b"?fpOPostB(o):fpO.skup==="c"?fpOPostC(o):fpOPostA(o);}
 const FP_O_NAZ={crvena:"Crvena",svijetla:"Svijetla",tamna:"Tamna",foto:"Fotografija",usporedba:"Usporedba",ekran:"Ekran",lista:"Popis",
  lf:"Logo + fotografija",split:"Podijeljena",okvir:"Okvir",kolaz:"Kolaž",potpis:"Znak",traka:"Traka"};
@@ -10251,7 +10296,7 @@ function fpObjaveHTML(){
    ${r?`<button title="Snimi video (webm)" onclick="fpRSnimi(${i},this)">${fpIk("video",16)}</button>
    <button title="Preuzmi kao HTML" onclick="fpRPreuzmiHTML(${i},this)">${fpIk("preuzmi",16)}</button>`:
     `<button title="Preuzmi PNG 1080×1350" onclick="fpOPreuzmi(${i},this)">${fpIk("preuzmi",16)}</button>`}</span></div>
-  <details class="fpo-cap"><summary>Tekst objave</summary><p>${esc(o.cap||"")}</p><p class="oz">${FP_OZNAKE}</p></details></div>`).join("")}</div>`;}
+  <details class="fpo-cap"><summary>Tekst objave</summary><p>${esc(o.cap||"")}</p><p class="oz">${o.oz||FP_OZNAKE}</p></details></div>`).join("")}</div>`;}
 
 function fpOPuni(i){
  const r=fpOJeR(), o=fpOLista()[i]; fpOZatvori();
@@ -10265,7 +10310,7 @@ function fpOPuni(i){
  d.onkeydown=null; document.onkeydown=e=>{if(e.key==="Escape")fpOZatvori();};}
 function fpOZatvori(){const d=document.getElementById("fpo-puni"); if(d){const el=d.querySelector(".fpr-reel"); if(el){el._vid=false; clearTimeout(el._t);} d.remove();}
  document.documentElement.style.overflow=""; document.onkeydown=null;}
-function fpOKopiraj(i,b){const o=fpOLista()[i]; const t=(o.cap||"")+"\n\n"+FP_OZNAKE;
+function fpOKopiraj(i,b){const o=fpOLista()[i]; const t=(o.cap||"")+"\n\n"+(o.oz||FP_OZNAKE);
  (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{b.classList.add("ok"); setTimeout(()=>b.classList.remove("ok"),1400);})
   .catch(()=>{prompt("Kopirajte tekst:",t);});}
 function fpUcitajH2C(){return window.html2canvas?Promise.resolve():new Promise((ok,ne)=>{const s=document.createElement("script");
@@ -11185,6 +11230,168 @@ const FP_VREKLAME=(()=>{
  VO(4915,"mob_narudzba","Popis",POSTIT(["Stranica za narudžbe","Kuhinja i šank","Aplikacija za vozače","Jelovnik sa sidrenim"],"Sve u jednom paketu.",{n_:"Popis koji se sam križa",cta:"Pogledajte pakete",tag:"Jedan partner, sve riješeno"})),
  VO(20913,"pizza_ruke","Popis želja",POSTIT(["Manje telefona","Manje papirića","Manje provizije","Više vremena za kuhanje"],"To je ideja.",{n_:"Popis želja svakog ugostitelja",cta:"Ostvarimo ga",tag:"Javite nam se"}))];
 })();
+
+/* ===== FOODPOINT 12: 20 reelova za Riky's Pizza =====
+   Reklame za KLIJENTA (B2C), ne za Foodpoint. Vlastiti brend: logo, narančasta i zlatna,
+   pravi jelovnik i prave cijene iz baze, prave akcije (4+1, gratis Coca-Cola, vjernost).
+   Ton po uputama: topao, duhovit, prirodan hrvatski. Formula svake objave:
+   želja/proizvod → konkretnost (cijena ili ponuda) → jedan jasan CTA. */
+
+const RIKYS={
+ naziv:"Riky's Pizza", slogan:"Real food. Real pizza.",
+ logo:"https://dtukpkufpqmrktpaxiho.supabase.co/storage/v1/object/public/slike/rikys/logo.png",
+ web:"rikyspizza.com.hr", tel:"01 2090 102", adresa:"Zagorska 18, Zagreb",
+ oznake:"#RikysPizza #Zagreb #pizza #dostava #domaće"};
+
+/* scena "jelo": kartica s nazivom, kratkim opisom i cijenom preko fotografije */
+function fpRJelo(s){
+ return `<div class="fpr-sc fpr-jelo" data-t="${s.o?3400:3000}"><div class="fpr-bg" style="${fpBg(s.f,1080,1920)}"></div>
+  <div class="fpr-sjena"></div><div class="fpr-tx"><div class="fpr-jkar">
+   <div class="j">${esc(s.j)}</div>${s.o?`<div class="o">${esc(s.o)}</div>`:""}<div class="c">${esc(s.c)}</div></div></div></div>`;}
+{const st=fpRScena2; fpRScena2=function(s){return s.v==="jelo"?fpRJelo(s):st(s);};}
+{const st=fpRScena; fpRScena=function(s){return s.v==="jelo"?fpRJelo(s):st(s);};}
+
+/* odjava i vodeni žig u Rikyjevom brendu umjesto Foodpointova */
+{const st=fpReelHTML; fpReelHTML=function(r){
+ if(r.brend!=="rikys")return st(r);
+ return `<div class="fpr-reel fpr-rikys">${r.s.map(fpRScena).join("")}
+  <div class="fpr-sc fpr-odjava" data-t="3600"><div class="fpr-tx"><img class="znak" src="${RIKYS.logo}" alt="${RIKYS.naziv}">
+   <div class="tag">${esc(r.tag||RIKYS.slogan)}</div><div class="cta">${esc(r.cta||"Naruči")} →</div>
+   <div class="fpr-rk-dno"><b>${esc(RIKYS.web)}</b><span>·</span><b>${esc(RIKYS.tel)}</b></div>
+   <div class="fpr-rk-dno adr">${esc(RIKYS.adresa)}</div></div></div>
+  <img class="fpr-wm fpr-wm-rk" src="${RIKYS.logo}" alt=""><div class="fpr-prog"><i></i></div></div>`;};}
+
+const FP_RIKYS=(()=>{
+ const V=(id,t,f,k)=>({v:"vid",id,t,f,k}), J=(j,c,o,f)=>({v:"jelo",j,c,o,f}),
+  B=(a,b,p)=>({v:"broj",a,b,p}), L=l=>({v:"lista",l}), N=h=>({v:"naslov",h}),
+  K=(ik,n,t)=>({v:"k",ik,n,t});
+ const R=o=>({...o,brend:"rikys",oz:RIKYS.oznake});
+ return [
+
+ /* ---- 1–10: hrana i želja (zabava/edukacija) ---- */
+ R({n:"Petak je Riky's",cta:"Naruči online",tag:"Petak navečer",
+  s:[V(42481,"Petak je. Peć je *već vruća*.","pec"),
+     J("Capricciosa","10,60 €","Šunka, šampinjoni, mozzarella, maslina","pizza_stol"),
+     V(44007,"Ostalo je samo da kažeš *koliko komada*.","prijatelji_pizza")],
+  cap:"Petak navečer i peć koja ne staje. Capricciosa 10,60 € — naruči na rikyspizza.com.hr i stiže topla na vrata. 🍕"}),
+
+ R({n:"Tijesto od jutra",cta:"Naruči svoju",tag:"Iza kulisa",
+  s:[V(42467,"Tijesto mijesimo *svako jutro*.","pizza_tijesto"),
+     V(42478,"Bez prečaca i bez smrznutog.","pizza_tijesto"),
+     J("Margherita","9,00 €","Pelati, gouda, mozzarella, maslina","pizza_ruke")],
+  cap:"Tijesto radimo svako jutro, od nule. Margherita 9,00 € — jednostavno, kako treba. Naruči na rikyspizza.com.hr."}),
+
+ R({n:"XXL sendvič",cta:"Naruči XXL",tag:"Veličina pizze",
+  s:[V(47159,"Ovo nije sendvič. Ovo je *32 puta 32 centimetra*.","burger1"),
+     J("XXL sendvič pršut","15,00 €","Pršut, gouda, rikola, rajčica, majoneza","burger4"),
+     V(44015,"Dovoljno za *dvoje*. Ako se slažete.","prijatelji_pizza")],
+  cap:"XXL sendvič je velik kao pizza — 32×32 cm. Pršut, gouda, rikola i rajčica, 15,00 €. Naruči na rikyspizza.com.hr."}),
+
+ R({n:"Vatrena",cta:"Naruči Vatrenu",tag:"Za ljubitelje ljutog",
+  s:[V(4118,"Neki vole *toplo*.","kuhar_noc"),
+     J("Vatrena","13,00 €","Dimljena vratina, kulen, špek, chili, feferoni","pec"),
+     V(32457,"Mi smo ih *ozbiljno shvatili*.","meso")],
+  cap:"Vatrena: dimljena vratina, kulen, špek, chili i feferoni. 13,00 € za one koji vole kad peče. 🌶️ Naruči na rikyspizza.com.hr."}),
+
+ R({n:"Četiri sira",cta:"Naruči Quattro",tag:"Sirni ritual",
+  s:[V(42478,"Gorgonzola. Grana padano. Gouda. Mozzarella.","pizza_tijesto"),
+     J("Quattro Formaggio","12,20 €","Četiri sira i ništa što ih ometa","pizza_stol2"),
+     V(20913,"Broji se *svaki*.","pizza_ruke")],
+  cap:"Quattro Formaggio — gorgonzola, grana padano, gouda i mozzarella. 12,20 €. Naruči na rikyspizza.com.hr. 🧀"}),
+
+ R({n:"Pizza s našim imenom",cta:"Naruči Riky's",tag:"Kuća preporučuje",
+  s:[V(42480,"Jednu pizzu smo nazvali *po sebi*.","pec"),
+     J("Riky's","13,00 €","Šunka, kulen, špek, dimljeni sir, maslina","pizza_ruke"),
+     V(42484,"Nije to napravljeno *na brzinu*.","pizza_ponos")],
+  cap:"Riky's — šunka, kulen, špek i dimljeni sir. Pizza koja nosi naše ime, 13,00 €. Naruči na rikyspizza.com.hr."}),
+
+ R({n:"Burger u brioche pecivu",cta:"Naruči burger",tag:"Nije samo pizza",
+  s:[V(12016,"Cheddar se *topi*…","burger2"),
+     V(24785,"…slanina hrska…","burger3"),
+     J("Bacon Cheeseburger","9,54 €","100 % juneće meso, cheddar, slanina, brioche","konobar_burgeri")],
+  cap:"Bacon Cheeseburger u brioche pecivu: 100 % juneće meso, cheddar i hrskava slanina. 9,54 €. Naruči na rikyspizza.com.hr. 🍔"}),
+
+ R({n:"Njoke 4 sira",cta:"Naruči njoke",tag:"Kad treba nešto toplo",
+  s:[V(13258,"Kad vani *pada kiša*…","chef_rez"),
+     J("Njoke 4 sira","12,00 €","Mekani krumpirovi njoki u umaku od četiri sira","chef_tanjur"),
+     V(4672,"…tanjur rješava *cijelu večer*.","konobar_tanjur")],
+  cap:"Kišni dan traži njoke. Mekani krumpirovi njoki u umaku od četiri sira, 12,00 €. Naruči na rikyspizza.com.hr."}),
+
+ R({n:"Ćevapi u lepinji",cta:"Naruči ćevape",tag:"Domaće i jednostavno",
+  s:[V(4678,"Lepinja ide *u juhu*, pa na roštilj.","raznjici"),
+     J("Ćevapi u lepinji","8,50 €","Domaća junetina, sjeckani luk, ajvar","meso"),
+     V(32457,"Tako se to radilo *i prije nas*.","meso")],
+  cap:"Ćevapi od domaće junetine, lepinja natopljena u juhi i zapečena na roštilju. S lukom i ajvarom, 8,50 €. Naruči na rikyspizza.com.hr."}),
+
+ R({n:"Slatki kraj",cta:"Dodaj palačinke",tag:"Za kraj",
+  s:[V(13261,"Ostalo je još *malo mjesta*.","chef_tanjur"),
+     J("Palačinke","4,00 €","Nutella, Lino Lada Gold ili marmelada — 2 komada","chef_priprema"),
+     V(44012,"Uvijek ostane. Znamo.","prijatelji_pizza")],
+  cap:"Dvije domaće palačinke za 4,00 € — Nutella, Lino Lada Gold ili marmelada. Dodaj uz narudžbu na rikyspizza.com.hr. 🥞"}),
+
+ /* ---- 11–16: zajednica i svakodnevica ---- */
+ R({n:"Utakmica i pizza",cta:"Naruči prije utakmice",tag:"Za ekipu",
+  s:[V(26089,"Utakmica počinje za *20 minuta*.","prijatelji_tv"),
+     V(42136,"Narudžba traje *minutu*.","pizza_mob"),
+     V(31155,"Stigne prije *prvog gola*.","vrecica")],
+  cap:"Utakmica za 20 minuta? Naruči na rikyspizza.com.hr i pizza stiže prije prvog gola. ⚽"}),
+
+ R({n:"Nedjeljni ručak",cta:"Naruči ručak",tag:"Nedjelja",
+  s:[V(2597,"Nedjelja. Nitko ne želi *prati suđe*.","restoran_drvo"),
+     J("Pohani pileći odrezak","10,90 €","S pomfritom, tartar umakom i kruhom","chef_tanjur"),
+     V(44015,"Stol je i dalje *pun*. Kuhinja nije.","prijatelji_pizza")],
+  cap:"Nedjeljni ručak bez suđa: pohani pileći odrezak s pomfritom i tartar umakom, 10,90 €. Naruči na rikyspizza.com.hr."}),
+
+ R({n:"Doručak u Zagorskoj",cta:"Svrati na doručak",tag:"Od 10 h",
+  s:[V(3572,"Otvaramo u *10*.","barista"),
+     J("Tost šunka sir","4,95 €","Hrskavi tost s kuhanom šunkom i topljenim sirom","pekara"),
+     V(3581,"Dovoljan razlog da *staneš*.","kava_toci")],
+  cap:"Jutro u Zagorskoj 18: tost sa šunkom i sirom za 4,95 €. Otvaramo u 10. Svrati ili naruči na rikyspizza.com.hr. ☕"}),
+
+ R({n:"Dostava do vrata",cta:"Naruči dostavu",tag:"Zagreb",
+  s:[V(31136,"Vozimo *sami*.","dostavljac_ulica"),
+     B("1 €","do 2 km","dostava u susjedstvu"),
+     V(31139,"Nitko između nas i tebe.","dostava_portret")],
+  cap:"Dostavu vozimo sami — 1 € do 2 km. Minimalna narudžba 9 €. Naruči na rikyspizza.com.hr. 🛵"}),
+
+ R({n:"Stalni gosti",cta:"Vidimo se",tag:"Hvala",
+  s:[V(42487,"Neke narudžbe znamo *napamet*.","pizza_stol2"),
+     V(44012,"Ime, adresa, bez luka.","prijatelji_pizza"),
+     N("Hvala što ste naši.")],
+  cap:"Neke narudžbe znamo napamet — ime, adresa, bez luka. Hvala svima koji se vraćaju. ❤️ rikyspizza.com.hr"}),
+
+ R({n:"Ponedjeljak",cta:"Vidimo se u utorak",tag:"Radno vrijeme",
+  s:[V(29050,"Ponedjeljkom smo *zatvoreni*.","restoran_sala"),
+     N("I peć ima pravo na pauzu."),
+     B("Uto–ned","10–23","svaki dan osim ponedjeljka")],
+  cap:"Ponedjeljkom je peć na pauzi. Utorak–nedjelja 10:00–23:00, Zagorska 18. Vidimo se. 🍕"}),
+
+ /* ---- 17–20: promocije ---- */
+ R({n:"4 + 1 gratis",cta:"Iskoristi 4 + 1",tag:"Akcija",
+  s:[V(44001,"Naručiš *četiri* pizze…","pizza_stol"),
+     B("+1","GRATIS","peta ide na kuću"),
+     V(20913,"…peta je *naša*.","pizza_ruke")],
+  cap:"Naruči četiri pizze i peta ide na kuću. Akcija 4 + 1 vrijedi na rikyspizza.com.hr. 🍕🍕🍕🍕🍕"}),
+
+ R({n:"Cola na kuću",cta:"Naruči i uzmi Colu",tag:"Uz narudžbu",
+  s:[V(44007,"Uz svaku narudžbu ide *nešto hladno*.","prijatelji_pizza"),
+     J("Coca-Cola","gratis","Uz narudžbu preko naše stranice","pizza_stol"),
+     V(44015,"Bez dodatnog klika.","prijatelji_pizza")],
+  cap:"Uz narudžbu preko naše stranice ide gratis Coca-Cola. Bez koda i bez dodatnog klika. rikyspizza.com.hr 🥤"}),
+
+ R({n:"Naruči izravno",cta:"Naruči kod nas",tag:"Zašto baš naša stranica",
+  s:[V(4915,"Naruči *izravno* kod nas.","mob_narudzba"),
+     L(["Ista pizza, naša cijena","Bez naknade aplikacije","Dostavu vozimo sami"]),
+     V(42133,"Kratak put od peći do vrata.","mob_kutija")],
+  cap:"Kad naručiš na rikyspizza.com.hr, plaćaš pizzu — ne naknadu aplikacije. Ista pizza, naša cijena, naša dostava."}),
+
+ R({n:"Svaka se narudžba broji",cta:"Pridruži se",tag:"Vjernost",
+  s:[V(42473,"Svaka se narudžba *broji*.","pizza_ruke"),
+     K("poklon","Bez kartice u novčaniku","Broj mobitela je dovoljan. Narudžbe se zbrajaju same."),
+     V(44012,"A nagrada stiže *sama od sebe*.","prijatelji_pizza")],
+  cap:"Program vjernosti bez kartica — dovoljan je broj mobitela, narudžbe se zbrajaju same. Naruči na rikyspizza.com.hr."}),
+
+ ];})();
 
 start();
 </script>
