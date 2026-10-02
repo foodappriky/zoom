@@ -2833,168 +2833,387 @@ html[lang=en] .fpl-paket.istaknut::before{content:"Most popular"}
 .fpr-razg .bub{font-size:5cqw;max-width:84%}
 .fpr-razg .bub small{font-size:2.9cqw}
 
-/* ---- video reelovi ---- */
-.fpr-vid video.fpr-bg{width:100%;height:100%;object-fit:cover;display:block;background:#17120F}
-.fpr-sjena{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 26%,rgba(0,0,0,.12) 45%,rgba(0,0,0,.8) 72%,rgba(0,0,0,.9) 100%)}
-.fpr-sc.on.fpr-vid .fpr-bg{animation:none}
-
-/* ---- reklame (skup C) ---- */
-.fpc{background:#FFF8F4}
-.fpc.tamno{color:#fff;background:#17120F}
-.fpc.tamno .fpo-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,10,8,.6) 0%,rgba(15,10,8,.1) 32%,rgba(15,10,8,.35) 55%,rgba(15,10,8,.92) 100%)}
-.fpc.tamno .fpo-sidr{color:#fff;border-color:rgba(255,255,255,.45)}
-.fpc .fpo-sred{gap:0}
-.fpk-poster .fpo-sred{justify-content:flex-end;padding-bottom:3cqw}
-.fpk-poster .fpo-h{font-family:Anton,"Plus Jakarta Sans",sans-serif;font-weight:400;font-size:12.5cqw;line-height:.98;letter-spacing:0;text-transform:uppercase}
-.fpk-poster .fpo-h em{color:#FF5A4A}
-.fpo-p.jak{font-weight:800;color:#C9191A;opacity:1;font-size:4.2cqw;margin-top:3cqw}
-/* bingo */
-.fpc-bingo{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6cqw;margin-top:4cqw}
-.fpc-bingo div{position:relative;aspect-ratio:1/.82;background:#fff;border:.3cqw solid #EADFD9;border-radius:2.4cqw;display:grid;place-items:center;text-align:center;padding:1.6cqw;font-size:2.8cqw;font-weight:700;line-height:1.2;overflow:hidden}
-.fpc-bingo div::after{content:"";position:absolute;width:11cqw;height:11cqw;border:1cqw solid rgba(201,25,26,.8);border-radius:50%;transform:rotate(calc(var(--i)*17deg))}
-/* pismo */
-.fpc-papir{background:#fff;border-radius:1.5cqw;padding:7cqw 6.5cqw;transform:rotate(-1.6deg);box-shadow:0 2cqw 6cqw rgba(23,18,15,.14);background-image:repeating-linear-gradient(180deg,transparent 0 8.4cqw,#F3E6E0 8.4cqw 8.7cqw);font-family:Caveat,"Segoe Print",cursive}
-.fpc-papir .z{font-size:8.6cqw;font-weight:700;color:#C9191A;line-height:1}
-.fpc-papir p{font-size:6.2cqw;line-height:1.36;margin:3cqw 0 0;color:#2A211D;font-weight:600}
-.fpc-papir .pot{font-size:6.4cqw;text-align:right;margin-top:3cqw;color:#2A211D;font-weight:700}
-.fpk-pismo .fpo-sred{justify-content:center}
-/* pretraga */
-.fpc-trazi{margin-bottom:6cqw}
-.fpc-trazi .polje{display:flex;align-items:center;gap:2.6cqw;background:#fff;border-radius:99px;padding:3.6cqw 4.6cqw;box-shadow:0 1.5cqw 5cqw rgba(23,18,15,.12);font-size:4.2cqw;font-weight:600}
-.fpc-trazi .polje svg{width:5cqw;height:5cqw;color:#8A7F79;flex:none}
-.fpc-trazi .polje i{width:.5cqw;height:5.2cqw;background:#C9191A;animation:fpcKursor 1s steps(2) infinite}
-@keyframes fpcKursor{50%{opacity:0}}
-.fpc-trazi .rez{margin-top:4cqw;background:#fff;border-radius:4cqw;padding:4.5cqw 5cqw;border-left:1.4cqw solid #C9191A;display:flex;flex-direction:column;gap:1cqw}
-.fpc-trazi .rez small{font-size:2.8cqw;color:#2B7A3E}
-.fpc-trazi .rez b{font-size:4.8cqw;color:#1A0DAB}
-.fpc-trazi .rez span{font-size:3.4cqw;color:#5B504A}
-/* obavijesti */
-.fpc-not{display:flex;flex-direction:column;gap:2cqw;margin-bottom:6cqw}
-.fpc-not div{display:flex;gap:3cqw;align-items:center;background:rgba(255,255,255,.94);color:#17120F;border-radius:4cqw;padding:3cqw 3.6cqw;box-shadow:0 1.5cqw 5cqw rgba(0,0,0,.25);transform:scale(calc(1 - var(--i)*.03));transform-origin:top center}
-.fpc-not svg{width:7cqw;height:7cqw;padding:1.5cqw;border-radius:2cqw;background:#C9191A;color:#fff;flex:none}
-.fpc-not span{display:flex;flex-direction:column;font-size:3.6cqw;font-weight:700;line-height:1.25}
-.fpc-not b{font-size:2.6cqw;color:#C9191A;text-transform:uppercase;letter-spacing:.05em}
-.fpk-tel .fpo-sred{justify-content:flex-end;padding-bottom:2cqw}
-/* račun */
-.fpc-racun{background:#fff;font-family:"IBM Plex Mono",ui-monospace,monospace;padding:6cqw 6cqw 8cqw;margin-bottom:6cqw;transform:rotate(1.2deg);box-shadow:0 2cqw 6cqw rgba(23,18,15,.12);-webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 3cqw) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/6cqw 3cqw repeat-x;mask:linear-gradient(#000 0 0) top/100% calc(100% - 3cqw) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/6cqw 3cqw repeat-x}
-.fpc-racun .nas{text-align:center;font-weight:600;letter-spacing:.3em;font-size:3.4cqw;border-bottom:.4cqw dashed #CFC4BE;padding-bottom:3cqw;margin-bottom:3cqw}
-.fpc-racun .red,.fpc-racun .fp{display:flex;justify-content:space-between;gap:3cqw;font-size:3.4cqw;padding:1.4cqw 0}
-.fpc-racun .red.zad{border-top:.4cqw dashed #CFC4BE;margin-top:1.5cqw;padding-top:2.6cqw;font-weight:600;text-decoration:line-through;text-decoration-color:#C9191A;text-decoration-thickness:.5cqw;color:#8A7F79}
-.fpc-racun .fp{margin-top:2.6cqw;background:#C9191A;color:#fff;padding:2.6cqw 3cqw;border-radius:1.6cqw;font-size:3.8cqw;font-weight:600}
-/* prognoza */
-.fpc.fpk-prognoza{background:linear-gradient(170deg,#3A1210,#C9191A 120%);color:#fff}
-.fpc-prog{background:rgba(255,255,255,.1);border:.3cqw solid rgba(255,255,255,.18);border-radius:5cqw;padding:5cqw 6cqw;margin-bottom:6cqw}
-.fpc-prog .d{font-size:3.6cqw;font-weight:700;opacity:.8}
-.fpc-prog .ik{color:#FFB199;margin:2cqw 0}
-.fpc-prog .ik svg{width:14cqw;height:14cqw}
-.fpc-prog .red{display:flex;justify-content:space-between;font-size:4cqw;padding:1.8cqw 0;border-top:.3cqw solid rgba(255,255,255,.15)}
-.fpc-prog .red b{font-weight:800}
-.fpk-prognoza .fpo-h em{color:#FFB199}
-/* broj */
-.fpc-broj{display:flex;align-items:baseline;gap:3cqw;margin-bottom:2cqw}
-.fpc-broj b{font-family:Anton,"Plus Jakarta Sans",sans-serif;font-weight:400;font-size:38cqw;line-height:.9;color:#C9191A}
-.fpc-broj span{font-family:Anton,"Plus Jakarta Sans",sans-serif;font-size:9cqw;color:#17120F}
-.fpc-broj b:only-child{font-size:30cqw}
-/* split */
-.fpc-split{display:grid;grid-template-columns:1fr 1fr;gap:3cqw;margin-top:5cqw}
-.fpc-split>div{border-radius:3.5cqw;padding:4.5cqw;min-height:52cqw}
-.fpc-split small{display:block;font-size:2.8cqw;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3cqw;opacity:.7}
-.fpc-split .l{background:#FFF6C9;transform:rotate(-2deg);box-shadow:0 1.5cqw 4cqw rgba(23,18,15,.12)}
-.fpc-split .ruka{font-family:Caveat,"Segoe Print",cursive;font-size:7cqw;line-height:1.1;font-weight:700;color:#2B4BA0;word-break:break-word}
-.fpc-split .d{background:#fff;border:.3cqw solid #EADFD9;display:flex;flex-direction:column;gap:1.6cqw;font-size:3.5cqw}
-.fpc-split .d b{font-size:4.4cqw;color:#C9191A}
-/* kviz */
-.fpc-kviz{display:flex;flex-direction:column;gap:2.6cqw;margin-top:5cqw}
-.fpc-kviz div{display:flex;align-items:center;gap:3.4cqw;background:#fff;border:.4cqw solid #EADFD9;border-radius:99px;padding:2.8cqw 4cqw;font-size:4.2cqw;font-weight:700}
-.fpc-kviz i{font-style:normal;width:7.5cqw;height:7.5cqw;border-radius:50%;display:grid;place-items:center;background:#17120F;color:#fff;font-size:3.6cqw;flex:none}
-.fpc-kviz .da{border-color:#C9191A;background:#FFEDEA}.fpc-kviz .da i{background:#C9191A}
-.fpc-kviz+.fpo-p{font-weight:700;color:#C9191A;opacity:1}
-/* cijena */
-.fpc-tag{align-self:flex-start;background:#fff;color:#17120F;border-radius:3cqw 3cqw 3cqw 3cqw;padding:5cqw 6cqw 5cqw 9cqw;position:relative;margin-bottom:5cqw;transform:rotate(-3deg);box-shadow:0 2cqw 6cqw rgba(0,0,0,.3)}
-.fpc-tag::before{content:"";position:absolute;left:3cqw;top:50%;width:2.6cqw;height:2.6cqw;margin-top:-1.3cqw;border-radius:50%;background:#17120F}
-.fpc-tag .c{font-family:Anton,sans-serif;font-size:14cqw;line-height:1;color:#C9191A}
-.fpc-tag .r{display:flex;justify-content:space-between;gap:6cqw;font-size:4cqw;font-weight:700;margin-top:1.6cqw}
-.fpc-tag .x{text-decoration:line-through;text-decoration-color:#C9191A;text-decoration-thickness:.6cqw;color:#8A7F79}
-.fpc-tag .ok b{color:#2B8A4B}
-.fpc-tag+.fpo-h{color:#fff}
-.fpc-tag:not(.x)~.fpo-h em{color:#FF7A6B}
-.fpc-tag .r span{opacity:.75}
-.fpc-tag,.fpc-tag *{text-transform:none}
-.fpc.fpk-tag{color:#fff;background:#17120F}
-.fpc.fpk-tag .fpo-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,10,8,.55),rgba(15,10,8,.1) 35%,rgba(15,10,8,.85))}
-.fpc.fpk-tag .fpo-sred{justify-content:flex-end}
-.fpc.fpk-tag .fpo-sidr{color:#fff;border-color:rgba(255,255,255,.45)}
-/* chat */
-.fpc-chat{background:#ECE5DD;border-radius:5cqw;padding:0 0 4cqw;overflow:hidden;margin-bottom:5cqw;display:flex;flex-direction:column;gap:2cqw;box-shadow:0 2cqw 6cqw rgba(23,18,15,.12)}
-.fpc-chat .vrh{display:flex;align-items:center;gap:2.6cqw;background:#075E54;color:#fff;padding:3cqw 4cqw;font-size:4cqw}
-.fpc-chat .vrh i{font-style:normal;width:7cqw;height:7cqw;border-radius:50%;background:#FFD6CC;color:#C9191A;display:grid;place-items:center;font-weight:800;font-size:3.6cqw}
-.fpc-chat>div:not(.vrh){max-width:76%;font-size:3.8cqw;line-height:1.35;padding:2.4cqw 3.4cqw;border-radius:3cqw;margin:0 4cqw;box-shadow:0 .3cqw .6cqw rgba(0,0,0,.08);color:#17120F}
-.fpc-chat .on{background:#fff;align-self:flex-start}
-.fpc-chat .ja{background:#DCF8C6;align-self:flex-end}
-/* match */
-.fpc-match{background:#fff;color:#17120F;border-radius:5cqw;overflow:hidden;box-shadow:0 3cqw 8cqw rgba(0,0,0,.35);margin-bottom:5cqw;transform:rotate(-2deg)}
-.fpc-match .foto{height:30cqw;background-size:cover;background-position:center;position:relative}
-.fpc-match .foto b{position:absolute;left:4cqw;bottom:3cqw;color:#fff;font-size:7cqw;text-shadow:0 .5cqw 2cqw rgba(0,0,0,.6)}
-.fpc-match .inf{display:grid;grid-template-columns:1fr 1fr;gap:3cqw;padding:4cqw}
-.fpc-match .inf small{display:block;font-size:2.6cqw;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#2B8A4B;margin-bottom:1.4cqw}
-.fpc-match .inf .ne small{color:#C9191A}
-.fpc-match .inf span{display:block;font-size:3.4cqw;font-weight:600;line-height:1.5}
-.fpc-match .gumbi{display:flex;justify-content:center;gap:8cqw;padding:0 0 4cqw}
-.fpc-match .gumbi i{width:12cqw;height:12cqw;border-radius:50%;display:grid;place-items:center;box-shadow:0 1cqw 3cqw rgba(0,0,0,.15)}
-.fpc-match .gumbi svg{width:6cqw;height:6cqw}
-.fpc-match .x{color:#8A7F79;background:#fff}.fpc-match .s{color:#fff;background:#C9191A}
-.fpc-match~.fpo-h em{color:#FF7A6B}
-/* post-it */
-.fpc-postit{display:grid;grid-template-columns:1fr 1fr;gap:3cqw;margin-top:5cqw}
-.fpc-postit div{background:#FFF07A;padding:4cqw;font-family:Caveat,"Segoe Print",cursive;font-size:6cqw;line-height:1.05;font-weight:700;color:#2A211D;box-shadow:0 1.5cqw 3cqw rgba(23,18,15,.15);transform:rotate(calc((var(--i) - 1.5)*2.4deg));min-height:20cqw}
-.fpc-postit div:nth-child(2n){background:#FFD1DC}
-.fpc-postit .vel{grid-column:1/3;background:#C9191A!important;color:#fff!important;font-size:9cqw;text-align:center;transform:rotate(-1.5deg);min-height:0}
-/* oglas */
-.fpc-oglas{font-family:Georgia,"Times New Roman",serif;color:#17120F;background:#F4EFE6;padding:4cqw;margin-bottom:5cqw;box-shadow:0 2cqw 6cqw rgba(23,18,15,.12);transform:rotate(1deg)}
-.fpc-oglas .nn{font-size:3cqw;letter-spacing:.3em;text-align:center;border-bottom:.5cqw double #17120F;padding-bottom:2cqw;margin-bottom:3cqw}
-.fpc-oglas .okv{border:.4cqw solid #17120F;padding:4cqw}
-.fpc-oglas b{font-size:7cqw;letter-spacing:.06em}
-.fpc-oglas p{font-size:4.2cqw;line-height:1.4;margin:2cqw 0}
-.fpc-oglas small{font-size:3.6cqw;font-style:italic}
-/* horoskop */
-.fpc-horo{display:flex;flex-direction:column;gap:2.4cqw;margin-top:5cqw}
-.fpc-horo div{background:#fff;border-radius:3cqw;padding:3cqw 4cqw;border:.3cqw solid #EADFD9}
-.fpc-horo b{display:block;font-size:3.6cqw;color:#C9191A;text-transform:uppercase;letter-spacing:.08em}
-.fpc-horo span{font-size:3.8cqw;font-weight:600}
-.fpc-horo .sv{background:#C9191A;border-color:#C9191A;color:#fff}.fpc-horo .sv b{color:#FFD5CC}
-/* prije-poslije */
-.fpc-pp{display:grid;grid-template-columns:1fr auto 1fr;gap:3cqw;align-items:center;margin-top:6cqw}
-.fpc-pp>div{border-radius:4cqw;padding:5cqw 4cqw;min-height:50cqw;display:flex;flex-direction:column;gap:2cqw;justify-content:center}
-.fpc-pp small{font-size:2.8cqw;font-weight:800;text-transform:uppercase;letter-spacing:.08em;opacity:.6}
-.fpc-pp .l{background:#EFE8E4;color:#6B6460}.fpc-pp .l span{font-size:3.8cqw;font-weight:700;text-decoration:line-through;text-decoration-color:#C9191A;text-decoration-thickness:.5cqw}
-.fpc-pp .s{font-size:9cqw;font-weight:800;color:#C9191A}
-.fpc-pp .d{background:#C9191A;color:#fff;align-items:center}.fpc-pp .d img{width:100%;height:auto}
-/* zbijanje reklama */
-.fpk-bingo .fpo-h{font-size:6.4cqw}
-.fpc-bingo{gap:1.4cqw;margin-top:3cqw}
-.fpc-bingo div{aspect-ratio:1/.66;font-size:2.55cqw;padding:1.2cqw}
-.fpc-bingo div::after{width:9cqw;height:9cqw;border-width:.8cqw}
-.fpc-papir{padding:5cqw 5.5cqw;background-image:repeating-linear-gradient(180deg,transparent 0 7.2cqw,#F3E6E0 7.2cqw 7.5cqw)}
-.fpc-papir .z{font-size:7.6cqw}.fpc-papir p{font-size:5.3cqw;margin-top:2cqw}.fpc-papir .pot{font-size:5.6cqw;margin-top:2cqw}
-.fpc-prog{padding:3.6cqw 5cqw;margin-bottom:4cqw}.fpc-prog .ik{margin:1cqw 0}.fpc-prog .ik svg{width:10cqw;height:10cqw}.fpc-prog .red{padding:1.3cqw 0;font-size:3.7cqw}
-.fpk-prognoza .fpo-h{font-size:7cqw}
-.fpc-split{margin-top:3.5cqw}.fpc-split>div{min-height:44cqw;padding:3.6cqw}.fpc-split .ruka{font-size:5.6cqw}.fpk-split .fpo-h{font-size:7.4cqw}
-.fpc-postit{gap:2.4cqw;margin-top:3.5cqw}.fpc-postit div{font-size:5cqw;min-height:15cqw;padding:3cqw}.fpc-postit .vel{font-size:7.6cqw}
-.fpk-postit .fpo-h{font-size:7cqw}
-.fpc-oglas{padding:3cqw;margin-bottom:3.5cqw}.fpc-oglas .okv{padding:3cqw}.fpc-oglas b{font-size:6cqw}.fpc-oglas p{font-size:3.7cqw}
-.fpc-broj b:only-child{font-size:24cqw}
-.fpc-horo{gap:1.6cqw;margin-top:3cqw}.fpc-horo div{padding:2.2cqw 3.4cqw}.fpc-horo b{font-size:3cqw}.fpc-horo span{font-size:3.5cqw}
-.fpk-horoskop .fpo-h{font-size:7cqw}
-.fpc-not{gap:1.4cqw;margin-bottom:4cqw}.fpc-not div{padding:2.4cqw 3.2cqw}.fpc-not span{font-size:3.3cqw}
-.fpk-tel .fpo-h{font-size:7.2cqw}
-.fpc-pp>div{min-height:42cqw}
-.zoom-powered .fp-del{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-left:4px;opacity:.75}
-.fp-del-logo{display:block;height:44px;width:auto;margin:6px auto 18px}
-.fp-del-dno{text-align:center;padding:24px 0 8px;opacity:.85}.fp-del-dno .fp-del-logo{height:30px;margin:0 auto}
-
 .fp-logo{display:inline-flex;align-items:center;gap:calc(var(--v)*.32);font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-weight:800;
  font-size:calc(var(--v)*.86);letter-spacing:-.02em;line-height:1;text-transform:none;white-space:nowrap;vertical-align:middle}
 .fp-logo img{width:calc(var(--v)*1.3);height:calc(var(--v)*1.3);border-radius:28%;display:block;flex:none}
+
+/* ===== RIKY'S REKLAME CSS ===== */
+
+/* ==================== RIKY'S: 50 objava (4:5) + 100 reelova (9:16) — Vlasnik → Objave i reels ==================== */
+.rk-ui{--rko:#FF4106;--rky:#F6BE2C}
+.rk-ui .sec{margin-bottom:10px}
+.rk-uvod{color:var(--dim);font-size:14px;line-height:1.5;margin:4px 0 0;max-width:820px}
+.rk-alati{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0 16px}
+.rk-sw{display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:4px}
+.rk-sw button{border:0;background:none;padding:9px 14px;border-radius:9px;font-weight:700;font-size:13.5px;color:#4B5360;cursor:pointer;white-space:nowrap}
+.rk-sw button.on{background:#15171C;color:#fff}
+.rk-sw button.on.nar{background:var(--rko)}
+.rk-mreza{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+.rk-mreza.r{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.rk-kart{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;display:flex;flex-direction:column;gap:10px;box-shadow:0 1px 2px rgba(20,22,28,.05),0 6px 20px rgba(20,22,28,.06)}
+.rk-okvir{container-type:inline-size;border-radius:10px;overflow:hidden;background:#0E0C0B;box-shadow:0 6px 18px rgba(23,18,15,.12)}
+.rk-info{display:flex;align-items:center;gap:8px;font-size:13px}
+.rk-info .br{font-weight:800;color:var(--rko);white-space:nowrap}
+.rk-info .tip{color:#6B7280;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rk-info .gumbi{display:flex;gap:4px;flex:none}
+.rk-info button{width:34px;height:34px;border-radius:9px;border:1px solid var(--line2);background:#fff;color:#3B3532;display:grid;place-items:center;cursor:pointer;padding:0}
+.rk-info button:hover{border-color:var(--rko);color:var(--rko)}
+.rk-info button.ok{background:#E8F6EC;border-color:#5FB37A;color:#237A3F}
+.rk-oznake{display:flex;flex-wrap:wrap;gap:5px}
+.rk-oznake span{font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:99px;background:#F3F1EE;color:#4B5360}
+.rk-oznake span.s{background:#FFF1D6;color:#8A5A00}
+.rk-oznake span.p{background:#E9EEF7;color:#2C4A7A}
+.rk-oznake span.upoz{background:#FFE9E1;color:#B4370F}
+.rk-cap summary{cursor:pointer;font-size:13px;font-weight:700;color:#4B5360}
+.rk-cap p{font-size:13px;line-height:1.5;margin:8px 0 0;color:#2B2F36;white-space:pre-line}
+.rk-cap .oz{color:var(--rko)}
+.rk-str{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:22px 0 6px}
+.rk-str button{min-width:40px;height:40px;border-radius:10px;border:1px solid var(--line2);background:#fff;font-weight:800;color:#15171C;cursor:pointer}
+.rk-str button.on{background:var(--rko);border-color:var(--rko);color:#fff}
+.rk-str button:disabled{opacity:.35;cursor:default}
+#fpo-puni.rk .fpr-kreni svg{background:#FF4106}
+#fpo-puni .rk-okvir{border-radius:0;box-shadow:none}
+@media (max-width:600px){.rk-mreza,.rk-mreza.r{grid-template-columns:1fr}.rk-sw{overflow-x:auto;max-width:100%}}
+
+/* ---- fontovi (sučelje osoblja inače svemu nameće svoj font) ---- */
+body .rk-z.rk-z.rk-z,body .rk-z.rk-z.rk-z *{font-family:"Barlow Semi Condensed","Oswald",system-ui,sans-serif!important;text-transform:none;letter-spacing:normal}
+body .rk-z.rk-z .rk-A.rk-A,body .rk-z.rk-z .rk-A.rk-A *{font-family:Anton,"Oswald",Impact,"Arial Narrow",sans-serif!important;font-weight:400!important;text-transform:uppercase!important;letter-spacing:.01em!important}
+body .rk-z.rk-z .rk-B.rk-B.rk-B.rk-B{font-family:"Barlow Semi Condensed","Oswald",system-ui,sans-serif!important;font-weight:600!important;text-transform:uppercase!important;letter-spacing:.14em!important}
+
+/* ---- zajedničko ---- */
+.rk-post,.rk-reel{--o:#FF4106;--y:#F6BE2C;--k:#0E0C0B;--c:#FFF3E6;color:#fff;background:#0E0C0B}
+.rk-post{position:relative;width:100cqw;height:125cqw;overflow:hidden;text-align:left;line-height:1.2}
+.rk-post *,.rk-reel *{box-sizing:border-box}
+.rk-h{margin:0;font-size:10.6cqw;line-height:.98;color:inherit}
+.rk-h em{font-style:normal;color:var(--y)}
+.rk-p{font-size:4cqw;line-height:1.3;font-weight:500;margin:3.2cqw 0 0;opacity:.92;max-width:80cqw}
+.rk-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.rk-sig{position:absolute;inset:6.5cqw 7cqw;display:flex;flex-direction:column;z-index:2}
+.rk-vrh{display:flex;align-items:center;gap:2.6cqw}
+.rk-logo{display:block;width:13cqw;height:13cqw;border-radius:50%;background:#000 center/cover no-repeat;box-shadow:0 0 0 .55cqw var(--o);flex:none}
+.rk-ime{font-size:4.6cqw;line-height:1}
+.rk-ime small{display:block;font-size:2.4cqw;color:var(--y);margin-top:1cqw}
+.rk-oz{margin-left:auto;font-size:2.6cqw;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1.4cqw 2.8cqw;border-radius:99px;background:var(--o);color:#fff;white-space:nowrap}
+.rk-sred{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+.rk-dno{display:flex;align-items:center;justify-content:space-between;gap:2cqw;margin-top:3cqw}
+.rk-web{font-size:3.5cqw;font-weight:700;line-height:1.15}
+.rk-web small{display:block;font-size:2.6cqw;font-weight:500;opacity:.75;margin-top:.5cqw}
+.rk-cta{font-size:3.5cqw;padding:2.3cqw 4cqw;border-radius:99px;background:var(--o);color:#fff;white-space:nowrap;line-height:1}
+.rk-cij{display:inline-block;background:var(--y);color:#140A06;font-size:7cqw;padding:2cqw 3.6cqw;border-radius:2.4cqw;transform:rotate(-4deg);line-height:1;box-shadow:0 1.4cqw 0 #B5840F}
+
+/* ---- predlošci objava ---- */
+.rk-foto .rk-bg::after,.rk-meme .rk-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,6,5,.66) 0%,rgba(8,6,5,0) 26%,rgba(8,6,5,.05) 45%,rgba(8,6,5,.9) 100%)}
+.rk-foto .rk-sred{justify-content:flex-end;padding-bottom:3cqw}
+.rk-plamen{background:radial-gradient(circle at 85% 108%,rgba(255,65,6,.85),rgba(255,65,6,0) 58%),radial-gradient(circle at -5% -5%,rgba(246,190,44,.22),rgba(246,190,44,0) 42%),#0E0C0B}
+.rk-plamen .rk-h{font-size:12.6cqw}
+.rk-plamen .rk-ik{width:15cqw;height:15cqw;border-radius:4cqw;display:grid;place-items:center;background:rgba(255,65,6,.18);color:var(--o);margin-bottom:5cqw}
+.rk-plamen .rk-ik svg{width:8cqw;height:8cqw}
+.rk-naranca{background:var(--o);color:#140A06}
+.rk-naranca::before{content:"";position:absolute;right:-30cqw;top:-26cqw;width:86cqw;height:86cqw;border-radius:50%;background:rgba(255,255,255,.1)}
+.rk-naranca .rk-h{font-size:12.6cqw}
+.rk-naranca .rk-h em{color:#fff}
+.rk-naranca .rk-logo{box-shadow:0 0 0 .55cqw #140A06}
+.rk-naranca .rk-ime small{color:#fff}
+.rk-naranca .rk-oz,.rk-naranca .rk-cta{background:#140A06;color:#fff}
+.rk-split{background:var(--o);color:#140A06}
+.rk-split .rk-bg{bottom:auto;height:54%}
+.rk-split .rk-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,6,5,.6),rgba(8,6,5,0) 30%)}
+.rk-split .rk-sig{top:6.5cqw}
+.rk-split .rk-vrh{color:#fff}
+.rk-split .rk-sred{justify-content:flex-end}
+.rk-split .rk-ploca{margin:0 -7cqw;padding:5cqw 7cqw 0;background:var(--o);min-height:55cqw;display:flex;flex-direction:column;justify-content:center}
+.rk-split .rk-h{font-size:9.6cqw}
+.rk-split .rk-h em{color:#fff}
+.rk-split .rk-p{font-size:3.7cqw}
+.rk-split .rk-cta{background:#140A06}
+.rk-jelo{background:radial-gradient(circle at 70% 34%,rgba(255,65,6,.42),rgba(255,65,6,0) 52%),#0E0C0B}
+.rk-jelo .rk-kol{position:absolute;right:-12cqw;top:16cqw;width:80cqw;height:80cqw;border-radius:50%;background:#2a1a12 center/cover no-repeat;box-shadow:0 0 0 1.6cqw rgba(255,65,6,.9),0 0 0 3.2cqw rgba(255,65,6,.18),0 4cqw 12cqw rgba(0,0,0,.6)}
+.rk-jelo .rk-sred{justify-content:flex-end;padding-bottom:2cqw}
+.rk-jelo .rk-h{font-size:11cqw;max-width:72cqw;text-shadow:0 .6cqw 2.4cqw rgba(0,0,0,.6)}
+.rk-jelo .rk-sast{font-size:3.5cqw;line-height:1.35;margin:2.6cqw 0 0;max-width:70cqw;opacity:.88;font-weight:500}
+.rk-jelo .rk-cij{position:absolute;left:7cqw;top:36cqw;z-index:3}
+.rk-jelo .rk-oz2{display:inline-block;align-self:flex-start;font-size:2.8cqw;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--y);margin-bottom:2cqw}
+.rk-meme{text-align:center}
+.rk-meme .rk-mt{position:absolute;left:5cqw;right:5cqw;font-size:9.6cqw;line-height:1.02;color:#fff;
+ text-shadow:.5cqw .5cqw 0 #000,-.5cqw .5cqw 0 #000,.5cqw -.5cqw 0 #000,-.5cqw -.5cqw 0 #000,0 .6cqw 0 #000,0 -.6cqw 0 #000,.6cqw 0 0 #000,-.6cqw 0 0 #000;z-index:2}
+.rk-meme .rk-mt.a{top:7cqw}
+.rk-meme .rk-mt.b{bottom:19cqw}
+.rk-meme .rk-mt em{font-style:normal;color:var(--y)}
+.rk-meme .rk-mdno{position:absolute;left:6cqw;right:6cqw;bottom:5cqw;display:flex;align-items:center;gap:2.4cqw;z-index:2;text-align:left}
+.rk-meme .rk-logo{width:10cqw;height:10cqw}
+.rk-akcija,.rk-vjernost,.rk-lista,.rk-vs,.rk-info,.rk-chat,.rk-app,.rk-cola,.rk-koza{background:radial-gradient(circle at 50% 120%,rgba(255,65,6,.55),rgba(255,65,6,0) 60%),#0E0C0B}
+.rk-pizze{display:flex;align-items:center;justify-content:space-between;gap:1cqw;margin:6cqw 0 3cqw}
+.rk-pizze .pl{font-size:7cqw;color:var(--o);line-height:1}
+.rk-piz{position:relative;width:13.4cqw;height:13.4cqw;border-radius:50%;flex:none;background:
+ radial-gradient(circle at 30% 34%,#A8231B 0 8%,transparent 8.5%),radial-gradient(circle at 66% 30%,#A8231B 0 7%,transparent 7.5%),
+ radial-gradient(circle at 56% 66%,#A8231B 0 8%,transparent 8.5%),radial-gradient(circle at 28% 70%,#A8231B 0 6.5%,transparent 7%),
+ radial-gradient(circle at 72% 54%,#2F6B2A 0 3.5%,transparent 4%),radial-gradient(circle at 44% 46%,#2F6B2A 0 3%,transparent 3.5%),
+ radial-gradient(circle,#F8CC4F 0 56%,#E2762B 60% 67%,#C98B42 68% 100%);box-shadow:0 1cqw 2.6cqw rgba(0,0,0,.45)}
+.rk-piz.g{box-shadow:0 0 0 .9cqw var(--y),0 0 6cqw rgba(246,190,44,.75)}
+.rk-piz.g::after{content:"GRATIS";position:absolute;left:50%;bottom:-6.4cqw;transform:translateX(-50%) rotate(-6deg);font:400 3.2cqw/1 Anton,Impact,sans-serif;letter-spacing:.04em;color:#140A06;background:var(--y);padding:1cqw 1.6cqw;border-radius:1cqw}
+.rk-akcija .rk-veliko{font-size:30cqw;line-height:.86;color:var(--o);margin:0}
+.rk-akcija .rk-veliko em{font-style:normal;color:var(--y)}
+.rk-zig{display:grid;grid-template-columns:repeat(5,1fr);gap:2.4cqw;margin:6cqw 0 2cqw}
+.rk-zig i{aspect-ratio:1;border-radius:50%;border:.5cqw dashed rgba(255,255,255,.35);display:grid;place-items:center;color:#140A06}
+.rk-zig i.on{border:0;background:var(--o);box-shadow:inset 0 0 0 1cqw rgba(0,0,0,.12)}
+.rk-zig i.on::after{content:"";width:46%;height:46%;border-radius:50%;background:radial-gradient(circle,#F8CC4F 0 52%,#E2762B 56% 100%)}
+.rk-zig i.dar{border:0;background:var(--y)}
+.rk-zig i.dar svg{width:55%;height:55%}
+.rk-l{list-style:none;margin:5cqw 0 0;padding:0;display:flex;flex-direction:column;gap:2.8cqw}
+.rk-l li{display:flex;align-items:center;gap:3cqw;font-size:4.8cqw;font-weight:600;line-height:1.15}
+.rk-l li b{display:grid;place-items:center;flex:none;width:7.4cqw;height:7.4cqw;border-radius:50%;background:var(--o);color:#fff;font-size:3.6cqw}
+.rk-l li b svg{width:4.4cqw;height:4.4cqw}
+.rk-vs2{display:grid;grid-template-columns:1fr 1fr;gap:3cqw;margin-top:5cqw}
+.rk-vs2>div{border-radius:3.4cqw;padding:4cqw 3.6cqw}
+.rk-vs2 .a{background:#26211E;color:#B9AEA7}
+.rk-vs2 .b{background:var(--o);color:#fff}
+.rk-vs2 .n{font-size:4.6cqw;line-height:1;margin-bottom:3cqw}
+.rk-vs2 ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2.2cqw;font-size:3.5cqw;font-weight:600;line-height:1.2}
+.rk-vs2 .a li::before{content:"✕ ";color:#7E726B}
+.rk-vs2 .b li::before{content:"✓ ";color:#140A06}
+.rk-ikarta{background:#1A1513;border:.3cqw solid #3A2F2A;border-radius:4cqw;padding:5cqw;margin-top:5cqw;display:flex;flex-direction:column;gap:3.4cqw}
+.rk-ikarta div{display:flex;align-items:center;gap:3.4cqw;font-size:4.4cqw;font-weight:600;line-height:1.2}
+.rk-ikarta svg{width:6.6cqw;height:6.6cqw;color:var(--o);flex:none}
+.rk-ikarta small{display:block;font-size:3cqw;opacity:.7;font-weight:500}
+.rk-cola .rk-kola{width:100%;aspect-ratio:592/348;background:center/contain no-repeat;margin:4cqw 0 0}
+.rk-koza .rk-kz{position:absolute;right:-6cqw;bottom:18cqw;width:66cqw;height:66cqw;background:center bottom/contain no-repeat}
+.rk-koza .rk-sred{justify-content:flex-start;padding-top:8cqw}
+.rk-koza .rk-h{font-size:12cqw;max-width:66cqw}
+.rk-koza .rk-p{max-width:52cqw}
+.rk-app .rk-tel{position:absolute;left:50%;bottom:-24cqw;transform:translateX(-50%) rotate(-3deg)}
+.rk-app .rk-sred{justify-content:flex-start;padding-top:5cqw}
+.rk-app .rk-h{font-size:9.4cqw;text-align:center}
+.rk-app .rk-p{text-align:center;margin-left:auto;margin-right:auto;font-size:3.6cqw;max-width:72cqw}
+.rk-app .rk-dno{position:relative;z-index:4}
+.rk-chat .rk-sred{justify-content:center}
+.rk-chat .rk-h{font-size:8.6cqw;margin-bottom:4cqw}
+
+/* ---- chat mjehurići ---- */
+.rk-cht{display:flex;flex-direction:column;gap:2.2cqw}
+.rk-cht .nas{align-self:center;font-size:2.8cqw;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin-bottom:1cqw}
+.rk-cht .m{max-width:78%;padding:2.6cqw 3.6cqw;border-radius:4cqw;font-size:4.2cqw;font-weight:600;line-height:1.22;background:#2A2421;color:#fff;align-self:flex-start;border-bottom-left-radius:1cqw}
+.rk-cht .m small{display:block;font-size:2.7cqw;font-weight:700;color:var(--y);margin-bottom:.6cqw}
+.rk-cht .m.ja{align-self:flex-end;background:var(--o);border-bottom-left-radius:4cqw;border-bottom-right-radius:1cqw}
+.rk-cht .m.ja small{color:#FFE2CF}
+
+/* ---- mobitel s aplikacijom ---- */
+.rk-tel{position:relative;width:54cqw;height:110cqw;border-radius:7cqw;background:#121014;border:1.3cqw solid #050405;box-shadow:0 5cqw 12cqw rgba(0,0,0,.55),0 0 0 .3cqw rgba(255,255,255,.14);overflow:hidden;color:#fff;text-align:left;z-index:3}
+.rk-tel::before{content:"";position:absolute;left:50%;top:1.6cqw;width:14cqw;height:3.2cqw;margin-left:-7cqw;border-radius:99px;background:#050405;z-index:5}
+.rk-tel .ek{position:absolute;inset:0;padding:7cqw 3.2cqw 3cqw;display:flex;flex-direction:column;gap:2.2cqw;background:radial-gradient(circle at 50% 0,rgba(255,65,6,.25),rgba(255,65,6,0) 45%),#121014}
+.rk-t-vrh{display:flex;align-items:center;gap:2cqw}
+.rk-t-vrh .rk-logo{width:7.6cqw;height:7.6cqw;box-shadow:0 0 0 .35cqw var(--o)}
+.rk-t-vrh b{display:block;font-size:3.3cqw;line-height:1}
+.rk-t-vrh small{display:block;font-size:2.1cqw;color:#7DD08F;font-weight:600;margin-top:.6cqw}
+.rk-t-kat{display:flex;gap:1.2cqw}
+.rk-t-kat span{font-size:2.3cqw;font-weight:700;padding:1.1cqw 2.2cqw;border-radius:99px;background:#24201F;color:#CFC5BF}
+.rk-t-kat span.on{background:var(--o);color:#fff}
+.rk-t-ak{font-size:2.3cqw;font-weight:700;padding:1.6cqw 2.2cqw;border-radius:2cqw;background:rgba(246,190,44,.14);color:var(--y);border:.25cqw solid rgba(246,190,44,.35)}
+.rk-t-st{display:flex;align-items:center;gap:2cqw;padding:1.6cqw;border-radius:2.6cqw;background:#1D1918}
+.rk-t-st i{width:10.6cqw;height:10.6cqw;border-radius:2cqw;background:#2a1a12 center/cover no-repeat;flex:none}
+.rk-t-st div{flex:1;min-width:0}
+.rk-t-st b{display:block;font-size:2.7cqw;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rk-t-st small{display:block;font-size:1.9cqw;opacity:.6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:.4cqw}
+.rk-t-st em{display:block;font-style:normal;font-size:2.6cqw;font-weight:700;color:var(--o);margin-top:.5cqw}
+.rk-t-plus{position:relative;width:5.6cqw;height:5.6cqw;border-radius:50%;background:var(--o);display:grid;place-items:center;font-size:4cqw;font-weight:700;line-height:1;flex:none}
+.rk-t-bar{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding:2.6cqw 3cqw;border-radius:3cqw;background:var(--o);font-size:2.8cqw;font-weight:700}
+.rk-t-nas{font-size:4.2cqw;line-height:1;margin-top:1cqw}
+.rk-t-nar{padding:3cqw;border-radius:3cqw;background:#1D1918;display:flex;flex-direction:column;gap:.8cqw}
+.rk-t-nar small{font-size:2.1cqw;opacity:.6;font-weight:600}
+.rk-t-nar b{font-size:5cqw;line-height:1}
+.rk-t-nar span{font-size:2.6cqw;font-weight:600}
+.rk-t-nar span b{font-size:2.8cqw;color:var(--y)}
+.rk-t-kor{list-style:none;margin:0;padding:0 0 0 1cqw;display:flex;flex-direction:column;gap:2.6cqw}
+.rk-t-kor li{display:flex;align-items:center;gap:2.2cqw;font-size:2.7cqw;font-weight:600;color:#fff}
+.rk-t-kor li i{width:4.4cqw;height:4.4cqw;border-radius:50%;background:var(--o);display:grid;place-items:center;flex:none;box-shadow:0 0 0 .8cqw rgba(255,65,6,.2)}
+.rk-t-kor li i svg{width:2.8cqw;height:2.8cqw;color:#fff}
+.rk-t-kor li.ne{color:#776C66}.rk-t-kor li.ne i{background:#2F2927;box-shadow:none}
+.rk-t-traka{height:1.4cqw;border-radius:99px;background:#2F2927;overflow:hidden}
+.rk-t-traka i{display:block;height:100%;width:75%;background:linear-gradient(90deg,var(--o),var(--y));border-radius:99px}
+.rk-tel .rk-cht .m{font-size:2.6cqw;padding:1.8cqw 2.4cqw;border-radius:2.6cqw}
+.rk-tel .rk-cht .m small{font-size:1.9cqw}
+.rk-t-unos{margin-top:auto;display:flex;align-items:center;gap:1.6cqw;padding:1.6cqw 1.6cqw 1.6cqw 3cqw;border-radius:99px;background:#1D1918;font-size:2.3cqw;opacity:.85}
+.rk-t-unos span{flex:1;opacity:.6}
+.rk-t-unos b{width:5.6cqw;height:5.6cqw;border-radius:50%;background:var(--o);display:grid;place-items:center}
+.rk-t-unos b svg{width:3cqw;height:3cqw}
+.rk-tel .rk-zig{gap:1.4cqw;margin:1cqw 0}
+.rk-tel .rk-zig i{border-width:.3cqw}
+.rk-t-mala{font-size:2.5cqw;line-height:1.35;opacity:.85;font-weight:500}
+.rk-t-mala b{color:var(--y)}
+.rk-t-url{display:flex;align-items:center;gap:1.4cqw;font-size:2.3cqw;padding:1.4cqw 2.4cqw;border-radius:99px;background:#24201F;color:#CFC5BF}
+.rk-t-url svg{width:2.6cqw;height:2.6cqw}
+.rk-t-sjena{flex:1;border-radius:2.6cqw;background:repeating-linear-gradient(180deg,#1D1918 0 9cqw,#121014 9cqw 11cqw);opacity:.55}
+.rk-t-list{position:absolute;left:0;right:0;bottom:0;padding:3cqw 3.2cqw 4cqw;background:#F6F1EC;color:#140A06;border-radius:4cqw 4cqw 0 0;display:flex;flex-direction:column;gap:2cqw;box-shadow:0 -2cqw 6cqw rgba(0,0,0,.5)}
+.rk-t-list .ap{display:flex;align-items:center;gap:2.2cqw}
+.rk-t-list .ap .rk-logo{width:9cqw;height:9cqw;border-radius:2.2cqw;box-shadow:none}
+.rk-t-list .ap b{font-size:3cqw}.rk-t-list .ap small{display:block;font-size:2cqw;opacity:.6}
+.rk-t-list .op{display:flex;align-items:center;justify-content:space-between;font-size:2.6cqw;font-weight:700;padding:2cqw 2.4cqw;border-radius:2cqw;background:#fff}
+.rk-t-list .op svg{width:3.4cqw;height:3.4cqw}
+.rk-t-list .gb{align-self:stretch;text-align:center;font-size:2.8cqw;font-weight:700;padding:2.2cqw;border-radius:99px;background:var(--o);color:#fff}
+.rk-t-ks{display:flex;flex-direction:column;gap:1.4cqw}
+.rk-t-ks div{display:flex;justify-content:space-between;gap:2cqw;font-size:2.5cqw;font-weight:600;padding:1.3cqw 0;border-bottom:.2cqw solid #2A2421}
+.rk-t-ks div.ak{color:var(--y);border-bottom:0}
+.rk-t-ks div.uk{font-size:3.3cqw;font-weight:700;border:0;padding-top:2cqw}
+
+/* ==================== REELS ==================== */
+.rk-reel.fpr-reel{background:#0E0C0B}
+.rk-reel .fpr-prog i{background:var(--o)}
+.rk-wm{position:absolute;z-index:6;top:15cqw;left:7cqw;display:flex;align-items:center;gap:2.2cqw;transition:opacity .3s;font-size:4.2cqw;line-height:1;text-shadow:0 .4cqw 1.4cqw rgba(0,0,0,.5)}
+.rk-wm .rk-logo{width:10cqw;height:10cqw}
+.rk-reel:has(.rk-odj.on) .rk-wm{opacity:0}
+.rk-reel:has(.rk-n-o.on) .rk-wm .rk-logo,.rk-reel:has(.rk-n-y.on) .rk-wm .rk-logo{box-shadow:0 0 0 .5cqw #140A06}
+.rk-reel:has(.rk-n-y.on) .rk-wm,.rk-reel:has(.rk-n-c.on) .rk-wm{color:#140A06;text-shadow:none}
+.rk-tx{position:absolute;left:8cqw;right:14cqw;top:34cqw;bottom:46cqw;display:flex;flex-direction:column;justify-content:center}
+.rk-tx.dno{justify-content:flex-end}
+.rk-reel .rk-h{font-size:13.4cqw;line-height:1}
+.rk-reel .w{display:inline-block}
+.rk-reel .w.hi{color:var(--y)}
+.rk-n-o{background:var(--o);color:#140A06}
+.rk-n-o .w.hi{color:#fff}
+.rk-n-y{background:var(--y);color:#140A06}
+.rk-n-y .w.hi{color:var(--o)}
+.rk-n-c{background:#FFF3E6;color:#140A06}
+.rk-n-c .w.hi{color:var(--o)}
+.rk-n-d{background:radial-gradient(circle at 80% 100%,rgba(255,65,6,.7),rgba(255,65,6,0) 55%),radial-gradient(circle at 0 0,rgba(246,190,44,.16),rgba(246,190,44,0) 40%),#0E0C0B}
+.rk-n-o::before,.rk-n-y::before{content:"";position:absolute;width:150cqw;height:150cqw;left:-25cqw;top:12cqw;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.16),rgba(255,255,255,0) 60%)}
+.fpr-sc.on.rk-n-o::before,.fpr-sc.on.rk-n-y::before{animation:fprPuls 2.6s ease-out both}
+.rk-n .w{animation-name:fprPop!important}
+.rk-f .rk-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 28%,rgba(0,0,0,.2) 48%,rgba(0,0,0,.88) 80%,rgba(0,0,0,.94) 100%)}
+.fpr-sc.on .rk-bg{animation:fprKB 3.6s ease-out both}
+.rk-f .rk-h{font-size:12cqw}
+.rk-c{background:#0E0C0B}
+.rk-c .a{position:relative;align-self:flex-start;font-size:15cqw;line-height:1;color:#8C837E}
+.rk-c .a::after{content:"";position:absolute;left:-2cqw;top:50%;height:1.6cqw;width:calc(100% + 4cqw);background:var(--o);border-radius:1cqw}
+.rk-c .b{font-size:31cqw;line-height:.95;color:var(--o)}
+.rk-c .b.dug{font-size:22cqw}
+.rk-c p{font-size:5cqw;margin:3cqw 0 0;font-weight:600;line-height:1.25}
+.fpr-sc .rk-c-a{opacity:0}
+.fpr-sc.on .rk-c-a{animation:fprGore .5s .2s ease-out both}
+.fpr-sc .rk-c-a::after{width:0}
+.fpr-sc.on .rk-c-a::after{animation:fprCrta .45s .95s ease-in-out both}
+.fpr-sc .rk-c-b,.fpr-sc .rk-c-p{opacity:0}
+.fpr-sc.on .rk-c-b{animation:fprPop .7s 1.45s cubic-bezier(.2,.9,.3,1.25) both}
+.fpr-sc.on .rk-c-p{animation:fprGore .5s 2s ease-out both}
+.rk-reel .rk-l li{font-size:6.4cqw;gap:3.6cqw}
+.rk-reel .rk-l li b{width:9.6cqw;height:9.6cqw;font-size:4.6cqw}
+.rk-reel .rk-l li b svg{width:5.4cqw;height:5.4cqw}
+.rk-sl{background:radial-gradient(circle at 50% 115%,rgba(255,65,6,.6),rgba(255,65,6,0) 60%),#0E0C0B}
+.rk-sl .rk-h{font-size:9cqw;margin-bottom:1cqw}
+.fpr-sc .rk-li{opacity:0}
+.fpr-sc.on .rk-li{animation:fprLijevo .5s cubic-bezier(.2,.9,.3,1.15) both;animation-delay:calc(.35s + var(--i)*.42s)}
+/* jelo */
+.rk-sj{background:radial-gradient(circle at 50% 40%,rgba(255,65,6,.5),rgba(255,65,6,0) 55%),#0E0C0B}
+.rk-sj .rk-kol{position:absolute;left:50%;top:34cqw;width:84cqw;height:84cqw;margin-left:-42cqw;border-radius:50%;background:#2a1a12 center/cover no-repeat;box-shadow:0 0 0 1.8cqw var(--o),0 0 0 3.6cqw rgba(255,65,6,.2),0 6cqw 16cqw rgba(0,0,0,.7)}
+.rk-sj .rk-ime2{position:absolute;left:8cqw;right:10cqw;top:122cqw;text-align:center}
+.rk-sj .rk-ime2 .rk-h{font-size:11cqw}
+.rk-sj .rk-ime2 p{font-size:3.8cqw;line-height:1.3;margin:2cqw auto 0;opacity:.85;font-weight:500;max-width:78cqw}
+.rk-sj .rk-cij{position:absolute;right:9cqw;top:30cqw;font-size:9cqw;z-index:3}
+.fpr-sc.rk-sj .rk-kol{opacity:0}
+.fpr-sc.on.rk-sj .rk-kol{animation:rkVrti 1s .1s cubic-bezier(.2,.9,.3,1) both}
+@keyframes rkVrti{from{opacity:0;transform:scale(.4) rotate(-90deg)}to{opacity:1;transform:none}}
+.fpr-sc.rk-sj .rk-cij,.fpr-sc.rk-sj .rk-ime2 p{opacity:0}
+.fpr-sc.on.rk-sj .rk-cij{animation:rkPecat .6s 1.5s cubic-bezier(.2,.9,.3,1.3) both}
+@keyframes rkPecat{0%{opacity:0;transform:scale(2.4) rotate(8deg)}70%{opacity:1;transform:scale(.92) rotate(-5deg)}100%{opacity:1;transform:rotate(-4deg)}}
+.fpr-sc.on.rk-sj .rk-ime2 p{animation:fprGore .5s 1.2s ease-out both}
+/* 4+1 */
+.rk-ak{background:radial-gradient(circle at 50% 100%,rgba(255,65,6,.6),rgba(255,65,6,0) 58%),#0E0C0B;text-align:center}
+.rk-ak .rk-tx{left:6cqw;right:6cqw;align-items:center}
+.rk-ak .rk-veliko{font-size:34cqw;line-height:.86;color:var(--o)}
+.rk-ak .rk-veliko em{font-style:normal;color:var(--y)}
+.rk-ak .rk-pizze{width:88cqw;margin:6cqw 0 9cqw}
+.rk-ak .rk-piz{width:14.6cqw;height:14.6cqw}
+.rk-ak p{font-size:5.4cqw;font-weight:600;margin:0;line-height:1.25}
+.fpr-sc.rk-ak .rk-veliko,.fpr-sc.rk-ak .rk-piz,.fpr-sc.rk-ak .pl,.fpr-sc.rk-ak p{opacity:0}
+.fpr-sc.on.rk-ak .rk-veliko{animation:fprPop .6s .15s cubic-bezier(.2,.9,.3,1.25) both}
+.fpr-sc.on.rk-ak .rk-piz,.fpr-sc.on.rk-ak .pl{animation:fprPop .5s cubic-bezier(.2,.9,.3,1.3) both;animation-delay:calc(.7s + var(--i)*.3s)}
+.fpr-sc.on.rk-ak .rk-piz.g{animation:rkGratis .9s 2.2s cubic-bezier(.2,.9,.3,1.3) both}
+@keyframes rkGratis{0%{opacity:0;transform:scale(.2) rotate(-200deg)}70%{opacity:1;transform:scale(1.25)}100%{opacity:1;transform:none}}
+.fpr-sc.on.rk-ak p{animation:fprGore .5s 3s ease-out both}
+/* vjernost */
+.rk-vj{background:radial-gradient(circle at 50% 100%,rgba(246,190,44,.35),rgba(246,190,44,0) 55%),#0E0C0B;text-align:center}
+.rk-vj .rk-tx{left:7cqw;right:7cqw}
+.rk-vj .rk-h{font-size:10cqw}
+.rk-vj .rk-zig{gap:3cqw;margin:6cqw 0 5cqw}
+.rk-vj p{font-size:5cqw;font-weight:600;margin:0}
+.fpr-sc.rk-vj .rk-zig i.on,.fpr-sc.rk-vj .rk-zig i.dar,.fpr-sc.rk-vj p{opacity:0}
+.fpr-sc.on.rk-vj .rk-zig i.on{animation:fprPop .35s cubic-bezier(.2,.9,.3,1.4) both;animation-delay:calc(.4s + var(--i)*.2s)}
+.fpr-sc.on.rk-vj .rk-zig i.dar{animation:rkGratis .8s 2.4s both}
+.fpr-sc.on.rk-vj p{animation:fprGore .5s 2.9s ease-out both}
+/* chat */
+.rk-sch{background:#0E0C0B}
+.rk-sch .rk-tx{right:8cqw}
+.rk-sch .rk-cht{gap:3cqw}
+.rk-sch .rk-cht .nas{font-size:3.4cqw}
+.rk-sch .rk-cht .m{font-size:5.6cqw;padding:3.4cqw 4.6cqw;border-radius:5cqw}
+.rk-sch .rk-cht .m small{font-size:3.4cqw}
+.fpr-sc .rk-cht .m{opacity:0}
+.fpr-sc.on .rk-cht .m{animation:rkMjeh .45s cubic-bezier(.2,.9,.3,1.3) both;animation-delay:calc(.35s + var(--i)*.85s)}
+@keyframes rkMjeh{from{opacity:0;transform:translateY(5cqw) scale(.8)}to{opacity:1;transform:none}}
+/* mobitel u reelu */
+.rk-st{background:radial-gradient(circle at 50% 70%,rgba(255,65,6,.55),rgba(255,65,6,0) 55%),#0E0C0B}
+.rk-st .rk-tel{position:absolute;left:50%;top:40cqw;margin-left:-29cqw;width:58cqw;height:118cqw}
+.rk-st .rk-nad{position:absolute;left:8cqw;right:14cqw;top:28cqw;font-size:7.6cqw;line-height:1;text-align:left}
+.rk-st .rk-nad em{font-style:normal;color:var(--y)}
+.fpr-sc.rk-st .rk-tel{opacity:0}
+.fpr-sc.on.rk-st .rk-tel{animation:fprTel .8s .15s cubic-bezier(.2,.9,.3,1) both}
+.fpr-sc .rk-ta{opacity:0}
+.fpr-sc.on .rk-ta{animation:fprGore .45s ease-out both;animation-delay:calc(.8s + var(--i)*.35s)}
+.fpr-sc.on .rk-t-plus.tap::after{content:"";position:absolute;inset:-1.4cqw;border-radius:50%;border:.6cqw solid #fff;animation:rkTap .7s 2.3s ease-out both}
+@keyframes rkTap{0%{opacity:0;transform:scale(.4)}30%{opacity:1}100%{opacity:0;transform:scale(1.8)}}
+.fpr-sc .rk-t-bar{opacity:0}
+.fpr-sc.on .rk-t-bar{animation:rkBar .5s 2.7s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes rkBar{from{opacity:0;transform:translateY(8cqw)}to{opacity:1;transform:none}}
+.fpr-sc .rk-t-kor li{opacity:.25}
+.fpr-sc.on .rk-t-kor li{animation:rkKor .4s ease-out both;animation-delay:calc(1s + var(--i)*.6s)}
+@keyframes rkKor{from{opacity:.25;transform:translateX(-2cqw)}to{opacity:1;transform:none}}
+.fpr-sc .rk-t-traka i{width:0}
+.fpr-sc.on .rk-t-traka i{animation:rkTraka 2.6s 1s ease-in-out both}
+@keyframes rkTraka{to{width:75%}}
+.fpr-sc .rk-t-list{transform:translateY(100%)}
+.fpr-sc.on .rk-t-list{animation:rkList .6s 1.4s cubic-bezier(.2,.9,.3,1) both}
+@keyframes rkList{from{transform:translateY(100%)}to{transform:none}}
+.fpr-sc .rk-t-ks .ak{opacity:0}
+.fpr-sc.on .rk-t-ks .ak{animation:fprPop .5s 2.6s cubic-bezier(.2,.9,.3,1.3) both}
+/* cola, koza */
+.rk-sco{background:#000;text-align:center}
+.rk-sco .rk-kola{position:absolute;left:4cqw;right:4cqw;top:58cqw;aspect-ratio:592/348;background:center/contain no-repeat}
+.rk-sco .rk-nad{position:absolute;left:8cqw;right:8cqw;top:34cqw;font-size:10cqw;line-height:1}
+.rk-sco .rk-nad em{font-style:normal;color:var(--y)}
+.rk-sco p{position:absolute;left:8cqw;right:8cqw;top:120cqw;font-size:5cqw;font-weight:600;margin:0}
+.fpr-sc.rk-sco .rk-kola,.fpr-sc.rk-sco p{opacity:0}
+.fpr-sc.on.rk-sco .rk-kola{animation:rkSkok .9s .5s cubic-bezier(.3,.7,.3,1) both}
+@keyframes rkSkok{0%{opacity:0;transform:translateY(-40cqw) scale(.8)}55%{opacity:1;transform:translateY(3cqw) scale(1.04,.95)}75%{transform:translateY(-1cqw)}100%{opacity:1;transform:none}}
+.fpr-sc.on.rk-sco p{animation:fprGore .5s 1.5s ease-out both}
+.rk-skz{background:radial-gradient(circle at 30% 80%,rgba(255,65,6,.6),rgba(255,65,6,0) 55%),#0E0C0B}
+.rk-skz .rk-kz{position:absolute;left:4cqw;right:4cqw;top:70cqw;height:66cqw;background:center bottom/contain no-repeat}
+.rk-skz .rk-tx{bottom:auto;top:30cqw}
+.rk-skz .rk-h{font-size:12cqw}
+.fpr-sc.rk-skz .rk-kz{opacity:0}
+.fpr-sc.on.rk-skz .rk-kz{animation:rkKoza 1.3s .3s cubic-bezier(.16,.84,.3,1) both}
+@keyframes rkKoza{0%{opacity:0;transform:translateX(-90cqw)}60%{opacity:1;transform:translateX(4cqw)}72%{transform:translateX(-2cqw) rotate(-3deg)}85%{transform:rotate(2deg)}100%{opacity:1;transform:none}}
+/* info */
+.rk-si{background:radial-gradient(circle at 50% 110%,rgba(255,65,6,.55),rgba(255,65,6,0) 58%),#0E0C0B}
+.rk-si .rk-h{font-size:10cqw}
+.rk-si .rk-ikarta{gap:4.4cqw;padding:6cqw}
+.rk-si .rk-ikarta div{font-size:5.4cqw}
+.rk-si .rk-ikarta small{font-size:3.6cqw}
+.rk-si .rk-ikarta svg{width:8cqw;height:8cqw}
+.fpr-sc.rk-si .rk-ikarta div{opacity:0}
+.fpr-sc.on.rk-si .rk-ikarta div{animation:fprLijevo .5s cubic-bezier(.2,.9,.3,1.15) both;animation-delay:calc(.4s + var(--i)*.35s)}
+/* odjava */
+.rk-odj{background:var(--o);color:#140A06;text-align:center}
+.rk-odj .rk-tx{left:8cqw;right:8cqw;align-items:center}
+.rk-odj .rk-logo{width:38cqw;height:38cqw;box-shadow:0 0 0 1.4cqw #140A06,0 3cqw 8cqw rgba(0,0,0,.35)}
+.rk-odj .ime{font-size:12cqw;line-height:1;margin-top:5cqw}
+.rk-odj .tag{font-size:4.6cqw;font-weight:600;margin-top:1.6cqw;letter-spacing:.02em}
+.rk-odj .cta{margin-top:6cqw;background:#140A06;color:#fff;font-size:5.2cqw;padding:3.6cqw 6cqw;border-radius:99px;line-height:1}
+.rk-odj .sit{margin-top:3.4cqw;font-size:3.8cqw;font-weight:600;opacity:.85}
+.fpr-sc.rk-odj .rk-logo,.fpr-sc.rk-odj .ime,.fpr-sc.rk-odj .tag,.fpr-sc.rk-odj .cta,.fpr-sc.rk-odj .sit{opacity:0}
+.fpr-sc.on.rk-odj .rk-logo{animation:fprZig .9s .1s cubic-bezier(.3,.7,.3,1) both}
+.fpr-sc.on.rk-odj .ime{animation:fprGore .5s .8s ease-out both}
+.fpr-sc.on.rk-odj .tag{animation:fprGore .5s 1.05s ease-out both}
+.fpr-sc.on.rk-odj .cta{animation:fprPop .6s 1.5s cubic-bezier(.2,.9,.3,1.25) both}
+.fpr-sc.on.rk-odj .sit{animation:fprGore .5s 2s ease-out both}
+
 </style>
 </head>
 <body>
@@ -6433,7 +6652,7 @@ const mjesecSad=()=>new Date().toISOString().slice(0,7);
 const hrMjesec=m=>["siječanj","veljača","ožujak","travanj","svibanj","lipanj","srpanj",
  "kolovoz","rujan","listopad","studeni","prosinac"][+m.split("-")[1]-1]+" "+m.split("-")[0];
 
-const VL_TABOVI=()=>[["pregled","Pregled"],["analitika","Analitika"],["jelovnik","Jelovnik"],["pocetna","Izgled"],["dodaci","Dodaci"],["normativi","Normativi","normativi"],["nabava","Nabava","nabava"],["troskovi","Troškovi","troskovi"],
+const VL_TABOVI=()=>[["pregled","Pregled"],...(rkIma()?[["objave","Objave i reels"]]:[]),["analitika","Analitika"],["jelovnik","Jelovnik"],["pocetna","Izgled"],["dodaci","Dodaci"],["normativi","Normativi","normativi"],["nabava","Nabava","nabava"],["troskovi","Troškovi","troskovi"],
  ["recenzije","Recenzije","recenzije"],["vozaci","Vozači","vozac"],["voznipark","Vozni park","voznipark"],["nadzor",MOD("vozac")?"Kuhinja i vozači":"Kuhinja","kuhinja"],
  ["izvjestaj","Izvještaji","izvjestaji"],["marketing","Marketing i dizajn"],["postavke","Postavke"]].filter(x=>!x[2]||MOD(x[2]));
 function vlasnikHTML(){
@@ -6445,6 +6664,7 @@ function vlasnikHTML(){
  let h=`${osobljeUloga==="zoom"?`<div class="z-adm-traka">${ZOOM_LOGO(16)} admin · uređuješ <b>${esc(lokal.naziv)}</b> <a href="/#zoom">← svi restorani</a></div>`:""}${historijaIzmjena.length?`<button class="undo" onclick="ponistiZadnju()">↩ Poništi zadnju izmjenu (${historijaIzmjena.length})</button>`:""}<div class="podtab">
   ${VL_TABOVI().map(([k,n])=>`<button aria-selected="${vlTab===k}" onclick="vlNa('${k}')">${n}</button>`).join("")}</div>`;
  if(vlTab==="pregled")   h+=vlPregled();
+  if(vlTab==="objave")    h+=rkObjaveHTML();
  if(vlTab==="analitika") h+=vlAnalitika();
  if(vlTab==="marketing") h+=vlMarketing();
  if(vlTab==="jelovnik")  h+=vlJelovnik();
@@ -8979,7 +9199,7 @@ function fpLandingHTML(){
     <ul class="fpl-lista">${e.l.map(x=>`<li>${x}</li>`).join("")}</ul>
     ${e.zivo?`<div style="margin-top:22px"><a class="fpl-b" href="${demo}" target="_blank" rel="noopener">Otvori demo restoran →</a></div>`:""}</div>
    <div>${e.zivo?`<div class="fpl-foto-red" style="background-image:url('${FP_U(FP_SLIKE.stol,1100,800)}')"></div>`
-    :`<div class="fpl-ekran${e.mob?" mob":""}"><div class="traka"><i></i><i></i><i></i><span>${e.oz==="Dostava"?"foodpoint delivery":"foodpoint · "+e.oz.toLowerCase()}</span></div>
+    :`<div class="fpl-ekran${e.mob?" mob":""}"><div class="traka"><i></i><i></i><i></i><span>foodpoint · ${e.oz.toLowerCase()}</span></div>
      <img src="/${e.sl}" alt="Foodpoint — ${e.oz}" loading="lazy" onerror="this.closest('.fpl-ekran').style.display='none'"></div>`}</div></div>`).join("")}
  </div></section>
 
@@ -9560,6 +9780,7 @@ async function zoomSpremiPlacanje(id,o,box){
 
 /* ---------- IKONE (tanke linije, bez emotikona) ---------- */
 const FPI={
+ novac:'<rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/>',
  jelovnik:'<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>',
  zvono:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',
  dostava:'<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
@@ -10110,8 +10331,7 @@ const FP_REELS=[
 
 /* ---------- zajednički dijelovi ---------- */
 let fpO={skup:"a",puni:null};
-const FP_O_SKUPOVI=[["a","Objave 1–30"],["b","Objave 31–60"],["r","Reels 1–30"],["r2","Reels 31–80"],["c","Reklame 61–90"],["r3","Video reels 81–110"]];
-const fpOOd=()=>({b:30,r2:30,c:60,r3:80})[fpO.skup]||0;
+const FP_O_SKUPOVI=[["a","Objave 1–30"],["b","Objave 31–60"],["r","Reels 1–30"],["r2","Reels 31–80"]];
 const fpOSidr=()=>`<span class="fpo-sidr">${fpIk("sidro",14)}Spremni za sidrene cijene</span>`;
 const fpOLogo=(bijeli,kl)=>`<img class="fpo-logo${kl?" "+kl:""}" src="${FP_LOGO_V(bijeli)}" alt="Foodpoint" crossorigin="anonymous">`;
 const fpODno=(o,bijeli)=>`<div class="fpo-dno"><span class="fpo-cta">${esc(o.cta||"Foodpoint partner")} <b>→</b></span>${fpOSidr()}</div>`;
@@ -10172,9 +10392,9 @@ function fpReelHTML(r){
 /* ---------- pokretanje reelova: igraju samo kad su na ekranu ---------- */
 let fpRObs=null;
 function fpRKorak(el){
- if(!el.isConnected||!el._vid){el._t=null; el.querySelectorAll("video").forEach(v=>{try{v.pause();}catch(e){}}); return;}
+ if(!el.isConnected||!el._vid){el._t=null;return;}
  const sc=el.querySelectorAll(".fpr-sc"); el._i=((el._i==null?-1:el._i)+1)%sc.length;
- sc.forEach(s=>s.classList.remove("on")); void el.offsetWidth; sc[el._i].classList.add("on"); if(typeof fpRVideo==="function")fpRVideo(el,sc[el._i]);
+ sc.forEach(s=>s.classList.remove("on")); void el.offsetWidth; sc[el._i].classList.add("on");
  const t=+sc[el._i].dataset.t||2700, pr=el.querySelector(".fpr-prog i");
  if(pr){const uk=[...sc].reduce((a,s)=>a+(+s.dataset.t||2700),0), do_=[...sc].slice(0,el._i).reduce((a,s)=>a+(+s.dataset.t||2700),0);
   pr.style.transition="none"; pr.style.width=(do_/uk*100)+"%"; void pr.offsetWidth; pr.style.transition=`width ${t}ms linear`; pr.style.width=((do_+t)/uk*100)+"%";}
@@ -10185,13 +10405,13 @@ function fpRInit(){
  document.querySelectorAll(".fpr-reel:not([data-ok])").forEach(el=>{el.dataset.ok=1; if(fpRObs)fpRObs.observe(el); else {el._vid=true; fpRKorak(el);}});}
 
 /* ---------- prikaz u Upiti → Objave ---------- */
-const fpOJeR=()=>fpO.skup==="r"||fpO.skup==="r2"||fpO.skup==="r3";
-function fpOLista(){return fpO.skup==="b"?FP_OBJAVE2:fpO.skup==="r"?FP_REELS:fpO.skup==="r2"?FP_REELS2:fpO.skup==="r3"?FP_REELS3:fpO.skup==="c"?FP_REKLAME:FP_OBJAVE;}
-function fpOStavka(o){return fpOJeR()?fpReelHTML(o):fpO.skup==="b"?fpOPostB(o):fpO.skup==="c"?fpOPostC(o):fpOPostA(o);}
+const fpOJeR=()=>fpO.skup==="r"||fpO.skup==="r2";
+function fpOLista(){return fpO.skup==="b"?FP_OBJAVE2:fpO.skup==="r"?FP_REELS:fpO.skup==="r2"?FP_REELS2:FP_OBJAVE;}
+function fpOStavka(o){return fpOJeR()?fpReelHTML(o):fpO.skup==="b"?fpOPostB(o):fpOPostA(o);}
 const FP_O_NAZ={crvena:"Crvena",svijetla:"Svijetla",tamna:"Tamna",foto:"Fotografija",usporedba:"Usporedba",ekran:"Ekran",lista:"Popis",
  lf:"Logo + fotografija",split:"Podijeljena",okvir:"Okvir",kolaz:"Kolaž",potpis:"Znak",traka:"Traka"};
 function fpObjaveHTML(){
- const r=fpOJeR(), L=fpOLista(), od=fpOOd();
+ const r=fpOJeR(), L=fpOLista(), od=fpO.skup==="b"||fpO.skup==="r2"?30:0;
  setTimeout(fpRInit,0);
  return `<div class="fpo-uvod"><div><h2>${r?"Reels za Instagram i TikTok":"Objave za Instagram i Facebook"}</h2>
    <p>${r?"Format 1080×1920 (9:16). Tekst je unutar sigurne zone, pa ga gumbi i opis na Reelsu ne prekrivaju. Za video: otvorite reel preko cijelog ekrana, pokrenite snimanje ekrana na mobitelu i dodirnite reel — krene od početka.":
@@ -10230,7 +10450,7 @@ async function fpOPreuzmi(i,b){
  try{await fpUcitajH2C(); await Promise.all([...d.querySelectorAll("img")].map(im=>im.complete?0:new Promise(r=>{im.onload=im.onerror=r;})));
   if(document.fonts&&document.fonts.ready) await document.fonts.ready;
   const c=await html2canvas(d.firstElementChild,{scale:1,useCORS:true,backgroundColor:null,width:1080,height:1350,logging:false});
-  const a=document.createElement("a"); a.download=`foodpoint-objava-${i+1+fpOOd()}.png`; a.href=c.toDataURL("image/png"); a.click();}
+  const a=document.createElement("a"); a.download=`foodpoint-objava-${i+1+(fpO.skup==="b"?30:0)}.png`; a.href=c.toDataURL("image/png"); a.click();}
  catch(e){alert("Preuzimanje nije uspjelo. Otvorite objavu preko cijelog ekrana i napravite snimku ekrana.");}
  d.remove(); b.disabled=false; b.innerHTML=st;}
 
@@ -10285,7 +10505,7 @@ const FP_EN={
  "Ture i redoslijed adresa, navigacija jednim klikom":"Routes and stop order, one-tap navigation",
  "Naplata gotovinom ili karticom":"Cash or card payment on delivery",
  "Vlasnik vidi tko vozi i koliko":"The owner sees who is driving and how much",
- "foodpoint · dostava":"foodpoint · delivery","foodpoint delivery":"foodpoint delivery",
+ "foodpoint · dostava":"foodpoint · delivery",
  "Vlasnik":"Owner","Cijeli lokal na jednom ekranu":"Your whole venue on one screen",
  "Mijenjate jelovnik, cijene i slike sami, kad god želite. Pratite promet, nove i stalne kupce, marže po jelu, troškove i plaće — i naručujete namirnice od dobavljača.":
   "Update your menu, prices and photos yourself, whenever you like. Track revenue, new and returning customers, margin per dish, costs and wages — and order supplies from your suppliers.",
@@ -10490,9 +10710,8 @@ Object.assign(FP_FOTO,{
 
 /* ---------- prikaz novih scena ---------- */
 const fpRBroj=t=>t.trim().split(/\s+/).length;
-function fpRTitl(t){let i=0, u=false;
- return esc(t).split(/\s+/).map(w=>{const poc=w.startsWith("*"); if(poc)u=true; const ist=u; if(/\*[.,!?:…]*$/.test(w))u=false;
-  return `<span class="w${ist?" ist":""}" style="--i:${i++}">${w.replace(/\*/g,"")}</span>`;}).join(" ");}
+function fpRTitl(t){let i=0;
+ return esc(t).split(/\s+/).map(w=>{const ist=/^\*.*\*[.,!?:]?$/.test(w); const c=w.replace(/\*/g,""); return `<span class="w${ist?" ist":""}" style="--i:${i++}">${c}</span>`;}).join(" ");}
 function fpRScena2(s){
  if(s.v==="t"){const n=fpRBroj(s.t);
   return `<div class="fpr-sc fpr-titl" data-t="${2000+n*270}"><div class="fpr-bg" style="${fpBg(s.f,1080,1920)}"></div>
@@ -10785,220 +11004,499 @@ const FP_REELS2=(()=>{
   T("pizza_ponos","Gost dobije *točno ono* što je naručio.")],
   cap:"Dodaci i napomene stižu napisani, uz cijenu. Gost dobije točno ono što je naručio, a kuhinja ne mora pogađati."}];})();
 
-/* ===== FOODPOINT 10: video reelovi (Mixkit, besplatna licenca) i 30 reklama (zabavne objave) ===== */
-/* ---------- video ---------- */
-const FP_VID=id=>[`https://assets.mixkit.co/videos/${id}/${id}-720.mp4`,`https://assets.mixkit.co/videos/${id}/${id}-360.mp4`];
-function fpRVideo(el,sc){
- el.querySelectorAll(".fpr-sc video").forEach(v=>{if(!sc.contains(v)){try{v.pause();}catch(e){}}});
- const v=sc.querySelector("video"); if(!v)return;
- if(v.preload!=="auto"){v.preload="auto"; v.load();}
- try{v.currentTime=0;}catch(e){}
- const p=v.play(); if(p&&p.catch)p.catch(()=>{});
- /* sljedeća scena: učitaj unaprijed da nema čekanja */
- const sve=[...el.querySelectorAll(".fpr-sc")], n=sve[(sve.indexOf(sc)+1)%sve.length], nv=n&&n.querySelector("video");
- if(nv&&nv.preload!=="auto"){nv.preload="auto"; nv.load();}}
-function fpRVidScena(s){const n=fpRBroj(s.t), [a,b]=FP_VID(s.id);
- return `<div class="fpr-sc fpr-titl fpr-vid" data-t="${Math.max(3400,2000+n*270)}">
-  <video class="fpr-bg" muted playsinline loop preload="none" poster="${fpF(s.f||"pizza_ruke",720,1280)}" onerror="this.classList.add('greska')"><source src="${a}" type="video/mp4"><source src="${b}" type="video/mp4"></video>
-  <div class="fpr-sjena"></div><div class="fpr-cap">${s.k?`<div class="kic">${esc(s.k)}</div>`:""}<p>${fpRTitl(s.t)}</p></div></div>`;}
-{const st=fpRScena2; fpRScena2=function(s){return s.v==="vid"?fpRVidScena(s):st(s);};}
-{const st=fpRScena; fpRScena=function(s){return s.v==="vid"?fpRVidScena(s):st(s);};}
 
-/* 30 video reelova — izvor videa: mixkit.co (Mixkit Free License: besplatno i za reklame, bez navođenja autora) */
-const FP_REELS3=(()=>{
- const V=(id,t,f,k)=>({v:"vid",id,t,f,k}), K=(ik,n,t)=>({v:"k",ik,n,t}), R=(...m)=>({v:"r",m}), N=h=>({v:"naslov",h}),
-  L=l=>({v:"lista",l}), B=(a,b,p)=>({v:"broj",a,b,p}), S=(j,c,z)=>({v:"sidro",j,c,z}), E=(sl,n,mob)=>({v:"ekran",sl,n,mob});
- return [
- {n:"Petak navečer",cta:"Narudžbe bez telefona",s:[V(42481,"Petak navečer. Peć radi *punom parom*.","pec"),V(15875,"Kuhinja ne stigne dizati slušalicu.","kuhinja_ekipa"),
-  V(4915,"Zato gosti naručuju *sami*, na vašoj stranici.","mob_narudzba"),V(20913,"A vi radite ono što najbolje znate.","pizza_ruke")],
-  cap:"Petak navečer, peć puna, a telefon ne staje. S Foodpointom gosti naručuju sami na vašoj stranici, a kuhinja dobiva sve napisano."},
- {n:"Od tijesta do vrata",cta:"Pogledajte kako radi",s:[V(42467,"Sve počinje *tijestom*.","pizza_tijesto"),V(42473,"Gost je već naručio na vašoj stranici.","pizza_ruke"),
-  V(42480,"Kuhinja je narudžbu dobila *u sekundi*.","pec"),V(31136,"Vaš dostavljač zna točnu adresu.","dostavljac_ulica"),V(26090,"A gost? Sretan za *30 minuta*.","prijatelji_tv")],
-  cap:"Od tijesta do vrata: gost naruči na vašoj stranici, kuhinja odmah dobije narudžbu, a vaš dostavljač zna točnu adresu."},
- {n:"Gdje ide vaš novac",cta:"Izračunajte uštedu",s:[V(44001,"Ova pizza košta *10 €*.","pizza_stol"),B("3 €","1 €","platformi — ili Foodpointu"),
-  V(44007,"Razlika ostaje *vama*. Svaki put.","prijatelji_pizza")],
-  cap:"Pizza od 10 €: platformi za dostavu ide oko 3 €, a Foodpointu 1 €. Razlika ostaje vama, na svakoj narudžbi."},
- {n:"Sidrene cijene",cta:"Pošaljite jelovnik",s:[V(2433,"Od *17. studenoga* jelovnik mora pokazati i sidrenu cijenu.","pasta1","Važno za sve lokale"),
-  S("Fettuccine Alfredo","11,00 €","10,50 €"),V(13261,"Mi je upišemo. *Vi kuhate dalje.*","chef_tanjur")],
-  cap:"Od 17. studenoga uz svaku cijenu ide i sidrena cijena. Pošaljite nam jelovnik, mi sve upišemo — na papiru i na webu."},
- {n:"Jutro u kafiću",cta:"QR za kafiće",s:[V(3572,"Jutarnja gužva.","barista"),V(219,"Konobar ne stigne do *svakog stola*.","konobar"),
-  K("qr","QR kod na stolu","Gost skenira, odabere i naruči. Bez čekanja i bez aplikacije."),V(3574,"Narudžba stiže *ravno na šank*.","kava_toci")],
-  cap:"Jutarnja gužva u kafiću? Gost skenira QR kod na stolu i naruči, a narudžba stiže ravno na šank."},
- {n:"Burger bez telefona",cta:"Narudžbe preko stranice",s:[V(12016,"Sir se topi…","burger2"),V(24785,"…umak ide na vrh…","burger3"),
-  V(327,"…a narudžba je stigla *sama*. Bez ijednog poziva.","konobar_burgeri")],
-  cap:"Dok se sir topi, nova narudžba stiže sama — napisana, s adresom i napomenom. Bez ijednog poziva."},
- {n:"Roštilj ne čeka",cta:"Za restorane",s:[V(4678,"Roštilj ne čeka.","raznjici"),V(4118,"Ni vaši gosti.","kuhar_noc"),
-  K("zvono","Narudžba zazvoni u kuhinji","Prilog, umak i napomena — sve jasno napisano. Kuhar potvrdi vrijeme jednim klikom."),V(32457,"Gost dobije *točno* ono što je naručio.","meso")],
-  cap:"Roštilj ne čeka, a ni gosti. Narudžba zazvoni u kuhinji s prilogom, umakom i napomenom — sve jasno napisano."},
- {n:"Utakmica počinje",cta:"Vaša stranica za narudžbe",s:[V(26089,"Utakmica počinje *za 20 minuta*.","prijatelji_tv"),V(42136,"Gost otvori *vašu* stranicu…","mob_narudzba"),
-  V(31155,"…i hrana stiže prije prvog gola.","vrecica")],
-  cap:"Utakmica za 20 minuta? Gost otvori vašu stranicu, naruči u minuti, a hrana stiže prije prvog gola."},
- {n:"Mali lokal, veliko srce",cta:"Za male lokale",s:[V(4385,"Mali lokal. *Puno srca.*","bistro"),V(4350,"Ne treba vam velika aplikacija…","kava_stol"),
-  V(13875,"…treba vam *partner* koji razumije vaš posao.","kuharica")],
-  cap:"Za male i obiteljske lokale: ne treba vam velika aplikacija, nego partner koji razumije vaš posao."},
- {n:"Kuhar, ne telefonist",cta:"Kuhinja bez papirića",s:[V(39535,"Vi ste kuhar. *Ne telefonist.*","kuhar_lonac"),V(15867,"Neka narudžbe stižu napisane, same.","chef_priprema"),
-  V(13258,"A vi kuhajte *s mirom*.","chef_rez")],
-  cap:"Vi ste kuhar, ne telefonist. Neka narudžbe stižu napisane i same, a vi kuhajte s mirom."},
- {n:"Utorak navečer",cta:"Vaše akcije",s:[V(29050,"Utorak. *Tiho* u lokalu.","restoran_sala"),K("poklon","Akcija jednim klikom","Uključite 4 + 1 gratis ili piće uz narudžbu. Isključite kad želite."),
-  V(4043,"Dajte gostima *razlog* da naruče baš danas.","bistro")],
-  cap:"Tih utorak? Uključite akciju 4 + 1 ili piće uz narudžbu jednim klikom i dajte gostima razlog da naruče baš danas."},
- {n:"Deseta je na kuću",cta:"Program vjernosti",s:[V(42487,"Ana je ovo naručila već *9 puta*.","pizza_stol2"),V(44012,"Deseta je *na kuću*.","prijatelji_pizza"),
-  K("poklon","Vjernost po broju mobitela","Bez kartica i aplikacija. Narudžbe se same broje, vi birate nagradu.")],
-  cap:"Program vjernosti bez kartica: narudžbe se broje po broju mobitela, a deseta može biti na kuću. Vi birate nagradu."},
- {n:"Vaš dostavljač",cta:"Aplikacija za vozače",s:[V(31136,"Vaš dostavljač. *Vaša pravila.*","dostavljac_ulica"),E("fp-ekran-vozac.png","Tura · 3 adrese po redu",true),
-  V(31139,"Adrese po redu, navigacija *jednim klikom*.","dostava_portret")],
-  cap:"Dostavljača zaposlite vi, a Foodpoint mu daje aplikaciju: adrese po redu, naplata i navigacija jednim klikom."},
- {n:"Plaćeno odmah",cta:"Online plaćanje",s:[V(51123,"Gost plati *Apple Payom*, Google Payom ili karticom.","mob_narudzba"),
-  K("kartica","Novac ide izravno vama","Preko Teye, ravno na vaš račun. Foodpoint ga nikad ne drži."),V(44008,"Kuhinja kreće tek kad je *plaćeno*.","konobar")],
-  cap:"Online plaćanje Apple Payom, Google Payom ili karticom. Novac ide izravno vama, a kuhinja kreće tek kad je plaćeno."},
- {n:"Svježe svaki dan",cta:"Jednostavna nabava",s:[V(49231,"Svježe namirnice, *svaki dan*.","chef_rez"),
-  K("kosarica","Nabava jednim klikom","Popis namirnica i narudžba dobavljaču, odmah iz sustava."),V(3806,"Više vremena za kuhanje, *manje za papire*.","kuhar_lonac")],
-  cap:"Nabava u Foodpointu: popis namirnica i narudžba dobavljaču jednim klikom. Više vremena za kuhanje, manje za papire."},
- {n:"Koliko sira?",cta:"Kontrola troškova",s:[V(42478,"Koliko sira ide na *jednu pizzu*?","pizza_tijesto"),
-  K("vaga","Normativi","Recept upišete jednom, a Foodpoint izračuna trošak i maržu svakog jela."),V(1666,"Znate *točno* koliko zarađujete po komadu.","pizza_stol")],
-  cap:"Normativi u Foodpointu: recept upišete jednom, a sustav izračuna trošak i maržu svakog jela."},
- {n:"Novi ste?",cta:"Postanite partner",s:[V(42469,"Novi ste s nama?","pizza_tijesto","Uvodna ponuda"),B("10 %","5 %","provizija prva 3 mjeseca"),
-  V(42484,"Postavljanje i obuka su *besplatni*.","pizza_ponos")],
-  cap:"Novi partneri prva 3 mjeseca plaćaju 5 % provizije umjesto 10 %, uz 49 € mjesečno. Postavljanje i obuka su besplatni."},
- {n:"Tko su vaši gosti",cta:"Analitika",s:[V(41229,"Tko su vaši *najbolji* gosti?","kava_stol"),E("fp-ekran-vlasnik.png","Stalni gosti ovaj mjesec: +18 %"),
-  V(4043,"Brojke vam kažu kad je gužva i *što se najviše prodaje*.","bistro")],
-  cap:"Analitika pokazuje nove i stalne goste, najjače sate i najprodavanija jela — da znate na čemu ste."},
- {n:"Kutija koja vraća goste",cta:"Ambalaža i letci",s:[V(42133,"Gost skenira QR s kutije…","mob_kutija"),V(20913,"…i sljedeća pizza je opet *vaša*.","pizza_ruke"),
-  K("paket","Ambalaža i letci s QR kodom","Dizajn, tisak i dostava na adresu lokala.")],
-  cap:"QR kod na kutiji ili letku vodi gosta ravno na vaš jelovnik. Radimo dizajn, tisak i dostavu."},
- {n:"Da gosti ogladne",cta:"Foto i video jela",s:[V(47159,"Ovako bi vaša jela trebala izgledati *na mobitelu*.","burger1"),V(14010,"Snimamo i fotografiramo vaša jela…","burger4"),
-  V(3553,"…da gosti *ogladne* čim otvore jelovnik.","burger2")],
-  cap:"Snimamo i fotografiramo vaša jela za jelovnik, web i mreže — da gosti ogladne čim otvore jelovnik."},
- {n:"Instagram umjesto vas",cta:"Vođenje mreža",s:[V(4919,"Nemate vremena za *Instagram*?","barista2"),R("v: Radim od 8 do ponoći.","f: Onda pustite nama objave i oglase.","f: Vi kuhajte, mi pričamo vašu priču."),
-  V(3581,"Gosti vas vide svaki dan. *Vi samo radite.*","kava_toci")],
-  cap:"Radimo objave i oglase za vaš kvart, s mjesečnim izvještajem. Vi kuhajte, mi pričamo vašu priču."},
- {n:"Bez sitnih slova",cta:"Isprobajte",s:[V(21864,"Bez ugovora. *Bez sitnih slova.*","kava_stol"),V(223,"Ostanete jer vam se *isplati*.","kava_toci")],
-  cap:"Foodpoint se plaća mjesečno, bez ugovorne obveze. Ostajete jer vam se isplati."},
- {n:"Zadovoljan gost",cta:"Recenzije",s:[V(44015,"Zadovoljan gost…","prijatelji_pizza"),K("nagrada","Recenzije na vašoj stranici","Gost ocijeni narudžbu, a vi birate što se objavljuje."),
-  V(44007,"…dovodi *nove* goste.","pizza_stol")],
-  cap:"Gosti mogu ocijeniti narudžbu, a vi birate koje se recenzije objavljuju na vašoj stranici."},
- {n:"Doručak za ured",cta:"Narudžbe unaprijed",s:[V(42464,"Ured naruči doručak za *ponedjeljak u 7*.","pekara"),
-  K("kalendar","Zakazano unaprijed","Gost bira dan i sat, do 7 dana unaprijed. Vi sve vidite na vrijeme."),V(42468,"Kuhinja zna sve *unaprijed*.","pekara_peciva")],
-  cap:"Gosti mogu zakazati narudžbu za točan dan i sat, do 7 dana unaprijed — idealno za pekare i urede."},
- {n:"Promet na mobitelu",cta:"Sve na mobitelu",s:[V(42123,"Promet dana? *Na mobitelu.*","mob_narudzba"),V(2597,"Pa možete biti i *na terasi* s obitelji.","restoran_drvo")],
-  cap:"Narudžbe i promet vidite na mobitelu, gdje god bili."},
- {n:"Previše odjednom",cta:"Kuhinja pod kontrolom",s:[V(15875,"Previše narudžbi *odjednom*?","kuhinja_ekipa"),
-  K("sat","Pauza jednim klikom","Kuhinja pauzira primanje na 20–30 minuta, a gosti vide kad opet primate."),V(4672,"Bolje malo pričekati nego *čekati sat vremena*.","konobar_tanjur")],
-  cap:"Kad je gužva prevelika, kuhinja pauzira primanje narudžbi jednim klikom. Gosti vide kad opet primate."},
- {n:"Cijela Hrvatska",cta:"Zatražite ponudu",s:[V(2597,"Od Dubrovnika do Osijeka…","restoran_drvo"),V(4385,"…radimo s ugostiteljima u *cijeloj Hrvatskoj*.","bistro"),
-  L(["Zagreb · Split · Rijeka","Osijek · Zadar · Pula","Dubrovnik · Varaždin","i svako mjesto između"])],
-  cap:"Foodpoint radi s ugostiteljima u cijeloj Hrvatskoj — sve se može postaviti i na daljinu."},
- {n:"Isprobajte demo",cta:"Pogledajte demo",s:[V(42136,"Isprobajte *kao gost*.","pizza_mob"),E("fp-ekran-gost.jpg","Casa Lume · demo restoran",true),
-  V(44008,"Demo restoran *Casa Lume* čeka vašu narudžbu.","konobar")],
-  cap:"Otvorite demo restoran Casa Lume i prođite cijelu narudžbu kao pravi gost."},
- {n:"Popijmo kavu",cta:"Javite nam se",tag:"Javite se i dogovorimo kavu",s:[V(43941,"Najbolje je da se *upoznamo*.","kava_toci"),
-  V(222,"Dođemo, popijemo kavu i pokažemo sve — *na vašem jelovniku*.","barista")],
-  cap:"Najbolje uživo: dođemo, popijemo kavu i pokažemo vam Foodpoint na vašem jelovniku. Bez obveze."},
- {n:"Sve na jednom mjestu",cta:"Foodpoint partner",s:[V(42481,"Narudžbe.","pec"),V(15875,"Kuhinja.","kuhinja_ekipa"),V(31136,"Dostava.","dostavljac_ulica"),
-  V(4043,"Sve na jednom mjestu. *Foodpoint.*","bistro")],
-  cap:"Narudžbe, kuhinja i dostava — sve na jednom mjestu. Foodpoint."}];})();
+/* ===== RIKY'S REKLAME JS ===== */
 
-/* ---------- 30 reklama: zabavne objave 4:5 ---------- */
-function fpDanaDo(){const d=new Date(2026,10,17), n=new Date(); n.setHours(0,0,0,0); return Math.max(0,Math.round((d-n)/864e5));}
-function fpUcitajRukopis(){if(document.getElementById("fp-caveat"))return; const l=document.createElement("link"); l.id="fp-caveat"; l.rel="stylesheet";
- l.href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap"; document.head.appendChild(l);}
-const FP_REKLAME=[
- {t:"bingo",oz:"Ugostiteljski bingo",h:"Koliko ste ovih skupili <em>ovaj tjedan?</em>",l:["Telefon zvoni u najvećoj gužvi","Papirić koji nitko ne zna pročitati","„Gdje mi je hrana?”","Krivi ulaz, krivi kat","30 % provizije","Vozač zove kuhinju","Bez luka. Ili ipak s lukom?","„Imate li sidrene cijene?”","Konobar ne stiže do stola"],p:"Foodpoint briše cijelu karticu.",cta:"Igrajte s nama",
-  cap:"Ugostiteljski bingo: koliko ste ih skupili ovaj tjedan? 😅 Foodpoint rješava cijelu karticu — od telefona u gužvi do sidrenih cijena."},
- {t:"pismo",oz:"Pismo",h:"Draga provizijo od 30 %,",p:"nije do mene, do tebe je. Svaki mjesec uzmeš trećinu, a na telefon se ne javiš. Upoznao sam nekoga tko uzima 10 % i dođe na kavu. Nemoj me više zvati.",pot:"Tvoj ugostitelj",cta:"Prekinite i vi",
-  cap:"Neki rastanci su jednostavno potrebni. 💌 Foodpoint: 10 % provizije, 49 € mjesečno i partner koji se javlja na telefon."},
- {t:"trazi",oz:"Pretraga",q:"kako da mi dostava ne uzima 30 %",r:["Foodpoint — partner za ugostitelje","Vaša stranica za narudžbe · 10 % provizije · bez ugovora"],h:"Pitali ste. <em>Odgovaramo.</em>",cta:"foodpoint · ponuda",
-  cap:"Ako ste ovo ikad guglali, ovo je za vas. Foodpoint: vaša stranica za narudžbe, 10 % provizije, bez ugovora."},
- {t:"tel",f:"pizza_ponos",oz:"Zvuk",n:["Nova narudžba · 2× Margherita","Nova narudžba · Capricciosa + Cola","Nova narudžba · 3× Burger Classic","Nova narudžba · Tiramisu × 2"],h:"Zvuk koji <em>volite čuti.</em>",cta:"Izravno vama",
-  cap:"Postoji zvuk koji svaki ugostitelj voli. 🔔 S Foodpointom narudžbe stižu izravno u vašu kuhinju — napisane, s adresom i napomenom."},
- {t:"racun",oz:"Račun",r:[["Pizza Margherita","20,00 €"],["Provizija platforme 30 %","−6,00 €"],["Vama ostaje","14,00 €"]],z:["S Foodpointom (10 %)","18,00 €"],h:"Pročitajte račun <em>do kraja.</em>",cta:"Izračunajte svoju",
-  cap:"Isti račun, drugačiji kraj. Na narudžbi od 20 € s Foodpointom vama ostaje 18 €, a ne 14 €."},
- {t:"prognoza",oz:"Prognoza",d:"Petak · 20:00",st:[["Šansa za gužvu","100 %"],["Telefonskih poziva","previše"],["Živci","na rubu"]],h:"Foodpoint: <em>kuhinja spremna, telefon miran.</em>",cta:"Spremni za petak",
-  cap:"Prognoza za petak: 100 % šanse za gužvu. 🌩️ Uz Foodpoint gosti naručuju sami, a kuhinja dobiva sve napisano."},
- {t:"broj",oz:"Sidrene cijene",b:"DANA",h:"do sidrenih cijena. <em>Je li vaš jelovnik spreman?</em>",p:"Pošaljite nam postojeći jelovnik, mi upišemo sidrene cijene.",cta:"Pošaljite jelovnik",odbr:1,
-  cap:"Sat otkucava ⏳ Od 17. studenoga uz svaku cijenu mora stajati i sidrena cijena. Pošaljite nam jelovnik — mi sve uskladimo."},
- {t:"split",oz:"Ovo ili ovo?",a:"margerita bez luka?? ul. ...ska 14 ili 41?? platio? NE ZNAM",b:["Narudžba #128","2× Margherita, bez luka","Ilica 14, 2. kat","Plaćeno karticom"],h:"Papirić ili <em>Foodpoint?</em>",cta:"Bez papirića",
-  cap:"S lijeve strane: papirić iz petka navečer. S desne: ista narudžba u Foodpointu. Biramo desno. ✍️➡️📱"},
- {t:"kviz",oz:"Kviz",h:"Koliko provizije plaćate na narudžbu od 20 €?",o:["2 €","6 €","Ne želim znati"],tocno:-1,p:"Ako ste odabrali B ili C — javite nam se.",cta:"Javite se",
-  cap:"Brzi kviz za ugostitelje 🧠 Ako ste odabrali B ili C, imamo rješenje: 10 % provizije i vaša vlastita stranica."},
- {t:"tag",f:"pizza_stol",oz:"Cijena",c:"10 €",a:["Platformi","3 €"],b:["Foodpointu","1 €"],h:"Ista pizza. <em>Drugačija računica.</em>",cta:"Izračunajte uštedu",
-  cap:"Ista pizza, ista cijena — samo vam ostane više. 🍕 Foodpoint: 10 % provizije umjesto 25–30 %."},
- {t:"poster",f:"pizza_ruke",oz:"Reklama",h:"Ovo nije reklama <em>za pizzu.</em>",p:"Ovo je reklama za to da od nje zaradite više.",cta:"Saznajte kako",
-  cap:"Ovo nije reklama za pizzu. 😉 Ovo je reklama za to da od svake pizze zaradite više — uz vlastitu stranicu za narudžbe."},
- {t:"chat",oz:"Mama",m:["v:Jesi jeo išta danas?","f:Nisam stigao, telefon ne staje od 5","v:Pa uzmi taj Foodpoint. Neka ljudi sami naruče!","f:…mama ima pravo."],h:"Mama uvijek <em>zna.</em>",cta:"Poslušajte mamu",
-  cap:"Kad mama kaže, tako je. 😄 Gosti naručuju sami, a vi stignete i ručati."},
- {t:"match",f:"pizza_ponos",oz:"Savršen spoj",ime:"Foodpoint",vol:["dobru hranu","stalne goste","10 % provizije"],nevol:["papiriće","30 % provizije"],h:"Mislimo da smo <em>savršen spoj.</em>",cta:"Swipe desno",
-  cap:"Tražite partnera koji voli dobru hranu i mrzi papiriće? 💘 Mislimo da smo savršen spoj."},
- {t:"postit",oz:"Popis",n:["Nazvati dobavljača!!","Novi jelovnik?","Sidrene cijene???","Provizija 1.800 €!!"],z:"Ili samo: Foodpoint.",h:"Kad popis <em>raste brže</em> od narudžbi.",cta:"Skratite popis",
-  cap:"Popis obaveza koji nikad ne završava? 📝 Narudžbe, jelovnik, sidrene cijene i nabava — kod jednog partnera."},
- {t:"oglas",oz:"Mali oglasi",nas:"TRAŽI SE",txt:"Partner za ugostitelje. Pouzdan, javlja se na telefon, ne uzima 30 % provizije. Iskustvo s gužvom petkom poželjno.",pot:"Javiti se: Foodpoint",h:"Pronašli ste ga.",cta:"Javite se",
-  cap:"Mali oglas koji ima sretan kraj. 📰 Foodpoint — partner za ugostitelje."},
- {t:"poster",f:"vlasnik_ulaz",oz:"Vaš lokal",h:"Vaša pizza. Vaše ime. <em>Vaš novac.</em>",p:"Stranica za narudžbe s vašim logom — bez tuđeg imena na vrhu.",cta:"Vaša stranica",
-  cap:"Vaša pizza, vaše ime, vaš novac. Stranica za narudžbe s vašim logom i bojama."},
- {t:"broj",oz:"Kuhinja",b:"1 KLIK",h:"Toliko kuhinji treba <em>da potvrdi narudžbu.</em>",p:"Gost odmah vidi kad mu stiže hrana.",cta:"Kuhinja bez papirića",
-  cap:"Jedan klik i gost zna kad stiže hrana. ⚡ Kuhinja bez papirića i bez zvanja."},
- {t:"horoskop",oz:"Horoskop",z:[["Ovan","Petak donosi gužvu. Kao i svaki petak."],["Rak","Telefon zvoni. Ne javljajte se, gosti naručuju sami."],["Vaga","Izvažite: 30 % ili 10 %?"],["Svi znakovi","Foodpoint vam donosi mir."]],h:"Horoskop za <em>ugostitelje</em>",cta:"Vaš sretan znak",
-  cap:"Zvijezde kažu: manje telefona, više narudžbi. ✨ Horoskop za ugostitelje, by Foodpoint."},
- {t:"poster",f:"kuhar_noc",oz:"Kuhinja",h:"Manje zvonjave. <em>Više zarade.</em>",p:"Gosti naručuju sami, a kuhinja dobiva sve napisano.",cta:"Vaša stranica",
-  cap:"Manje zvonjave, više zarade. 🔕 Gosti naručuju na vašoj stranici, kuhinja dobiva sve napisano."},
- {t:"prijepos",oz:"Prije i poslije",a:["7 aplikacija","3 bilježnice","1 telefon koji ne staje","30 % provizije"],b:["Foodpoint"],h:"Prije i <em>poslije.</em>",cta:"Prijeđite na lakše",
-  cap:"Prije: aplikacije, bilježnice i telefon koji ne staje. Poslije: Foodpoint. 😌"},
- {t:"poster",f:"dostava_skuter",oz:"Dostava",h:"Dostavljač vaš. <em>Ruta posložena.</em>",p:"Aplikacija za vaše vozače: adrese po redu, navigacija jednim klikom.",cta:"Aplikacija za vozače",
-  cap:"Dostavljač je vaš, a mi mu dajemo aplikaciju s posloženom rutom. 🛵"},
- {t:"kviz",oz:"Kviz",h:"Što je sidrena cijena?",o:["Cijena sidra u marini","Cijena od 10. rujna, uz današnju","Nemam pojma, a od 17. 11. je obvezno"],tocno:1,p:"Točno je B. Mi je upišemo umjesto vas.",cta:"Pošaljite jelovnik",
-  cap:"Kviz: što je sidrena cijena? ⚓ Točno je B — cijena od 10. rujna istaknuta uz današnju. Mi je upišemo za vas."},
- {t:"tel",f:"kuhinja_ekipa",oz:"Kuhinja",n:["Nova narudžba #129 · za 25 min","Gost: „Bez luka, molim”","Plaćeno karticom"],h:"Ovo vidi kuhinja. <em>Ništa ne treba pogađati.</em>",cta:"Pogledajte demo",
-  cap:"Kad gost naruči, kuhinja vidi sve: jela, napomene, adresu i način plaćanja. Ništa ne treba pogađati."},
- {t:"racun",oz:"Mjesečni račun",r:[["300 narudžbi po 20 €","6.000 €"],["Provizija platforme 25–30 %","1.500–1.800 €"]],z:["Foodpoint: 49 € + 10 %","649 €"],h:"Ista količina posla. <em>Manji račun.</em>",cta:"Izračunajte svoju",
-  cap:"300 narudžbi mjesečno po 20 €: na platformi 1.500–1.800 € provizije, s Foodpointom 649 €. Ista količina posla, manji račun."},
- {t:"poster",f:"prijatelji_tv",oz:"Gosti",h:"Platforma dovede gosta. <em>Vi ga zadržite.</em>",p:"Stalni gosti naručuju na vašoj stranici — uz 10 % umjesto 25–30 %.",cta:"Vaš kanal",
-  cap:"Ne morate odustati od platformi. Neka vam dovedu nove goste, a stalne zadržite na svojoj stranici. 🤝"},
- {t:"trazi",oz:"Pretraga",q:"pizzerija blizu mene",r:["Pizzeria Mario — naruči izravno","Vaša stranica · vaš logo · vaše cijene"],h:"Neka vas gosti nađu <em>pod vašim imenom.</em>",cta:"Vaša stranica",
-  cap:"Kad gost traži pizzeriju, neka nađe vas — pod vašim imenom, s vašom stranicom za narudžbe."},
- {t:"postit",oz:"Popis",n:["Stranica za narudžbe ✓","Kuhinja i šank ✓","Aplikacija za vozače ✓","Jelovnik sa sidrenim ✓"],z:"Sve riješeno.",h:"Popis koji se <em>sam križa.</em>",cta:"Foodpoint partner",
-  cap:"Kad sve s popisa bude riješeno — to je Foodpoint. ✅"},
- {t:"poster",f:"chef_priprema",oz:"Vi i mi",h:"Kuhajte. <em>Mi ćemo ostalo.</em>",p:"Narudžbe, dostavljači, jelovnici, tisak i oglasi — kod jednog partnera.",cta:"Foodpoint partner",
-  cap:"Kuhajte vi, mi ćemo ostalo. 👨‍🍳 Narudžbe, dostava, jelovnici, tisak i oglasi — kod jednog partnera."},
- {t:"oglas",oz:"Mali oglasi",nas:"PRODAJEM",txt:"Papirnati blok za narudžbe. Malo korišten, samo petkom i subotom. Gratis kemijska koja ne piše. Razlog prodaje: prešli smo na Foodpoint.",pot:"Cijena: po dogovoru",h:"Rasprodaja <em>papirića.</em>",cta:"Prijeđite i vi",
-  cap:"Prodaje se blok za narudžbe. Razlog prodaje: Foodpoint. 😄"},
- {t:"poster",f:"kava_toci",oz:"Kava",h:"Kava? <em>Mi častimo.</em>",p:"Dođemo, popijemo kavu i pokažemo vam sve na vašem jelovniku. Bez obveze.",cta:"Dogovorite kavu",
-  cap:"Najbolje se upoznati uživo. ☕ Javite se — dođemo, popijemo kavu i pokažemo vam Foodpoint na vašem jelovniku."}];
+/* ===== RIKY'S: 50 objava (1080×1350) + 100 reelova (9:16) — samo za restoran /rikys, Vlasnik → Objave i reels =====
+   Reklame za Riky's aplikaciju (rikyspizza.com.hr) i njenu ponudu. Cijene i slike jela čitaju se iz jelovnika
+   (ako jelo nije u jelovniku, koristi se cijena iz RK_MENI i slika s Unsplasha). Sadržaj se uređuje ovdje:
+   RK_OBJAVE (objave) i RK_REELS (reelovi). g:"s" = smiješno, g:"p" = profesionalno,
+   n:"d" = spominje dostavu, n:"c" = spominje gratis Colu (označeno na kartici, da ne objaviš kad to nije uključeno). */
+const rkIma=()=>!!(lokal&&lokal.slug==="rikys");
+const RK_ST=SUPABASE_URL+"/storage/v1/object/public/slike/rikys/";
+const RK_LOGO=()=>(BREND().logo_url)||RK_ST+"logo.png";
+const RK_KOZA=RK_ST+"koza.webp";
+const RK_WEB="rikyspizza.com.hr", RK_ADR="Zagorska 18, Zagreb", RK_TEL="01 2090 102", RK_MOB="091 997 1887", RK_IG="@rikys_pizza";
+const RK_RADNO="Uto–ned 10–23 h", RK_SLOGAN="Real food. Real pizza.";
+const RK_OZNAKE="#rikyspizza #rikys #pizza #pizzazagreb #zagreb #hranazagreb #realfood #realpizza";
+/* rezervni podaci jelovnika: [cijena, sastav/opis, vrsta] — p pizza, b burgeri, d doručak, r ručak, x XXL, s desert */
+const RK_MENI={
+ "Margherita":[9,"Pelati, gouda, mozzarella, maslina","p"],
+ "Funghi":[9.5,"Pelati, gouda, mozzarella, šampinjoni, maslina","p"],
+ "Vesuvio":[9.7,"Pelati, gouda, mozzarella, šunka, maslina","p"],
+ "Capricciosa":[10.6,"Pelati, gouda, mozzarella, šunka, šampinjoni, maslina","p"],
+ "Peperoni":[10.3,"Pelati, gouda, mozzarella, kulen, maslina","p"],
+ "Vegetarijana":[10.6,"Pelati, gouda, mozzarella, šampinjoni, paprika, kukuruz, tikvica, maslina","p"],
+ "Al Tonno":[11,"Pelati, gouda, mozzarella, tuna, luk, maslina","p"],
+ "Hawaii":[11.25,"Pelati, gouda, mozzarella, šunka, ananas, maslina","p"],
+ "Picante":[11.5,"Pelati, gouda, mozzarella, šunka, panceta, ljuti feferoni, maslina","p"],
+ "Zagrebačka":[10.8,"Pelati, gouda, mozzarella, šunka, šampinjoni, paprika, kiselo vrhnje, maslina","p"],
+ "Hungarese":[11.9,"Pelati, gouda, mozzarella, šunka, špek, šampinjoni, kiselo vrhnje, maslina","p"],
+ "Zagorska":[11.9,"Pelati, gouda, mozzarella, šunka, dimljena vratina, kiselo vrhnje, maslina","p"],
+ "Slavonska":[12.15,"Pelati, gouda, mozzarella, kulen, ljuti feferoni, kiselo vrhnje, maslina","p"],
+ "Chicken":[12.2,"Pelati, gouda, mozzarella, grill piletina, kiselo vrhnje, maslina","p"],
+ "Quattro Formaggio":[12.2,"Pelati, gouda, mozzarella, gorgonzola, grana padano, maslina","p"],
+ "Pršut":[12.4,"Pelati, gouda, mozzarella, pršut, maslina","p"],
+ "Gurmanska":[12.4,"Pelati, gouda, mozzarella, šunka, špek, šampinjoni, paprika, jaje, maslina","p"],
+ "Nduja Picante":[13,"Pelati, gouda, mozzarella, kuhana šunka, kulen, nduja, ljuti feferoni, maslina","p"],
+ "Riky's":[13,"Pelati, gouda, mozzarella, kuhana šunka, kulen, špek, dimljeni sir, maslina","p"],
+ "Vatrena":[13,"Pelati, gouda, mozzarella, dimljena vratina, kulen, špek, chili prah, ljuti feferoni, maslina","p"],
+ "Toscana":[12.4,"Pelati, gouda, mozzarella, šunka, pršut, šampinjoni, ljuti feferoni, maslina","p"],
+ "Italiana":[12.8,"Pelati, gouda, mozzarella, pršut, cherry rajčice, rukola, grana padano","p"],
+ "Royal Slavonska":[13,"Pelati, gouda, mozzarella, šunka, kulen, špek, ljuti feferoni, kiselo vrhnje","p"],
+ "Bianco":[9.4,"Kiselo vrhnje, gouda, mozzarella, špek, svježi luk, maslina","p"],
+ "Dalmatina Bianca":[12.8,"Kiselo vrhnje, gouda, mozzarella, pršut, rukola, grana padano, maslinovo ulje, maslina","p"],
+ "Vesuvius Calzone":[9.5,"Pelati, gouda, mozzarella, šunka","p"],
+ "Slavonska Calzone":[11.2,"Pelati, gouda, mozzarella, kulen","p"],
+ "Hamburger u Brioche Pecivu":[8.46,"Pljeskavica od 100 % junećeg mesa, svježa salata, rajčica, krastavci, luk","b"],
+ "Cheeseburger u Brioche Pecivu":[9.45,"100 % junetina, topljeni cheddar, svježa salata, rajčica","b"],
+ "Bacon Cheeseburger u Brioche Pecivu":[9.54,"100 % junetina, hrskava slanina, cheddar, iceberg salata, rajčica","b"],
+ "Piletina Tortilla":[10.71,"Tortilla od 30 cm s grill piletinom, mozzarellom, rajčicom i iceberg salatom","b"],
+ "Taquitos s Piletinom":[9.72,"Hrskavi štapići od tortilje punjeni pikantnom piletinom","b"],
+ "Double Cheese Lava Quesadilla":[10.35,"Piletina, otopljeni cheddar i mozzarella, hrskava tortilja","b"],
+ "Clasic Pommes":[4.5,"Hrskavi krumpirići pečeni do zlatne boje","b"],
+ "Cheese Pommes":[8.82,"Hrskavi krumpirići preliveni toplim topljenim sirom","b"],
+ "Tost Šunka Sir":[4.95,"Tostirani sendvič s kuhanom šunkom i otopljenim sirom","d"],
+ "Tost Kulen Sir":[5.13,"Tostirani sendvič s pikantnim kulenom i otopljenim sirom","d"],
+ "Tost Combo (2 tosta + 2 Coca-Cole 0,33 L)":[12.6,"Dva tosta po izboru i dvije hladne Coca-Cole 0,33 L","d"],
+ "Omlet sa Šunkom i Sirom":[6.75,"Omlet od 3 jaja sa šunkom i otopljenim sirom, uz zapečeni tost","d"],
+ "Omlet s Piletinom i Povrćem":[7.65,"Omlet od 3 jaja s grill piletinom, paprikom i mozzarellom","d"],
+ "Grah Varivo":[7.02,"Domaće grah varivo po tradicionalnoj recepturi","r"],
+ "Pohani Pileći Odrezak s Pomfritom":[10.9,"Hrskavi pohani pileći odrezak, zlatni pomfrit i tartar umak","r"],
+ "Tjestenina Bolognese":[10.8,"Tjestenina u sporo kuhanom umaku od mljevenog mesa i rajčice","r"],
+ "Njoke 4 sira":[12,"Mekani krumpirovi njoki u baršunastom umaku od četiri sira","r"],
+ "Ćevapi u Lepinji":[8.5,"Ćevapčići od domaće junetine u lepinji","r"],
+ "XXL sendvič kulen":[15,"XXL sendvič veličine pizze (32×32 cm): gouda i domaći kulen","x"],
+ "XXL sendvič pršut":[15,"XXL sendvič veličine pizze (32×32 cm): dalmatinski pršut i gouda","x"],
+ "XXL sendvič piletina":[15,"XXL sendvič veličine pizze (32×32 cm): sočna piletina u umaku","x"],
+ "Nutella Palačinke (2 kom)":[4,"Dvije domaće palačinke bogato punjene Nutellom","s"],
+ "Lino Lada Gold Palačinke (2 kom)":[4,"Dvije domaće palačinke s Lino Lada Gold namazom","s"],
+ "Marmelada Palačinke (2 kom)":[4,"Dvije domaće palačinke s voćnom marmeladom","s"]};
+const RK_FB={p:["pizza_stol","pizza_stol2","pizza_ruke","pizza_covjek"],b:["burger1","burger2","burger3","burger4"],d:["chef_tanjur","chef_tanjur2"],
+ r:["pasta1","pasta2","pasta3","pasta4"],x:["burger3","burger4"],s:["kava2","kava3"]};
+const rkHash=s=>[...String(s)].reduce((a,c)=>(a*31+c.charCodeAt(0))>>>0,7);
+const rkKr=n=>{const s=String(n).replace(/\s*\(.*\)\s*/,"").replace(/ u Brioche Pecivu/,"").replace(/ s Pomfritom/,""); return s;};
+function rkJ(n){
+ const m=RK_MENI[n]||[0,"","p"], j=(Array.isArray(jela)?jela:[]).find(x=>x.naziv===n);
+ const fb=RK_FB[m[2]]||RK_FB.p;
+ return {n, kr:rkKr(n), c:j&&j.cijena!=null&&+j.cijena>0?+j.cijena:m[0], o:m[1], k:m[2], f:(j&&j.slika_url)||fpF(fb[rkHash(n)%fb.length],900,900)};}
+const rkE=c=>(+c||0).toFixed(2).replace(".",",")+" €";
+const rkU=u=>`background-image:url('${String(u).replace(/'/g,"%27")}')`;
+const rkFoto=(k,w,h)=>/^https?:/.test(k)?k:RK_MENI[k]?rkJ(k).f:fpF(k,w||1080,h||1350);
+/* *istaknuto* → <em> */
+const rkH=t=>esc(t||"").replace(/\*([^*]+)\*/g,"<em>$1</em>").replace(/\n/g,"<br>");
+function rkRijeci(t){let i=0; return String(t||"").split(/(\*[^*]+\*)/).filter(Boolean).map(seg=>{const hi=/^\*.*\*$/.test(seg), s=hi?seg.slice(1,-1):seg;
+ return s.split(/\s+/).filter(Boolean).map(w=>`<span class="w${hi?" hi":""}" style="--i:${i++}">${esc(w)}</span>`).join(" ");}).join(" ");}
+const rkBrRijeci=t=>String(t||"").replace(/\*/g,"").split(/\s+/).filter(Boolean).length;
+const rkLogo=()=>`<i class="rk-logo" style="${rkU(RK_LOGO())}"></i>`;
+const rkVrh=oz=>`<div class="rk-vrh">${rkLogo()}<div class="rk-ime rk-A">Riky's Pizza<small class="rk-B">${RK_SLOGAN}</small></div>${oz?`<div class="rk-oz">${esc(oz)}</div>`:""}</div>`;
+const rkDno=cta=>`<div class="rk-dno"><div class="rk-web">${RK_WEB}<small>${RK_ADR} · ${RK_TEL}</small></div>${cta?`<div class="rk-cta rk-A">${esc(cta)}</div>`:""}</div>`;
+const rkKvaka=()=>fpIk("kvaka",20);
+const rkPizze=()=>[0,1,2,3,4].map(i=>`${i?`<span class="pl rk-A" style="--i:${i*2-1}">${i<4?"+":"+"}</span>`:""}<i class="rk-piz${i===4?" g":""}" style="--i:${i*2}"></i>`).join("");
+const rkZig=(k,mali)=>`<div class="rk-zig">${Array.from({length:10},(_,i)=>i===9?`<i class="dar">${fpIk("poklon",20)}</i>`:`<i class="${i<k?"on":""}" style="--i:${i}"></i>`).join("")}</div>`;
+const rkCht=(m,nas)=>`<div class="rk-cht">${nas?`<div class="nas">${esc(nas)}</div>`:""}${m.map((x,i)=>`<div class="m${x[2]?" ja":""}" style="--i:${i}">${x[0]?`<small>${esc(x[0])}</small>`:""}${esc(x[1])}</div>`).join("")}</div>`;
+const rkIkarta=()=>`<div class="rk-ikarta">
+ <div style="--i:0">${fpIk("lokacija",24)}<span>${RK_ADR}<small>Osobno preuzimanje i dostava</small></span></div>
+ <div style="--i:1">${fpIk("sat",24)}<span>Utorak – nedjelja, 10 – 23 h<small>Ponedjeljkom odmaramo</small></span></div>
+ <div style="--i:2">${fpIk("telefon",24)}<span>${RK_TEL}<small>${RK_MOB}</small></span></div>
+ <div style="--i:3">${fpIk("web",24)}<span>${RK_WEB}<small>Instagram ${RK_IG}</small></span></div></div>`;
 
-function fpOPostC(o){
- const tamno=["poster","tel","match","prognoza","tag"].includes(o.t), vrh=`<div class="fpo-vrh">${fpOLogo(tamno)}<span class="fpo-oz">${esc(o.oz||"")}</span></div>`;
- const H=`<h3 class="fpo-h">${o.h}</h3>`, P=o.p?`<p class="fpo-p">${esc(o.p)}</p>`:"";
- let s="";
- if(o.t==="poster") s=`<div class="fpo-sred">${H}${P}</div>`;
- else if(o.t==="bingo") s=`<div class="fpo-sred"><h3 class="fpo-h fpo-h-m">${o.h}</h3><div class="fpc-bingo">${o.l.map((x,i)=>`<div style="--i:${i}"><span>${esc(x)}</span></div>`).join("")}</div><p class="fpo-p jak">${esc(o.p)}</p></div>`;
- else if(o.t==="pismo") s=`<div class="fpo-sred"><div class="fpc-papir"><div class="z">${o.h}</div><p>${esc(o.p)}</p><div class="pot">— ${esc(o.pot)}</div></div></div>`;
- else if(o.t==="trazi") s=`<div class="fpo-sred"><div class="fpc-trazi"><div class="polje">${fpIk("cilj",20)}<span>${esc(o.q)}</span><i></i></div>
-   <div class="rez"><small>foodpoint.hr</small><b>${esc(o.r[0])}</b><span>${esc(o.r[1])}</span></div></div>${H}</div>`;
- else if(o.t==="tel") s=`<div class="fpo-sred"><div class="fpc-not">${o.n.map((x,i)=>`<div style="--i:${i}">${fpIk("zvono",18)}<span><b>Foodpoint · sada</b>${esc(x)}</span></div>`).join("")}</div>${H}</div>`;
- else if(o.t==="racun") s=`<div class="fpo-sred"><div class="fpc-racun"><div class="nas">RAČUN</div>${o.r.map(([a,b],i)=>`<div class="red${i===o.r.length-1?" zad":""}"><span>${esc(a)}</span><b>${esc(b)}</b></div>`).join("")}
-   <div class="fp"><span>${esc(o.z[0])}</span><b>${esc(o.z[1])}</b></div></div>${H}</div>`;
- else if(o.t==="prognoza") s=`<div class="fpo-sred"><div class="fpc-prog"><div class="d">${esc(o.d)}</div><div class="ik">${fpIk("plamen",44)}</div>
-   ${o.st.map(([a,b])=>`<div class="red"><span>${esc(a)}</span><b>${esc(b)}</b></div>`).join("")}</div>${H}</div>`;
- else if(o.t==="broj") s=`<div class="fpo-sred"><div class="fpc-broj">${o.odbr?`<b data-odbr>${fpDanaDo()}</b><span>${esc(o.b)}</span>`:`<b>${esc(o.b)}</b>`}</div>${H}${P}</div>`;
- else if(o.t==="split") s=`<div class="fpo-sred">${H}<div class="fpc-split"><div class="l"><small>Prije</small><div class="ruka">${esc(o.a)}</div></div>
-   <div class="d"><small>S Foodpointom</small>${o.b.map((x,i)=>i?`<span>${esc(x)}</span>`:`<b>${esc(x)}</b>`).join("")}</div></div></div>`;
- else if(o.t==="kviz") s=`<div class="fpo-sred">${H}<div class="fpc-kviz">${o.o.map((x,i)=>`<div class="${i===o.tocno?"da":""}"><i>${"ABC"[i]}</i><span>${esc(x)}</span></div>`).join("")}</div>${P}</div>`;
- else if(o.t==="tag") s=`<div class="fpo-sred"><div class="fpc-tag"><div class="c">${esc(o.c)}</div><div class="r"><span>${esc(o.a[0])}</span><b class="x">${esc(o.a[1])}</b></div><div class="r ok"><span>${esc(o.b[0])}</span><b>${esc(o.b[1])}</b></div></div>${H}</div>`;
- else if(o.t==="chat") s=`<div class="fpo-sred"><div class="fpc-chat"><div class="vrh"><i>M</i><b>${esc(o.oz)}</b></div>${o.m.map(x=>`<div class="${x[0]==="f"?"ja":"on"}">${esc(x.slice(2))}</div>`).join("")}</div>${H}</div>`;
- else if(o.t==="match") s=`<div class="fpo-sred"><div class="fpc-match"><div class="foto" style="${fpBg(o.f,800,700)}"><b>${esc(o.ime)}</b></div>
-   <div class="inf"><div><small>Voli</small>${o.vol.map(x=>`<span>${esc(x)}</span>`).join("")}</div><div class="ne"><small>Ne voli</small>${o.nevol.map(x=>`<span>${esc(x)}</span>`).join("")}</div></div>
-   <div class="gumbi"><i class="x">${fpIk("zatvori",22)}</i><i class="s"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2.1 0 3.6 1.2 4.4 2.6.8-1.4 2.3-2.6 4.4-2.6 3.6 0 5.7 3.7 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg></i></div></div>${H}</div>`;
- else if(o.t==="postit") s=`<div class="fpo-sred">${H}<div class="fpc-postit">${o.n.map((x,i)=>`<div style="--i:${i}">${esc(x)}</div>`).join("")}<div class="vel">${esc(o.z)}</div></div></div>`;
- else if(o.t==="oglas") s=`<div class="fpo-sred"><div class="fpc-oglas"><div class="nn">MALI OGLASI</div><div class="okv"><b>${esc(o.nas)}</b><p>${esc(o.txt)}</p><small>${esc(o.pot)}</small></div></div>${H}</div>`;
- else if(o.t==="horoskop") s=`<div class="fpo-sred">${H}<div class="fpc-horo">${o.z.map(([a,b],i)=>`<div class="${i===o.z.length-1?"sv":""}"><b>${esc(a)}</b><span>${esc(b)}</span></div>`).join("")}</div></div>`;
- else if(o.t==="prijepos") s=`<div class="fpo-sred">${H}<div class="fpc-pp"><div class="l"><small>Prije</small>${o.a.map(x=>`<span>${esc(x)}</span>`).join("")}</div><div class="s">→</div><div class="d"><small>Poslije</small><img src="${FP_LOGO_V(1)}" alt="Foodpoint"></div></div></div>`;
- return `<div class="fpo-post fpc fpk-${o.t}${tamno?" tamno":""}">${o.f?`<div class="fpo-bg" style="${fpBg(o.f)}"></div>`:""}<div class="fpo-sig">${vrh}${s}${fpODno(o,tamno)}</div></div>`;}
-{const st=fpObjaveHTML; fpObjaveHTML=function(){if(fpO.skup==="c")fpUcitajRukopis(); return st();};}
-/* Foodpoint Delivery: oznaka samo u sučeljima za dostavu (vozač) */
-{const st=zoomPoweredHTML; zoomPoweredHTML=function(){
- if((location.hash||"")!=="#vozac") return st();
- return `<a class="zoom-powered" href="${ZOOM_KORIJEN()}" target="_blank" rel="noopener"><span>powered by</span>${ZOOM_LOGO(15)}<b class="fp-del">Delivery</b></a>`;};}
-{const st=vozacHTML; vozacHTML=function(){const h=st(), L=`<img class="fp-del-logo" src="/foodpoint-delivery-vodoravno-crveni.png" alt="Foodpoint Delivery">`;
- return h.startsWith('<div class="login">')?h.replace('<div class="login">','<div class="login">'+L):h+`<div class="fp-del-dno">${L}</div>`;};}
+/* ---------- mobitel s Riky's aplikacijom (nacrtan, ne slika) ---------- */
+function rkTel(ek){
+ const vrh=(nas,pod)=>`<div class="rk-t-vrh">${rkLogo()}<div><b class="rk-A">${nas||"Riky's Pizza"}</b><small>${pod||"Otvoreno · do 23:00"}</small></div></div>`;
+ let h="";
+ if(ek==="prati") h=`${vrh("Tvoja narudžba","Prati uživo")}
+  <div class="rk-t-nar"><small>Narudžba</small><b class="rk-A">#128</b><span>Stiže oko <b>19:42</b></span></div>
+  <div class="rk-t-traka"><i></i></div>
+  <ul class="rk-t-kor">${["Narudžba primljena","Kuhinja potvrdila: 25 min","Pizza je u peći","Vozač je krenuo","Dostavljeno"].map((x,i)=>`<li class="${i>3?"ne":""}" style="--i:${i}"><i>${i<4?rkKvaka():""}</i>${x}</li>`).join("")}</ul>
+  <div class="rk-t-unos"><span>Poruka kuhinji…</span><b>${fpIk("poruka",14)}</b></div>`;
+ else if(ek==="chat") h=`${vrh("Chat s kuhinjom","Kuhinja je online")}
+  ${rkCht([["","Može Riky's bez luka?",1],["Kuhinja","Može, zapisano."],["","I malo više sira?",1],["Kuhinja","Za tebe uvijek. Stiže za 25 min."]])}
+  <div class="rk-t-unos"><span>Napiši poruku…</span><b>${fpIk("poruka",14)}</b></div>`;
+ else if(ek==="vjernost") h=`${vrh("Program vjernosti","Bez registracije")}
+  <div class="rk-t-nar"><small>Tvoje pizze</small><b class="rk-A">9 / 10</b><span>Još <b>1</b> do besplatne pizze</span></div>
+  ${rkZig(9,1)}<p class="rk-t-mala" style="margin:0">Brojimo po broju mobitela s narudžbe. Bez kartica i bez lozinke — <b>svaka 10. pizza je gratis.</b></p>
+  <div class="rk-t-bar"><span>Uzmi nagradnu pizzu</span><b>0,00 €</b></div>`;
+ else if(ek==="instal") h=`<div class="rk-t-url">${fpIk("lokot",12)}<span>${RK_WEB}</span></div>${vrh()}
+  <div class="rk-t-sjena"></div>
+  <div class="rk-t-list"><div class="ap">${rkLogo()}<div><b class="rk-A">Riky's Pizza</b><small>${RK_WEB}</small></div></div>
+   <div class="op"><span>Dodaj na početni zaslon</span>${fpIk("plus",14)}</div><div class="gb">Dodaj</div></div>`;
+ else if(ek==="akcija"){const L=["Riky's","Vatrena","Slavonska","Capricciosa","Margherita"].map(rkJ), uk=L.reduce((a,x)=>a+x.c,0), min=Math.min(...L.map(x=>x.c));
+  h=`${vrh("Košarica","5 pizza")}<div class="rk-t-ks">${L.map(x=>`<div><span>${esc(x.kr)}</span><b>${rkE(x.c)}</b></div>`).join("")}
+   <div class="ak"><span>Akcija 4+1 — peta gratis</span><b>−${rkE(min)}</b></div><div class="uk"><span>Ukupno</span><b>${rkE(uk-min)}</b></div></div>
+   <div class="rk-t-bar"><span>Naruči</span><b>${rkE(uk-min)}</b></div>`;}
+ else {const L=["Riky's","Slavonska","Margherita"].map(rkJ);
+  h=`${vrh()}<div class="rk-t-kat"><span class="on">Pizze</span><span>Burgeri</span><span>XXL</span><span>Deserti</span></div>
+  <div class="rk-t-ak rk-ta" style="--i:0">Akcija 4+1 · peta pizza gratis</div>
+  ${L.map((x,i)=>`<div class="rk-t-st rk-ta" style="--i:${i+1}"><i style="${rkU(x.f)}"></i><div><b>${esc(x.n)}</b><small>${esc(x.o)}</small><em>${rkE(x.c)}</em></div><span class="rk-t-plus${i===1?" tap":""}">+</span></div>`).join("")}
+  <div class="rk-t-bar"><span>Košarica · 2</span><b>${rkE(L[0].c+L[1].c)}</b></div>`;}
+ return `<div class="rk-tel"><div class="ek">${h}</div></div>`;}
+
+/* ---------- 50 objava ---------- */
+const RK_OBJAVE=[
+ {t:"foto",g:"p",f:"pizza_ruke",oz:"Riky's Pizza",h:"Real food.\n*Real pizza.*",p:"Naruči online na našoj stranici — bez registracije, za minutu.",cta:"Naruči",
+  cap:"Real food. Real pizza. 🍕\nNaruči na rikyspizza.com.hr — bez registracije i bez lozinke. Plaćaš gotovinom ili karticom kad dobiješ pizzu."},
+ {t:"akcija",g:"p",h:"Kupi 4,\n*peta je gratis*",p:"Najjeftinija pizza u narudžbi ide na nas. Aplikacija je sama oduzme — bez koda i kupona.",
+  cap:"Akcija 4+1 svaki dan! Naruči 5 pizza, a najjeftinija je gratis. Ne trebaš kod ni kupon — popust se sam obračuna u košarici na rikyspizza.com.hr."},
+ {t:"vjernost",g:"p",k:9,h:"Svaka *10. pizza*\nje naša",p:"Bez registracije i bez kartica. Brojimo po broju mobitela s narudžbe.",
+  cap:"Program vjernosti bez kartica i bez aplikacija za skidanje: svaka 10. pizza je gratis. Brojimo po broju mobitela koji upišeš pri narudžbi."},
+ {t:"cola",g:"p",n:"c",h:"Uz svaku pizzu\n*Cola gratis*",p:"Coca-Cola 0,33 L na nas — uz svaku pizzu, svaki put.",
+  cap:"Pizza bez Cole? Ne kod nas. Uz svaku pizzu dobivaš Coca-Colu 0,33 L gratis. Naruči na rikyspizza.com.hr."},
+ {t:"app",g:"p",ek:"meni",h:"Cijeli Riky's\n*u tvom džepu*",p:"Jelovnik, cijene i slike — narudžba u tri dodira.",
+  cap:"Cijeli jelovnik, prave slike jela i akcije na jednom mjestu. Otvori rikyspizza.com.hr i naruči u tri dodira — bez registracije."},
+ {t:"meme",g:"s",f:"pizza_stol2",a:"Kad kažeš da si na dijeti",b:"A Riky's ima *4+1*",
+  cap:"Dijeta može čekati do ponedjeljka. Akcija 4+1 ne čeka. 😅\nNaruči na rikyspizza.com.hr"},
+ {t:"chat",g:"s",nas:"Ekipa",m:[["Marko","Šta ćemo jesti?"],["Ana","Ne znam, ti odluči"],["","Pizza?",1],["Ana","Ne da mi se ništa"],["","Riky's, 4+1, peta gratis",1],["Ana","Krećem po ključeve"]],
+  cap:"Svaki grupni chat ikad. Srećom, odluka je laka: Riky's, 4+1, peta gratis. 🍕"},
+ {t:"jelo",g:"p",j:"Riky's",oz:"Naša potpisna",
+  cap:"Riky's — naša potpisna pizza. Kuhana šunka, kulen, špek i dimljeni sir. Naruči na rikyspizza.com.hr"},
+ {t:"jelo",g:"s",j:"Vatrena",oz:"Za hrabre",h:"Ljuto?\n*Vatrena* ljuto.",
+  cap:"Vatrena: dimljena vratina, kulen, špek, chili i ljuti feferoni. Mlijeko nije uključeno. 🔥"},
+ {t:"jelo",g:"p",j:"Slavonska",oz:"Domaće",h:"Slavonija\n*na tijestu*",
+  cap:"Slavonska: kulen, ljuti feferoni i kiselo vrhnje. Okus koji znaš od kuće. Naruči na rikyspizza.com.hr"},
+ {t:"jelo",g:"s",j:"Zagorska",oz:"Logično",h:"Zagorska iz\n*Zagorske 18*",
+  cap:"Gdje drugdje naručiti Zagorsku nego u Zagorskoj 18? 😄 Dimljena vratina i kiselo vrhnje."},
+ {t:"koza",g:"s",h:"Ovo nije koza.\n*Ovo je G.O.A.T.*",p:"Najbolja pizza u kvartu ima i najboljeg čuvara.",
+  cap:"Upoznajte našeg G.O.A.T.-a. 🐐 Čuva peć, recepte i petu pizzu gratis."},
+ {t:"plamen",g:"p",ik:"lokot",h:"Bez registracije.\n*Bez lozinke.*\nBez muke.",p:"Upišeš ime, broj i adresu — i narudžba je u kuhinji.",cta:"Naruči",
+  cap:"Nema računa, lozinke ni potvrde e-maila. Upišeš ime, broj mobitela i adresu — i narudžba je već u našoj kuhinji."},
+ {t:"lista",g:"p",n:"c",h:"Zašto naručiti\n*direktno?*",l:["Akcija 4+1 svaki dan","Svaka 10. pizza gratis","Coca-Cola 0,33 L uz svaku pizzu","Plaćaš gotovinom ili karticom","Pratiš narudžbu uživo"],
+  cap:"Kad naručiš direktno na rikyspizza.com.hr dobivaš sve naše pogodnosti: 4+1, svaku 10. pizzu gratis, Colu uz pizzu i praćenje narudžbe uživo."},
+ {t:"vs",g:"s",h:"Pizza u 23 h",a:{n:"Iz zamrzivača",l:["Karton od tijesta","Sir? Nekakav.","20 min u pećnici","Nitko nije sretan"]},b:{n:"Riky's",l:["Prava pizza iz peći","Gouda i mozzarella","Naručiš u minuti","Svi su sretni"]},
+  cap:"Zamrznuta pizza ili Riky's? Mislimo da znamo odgovor. Radimo do 23 h, utorak – nedjelja."},
+ {t:"app",g:"p",n:"d",ek:"prati",h:"Znaš *točno*\nkad stiže",p:"Praćenje narudžbe uživo — od peći do tvojih vrata.",
+  cap:"Bez pitanja „gdje mi je pizza?”. Na rikyspizza.com.hr pratiš narudžbu uživo: kad je potvrđena, kad je u peći i kad je vozač krenuo."},
+ {t:"naranca",g:"s",h:"Pizza ne pita\n*koliko je sati.*",p:"Ali mi radimo utorak – nedjelja, 10 – 23 h.",cta:"Naruči",
+  cap:"Gladan u 22:30? Imaš vremena. Radimo do 23 h, utorak – nedjelja."},
+ {t:"foto",g:"p",f:"pec_zar",oz:"Iz peći",h:"Peć je vruća.\n*Jesi li ti gladan?*",p:"Naruči na rikyspizza.com.hr i preuzmi vruću pizzu.",cta:"Naruči",
+  cap:"Peć je vruća, pizza samo čeka tebe. Naruči na rikyspizza.com.hr 🔥"},
+ {t:"split",g:"p",f:"burger1",oz:"Burgeri",h:"Nije sve pizza.\n*Ali sve je Riky's.*",p:"Burgeri u brioche pecivu od 100 % junetine.",cta:"Pogledaj jelovnik",
+  cap:"Nije sve pizza — imamo i burgere u brioche pecivu od 100 % junećeg mesa domaćeg porijekla, tortilje, quesadillu i pomfrit."},
+ {t:"jelo",g:"s",j:"XXL sendvič kulen",oz:"32 × 32 cm",h:"Sendvič\n*veličine pizze*",p:"Za jednog. Možda.",
+  cap:"XXL sendvič veličine pizze — 32 × 32 cm. Za jednu osobu. Teoretski. 😅"},
+ {t:"meme",g:"s",f:"pizza_stol",a:"Kad peta pizza dođe gratis",b:"I nitko ne zna *čija je*",
+  cap:"Peta pizza je gratis. Tko će je pojesti — to je već vaš problem. 😄 Akcija 4+1 na rikyspizza.com.hr"},
+ {t:"app",g:"p",ek:"chat",h:"Pitaj kuhinju,\n*direktno*",p:"Bez luka? Više sira? Napiši u chat — kuhinja odgovara uživo.",
+  cap:"Imaš posebnu želju? Nakon narudžbe napiši poruku u chat i kuhinja ti odgovara uživo."},
+ {t:"plamen",g:"s",ik:"kalendar",h:"Dijeta počinje\n*u ponedjeljak.*",p:"Mi smo ponedjeljkom zatvoreni. Slučajnost? Ne bismo rekli.",
+  cap:"Ponedjeljkom ne radimo, pa ti dijeta ide glatko. Od utorka smo opet tu, od 10 h. 😉"},
+ {t:"jelo",g:"p",j:"Margherita",oz:"Klasika",
+  cap:"Margherita — klasika koja nikad ne razočara. Naruči na rikyspizza.com.hr"},
+ {t:"lista",g:"s",h:"Pravila kuće",l:["Pizza se ne dijeli.","Osim ako je 4+1.","Peta je uvijek moja.","Kora nije ostatak — kora je desert."],
+  cap:"Kućni red Riky's Pizze. Pravilo broj 4 je neupitno. 🍕"},
+ {t:"info",g:"p",h:"Gdje smo i\n*kad radimo*",
+  cap:"Riky's Pizza — Zagorska 18, Zagreb.\nUtorak – nedjelja 10 – 23 h, ponedjeljkom odmaramo.\nTel. 01 2090 102 · 091 997 1887\nNaruči na rikyspizza.com.hr"},
+ {t:"akcija",g:"s",h:"Matematika\nkoju *volimo*",p:"4 + 1 = 5 pizza. Plaćaš četiri.",
+  cap:"Najljepša matematika: 4 + 1 = 5, a plaćaš 4. Akcija vrijedi svaki dan na rikyspizza.com.hr"},
+ {t:"foto",g:"p",f:"pizza_tijesto",oz:"Riky's",h:"Sve počinje\n*od tijesta*",p:"A završava kod tebe na stolu.",cta:"Naruči",
+  cap:"Sve počinje od tijesta, a završava kod tebe na stolu. Naruči na rikyspizza.com.hr"},
+ {t:"split",g:"p",f:"pasta1",oz:"Ručak",h:"Ručak je\n*riješen*",p:"Bolognese, njoke 4 sira, pohani odrezak i grah varivo.",cta:"Jelovnik",
+  cap:"Nije samo pizza: za ručak imamo tjesteninu bolognese, njoke 4 sira, pohani pileći odrezak, grah varivo i ćevape u lepinji."},
+ {t:"jelo",g:"p",j:"Ćevapi u Lepinji",oz:"Ručak",h:"Ćevapi\n*u lepinji*",
+  cap:"Ćevapi od domaće junetine u lepinji. Klasika koja uvijek prolazi."},
+ {t:"naranca",g:"p",n:"d",h:"Do *2 km*\ndostava gratis",p:"Dalje 1 € po km do 5 km. Naruči na rikyspizza.com.hr",cta:"Naruči",
+  cap:"Dostava je besplatna do 2 km. Dalje je 1 € po kilometru do 5 km. Naruči na rikyspizza.com.hr"},
+ {t:"meme",g:"s",f:"pizza_covjek",a:"Ja: večeras ništa ne naručujem",b:"Također ja u *22:47*",
+  cap:"Svi smo bili tu. Srećom, radimo do 23 h. 😅"},
+ {t:"app",g:"p",ek:"instal",h:"Riky's na\n*početni zaslon*",p:"Bez App Storea: otvori stranicu → Dijeli → Dodaj na početni zaslon.",
+  cap:"Riky's može biti aplikacija na tvom mobitelu, bez App Storea: otvori rikyspizza.com.hr, dodirni Dijeli i odaberi „Dodaj na početni zaslon”."},
+ {t:"koza",g:"p",h:"Kvartovski\n*G.O.A.T.*",p:"Riky's Pizza — Zagorska 18, Zagreb.",
+  cap:"Kvartovski G.O.A.T. 🐐 Riky's Pizza, Zagorska 18."},
+ {t:"vjernost",g:"s",k:7,h:"Skupljaj pizze\nkao *sličice*",p:"Album se puni sam. Deseta je gratis.",
+  cap:"Album koji se puni sam: svaka narudžba se broji po tvom broju mobitela, a 10. pizza je gratis."},
+ {t:"jelo",g:"s",j:"Nutella Palačinke (2 kom)",oz:"Desert",h:"Desert?\n*Normalno.*",
+  cap:"Nakon pizze uvijek ima mjesta za palačinke. Nutella, Lino Lada Gold ili marmelada."},
+ {t:"plamen",g:"p",ik:"novac",h:"Plaćaš kad\n*dobiješ pizzu*",p:"Gotovinom ili karticom. Bez upisivanja kartice na internetu.",cta:"Naruči",
+  cap:"Ne trebaš upisivati karticu na internetu. Plaćaš gotovinom ili karticom kad dobiješ pizzu."},
+ {t:"chat",g:"s",nas:"Utakmica",m:[["Ivan","Utakmica u 9, kod mene"],["Luka","Tko donosi klopu?"],["","Naručio sam 5 Riky's pizza",1],["Luka","5?? Pa nas je 4"],["","Peta je gratis. Ne pitaj.",1]],
+  cap:"Kad netko u ekipi zna za akciju 4+1. ⚽🍕"},
+ {t:"foto",g:"p",f:"pizza_stol",oz:"Za ekipu",h:"Pizza za\n*cijelu ekipu*",p:"Utakmica, rođendan ili petak — 4+1 radi za svaku ekipu.",cta:"Naruči",
+  cap:"Utakmica, rođendan ili petak navečer — uz akciju 4+1 peta pizza je gratis."},
+ {t:"jelo",g:"s",j:"Quattro Formaggio",oz:"Za sirofile",h:"Četiri sira.\n*Nula žaljenja.*",
+  cap:"Quattro Formaggio: gouda, mozzarella, gorgonzola i grana padano. Nula žaljenja."},
+ {t:"jelo",g:"s",j:"Hawaii",oz:"Bez osude",h:"Ananas na pizzi?\n*Ne sudimo.*",
+  cap:"Ananas na pizzi — za ili protiv? Mi ne sudimo, mi samo pečemo. 🍍"},
+ {t:"split",g:"p",n:"d",f:"dostava_skuter",oz:"Dostava",h:"Vruća\n*do tvojih vrata*",p:"Do 2 km dostava je gratis. Pratiš je uživo.",cta:"Naruči",
+  cap:"Vruća pizza do tvojih vrata. Do 2 km dostava je besplatna, a vozača pratiš uživo."},
+ {t:"naranca",g:"s",h:"Koja je\n*najbolja?*",p:"Sve su. Ali Riky's je Riky's.",cta:"Probaj sve",
+  cap:"Najčešće pitanje: koja je najbolja? Sve su. Ali Riky's je Riky's. 😎"},
+ {t:"lista",g:"p",h:"Naruči u\n*4 koraka*",l:["Otvori rikyspizza.com.hr","Odaberi pizzu (i petu gratis)","Upiši ime, broj i adresu","Prati narudžbu uživo"],
+  cap:"Kako naručiti: otvori rikyspizza.com.hr, odaberi jela, upiši ime, broj i adresu i prati narudžbu uživo. Bez registracije."},
+ {t:"jelo",g:"p",j:"Cheeseburger u Brioche Pecivu",oz:"Burger",h:"Cheeseburger\n*u brioche pecivu*",
+  cap:"Cheeseburger od 100 % junetine domaćeg porijekla, s topljenim cheddarom, u brioche pecivu."},
+ {t:"meme",g:"s",f:"pizza_stol2",a:"Nitko:\nApsolutno nitko:",b:"Ja: *još jedna Riky's*",
+  cap:"Uvijek ima mjesta za još jednu. 🍕"},
+ {t:"foto",g:"p",f:"pizza_covjek",oz:"Riky's",h:"Prava pizza.\n*Pravo iz kvarta.*",p:"Zagorska 18 — naruči online, preuzmi vruću.",cta:"Naruči",
+  cap:"Prava pizza iz tvog kvarta. Zagorska 18 — naruči online na rikyspizza.com.hr"},
+ {t:"jelo",g:"p",j:"Tost Combo (2 tosta + 2 Coca-Cole 0,33 L)",oz:"Doručak za dvoje",h:"Doručak\n*za dvoje*",
+  cap:"Tost Combo: dva tosta po izboru i dvije Coca-Cole 0,33 L. Radimo od 10 h."},
+ {t:"plamen",g:"p",ik:"lokacija",h:"Naruči direktno.\n*Ostani u kvartu.*",p:"Narudžba sa naše stranice ide ravno u našu kuhinju — bez posrednika.",cta:"Naruči",
+  cap:"Kad naručiš na rikyspizza.com.hr, narudžba ide ravno u našu kuhinju, bez posrednika. Hvala što podržavaš kvartovski lokal. 🧡"},
+ {t:"akcija",g:"s",h:"Ponedjeljak: zatvoreno.\n*Utorak: 4+1.*",p:"Vidimo se od utorka u 10 h.",
+  cap:"Ponedjeljkom odmaramo, od utorka smo opet tu — i akcija 4+1 s nama. 🍕"}];
+
+/* ---------- predlošci objava ---------- */
+function rkPost(o){
+ const v=rkVrh(o.oz), H=`<div class="rk-h rk-A">${rkH(o.h)}</div>`, P=o.p?`<p class="rk-p">${esc(o.p)}</p>`:"";
+ const sig=(sred,cta)=>`<div class="rk-sig">${v}<div class="rk-sred">${sred}</div>${rkDno(cta)}</div>`;
+ switch(o.t){
+ case "foto": return `<div class="rk-post rk-z rk-foto"><div class="rk-bg" style="${rkU(rkFoto(o.f))}"></div>${sig(H+P,o.cta)}</div>`;
+ case "plamen": return `<div class="rk-post rk-z rk-plamen">${sig((o.ik?`<div class="rk-ik">${fpIk(o.ik,24)}</div>`:"")+H+P,o.cta)}</div>`;
+ case "naranca": return `<div class="rk-post rk-z rk-naranca">${sig(H+P,o.cta)}</div>`;
+ case "split": return `<div class="rk-post rk-z rk-split"><div class="rk-bg" style="${rkU(rkFoto(o.f))}"></div><div class="rk-sig">${v}<div class="rk-sred"><div class="rk-ploca">${H}${P}</div></div>${rkDno(o.cta)}</div></div>`;
+ case "jelo": {const j=rkJ(o.j); return `<div class="rk-post rk-z rk-jelo"><div class="rk-kol" style="${rkU(j.f)}"></div><div class="rk-cij rk-A">${rkE(j.c)}</div>
+  <div class="rk-sig">${rkVrh("")}<div class="rk-sred">${o.oz?`<span class="rk-oz2">${esc(o.oz)}</span>`:""}<div class="rk-h rk-A">${o.h?rkH(o.h):esc(j.kr)}</div>
+  <p class="rk-sast">${o.h?`<b>${esc(j.kr)}</b> · `:""}${esc(o.p||j.o)}</p></div>${rkDno("Naruči")}</div></div>`;}
+ case "meme": return `<div class="rk-post rk-z rk-meme"><div class="rk-bg" style="${rkU(rkFoto(o.f))}"></div><div class="rk-mt a rk-A">${rkH(o.a)}</div><div class="rk-mt b rk-A">${rkH(o.b)}</div>
+  <div class="rk-mdno">${rkLogo()}<div class="rk-web">Riky's Pizza<small>${RK_WEB}</small></div></div></div>`;
+ case "akcija": return `<div class="rk-post rk-z rk-akcija">${sig(`<div class="rk-veliko rk-A">4<em>+</em>1</div><div class="rk-h rk-A" style="font-size:8.6cqw;margin-top:2cqw">${rkH(o.h)}</div><div class="rk-pizze">${rkPizze()}</div>${P}`,"Naruči")}</div>`;
+ case "vjernost": return `<div class="rk-post rk-z rk-vjernost">${sig(H+rkZig(o.k||9)+P,"Provjeri bodove")}</div>`;
+ case "lista": return `<div class="rk-post rk-z rk-lista">${sig(H+`<ul class="rk-l">${o.l.map((x,i)=>`<li><b>${i+1}</b><span>${esc(x)}</span></li>`).join("")}</ul>`,"Naruči")}</div>`;
+ case "vs": return `<div class="rk-post rk-z rk-vs">${sig(H+`<div class="rk-vs2"><div class="a"><div class="n rk-A">${esc(o.a.n)}</div><ul>${o.a.l.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+  <div class="b"><div class="n rk-A">${esc(o.b.n)}</div><ul>${o.b.l.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></div>`,"Naruči")}</div>`;
+ case "info": return `<div class="rk-post rk-z rk-info">${sig(H+rkIkarta(),"")}</div>`;
+ case "chat": return `<div class="rk-post rk-z rk-chat">${sig((o.h?H:"")+rkCht(o.m,o.nas),"Naruči 4+1")}</div>`;
+ case "cola": return `<div class="rk-post rk-z rk-cola">${sig(H+`<div class="rk-kola" style="${rkU(KOLA_POSTER)}"></div>`+P,"Naruči")}</div>`;
+ case "koza": return `<div class="rk-post rk-z rk-koza"><div class="rk-kz" style="${rkU(RK_KOZA)}"></div>${sig(H+P,"Naruči")}</div>`;
+ case "app": return `<div class="rk-post rk-z rk-app">${rkTel(o.ek)}<div class="rk-sig">${v}<div class="rk-sred">${H}${P}</div>${rkDno("")}</div></div>`;}
+ return "";}
+
+/* ---------- scene reelova ---------- */
+function rkSc(s,i){
+ switch(s.v){
+ case "n": {const b=s.b||(i%2?"o":"d"); return `<div class="fpr-sc rk-n rk-n-${b}" data-t="${1500+rkBrRijeci(s.h)*190}"><div class="rk-tx"><div class="rk-h rk-A">${rkRijeci(s.h)}</div></div></div>`;}
+ case "f": return `<div class="fpr-sc rk-f" data-t="3000"><div class="rk-bg" style="${rkU(rkFoto(s.f,1080,1920))}"></div><div class="rk-tx dno"><div class="rk-h rk-A">${rkRijeci(s.h)}</div></div></div>`;
+ case "c": return `<div class="fpr-sc rk-c" data-t="3300"><div class="rk-tx"><div class="a rk-c-a rk-A">${esc(s.a)}</div><div class="b rk-c-b rk-A${String(s.b).length>4?" dug":""}">${esc(s.b)}</div>${s.p?`<p class="rk-c-p">${esc(s.p)}</p>`:""}</div></div>`;
+ case "l": return `<div class="fpr-sc rk-sl" data-t="${1600+s.l.length*480}"><div class="rk-tx">${s.h?`<div class="rk-h rk-A">${rkRijeci(s.h)}</div>`:""}<ul class="rk-l">${s.l.map((x,k)=>`<li class="rk-li" style="--i:${k}"><b>${rkKvaka()}</b><span>${esc(x)}</span></li>`).join("")}</ul></div></div>`;
+ case "t": return `<div class="fpr-sc rk-st" data-t="${s.ek==="prati"?4600:4200}">${s.h?`<div class="rk-nad rk-A">${rkH(s.h)}</div>`:""}${rkTel(s.ek)}</div>`;
+ case "ch": return `<div class="fpr-sc rk-sch" data-t="${1300+s.m.length*850+900}"><div class="rk-tx">${rkCht(s.m,s.nas)}</div></div>`;
+ case "ak": return `<div class="fpr-sc rk-ak" data-t="4300"><div class="rk-tx"><div class="rk-veliko rk-A">4<em>+</em>1</div><div class="rk-pizze">${rkPizze()}</div><p>${esc(s.p||"Najjeftinija pizza je gratis — app je sam oduzme.")}</p></div></div>`;
+ case "vj": return `<div class="fpr-sc rk-vj" data-t="3900"><div class="rk-tx"><div class="rk-h rk-A">${rkH(s.h||"Svaka *10.* pizza gratis")}</div>${rkZig(s.k||9)}<p>${esc(s.p||"Bez registracije. Brojimo po broju mobitela.")}</p></div></div>`;
+ case "cola": return `<div class="fpr-sc rk-sco" data-t="3300"><div class="rk-nad rk-A">${rkH(s.h||"Uz svaku pizzu\n*Cola gratis*")}</div><div class="rk-kola" style="${rkU(KOLA_POSTER)}"></div><p>${esc(s.p||"Coca-Cola 0,33 L na nas.")}</p></div>`;
+ case "koza": return `<div class="fpr-sc rk-skz" data-t="3300"><div class="rk-tx"><div class="rk-h rk-A">${rkRijeci(s.h||"Kvartovski *G.O.A.T.*")}</div></div><div class="rk-kz" style="${rkU(RK_KOZA)}"></div></div>`;
+ case "j": {const j=rkJ(s.j); return `<div class="fpr-sc rk-sj" data-t="3500"><div class="rk-kol" style="${rkU(j.f)}"></div><div class="rk-cij rk-A">${rkE(j.c)}</div>
+  <div class="rk-ime2"><div class="rk-h rk-A">${rkRijeci(j.kr)}</div><p>${esc(j.o)}</p></div></div>`;}
+ case "i": return `<div class="fpr-sc rk-si" data-t="3800"><div class="rk-tx"><div class="rk-h rk-A">${rkRijeci(s.h||"Gdje smo i *kad radimo*")}</div>${rkIkarta()}</div></div>`;}
+ return "";}
+function rkReel(r){
+ return `<div class="fpr-reel rk-reel rk-z">${r.s.map(rkSc).join("")}
+  <div class="fpr-sc rk-odj" data-t="3700"><div class="rk-tx">${rkLogo()}<div class="ime rk-A">Riky's Pizza</div><div class="tag">${esc(r.tag||RK_SLOGAN)}</div>
+   <div class="cta rk-A">${esc(r.cta||RK_WEB)}</div><div class="sit">${RK_ADR} · ${RK_TEL}</div></div></div>
+  <div class="rk-wm">${rkLogo()}<span class="rk-A">Riky's</span></div><div class="fpr-prog"><i></i></div></div>`;}
+const rkTrajanje=r=>Math.round((rkReel(r).match(/data-t="(\d+)"/g)||[]).reduce((a,x)=>a+ +x.replace(/\D/g,""),0)/1000);
+
+/* ---------- 100 reelova ---------- */
+const [RK_REELS1,RK_JELA_R,RK_REELS2]=(()=>{
+const N=(h,b)=>({v:"n",h,b}), F=(f,h)=>({v:"f",f,h}), C=(a,b,p)=>({v:"c",a,b,p}), L=(l,h)=>({v:"l",l,h}), T=(ek,h)=>({v:"t",ek,h}),
+ CH=(m,nas)=>({v:"ch",m,nas}), AK=p=>({v:"ak",p}), VJ=(k,h,p)=>({v:"vj",k,h,p}), CO=(h,p)=>({v:"cola",h,p}), KZ=h=>({v:"koza",h}), J=j=>({v:"j",j}), I=h=>({v:"i",h});
+const RK_REELS1=[
+ {n:"Dijeta od ponedjeljka",g:"s",s:[N("Dijeta počinje u ponedjeljak.","d"),N("Riky's ponedjeljkom *ne radi.*","o"),N("*Slučajnost?*","y"),AK()],
+  cap:"Dijeta počinje u ponedjeljak. Mi ponedjeljkom ne radimo. Sve se poklopilo. 😅 Od utorka smo tu od 10 h."},
+ {n:"Matematika",g:"s",s:[N("Matematika za *početnike*","d"),C("5 pizza","4 €?","Ne baš — ali plaćaš samo četiri."),N("4 + 1 = *peta gratis*","o"),AK()],
+  cap:"Najljepša matematika u gradu: 4 + 1, a peta je gratis."},
+ {n:"Grupni chat",g:"s",s:[CH([["Marko","Šta ćemo jesti?"],["Ana","Ne znam, ti odluči"],["","Pizza?",1],["Ana","Ne da mi se ništa"],["","Riky's, 4+1",1],["Ana","Krećem po ključeve"]],"Ekipa"),F("pizza_stol","Peta je gratis. *Ne pitaj.*")],
+  cap:"Svaki grupni chat ikad. Srećom, odluka je laka. 🍕"},
+ {n:"22:47",g:"s",s:[N("Ja u 21:00: *neću ništa naručiti.*","d"),N("Ja u *22:47:*","o"),T("meni","Jednom *rukom.*")],
+  cap:"Svi smo bili tu. Srećom, radimo do 23 h. 😅"},
+ {n:"Imamo hranu doma",g:"s",s:[CH([["","Mama, može pizza?",1],["Mama","Imamo hranu doma."],["","Kakvu hranu?",1],["Mama","Riky's. Naručila sam 4+1."]],"Obitelj"),N("Mama *zna.*","y"),AK()],
+  cap:"Kad mama zna za akciju 4+1. 🧡"},
+ {n:"Peta pizza",g:"s",s:[N("Kad naručiš *5 pizza*","d"),N("i shvatiš da plaćaš *četiri*","o"),AK(),F("pizza_stol2","Peta? *Gratis.*")],
+  cap:"Naruči 5, plati 4. Najjeftinija je gratis — app je sam oduzme."},
+ {n:"G.O.A.T.",g:"s",s:[N("Upoznajte našeg *čuvara.*","d"),KZ("Nije koza. *G.O.A.T.*"),J("Riky's")],
+  cap:"Naš G.O.A.T. čuva peć, recepte i našu potpisnu pizzu. 🐐"},
+ {n:"Ananas",g:"s",s:[N("Ananas na pizzi?","d"),N("Mi *ne sudimo.*","o"),J("Hawaii")],
+  cap:"Tim ananas ili tim bez ananasa? Mi ne sudimo. 🍍"},
+ {n:"Vatrena",g:"s",s:[N("Upozorenje:","y"),N("ova pizza *grize nazad.*","d"),J("Vatrena"),N("Mlijeko *nije uključeno.*","o")],
+  cap:"Vatrena — dimljena vratina, kulen, špek, chili i ljuti feferoni. Za hrabre. 🔥"},
+ {n:"Sendvič XXL",g:"s",s:[N("Sendvič.","d"),N("*Veličine pizze.*","o"),J("XXL sendvič kulen"),N("Za jednog. *Možda.*","y")],
+  cap:"XXL sendvič — 32 × 32 cm. Za jednu osobu. Teoretski."},
+ {n:"Kora je desert",g:"s",s:[N("Kora nije ostatak.","d"),N("Kora je *desert.*","o"),J("Nutella Palačinke (2 kom)"),N("Ali i desert je *desert.*","y")],
+  cap:"Kora je desert. Palačinke su također desert. Logika je čvrsta."},
+ {n:"Utakmica",g:"s",s:[N("Utakmica u *21:00.*","d"),CH([["Ivan","Tko donosi klopu?"],["","Naručio sam 5 pizza",1],["Luka","5?? Pa nas je 4"],["","Peta je gratis. Ne pitaj.",1]],"Utakmica"),AK()],
+  cap:"Kad netko u ekipi zna za 4+1. ⚽🍕"},
+ {n:"Album",g:"s",s:[N("Skupljaš *sličice?*","d"),N("Mi skupljamo *pizze.*","o"),VJ(9,"Album se *puni sam*"),N("Deseta je *gratis.*","y")],
+  cap:"Svaka 10. pizza je gratis — bez kartica i bez registracije."},
+ {n:"Petak",g:"s",s:[F("pizza_stol2","Petak *navečer.*"),N("Kuhati? *Ne.*","o"),T("meni","Tri *dodira.*")],
+  cap:"Petak je za pizzu, ne za suđe. 🍕"},
+ {n:"Nitko",g:"s",s:[N("Nitko:","d"),N("Apsolutno *nitko:*","d"),N("Ja: *još jedna Riky's*","o"),J("Riky's")],
+  cap:"Uvijek ima mjesta za još jednu."},
+ {n:"Zagorska iz Zagorske",g:"s",s:[N("Zagorska pizza","d"),N("iz *Zagorske 18.*","o"),J("Zagorska"),N("*Logično.*","y")],
+  cap:"Gdje drugdje naručiti Zagorsku nego u Zagorskoj 18?"},
+ {n:"Bez lozinke",g:"s",s:[N("Lozinka: 8 znakova, veliko slovo, broj, simbol…","d"),N("*Ne kod nas.*","o"),L(["Ime","Broj mobitela","Adresa — i to je to"],"Treba ti samo:"),T("meni")],
+  cap:"Bez računa i bez lozinke. Ime, broj i adresa — i narudžba je u kuhinji."},
+ {n:"Pizza bez Cole",g:"s",n2:"c",s:[N("Pizza bez Cole?","d"),N("*Ne može.*","o"),CO()],
+  cap:"Uz svaku pizzu Coca-Cola 0,33 L gratis. 🥤"},
+ {n:"Četiri sira",g:"s",s:[N("Četiri sira.","d"),N("*Nula* žaljenja.","o"),J("Quattro Formaggio")],
+  cap:"Quattro Formaggio — gouda, mozzarella, gorgonzola i grana padano."},
+ {n:"Ponedjeljak",g:"s",s:[N("Ponedjeljkom smo *zatvoreni.*","d"),N("Utorkom smo tu *od 10.*","o"),AK("I akcija 4+1 je s nama.")],
+  cap:"Ponedjeljkom odmaramo, od utorka smo opet tu."},
+ {n:"Gdje mi je pizza",g:"s",n2:"d",s:[N("„Gdje mi je *pizza?*”","d"),N("Pogledaj. *Uživo.*","o"),T("prati")],
+  cap:"Više nema pitanja „gdje mi je pizza?” — pratiš je uživo."},
+ {n:"Bez luka",g:"s",s:[N("Imaš *posebnu želju?*","d"),T("chat","Napiši *kuhinji.*"),N("Kuhinja *odgovara.*","o")],
+  cap:"Bez luka, više sira? Napiši u chat nakon narudžbe — kuhinja odgovara uživo."},
+ {n:"Pizza za jednog",g:"s",s:[N("Pizza za *jednog?*","d"),N("*Nema takve.*","o"),J("Royal Slavonska")],
+  cap:"Royal Slavonska — pizza koja se ne dijeli. (Ali možeš probati.)"},
+ {n:"Kalorije",g:"s",s:[N("Kalorije u pizzi koja je *gratis:*","d"),C("Puno","0","Neznanstveno, ali uvjerljivo."),AK()],
+  cap:"Gratis pizza nema kalorija. Tako kažu. 😅"},
+ {n:"On nosi pizzu",g:"s",n2:"d",s:[N("On nosi *pizzu.*","d"),N("Ti nosiš *glad.*","o"),F("dostava_noc","Uskoro se *sretnete.*"),T("prati")],
+  cap:"Vozač je krenuo. Glad se smiruje. 🛵"},
+ {n:"Real food",g:"p",s:[F("pizza_ruke","Real *food.*"),F("pec_zar","Real *pizza.*"),L(["Akcija 4+1 svaki dan","Svaka 10. pizza gratis","Plaćaš kad dobiješ pizzu"])],
+  cap:"Real food. Real pizza. Naruči na rikyspizza.com.hr"},
+ {n:"Kako naručiti",g:"p",s:[N("Kako naručiti za *30 sekundi*","d"),T("meni","1. Odaberi"),L(["Upiši ime i broj","Upiši adresu","Pošalji — gotovo"],"2. Upiši"),T("prati","3. Prati *uživo*")],
+  cap:"Naruči za 30 sekundi: odaberi, upiši ime, broj i adresu, pošalji. Bez registracije."},
+ {n:"4+1 objašnjeno",g:"p",s:[N("Akcija *4+1*","d"),AK(),T("akcija","Popust se *sam obračuna*")],
+  cap:"Naruči 5 pizza — najjeftinija je gratis. Bez koda i kupona, popust se obračuna sam u košarici."},
+ {n:"Program vjernosti",g:"p",s:[N("Program *vjernosti*","d"),VJ(9),L(["Bez registracije","Bez kartice","Brojimo po broju mobitela"]),T("vjernost")],
+  cap:"Svaka 10. pizza je gratis. Bez registracije i bez kartica — brojimo po broju mobitela s narudžbe."},
+ {n:"Praćenje uživo",g:"p",n2:"d",s:[N("Prati narudžbu *uživo*","d"),T("prati"),N("Od peći do *tvojih vrata.*","o")],
+  cap:"Vidiš kad je narudžba potvrđena, kad je u peći i kad je vozač krenuo."},
+ {n:"Chat s kuhinjom",g:"p",s:[N("Posebna *želja?*","d"),T("chat"),N("Kuhinja ti odgovara *uživo.*","o")],
+  cap:"Nakon narudžbe možeš pisati kuhinji: bez luka, više sira, dodatna napomena."},
+ {n:"Plaćanje",g:"p",s:[N("Plaćaš kad *dobiješ pizzu.*","d"),L(["Gotovina","Kartica","Bez upisivanja kartice na webu"],"Kako ti paše:")],
+  cap:"Ne upisuješ karticu na internetu. Plaćaš gotovinom ili karticom kad dobiješ pizzu."},
+ {n:"Dostava",g:"p",n2:"d",s:[N("Dostava do 2 km — *gratis*","d"),C("2 km","0 €","Besplatna dostava u blizini."),L(["Do 5 km: 1 € po km","Dalje: 2 € po km"],"Dalje:")],
+  cap:"Dostava je besplatna do 2 km. Do 5 km 1 € po km, dalje 2 € po km."},
+ {n:"Riky's kao aplikacija",g:"p",s:[N("Riky's kao *aplikacija*","d"),T("instal"),L(["Otvori rikyspizza.com.hr","Dijeli → Dodaj na početni zaslon","Gotovo — bez App Storea"])],
+  cap:"Dodaj Riky's na početni zaslon mobitela — radi kao aplikacija, bez skidanja iz trgovine."},
+ {n:"Premium pizze",g:"p",s:[N("Premium *pizze*","d"),J("Nduja Picante"),J("Riky's"),J("Royal Slavonska")],
+  cap:"Premium pizze: Nduja Picante, Riky's i Royal Slavonska."},
+ {n:"Klasika",g:"p",s:[N("Klasika *od 9 €*","d"),J("Margherita"),J("Capricciosa"),J("Funghi")],
+  cap:"Klasične pizze — Margherita, Capricciosa, Funghi i ostale."},
+ {n:"Bijele pizze",g:"p",s:[N("Bijele *pizze*","d"),J("Bianco"),J("Dalmatina Bianca")],
+  cap:"Bijele pizze s kiselim vrhnjem umjesto pelata: Bianco i Dalmatina Bianca."},
+ {n:"Calzone",g:"p",s:[N("Pizza koja *čuva tajnu*","d"),J("Vesuvius Calzone"),J("Slavonska Calzone")],
+  cap:"Calzone — zatvorena pizza: Vesuvius i Slavonska."},
+ {n:"Burgeri",g:"p",s:[N("Burgeri u *brioche pecivu*","d"),J("Hamburger u Brioche Pecivu"),J("Bacon Cheeseburger u Brioche Pecivu"),N("100 % junetina *domaćeg porijekla*","o")],
+  cap:"Burgeri u brioche pecivu od 100 % junećeg mesa domaćeg porijekla."},
+ {n:"Doručak",g:"p",s:[N("Doručak *od 10 h*","d"),J("Tost Šunka Sir"),J("Tost Combo (2 tosta + 2 Coca-Cole 0,33 L)"),J("Omlet sa Šunkom i Sirom")],
+  cap:"Doručak od 10 h: tostovi, Tost Combo i omleti."},
+ {n:"Ručak",g:"p",s:[N("Ručak je *riješen.*","d"),J("Tjestenina Bolognese"),J("Njoke 4 sira"),J("Pohani Pileći Odrezak s Pomfritom")],
+  cap:"Ručak: bolognese, njoke 4 sira, pohani pileći odrezak i još toga."},
+ {n:"XXL sendviči",g:"p",s:[N("XXL — *32 × 32 cm*","d"),J("XXL sendvič kulen"),J("XXL sendvič pršut"),J("XXL sendvič piletina")],
+  cap:"XXL sendviči veličine pizze: kulen, pršut i piletina."},
+ {n:"Tortilje",g:"p",s:[N("Tortilje i *quesadilla*","d"),J("Piletina Tortilla"),J("Taquitos s Piletinom"),J("Double Cheese Lava Quesadilla")],
+  cap:"Tortilla od 30 cm, hrskavi taquitos i Double Cheese Lava Quesadilla."},
+ {n:"Deserti",g:"p",s:[N("Za *kraj*","d"),J("Nutella Palačinke (2 kom)"),J("Lino Lada Gold Palačinke (2 kom)"),J("Marmelada Palačinke (2 kom)")],
+  cap:"Domaće palačinke: Nutella, Lino Lada Gold ili marmelada."},
+ {n:"Radno vrijeme",g:"p",s:[N("Kad *radimo?*","d"),C("Uto–ned","10–23","Ponedjeljkom odmaramo."),I()],
+  cap:"Radimo utorak – nedjelja od 10 do 23 h. Ponedjeljkom odmaramo."},
+ {n:"Naruči direktno",g:"p",s:[N("Naruči *direktno.*","d"),L(["Bez posrednika","Narudžba ide ravno u našu kuhinju","Sve akcije vrijede"],"Zašto?"),N("Ostani *u kvartu.*","o")],
+  cap:"Naruči direktno na rikyspizza.com.hr — narudžba ide ravno u našu kuhinju."},
+ {n:"Peć je upaljena",g:"p",s:[F("pec","Peć je *upaljena.*"),F("pizza_tijesto","Tijesto je *spremno.*"),N("Još samo *ti.*","o"),T("meni")],
+  cap:"Peć je upaljena, sve je spremno — još samo tvoja narudžba."},
+ {n:"Za ekipu",g:"p",s:[F("pizza_stol","Za *cijelu ekipu.*"),AK("Peta pizza ide na nas."),T("akcija")],
+  cap:"Utakmica, rođendan, petak — 4+1 radi za svaku ekipu."},
+ {n:"Kvartovski G.O.A.T.",g:"p",s:[KZ("Kvartovski *G.O.A.T.*"),N("Zagorska *18.*","o"),I()],
+  cap:"Riky's Pizza, Zagorska 18 — kvartovski G.O.A.T."},
+ {n:"Slavonija",g:"p",s:[N("Kulen. Feferoni. *Vrhnje.*","d"),J("Slavonska"),J("Royal Slavonska"),J("Slavonska Calzone")],
+  cap:"Slavonska linija: Slavonska, Royal Slavonska i Slavonska Calzone."}];
+
+/* jelo u glavnoj ulozi: [jelo, udica, g, dodatak] — dodatak: ak 4+1 · vj vjernost · co Cola · tm aplikacija · in info · kz koza */
+const RK_JELA_R=[
+ ["Margherita","Kad želiš *klasiku.*","p","ak"],["Funghi","Šampinjoni su povrće. *Računa se.*","s","vj"],
+ ["Vesuvio","Šunka i sir. *Bez filozofije.*","p","ak"],["Capricciosa","Kapričoza. *Kako god je izgovaraš.*","s","ak"],
+ ["Peperoni","Kulen na pizzi. *Domaći remix.*","s","co"],["Vegetarijana","Povrće je zdravo. *Na pizzi pogotovo.*","s","vj"],
+ ["Al Tonno","Tuna, luk i *nula kompromisa.*","p","ak"],["Hawaii","Ananas? *Bez osude.*","s","co"],
+ ["Picante","Panceta i feferoni. *Ljutina s razlogom.*","p","ak"],["Zagrebačka","Zagrebačka. *Domaći teren.*","p","vj"],
+ ["Hungarese","Špek i vrhnje. *Kao kod bake.*","s","ak"],["Zagorska","Zagorska iz *Zagorske 18.*","s","in"],
+ ["Slavonska","Slavonija *na tijestu.*","p","ak"],["Chicken","Grill piletina. *Nije samo za teretanu.*","s","vj"],
+ ["Quattro Formaggio","Četiri sira. *Nula žaljenja.*","s","ak"],["Pršut","Pršut na pizzi. *Dalmacija javlja.*","p","co"],
+ ["Gurmanska","Šunka, špek, jaje… *Sve u jednoj.*","p","ak"],["Nduja Picante","Nduja. *Ljuta, mekana, opasna.*","p","ak"],
+ ["Riky's","Naša *potpisna.*","p","kz"],["Vatrena","Ova pizza *grize nazad.*","s","co"],
+ ["Toscana","Toscana. *Bez puta u Italiju.*","p","ak"],["Italiana","Pršut, rukola, grana. *Ciao bella.*","s","vj"],
+ ["Royal Slavonska","Slavonska. Ali *kraljevska.*","p","ak"],["Bianco","Bez pelata. *S puno stava.*","s","vj"],
+ ["Dalmatina Bianca","Bijela pizza s *dalmatinskim šarmom.*","p","ak"],["Vesuvius Calzone","Pizza koja *čuva tajnu.*","s","ak"],
+ ["Slavonska Calzone","Kulen. *Zamotan.*","s","co"],["Hamburger u Brioche Pecivu","Burger od *100 % junetine.*","p","tm"],
+ ["Cheeseburger u Brioche Pecivu","Cheddar se topi. *Ti također.*","s","tm"],["Bacon Cheeseburger u Brioche Pecivu","Slanina. *Treba li reći još nešto?*","s","tm"],
+ ["Piletina Tortilla","Tortilla od *30 cm.*","p","in"],["Taquitos s Piletinom","Hrskavo, pikantno, *za dijeljenje.*","p","tm"],
+ ["Double Cheese Lava Quesadilla","Sir kao lava. *Doslovno.*","s","tm"],["Clasic Pommes","Pomfrit. *Uvijek dobra ideja.*","s","tm"],
+ ["Cheese Pommes","Pomfrit, ali *sa sirom.*","s","tm"],["Tost Šunka Sir","Doručak koji *ne kasni.*","p","in"],
+ ["Tost Kulen Sir","Tost, ali *s kulenom.*","s","in"],["Tost Combo (2 tosta + 2 Coca-Cole 0,33 L)","Dva tosta, dvije Cole. *Za dvoje.*","p","in"],
+ ["Omlet sa Šunkom i Sirom","Tri jaja. *Puno sira.*","p","in"],["Omlet s Piletinom i Povrćem","Omlet koji *drži do ručka.*","p","in"],
+ ["Grah Varivo","Grah *kao doma.*","p","in"],["Pohani Pileći Odrezak s Pomfritom","Pohano. Hrskavo. *Gotovo.*","p","in"],
+ ["Tjestenina Bolognese","Bolognese. *Sporo kuhan.*","p","in"],["Njoke 4 sira","Njoki u *četiri sira.*","p","in"],
+ ["Ćevapi u Lepinji","Ćevapi u lepinji. *Klasika.*","p","in"],["XXL sendvič kulen","Sendvič *veličine pizze.*","s","tm"],
+ ["XXL sendvič pršut","32 × 32 cm *pršuta.*","s","tm"],["XXL sendvič piletina","XXL. Za jednog. *Možda.*","s","tm"],
+ ["Nutella Palačinke (2 kom)","Desert? *Normalno.*","s","tm"],["Lino Lada Gold Palačinke (2 kom)","Lino Lada Gold. *Bez rasprave.*","s","tm"]];
+const RK_REELS2=RK_JELA_R.map(([j,h,g,d],i)=>{
+ const x=RK_MENI[j]||[0,"","p"], piz=x[2]==="p";
+ const dod=d==="ak"?AK():d==="vj"?VJ(9):d==="co"?CO():d==="kz"?KZ("Odobrio *G.O.A.T.*"):d==="in"?I():T("meni","Naruči *u tri dodira*");
+ return {n:rkKr(j),g,n2:d==="co"?"c":"",jelo:j,s:[N(h,i%2?"o":"d"),J(j),dod],
+  cap:null};});
+return [RK_REELS1,RK_JELA_R,RK_REELS2];})();
+const RK_REELS=[...RK_REELS1,...RK_REELS2];
+function rkCap(r){
+ if(r.cap)return r.cap;
+ const j=rkJ(r.jelo), piz=j.k==="p";
+ return `${j.n} — ${j.o}. ${rkE(j.c)}.\n${piz?"Uz akciju 4+1 peta pizza je gratis, a svaka 10. pizza ide na nas.\n":""}Naruči na ${RK_WEB} ili nazovi ${RK_TEL}.`;}
+
+/* ---------- prikaz: Vlasnik → Objave i reels ---------- */
+let rkS={skup:"o",g:"",str:0}, rkNode=null, rkNodeK="";
+const RK_PO_STR=12;
+function rkLista(){const L=rkS.skup==="r"?RK_REELS:RK_OBJAVE; return L.map((o,i)=>({o,i})).filter(x=>!rkS.g||x.o.g===rkS.g);}
+function rkObjaveHTML(){return `<div id="rk-mjesto"></div>`;}
+function rkKljuc(){return [rkS.skup,rkS.g,rkS.str,(Array.isArray(jela)?jela.length:0),RK_LOGO()].join("|");}
+function rkUiHTML(){
+ const r=rkS.skup==="r", L=rkLista(), str=Math.max(1,Math.ceil(L.length/RK_PO_STR)); if(rkS.str>=str)rkS.str=0;
+ const dio=L.slice(rkS.str*RK_PO_STR,(rkS.str+1)*RK_PO_STR);
+ const br=k=>(r?RK_REELS:RK_OBJAVE).filter(o=>!k||o.g===k).length;
+ return `<div class="sec"><h3>Objave i reels za Riky's</h3>
+  <p class="rk-uvod">${RK_OBJAVE.length} gotovih objava za Instagram i Facebook (1080×1350) i ${RK_REELS.length} reelova (9:16) — reklame za Riky's aplikaciju i ponudu. Cijene i slike jela povlače se iz jelovnika.
+  ${r?"<b>Reel u video:</b> otvori ga preko cijelog ekrana (gumb s kutovima), na mobitelu pokreni snimanje zaslona i dodirni reel — krene od početka. Snimku objavi kao Reel i dodaj glazbu u Instagramu.":"<b>Objava:</b> gumb sa strelicom sprema sliku 1080×1350 (PNG), a gumb s listićima kopira tekst objave s oznakama."}</p></div>
+ <div class="rk-alati">
+  <div class="rk-sw"><button class="${!r?"on nar":""}" onclick="rkPostavi({skup:'o',str:0})">Objave (${RK_OBJAVE.length})</button><button class="${r?"on nar":""}" onclick="rkPostavi({skup:'r',str:0})">Reels (${RK_REELS.length})</button></div>
+  <div class="rk-sw"><button class="${!rkS.g?"on":""}" onclick="rkPostavi({g:'',str:0})">Sve (${br("")})</button><button class="${rkS.g==="s"?"on":""}" onclick="rkPostavi({g:'s',str:0})">Smiješne (${br("s")})</button><button class="${rkS.g==="p"?"on":""}" onclick="rkPostavi({g:'p',str:0})">Profesionalne (${br("p")})</button></div>
+ </div>
+ <div class="rk-mreza${r?" r":""}">${dio.map(({o,i})=>{const fl=(r?o.n2:o.n)||"";
+  return `<div class="rk-kart"><div class="rk-okvir">${r?rkReel(o):rkPost(o)}</div>
+  <div class="rk-info"><span class="br">${r?"Reel ":"#"}${i+1}</span><span class="tip">${esc(r?o.n:(RK_T_NAZ[o.t]||o.t))}${r?` · ${rkTrajanje(o)} s`:""}</span>
+   <span class="gumbi"><button title="Preko cijelog ekrana" onclick="rkPuni(${i})">${fpIk("puni",16)}</button>
+   <button title="Kopiraj tekst objave" onclick="rkKopiraj(${i},this)">${fpIk("kopiraj",16)}</button>
+   ${r?"":`<button title="Preuzmi PNG 1080×1350" onclick="rkPreuzmi(${i},this)">${fpIk("preuzmi",16)}</button>`}</span></div>
+  <div class="rk-oznake"><span class="${o.g}">${o.g==="s"?"Smiješno":"Profesionalno"}</span>${fl.includes("d")?`<span class="upoz" title="Objavi kad je dostava uključena">Spominje dostavu</span>`:""}${fl.includes("c")?`<span class="upoz" title="Objavi kad je gratis Cola uključena">Spominje gratis Colu</span>`:""}</div>
+  <details class="rk-cap"><summary>Tekst objave</summary><p>${esc(r?rkCap(o):o.cap||"")}</p><p class="oz">${RK_OZNAKE}</p></details></div>`;}).join("")}</div>
+ ${str>1?`<div class="rk-str"><button ${rkS.str?"":"disabled"} onclick="rkPostavi({str:${rkS.str-1}},1)">‹</button>${Array.from({length:str},(_,k)=>`<button class="${k===rkS.str?"on":""}" onclick="rkPostavi({str:${k}},1)">${k+1}</button>`).join("")}<button ${rkS.str<str-1?"":"disabled"} onclick="rkPostavi({str:${rkS.str+1}},1)">›</button></div>`:""}`;}
+const RK_T_NAZ={foto:"Fotografija",plamen:"Plamen",naranca:"Narančasta",split:"Podijeljena",jelo:"Jelo s cijenom",meme:"Meme",akcija:"Akcija 4+1",vjernost:"Vjernost",
+ lista:"Popis",vs:"Usporedba",info:"Kontakt i radno vrijeme",chat:"Chat",cola:"Gratis Cola",koza:"G.O.A.T.",app:"Aplikacija"};
+function rkUgradi(){
+ const m=el("rk-mjesto"); if(!m)return;
+ const k=rkKljuc();
+ if(!rkNode||rkNodeK!==k){rkNode=document.createElement("div"); rkNode.className="rk-ui"; rkNode.innerHTML=rkUiHTML(); rkNodeK=k;}
+ if(rkNode.parentNode!==m){m.innerHTML=""; m.appendChild(rkNode);}
+ setTimeout(fpRInit,0);}
+function rkPostavi(p,skrol){Object.assign(rkS,p); rkNode=null; rkUgradi();
+ if(skrol){const m=el("rk-mjesto"); if(m)m.scrollIntoView({block:"start",behavior:"smooth"});}}
+{const rkCrtajOrig=crtaj; crtaj=function(){const r=rkCrtajOrig.apply(this,arguments); try{rkUgradi();}catch(e){console.error(e);} return r;};}
+
+/* preko cijelog ekrana, kopiranje, preuzimanje */
+function rkPuni(i){
+ const r=rkS.skup==="r", L=rkLista(), o=(r?RK_REELS:RK_OBJAVE)[i], poz=L.findIndex(x=>x.i===i);
+ const pr=L[(poz-1+L.length)%L.length].i, sl=L[(poz+1)%L.length].i;
+ fpOZatvori();
+ const d=document.createElement("div"); d.id="fpo-puni"; d.className="rk"+(r?" r":"");
+ d.innerHTML=`<div class="fpo-puni-in rk-okvir${r?" fpr-okvir":" fpo-okvir"}">${r?rkReel(o):rkPost(o)}${r?`<div class="fpr-kreni">${fpIk("igraj",34)}<span>Pokreni snimanje zaslona,<br>pa dodirni za početak</span></div>`:""}</div>
+  <div class="fpo-puni-gumbi"><button onclick="rkPuni(${pr})">‹</button><button onclick="fpOZatvori()">${fpIk("zatvori",18)}</button><button onclick="rkPuni(${sl})">›</button></div>`;
+ document.body.appendChild(d); document.documentElement.style.overflow="hidden";
+ if(r){const e=d.querySelector(".fpr-reel"), k=d.querySelector(".fpr-kreni");
+  e.dataset.ok=1; e.querySelector(".fpr-sc").classList.add("on");
+  d.querySelector(".fpo-puni-in").onclick=()=>{k.style.display="none"; d.classList.add("snima"); clearTimeout(e._t); e._vid=true; e._i=-1; fpRKorak(e);};}
+ document.onkeydown=e=>{if(e.key==="Escape")fpOZatvori(); if(e.key==="ArrowRight")rkPuni(sl); if(e.key==="ArrowLeft")rkPuni(pr);};}
+function rkKopiraj(i,b){
+ const r=rkS.skup==="r", o=(r?RK_REELS:RK_OBJAVE)[i], t=(r?rkCap(o):o.cap||"")+"\n\n"+RK_OZNAKE;
+ (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{b.classList.add("ok"); setTimeout(()=>b.classList.remove("ok"),1400);})
+  .catch(()=>{prompt("Kopiraj tekst:",t);});}
+async function rkPreuzmi(i,b){
+ const o=RK_OBJAVE[i]; b.disabled=true; const st=b.innerHTML; b.innerHTML="…";
+ const d=document.createElement("div"); d.className="rk-okvir"; d.style.cssText="position:fixed;left:-20000px;top:0;width:1080px;border-radius:0";
+ d.innerHTML=rkPost(o); document.body.appendChild(d);
+ try{await fpUcitajH2C();
+  const urls=[...d.querySelectorAll("[style*='background-image']")].map(x=>(x.style.backgroundImage.match(/url\(["']?(.*?)["']?\)/)||[])[1]).filter(Boolean);
+  await Promise.all(urls.map(u=>new Promise(ok=>{const im=new Image(); im.crossOrigin="anonymous"; im.onload=im.onerror=ok; im.src=u;})));
+  if(document.fonts&&document.fonts.ready) await document.fonts.ready;
+  const c=await html2canvas(d.firstElementChild,{scale:1,useCORS:true,backgroundColor:"#0E0C0B",width:1080,height:1350,logging:false});
+  const a=document.createElement("a"); a.download=`rikys-objava-${String(i+1).padStart(2,"0")}.png`; a.href=c.toDataURL("image/png"); a.click();}
+ catch(e){console.error(e); alert("Preuzimanje nije uspjelo. Otvori objavu preko cijelog ekrana i napravi snimku zaslona.");}
+ d.remove(); b.disabled=false; b.innerHTML=st;}
 
 start();
 </script>
