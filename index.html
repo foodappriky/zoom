@@ -247,6 +247,13 @@ body.bljesak{animation:bl .35s steps(1) 4}
    Klikom se otvara panel s postavkama, pa se opet skupi na isti mali zvučnik.
    Ide u normalnom toku (ne fixed) da se ne preklapa s brojkama/naslovima koji
    već stoje gore desno na pojedinim ekranima (npr. pultu). */
+.loz-polje{position:relative;display:block}
+.loz-polje input.f{padding-right:52px;width:100%}
+.loz-oko{position:absolute;right:5px;top:50%;transform:translateY(-50%);width:40px;height:40px;padding:0;
+ border:0;background:transparent;color:inherit;opacity:.55;display:flex;align-items:center;justify-content:center;
+ cursor:pointer;border-radius:50%;-webkit-tap-highlight-color:transparent}
+.loz-oko:hover,.loz-oko:focus-visible{opacity:1}
+.loz-oko svg{width:21px;height:21px;display:block}
 .zvuk-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:0;padding:10px 18px 0}
 .zvuk-wrap.ugnijezdeno{padding:0}
 .zvuk-ikona{position:relative;width:44px;height:44px;border-radius:50%;flex:none;line-height:1;
@@ -3075,6 +3082,72 @@ html[lang=en] .fpl-paket.istaknut::before{content:"Most popular"}
 .fpr-jkar .c{margin-top:3cqw;display:inline-block;background:#FF4106;color:#fff;
  font-size:6.2cqw;font-weight:800;line-height:1;padding:2.2cqw 4cqw;border-radius:2.4cqw;letter-spacing:-.01em}
 
+/* ===== NOVI MARKETING: objave po branši (4:5) ===== */
+.fpo-grupe{display:flex;gap:6px;margin-bottom:8px}
+.fpo-grupe button{border:1px solid #E3D7D1;background:#fff;padding:9px 16px;border-radius:999px;
+ font:700 13px/1 "Plus Jakarta Sans",system-ui,sans-serif;color:#57504B;cursor:pointer;white-space:nowrap}
+.fpo-grupe button.on{background:#17120F;border-color:#17120F;color:#fff}
+.fpn-mreza{grid-template-columns:repeat(auto-fill,minmax(270px,1fr));align-items:start}
+.fpn-mreza .fpo-kart.je-reel .fpo-okvir{box-shadow:0 6px 18px rgba(23,18,15,.14)}
+
+.fpn-post{position:relative;width:100cqw;height:125cqw;overflow:hidden;background:#17120F;color:#fff;
+ font-family:"Plus Jakarta Sans",system-ui,sans-serif;display:flex;flex-direction:column;justify-content:center;
+ container-type:inline-size}
+.fpn-post .fpn-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.fpn-post .fpn-sjena{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,7,.45) 0%,rgba(10,8,7,.72) 55%,rgba(10,8,7,.9) 100%)}
+.fpn-post .fpn-sjena.jaka{background:linear-gradient(180deg,rgba(10,8,7,.3) 0%,rgba(10,8,7,.82) 70%,rgba(10,8,7,.95) 100%)}
+.fpn-sred{position:relative;z-index:3;padding:0 8cqw}
+.fpn-post h3{font-family:"Anton",system-ui,sans-serif;font-size:11cqw;line-height:1.04;letter-spacing:.005em;margin:0}
+.fpn-post h3 em{font-style:normal;color:var(--mb2)}
+.fpn-post p{margin:3.4cqw 0 0;font-size:4.1cqw;line-height:1.4;font-weight:500;color:rgba(255,255,255,.82);max-width:84cqw}
+.fpn-potpis{position:absolute;z-index:4;left:8cqw;bottom:7cqw}
+.fpn-potpis .zn{height:7cqw;width:auto;display:block;opacity:.95}
+.fpn-potpis .zn.rijec{font-family:"Anton",system-ui,sans-serif;font-size:5.2cqw;letter-spacing:.06em;
+ text-transform:uppercase;color:var(--mb2);height:auto;line-height:1}
+/* velika brojka */
+.fpn-velbroj{font-family:"Anton",system-ui,sans-serif;font-size:30cqw;line-height:.9;color:var(--mb2);letter-spacing:-.02em}
+.t-broj{background:var(--mb)}
+.t-broj .fpn-velbroj{color:#fff}
+.t-broj p{color:rgba(255,255,255,.9);font-size:4.6cqw;margin-top:4cqw}
+/* usporedba */
+.t-usp{background:#17120F}
+.fpn-usp{display:grid;grid-template-columns:1fr 1fr;gap:4cqw}
+.fpn-usp>div{border-radius:3.4cqw;padding:6cqw 4cqw;text-align:center}
+.fpn-usp .l{background:rgba(255,255,255,.08)}
+.fpn-usp .d{background:var(--mb)}
+.fpn-usp small{display:block;font-size:3.4cqw;font-weight:700;letter-spacing:.04em;text-transform:uppercase;opacity:.8}
+.fpn-usp b{display:block;margin-top:1.6cqw;font-family:"Anton",system-ui,sans-serif;font-size:9.4cqw;line-height:1.05;white-space:nowrap}
+/* cijena: naljepnica */
+.fpn-jelo{font-family:"Anton",system-ui,sans-serif;font-size:13cqw;line-height:1}
+.fpn-nalj{position:absolute;z-index:4;right:7cqw;top:8cqw;background:var(--mb);color:#fff;
+ font-family:"Anton",system-ui,sans-serif;font-size:9cqw;line-height:1;padding:3.4cqw 4.6cqw;border-radius:2.6cqw;
+ transform:rotate(-5deg);box-shadow:0 1.6cqw 4cqw rgba(0,0,0,.4)}
+/* popis */
+.t-popis ul{list-style:none;margin:5cqw 0 0;padding:0;display:flex;flex-direction:column;gap:2.6cqw}
+.t-popis li{position:relative;padding-left:7cqw;font-size:4.6cqw;font-weight:600;line-height:1.3}
+.t-popis li::before{content:"";position:absolute;left:0;top:1.5cqw;width:3.4cqw;height:3.4cqw;border-radius:50%;background:var(--mb2)}
+/* kartica osobe */
+.fpn-ime{font-family:"Anton",system-ui,sans-serif;font-size:15cqw;line-height:1}
+.fpn-uloga{margin-top:2cqw;font-size:3.9cqw;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mb2)}
+/* najava */
+.fpn-kad{display:inline-block;background:var(--mb);color:#fff;font-size:3.6cqw;font-weight:800;letter-spacing:.06em;
+ text-transform:uppercase;padding:2cqw 3.4cqw;border-radius:999px;margin-bottom:3.4cqw}
+/* reel u bojama branše */
+.fpn-reel .fpr-prog i{background:var(--mb)}
+.fpn-reel .fpr-cap .kic{background:var(--mb);color:#fff}
+.fpn-reel .fpr-titl em,.fpn-reel .fpr-naslov em,.fpn-reel .fpr-tx h3 em{color:var(--mb2)}
+.fpn-odjava{background:linear-gradient(165deg,#151010 0%,#0B0908 60%,#1A1012 100%)}
+.fpn-odjava .znak{width:44cqw;height:auto;opacity:0}
+.fpn-odjava .znak.rijec{width:auto;font-family:"Anton",system-ui,sans-serif;font-size:11cqw;letter-spacing:.04em;
+ text-transform:uppercase;color:#fff;line-height:1.05;text-align:center;display:block}
+.fpn-odjava .cta{text-transform:none;letter-spacing:0;margin-top:6cqw;background:var(--mb);color:#fff;
+ font-weight:800;font-size:4.6cqw;padding:3.4cqw 6cqw;border-radius:99px;opacity:0}
+.fpn-kontakt{opacity:0;margin-top:4cqw;font-size:3.2cqw;font-weight:600;color:rgba(255,255,255,.66);text-align:center}
+.fpn-odjava.on .znak{animation:fprZig .9s .1s cubic-bezier(.3,.7,.3,1) both}
+.fpn-odjava.on .cta{animation:fprPop .6s 1.1s cubic-bezier(.2,.9,.3,1.25) both}
+.fpn-odjava.on .fpn-kontakt{animation:fprGore .5s 1.5s ease-out both}
+.fpn-wm{width:20cqw;height:auto;border-radius:2cqw}
+
 .fp-logo{display:inline-flex;align-items:center;gap:calc(var(--v)*.32);font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-weight:800;
  font-size:calc(var(--v)*.86);letter-spacing:-.02em;line-height:1;text-transform:none;white-space:nowrap;vertical-align:middle}
 .fp-logo img{width:calc(var(--v)*1.3);height:calc(var(--v)*1.3);border-radius:28%;display:block;flex:none}
@@ -4527,6 +4600,24 @@ document.addEventListener("pointerup",skiniPritisak);
 document.addEventListener("pointercancel",skiniPritisak);
 document.addEventListener("pointerleave",skiniPritisak,true);
 
+/* Polje za lozinku s okom za prikaz. Bez ovoga se lozinka upisuje "naslijepo", pa je
+   krivi upis čest — a svaki krivi upis troši pokušaj prije kratke pauze. */
+function LOZ_OKO_IK(otvoreno){
+ const o=`viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"`;
+ if(otvoreno) return `<svg ${o}><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg>`;
+ return `<svg ${o}><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>`;}
+function lozPolje(id,dodatno){
+ return `<div class="loz-polje"><input class="f" id="${id}" type="password" ${dodatno||""}>
+  <button type="button" class="loz-oko" tabindex="-1" aria-label="Prikaži lozinku" title="Prikaži lozinku" onclick="lozOko(this)">${LOZ_OKO_IK(0)}</button></div>`;}
+function lozOko(b){
+ const i=b.parentNode.querySelector("input"); if(!i)return;
+ const skriveno=i.type==="password";
+ i.type=skriveno?"text":"password";
+ b.innerHTML=LOZ_OKO_IK(skriveno?1:0);
+ b.setAttribute("aria-label",skriveno?"Sakrij lozinku":"Prikaži lozinku");
+ b.title=b.getAttribute("aria-label");
+ try{i.focus(); i.setSelectionRange(i.value.length,i.value.length);}catch(e){}}
+
 /* Ikona zvuka: zvonce u istoj liniji kao ostale ikone sučelja (tanka linija, zaobljeni krajevi).
    Uključeno = zvonce s dva vala; isključeno = zvonce prekriženo kosom crtom. */
 function ZV_IKONA(ukljucen){
@@ -4983,7 +5074,7 @@ function zoomAdminHTML(){
  if(!zA.prijavljen)return `<div class="z-adm z-adm-prijava">
   <div class="z-adm-kart">${ZOOM_LOGO(34)}<h2>Admin</h2>
    <label class="f" for="z-loz">Lozinka</label>
-   <input class="f" id="z-loz" type="password" autocomplete="current-password" onkeydown="if(event.key==='Enter')zoomPrijava()">
+   ${lozPolje("z-loz",`autocomplete="current-password" onkeydown="if(event.key===&quot;Enter&quot;)zoomPrijava()"`)}
    ${zA.greska?`<p class="err on">${esc(zA.greska)}</p>`:""}
    <button class="btn" onclick="zoomPrijava()" ${zA.radi?"disabled":""}>${zA.radi?"Prijavljujem…":"Prijavi se"}</button>
    <a class="z-mali" href="#">← Foodpoint početna</a></div></div>`;
@@ -5007,8 +5098,8 @@ function zoomAdminHTML(){
   ${zA.novi?zoomNoviHTML():""}
   <div id="z-lista">${zoomListaHTML(vidljivi)}</div>
   <details class="z-adm-kart z-adm-loz"><summary>Promijeni admin lozinku</summary>
-   <label class="f">Trenutna</label><input class="f" id="z-st" type="password">
-   <label class="f">Nova (najmanje 10 znakova)</label><input class="f" id="z-no" type="password">
+   <label class="f">Trenutna</label>${lozPolje("z-st")}
+   <label class="f">Nova (najmanje 10 znakova)</label>${lozPolje("z-no")}
    <button class="btn sm" onclick="zoomNovaAdminLozinka()">Spremi novu lozinku</button></details>
   ${zoomPoweredHTML()}</div>`;}
 function zoomCrtajListu(){const L=zA.lista, q=zA.trazi.trim().toLowerCase();
@@ -6529,7 +6620,7 @@ const VL_TABOVI=()=>[["pregled","Pregled"],["analitika","Analitika"],["jelovnik"
 function vlasnikHTML(){
  if(vlUlaz&&!VL_TABOVI().some(x=>x[0]===vlTab))vlTab="pregled";
  if(!vlUlaz)return `<div class="login"><h2>Vlasnik</h2><p>Pristup svemu</p>
-  <div class="box"><label class="f" for="vl">Lozinka</label><input class="f" id="vl" type="password">
+  <div class="box"><label class="f" for="vl">Lozinka</label>${lozPolje("vl")}
   <p class="err" id="vle">Pogrešna lozinka.</p>
   <button class="btn" onclick="ulazVl()">Prijavi se</button></div></div>`;
  let h=`${osobljeUloga==="zoom"?`<div class="z-adm-traka">${ZOOM_LOGO(16)} admin · uređuješ <b>${esc(lokal.naziv)}</b> <a href="/#zoom">← svi restorani</a></div>`:""}${historijaIzmjena.length?`<button class="undo" onclick="ponistiZadnju()">↩ Poništi zadnju izmjenu (${historijaIzmjena.length})</button>`:""}<div class="podtab">
@@ -7552,7 +7643,7 @@ async function resetPovijest(){
 /* ==================== KUHINJA ==================== */
 function kuhinjaHTML(){
  if(!kuhUlaz)return `<div class="login"><h2>Kuhinja</h2><p>Ova stranica nije dostupna gostima</p>
-  <div class="box"><label class="f" for="kl">Lozinka</label><input class="f" id="kl" type="password">
+  <div class="box"><label class="f" for="kl">Lozinka</label>${lozPolje("kl")}
   <p class="err" id="kle">Pogrešna lozinka.</p>
   <button class="btn" onclick="ulazK()">Prijavi se</button></div></div>`;
  if(telNar)return telefonHTML();
@@ -7801,7 +7892,7 @@ function vozacHTML(){
    <select class="f" id="vt">${VOZACI.map((v,i)=>`<option value="${i}">${v.ime}</option>`).join("")}</select>
    ${VOZILA.length?`<label class="f" for="vv">Vozilo</label>
    <select class="f" id="vv">${VOZILA.map(v=>`<option value="${v.id}">${esc(v.naziv)} (${v.gorivo})</option>`).join("")}</select>`:""}
-   <label class="f" for="vp">PIN</label><input class="f" id="vp" type="password" inputmode="numeric">
+   <label class="f" for="vp">PIN</label>${lozPolje("vp",'inputmode="numeric"')}
    <p class="err" id="vpe">Pogrešan PIN.</p>
    <button class="btn" onclick="ulazV()">Prijavi se</button></div></div>`;
  const moja=ture.find(t=>t.vozac===vozac&&t.stanje==="preuzeta");
@@ -10200,8 +10291,10 @@ const FP_REELS=[
 
 /* ---------- zajednički dijelovi ---------- */
 let fpO={skup:"a",puni:null};
+const FP_O_GRUPE=[["novo","Novi marketing"],["staro","Stari marketing"]];
 const FP_O_SKUPOVI=[["a","Objave 1–30"],["b","Objave 31–60"],["r","Reels 1–30"],["r2","Reels 31–80"],["c","Reklame 61–90"],["r3","Video reels 81–110"],["r4","Video reklame 111–140"],["rk","Riky's 1–20"]];
-const fpOOd=()=>({b:30,r2:30,c:60,r3:80,r4:110})[fpO.skup]||0;
+function fpOOd(){ if(typeof FPN_MAPA!=="undefined"&&FPN_MAPA[fpO.skup])return 0;
+ return ({b:30,r2:30,c:60,r3:80,r4:110})[fpO.skup]||0;}
 const fpOSidr=()=>`<span class="fpo-sidr">${fpIk("sidro",14)}Spremni za sidrene cijene</span>`;
 const fpOLogo=(bijeli,kl)=>`<img class="fpo-logo${kl?" "+kl:""}" src="${FP_LOGO_V(bijeli)}" alt="Foodpoint" crossorigin="anonymous">`;
 const fpODno=(o,bijeli)=>`<div class="fpo-dno"><span class="fpo-cta">${esc(o.cta||"Foodpoint partner")} <b>→</b></span>${fpOSidr()}</div>`;
@@ -10275,18 +10368,26 @@ function fpRInit(){
  document.querySelectorAll(".fpr-reel:not([data-ok])").forEach(el=>{el.dataset.ok=1; if(fpRObs)fpRObs.observe(el); else {el._vid=true; fpRKorak(el);}});}
 
 /* ---------- prikaz u Upiti → Objave ---------- */
-const fpOJeR=()=>fpO.skup==="r"||fpO.skup==="r2"||fpO.skup==="r3"||fpO.skup==="r4"||fpO.skup==="rk";
+/* Je li ovo reel? Ako dobije stavku, gleda ima li ona scene (novi skupovi miješaju objave i reelove).
+   Bez stavke vraća zadano za cijeli skup (stari skupovi su ili sve objave ili sve reelovi). */
+function fpOJeR(o){
+ if(o&&typeof o==="object")return Array.isArray(o.s);
+ if(typeof FPN_MAPA!=="undefined"&&FPN_MAPA[fpO.skup])return false;
+ return fpO.skup==="r"||fpO.skup==="r2"||fpO.skup==="r3"||fpO.skup==="r4"||fpO.skup==="rk";}
 function fpOLista(){return fpO.skup==="b"?FP_OBJAVE2:fpO.skup==="r"?FP_REELS:fpO.skup==="r2"?FP_REELS2:fpO.skup==="r3"?FP_REELS3:fpO.skup==="r4"?FP_VREKLAME:fpO.skup==="rk"?FP_RIKYS:fpO.skup==="c"?FP_REKLAME:FP_OBJAVE;}
 function fpOStavka(o){return fpOJeR()?fpReelHTML(o):fpO.skup==="b"?fpOPostB(o):fpO.skup==="c"?fpOPostC(o):fpOPostA(o);}
 const FP_O_NAZ={crvena:"Crvena",svijetla:"Svijetla",tamna:"Tamna",foto:"Fotografija",usporedba:"Usporedba",ekran:"Ekran",lista:"Popis",
  lf:"Logo + fotografija",split:"Podijeljena",okvir:"Okvir",kolaz:"Kolaž",potpis:"Znak",traka:"Traka"};
 function fpObjaveHTML(){
+ const nov=typeof FPN_MAPA!=="undefined"&&FPN_MAPA[fpO.skup];
+ if(nov)return fpNObjaveHTML();
  const r=fpOJeR(), L=fpOLista(), od=fpOOd();
  setTimeout(fpRInit,0);
  return `<div class="fpo-uvod"><div><h2>${r?"Reels za Instagram i TikTok":"Objave za Instagram i Facebook"}</h2>
    <p>${r?"Format 1080×1920 (9:16). Tekst je unutar sigurne zone, pa ga gumbi i opis na Reelsu ne prekrivaju. Gumb kamere sam snimi video (webm) — na računalu u Chromeu ili Edgeu, bez dodatnih aplikacija. Gumb preuzimanja HTML-a sprema reel kao samostalnu datoteku za ručnu obradu. Može i snimka ekrana preko cijelog ekrana ako ništa od toga ne odgovara.":
     "Format 1080×1350 (4:5). Rubovi su prazni, pa se ništa važno ne odreže u prikazu na mobitelu i na profilu. Gumb za preuzimanje sprema PNG 1080×1350; može i snimka ekrana preko cijelog ekrana."}
    Tekst ispod svake ${r?"snimke":"objave"} kopirate gumbom.</p></div>
+  <div class="fpo-grupe">${FP_O_GRUPE.map(([g,n])=>`<button class="${g==="staro"?"on":""}" onclick="fpOGrupa('${g}')">${n}</button>`).join("")}</div>
   <div class="fpo-skup">${FP_O_SKUPOVI.map(([k,n])=>`<button class="${fpO.skup===k?"on":""}" onclick="fpO.skup='${k}';zoomCrtaj()">${n}</button>`).join("")}</div></div>
  <div class="fpo-mreza${r?" r":""}">${L.map((o,i)=>`<div class="fpo-kart">
   <div class="fpo-okvir${r?" fpr-okvir":""}">${fpOStavka(o)}</div>
@@ -10299,7 +10400,7 @@ function fpObjaveHTML(){
   <details class="fpo-cap"><summary>Tekst objave</summary><p>${esc(o.cap||"")}</p><p class="oz">${o.oz||FP_OZNAKE}</p></details></div>`).join("")}</div>`;}
 
 function fpOPuni(i){
- const r=fpOJeR(), o=fpOLista()[i]; fpOZatvori();
+ const o=fpOLista()[i], r=fpOJeR(o); fpOZatvori();
  const d=document.createElement("div"); d.id="fpo-puni"; d.className=r?"r":"";
  d.innerHTML=`<div class="fpo-puni-in${r?" fpr-okvir":" fpo-okvir"}">${fpOStavka(o)}${r?`<div class="fpr-kreni">${fpIk("igraj",34)}<span>Pokrenite snimanje ekrana,<br>pa dodirnite za početak</span></div>`:""}</div>
   <div class="fpo-puni-gumbi"><button onclick="fpOPuni(${(i+fpOLista().length-1)%fpOLista().length})">‹</button><button onclick="fpOZatvori()">${fpIk("zatvori",18)}</button><button onclick="fpOPuni(${(i+1)%fpOLista().length})">›</button></div>`;
@@ -11392,6 +11493,353 @@ const FP_RIKYS=(()=>{
   cap:"Program vjernosti bez kartica — dovoljan je broj mobitela, narudžbe se zbrajaju same. Naruči na rikyspizza.com.hr."}),
 
  ];})();
+
+/* ===== FOODPOINT 13: NOVI MARKETING — po branši, u stilu kojim pišu Wolt/Glovo/Uber Eats =====
+
+   ZAŠTO JE STARI STIL ZVUČAO KAO AI (i što ovdje NE radimo):
+   - "Nije X. To je Y." i "Vi ste kuhar. Ne telefonist." — lažna dubina, najjasniji znak AI-a
+   - tri nabrajanja u nizu, uvijek po tri ("Gorgonzola. Grana padano. Gouda.")
+   - svaka objava iste duljine i istog oblika: scena → dokaz → CTA, 20 puta zaredom
+   - strelica "→" na svakom CTA-u, crtice (—) posvuda
+   - potpune, uredne rečenice s točkom; nitko tako ne piše na Instagramu
+   - apstrakcije umjesto konkretnog ("kako treba", "bez prečaca")
+
+   KAKO PIŠU PRAVE PLATFORME (istraženo):
+   - Glovo: "playful, meme-ready, highly reactive"; Wolt: suho, kratko, bez hypea
+   - Reel traje 7–15 s, prve 3 sekunde odlučuju hoće li itko gledati
+   - hook je pitanje, brojka ili tvrdnja — nikad uvod
+   - na ekranu malo riječi; ostatak nosi slika
+   - caption je 1–2 retka, pa CTA u zasebnom retku, pa oznake
+   - konkretno: ime jela, cijena, ulica, dan u tjednu — ne pridjevi
+
+   PRAVILA OVOG SKUPA:
+   1. najviše 6 riječi po sceni reela
+   2. nijedan oblik se ne ponavlja dvaput zaredom unutar branše
+   3. bez "→", bez crtica, bez "Nije X nego Y"
+   4. B2B (Foodpoint, Studio 99): bez igre riječima. B2C (Riky's, Wizard, dijelom Ink): smije
+   5. svaka objava ima jedan CTA, a neke zabavne nemaju nijedan
+   6. mix po branši: 5 edukacija/zabava, 3 zajednica, 2 promocija                              */
+
+/* ---------- fotografije (Unsplash, provjereni ID-evi) ---------- */
+const FP_F2={
+ tet_rad:"1568515045052-f9a854d70bfd", tet_igla:"1564426622559-5af68da63b96", tet_proces:"1616879564267-a336232e3a95",
+ tet_ruka:"1513078094721-e7b6e0394a6a", tet_stroj:"1542744383-8c330d91f4b1",
+ bar_lounge:"1615887584283-91f1be7fdc34", bar_polumrak:"1640902106532-47dd3a2e833e", bar_dvoje:"1578911489158-334e5cd2a051",
+ bar_sank:"1656329379773-5ff518e51ed4",
+ diz_boje:"1561070791-2526d30994b5", diz_ekrani:"1519408469771-2586093c3f14", diz_cmyk:"1715154470884-1c2be0b0129f"};
+Object.assign(FP_FOTO,FP_F2);
+
+/* ---------- brendovi ---------- */
+const FP_BRENDOVI={
+ fp:{naziv:"Foodpoint", boja:"#C9191A", boja2:"#FF8A80", tema:"tamna", logo:"/foodpoint-logo-bijeli.png",
+  kontakt:"foodpoint.hr", b2b:true, oznake:"#Foodpoint #ugostitelji #restorani #onlinenarudžbe #Hrvatska"},
+ rikys:{naziv:"Riky's Pizza", boja:"#FF4106", boja2:"#F6BE2C", tema:"tamna",
+  logo:"https://dtukpkufpqmrktpaxiho.supabase.co/storage/v1/object/public/slike/rikys/logo.png",
+  kontakt:"rikyspizza.com.hr · 01 2090 102", oznake:"#RikysPizza #Zagreb #pizza #dostava #petak"},
+ ink:{naziv:"Ink Republic", boja:"#E8E3DA", boja2:"#C9A227", tema:"tamna", logo:null,
+  kontakt:"Vlaška 79, Zagreb · 091 7258 144", oznake:"#InkRepublic #tattoozagreb #finelinetattoo #blackwork #zagreb"},
+ s99:{naziv:"Studio 99", boja:"#1C6DD0", boja2:"#8ED1FF", tema:"svijetla", logo:null,
+  kontakt:"studio99.com.hr · 099 754 3116", oznake:"#Studio99 #dizajn #webdizajn #brending #Zagreb"},
+ wiz:{naziv:"The Wizard", boja:"#7B4BC9", boja2:"#E8C547", tema:"tamna", logo:null,
+  kontakt:"Sesvete", oznake:"#TheWizard #Sesvete #pubkviz #boardgames #caffebar"}};
+const fpBr=k=>FP_BRENDOVI[k]||FP_BRENDOVI.fp;
+
+/* ---------- potpis: logo ako postoji, inače ispisano ime ---------- */
+function fpNZnak(b,kl){
+ return b.logo?`<img class="${kl}" src="${b.logo}" alt="${esc(b.naziv)}">`
+              :`<span class="${kl} rijec">${esc(b.naziv)}</span>`;}
+
+/* ---------- REEL: odjava i vodeni žig u bojama branše ---------- */
+{const st=fpReelHTML; fpReelHTML=function(r){
+ if(!r.brend||!FP_BRENDOVI[r.brend])return st(r);
+ const b=fpBr(r.brend);
+ return `<div class="fpr-reel fpn-reel" style="--mb:${b.boja};--mb2:${b.boja2}">${r.s.map(fpRScena).join("")}
+  <div class="fpr-sc fpr-odjava fpn-odjava" data-t="3000"><div class="fpr-tx">${fpNZnak(b,"znak")}
+   ${r.cta?`<div class="cta">${esc(r.cta)}</div>`:""}
+   <div class="fpn-kontakt">${esc(b.kontakt)}</div></div></div>
+  ${b.logo?`<img class="fpr-wm fpn-wm" src="${b.logo}" alt="">`:""}<div class="fpr-prog"><i></i></div></div>`;};}
+
+/* ---------- OBJAVE (4:5) u novom stilu ----------
+   tipovi: broj (velika brojka), izjava (samo tekst), cijena (foto + naljepnica),
+           usporedba (dva stupca), popis (kratka lista), kartica (ime + uloga), najava (događaj) */
+function fpNPost(o){
+ const b=fpBr(o.brend), st=`--mb:${b.boja};--mb2:${b.boja2}`;
+ const znak=`<div class="fpn-potpis">${fpNZnak(b,"zn")}</div>`;
+ const F=k=>`background-image:url('${fpF(k,1080,1350)}')`;
+ const T=o.t;
+ if(T==="broj") return `<div class="fpn-post t-broj" style="${st}">
+  ${o.f?`<div class="fpn-bg" style="${F(o.f)}"></div><div class="fpn-sjena"></div>`:""}
+  <div class="fpn-sred"><div class="fpn-velbroj">${esc(o.a)}</div>${o.p?`<p>${esc(o.p)}</p>`:""}</div>${znak}</div>`;
+ if(T==="izjava") return `<div class="fpn-post t-izjava" style="${st}">
+  ${o.f?`<div class="fpn-bg" style="${F(o.f)}"></div><div class="fpn-sjena"></div>`:""}
+  <div class="fpn-sred"><h3>${o.h}</h3>${o.p?`<p>${esc(o.p)}</p>`:""}</div>${znak}</div>`;
+ if(T==="cijena") return `<div class="fpn-post t-cijena" style="${st}">
+  <div class="fpn-bg" style="${F(o.f)}"></div><div class="fpn-sjena jaka"></div>
+  <div class="fpn-sred"><div class="fpn-jelo">${esc(o.j)}</div>${o.p?`<p>${esc(o.p)}</p>`:""}</div>
+  <div class="fpn-nalj">${esc(o.c)}</div>${znak}</div>`;
+ if(T==="usporedba") return `<div class="fpn-post t-usp" style="${st}">
+  <div class="fpn-sred"><div class="fpn-usp">
+   <div class="l"><small>${esc(o.al)}</small><b>${esc(o.bl)}</b></div>
+   <div class="d"><small>${esc(o.ad)}</small><b>${esc(o.bd)}</b></div></div>${o.p?`<p>${esc(o.p)}</p>`:""}</div>${znak}</div>`;
+ if(T==="popis") return `<div class="fpn-post t-popis" style="${st}">
+  ${o.f?`<div class="fpn-bg" style="${F(o.f)}"></div><div class="fpn-sjena"></div>`:""}
+  <div class="fpn-sred"><h3>${o.h}</h3><ul>${o.l.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>${znak}</div>`;
+ if(T==="kartica") return `<div class="fpn-post t-kart" style="${st}">
+  <div class="fpn-bg" style="${F(o.f)}"></div><div class="fpn-sjena jaka"></div>
+  <div class="fpn-sred"><div class="fpn-ime">${esc(o.j)}</div><div class="fpn-uloga">${esc(o.c)}</div>
+   ${o.p?`<p>${esc(o.p)}</p>`:""}</div>${znak}</div>`;
+ /* najava */
+ return `<div class="fpn-post t-najava" style="${st}">
+  ${o.f?`<div class="fpn-bg" style="${F(o.f)}"></div><div class="fpn-sjena"></div>`:""}
+  <div class="fpn-sred"><div class="fpn-kad">${esc(o.c)}</div><h3>${o.h}</h3>${o.p?`<p>${esc(o.p)}</p>`:""}</div>${znak}</div>`;}
+
+/* ---------- sadržaj po branši ---------- */
+const [FPN_FP,FPN_RIKYS,FPN_INK,FPN_S99,FPN_WIZ]=(()=>{
+const V=(id,t,f,k)=>({v:"vid",id,t,f,k}), N=h=>({v:"naslov",h}), B=(a,b,p)=>({v:"broj",a,b,p}),
+      L=l=>({v:"lista",l}), E=(sl,n,mob)=>({v:"ekran",sl,n,mob}), FO=(f,h)=>({v:"foto",f,h}),
+      J=(j,c,o,f)=>({v:"jelo",j,c,o,f});
+const mk=(brend,niz)=>niz.map(x=>({...x,brend,oz:FP_BRENDOVI[brend].oznake}));
+
+/* === FOODPOINT — B2B. Suho, konkretno, bez igre riječima. === */
+const L_FP=mk("fp",[
+ {t:"usporedba",al:"Wolt i Glovo",bl:"25–30 %",ad:"Foodpoint",bd:"10 %",
+  p:"Provizija po online narudžbi. Prva tri mjeseca 5 %.",
+  cap:"Ista narudžba, tri puta manja provizija.\n49 € mjesečno i 10 % na online narudžbe.\nIzračun za svoj lokal tražite u poruci."},
+ {t:"izjava",f:"kuhinja",h:"Petak, 19:42.<br>Telefon zvoni <em>četrnaesti put.</em>",
+  p:"Svaki poziv je jedna narudžba koju netko zapisuje rukom.",
+  cap:"Petak navečer u kuhinji zvuči ovako.\nNarudžbe mogu stizati napisane, s adresom i napomenom.\nPitajte nas kako."},
+ {t:"broj",a:"0 €",p:"Postavljanje, unos jelovnika i obuka.",
+  cap:"Unos jelovnika i obuka ne naplaćujemo.\nPlaćate tek kad sustav radi.\n49 € mjesečno, bez ugovorne obveze."},
+ {t:"izjava",f:"gost",h:"Gost pita <em>„gdje mi je hrana?”</em>",
+  p:"Na svojoj stranici vidi vrijeme pripreme čim ga kuhar upiše.",
+  cap:"Pitanje koje svaki lokal čuje po deset puta navečer.\nKod nas gost sam vidi kad mu hrana stiže.\nPokažemo vam na vašem jelovniku."},
+ {t:"popis",h:"Za 49 € mjesečno",l:["Vaša stranica s narudžbom","Ekran za kuhinju","Dostava i preuzimanje","Brojke na kraju dana"],
+  cap:"Što ulazi u mjesečnu cijenu.\nProvizija je 10 % samo na online narudžbe, prva tri mjeseca 5 %.\nTražite ponudu u poruci."},
+
+ {n:"14 poziva",brend:"fp",cta:"Pitajte nas kako",s:[
+  V(15875,"14 poziva u sat vremena.","kuhinja_ekipa"),
+  V(39535,"Nitko ih ne stigne zapisati.","kuhar_lonac"),
+  E("fp-ekran-kuhinja.png","Nova narudžba · 3 pizze")],
+  cap:"Toliko poziva primi kuhinja u jednom petku.\nNarudžbe mogu stizati napisane, bez dizanja slušalice.\nJavite se pa pokažemo."},
+ {n:"25 ili 10",brend:"fp",cta:"Izračunajte svoju razliku",s:[
+  B("25–30 %","10 %","provizija po online narudžbi"),
+  V(44001,"Na 10.000 € prometa.","pizza_stol"),
+  B("2.500 €","1.000 €","razlika ostaje u lokalu")],
+  cap:"Provizija na Woltu i Glovu je 25 do 30 posto. Kod nas 10.\nNa 10.000 € online prometa to je oko 1.500 € razlike mjesečno.\nPošaljite svoj promet, izračunamo točno."},
+ {n:"Tko upisuje jelovnik",brend:"fp",cta:"Postavljanje je besplatno",s:[
+  V(42469,"Tko će upisati 60 jela?","pizza_tijesto"),
+  N("Mi."),
+  V(13261,"Vi samo pošaljete jelovnik.","chef_tanjur")],
+  cap:"Najčešće pitanje prije postavljanja.\nJelovnik, slike i cijene upisujemo mi, bez naplate.\nPošaljite jelovnik u poruci."},
+ {n:"Bez ugovora",brend:"fp",cta:"Bez ugovorne obveze",s:[
+  V(21864,"Nema ugovora na dvije godine.","kava_stol"),
+  N("Ostanete dok vam se isplati."),
+  V(223,"Toliko.","kava_toci")],
+  cap:"Ne vežemo nikoga ugovorom.\nPlaća se mjesečno i prekida kad god želite.\nPitajte što god vas zanima."},
+ {n:"Sidrene cijene",brend:"fp",cta:"Pošaljite jelovnik",s:[
+  V(2433,"Od 17. studenoga.","pasta1","Rok"),
+  N("Uz svaku cijenu ide i sidrena."),
+  V(13261,"Mi ih upišemo.","chef_tanjur")],
+  cap:"Od 17. studenoga jelovnik mora pokazati i sidrenu cijenu.\nUpisujemo ih umjesto vas, i na webu i za ispis.\nPošaljite jelovnik."},
+]);
+
+/* === RIKY'S — B2C. Toplo, kratko, smije biti duhovito. === */
+const L_RIKYS=mk("rikys",[
+ {t:"cijena",f:"pizza_stol",j:"Capricciosa",c:"10,60 €",p:"Šunka, šampinjoni, mozzarella.",
+  cap:"Petak. Znate što slijedi. 🍕\nCapricciosa 10,60 €, kod nas na stranici.\nrikyspizza.com.hr"},
+ {t:"broj",f:"pizza_ruke",a:"4 + 1",p:"Peta pizza ide na kuću.",
+  cap:"Četiri pizze u košarici, peta se doda sama.\nVrijedi na rikyspizza.com.hr."},
+ {t:"cijena",f:"burger4",j:"XXL sendvič",c:"15,00 €",p:"32 × 32 cm. Veličina pizze.",
+  cap:"Da, velik je kao pizza. 32 × 32 cm.\nPršut, kulen ili piletina, 15,00 €.\nrikyspizza.com.hr"},
+ {t:"izjava",f:"pizza_stol2",h:"Ponedjeljkom <em>ne radimo.</em>",
+  p:"Utorak do nedjelje, 10 do 23. Zagorska 18.",
+  cap:"Ponedjeljak je naš. Sve ostalo je vaše.\nUto–ned 10:00–23:00, Zagorska 18."},
+ {t:"izjava",f:"prijatelji_pizza",h:"Uz narudžbu ide <em>hladna Cola.</em>",
+  p:"Bez koda, bez kupona.",
+  cap:"Naručite preko naše stranice i Coca-Cola je naša. 🥤\nrikyspizza.com.hr"},
+
+ {n:"Petak",brend:"rikys",cta:"rikyspizza.com.hr",s:[
+  V(42481,"Petak. Peć je puna.","pec"),
+  J("Capricciosa","10,60 €","Šunka, šampinjoni, mozzarella","pizza_stol")],
+  cap:"Petak navečer, peć radi od 17 h. 🍕\nCapricciosa 10,60 €.\nrikyspizza.com.hr"},
+ {n:"Peta je naša",brend:"rikys",cta:"4 + 1 na stranici",s:[
+  V(44001,"Četiri pizze u košarici.","pizza_stol"),
+  B("+1","GRATIS","peta ide na kuću"),
+  V(20913,"Toliko.","pizza_ruke")],
+  cap:"Naručite četiri, peta je naša.\nVrijedi na rikyspizza.com.hr."},
+ {n:"Tijesto",brend:"rikys",cta:"Margherita 9,00 €",s:[
+  V(42467,"Pola osam ujutro.","pizza_tijesto"),
+  V(42478,"Tijesto za danas.","pizza_tijesto")],
+  cap:"Tijesto radimo svako jutro. Svaki dan iznova.\nMargherita 9,00 €.\nrikyspizza.com.hr"},
+ {n:"Utakmica",brend:"rikys",cta:"Naručite prije prvog gola",s:[
+  V(26089,"Utakmica za 20 minuta.","prijatelji_tv"),
+  V(31155,"Stigne prije prvog gola.","vrecica")],
+  cap:"Naručite sad, stigne prije prvog gola. ⚽\nrikyspizza.com.hr"},
+ {n:"Vatrena",brend:"rikys",cta:"Vatrena 13,00 €",s:[
+  V(4118,"Koliko ljuto izdržite?","kuhar_noc"),
+  J("Vatrena","13,00 €","Vratina, kulen, špek, chili, feferoni","pec")],
+  cap:"Vratina, kulen, špek, chili i feferoni. 🌶️\nVatrena 13,00 €.\nrikyspizza.com.hr"},
+]);
+
+/* === INK REPUBLIC — pravilo: nikad tuđi rad kao naš. Sve dolje je proces, ljudi i edukacija. === */
+const L_INK=mk("ink",[
+ {t:"kartica",f:"tet_stroj",j:"Leona",c:"Realizam · Fine line · Blackwork",
+  p:"Radi po vlastitoj skici, nikad po šabloni.",
+  cap:"Leona radi realizam, fine line i blackwork.\nSvaka skica nastaje za tog klijenta.\nDM za konzultaciju."},
+ {t:"kartica",f:"tet_proces",j:"Martin",c:"Anime · Fine line",
+  p:"Čiste linije i mirna paleta.",
+  cap:"Martin radi anime i fine line.\nDonesite referencu, ostalo dogovorimo na konzultaciji.\nDM za termin."},
+ {t:"popis",f:"tet_ruka",h:"Prvih 14 dana",l:["Krema 3 do 4 puta dnevno","Bez sunca i solarija","Bez bazena i mora","Bez teretane"],
+  cap:"Njega nakon tetoviranja, ukratko.\nKremu koju vam preporuči artist mažite u tankom sloju, 3–4 puta dnevno.\nPitajte nas ako niste sigurni."},
+ {t:"popis",f:"tet_igla",h:"Pošaljite u DM",l:["Veličinu u centimetrima","Mjesto na tijelu","Referentnu sliku","Kojeg artista želite"],
+  cap:"Četiri stvari i javljamo se s terminom.\nKonzultacija je besplatna.\nDM ili 091 7258 144."},
+ {t:"izjava",f:"tet_rad",h:"Konzultacija je <em>besplatna.</em>",
+  p:"Vlaška 79. Radimo po dogovoru, sedam dana u tjednu.",
+  cap:"Dođite, pokažite ideju, popijemo kavu i vidimo je li izvediva.\nNiste ništa dužni.\nVlaška 79, Zagreb."},
+
+ {n:"Prva linija",brend:"ink",cta:"DM za konzultaciju",s:[
+  V(42467,"Prva linija.","tet_stroj"),
+  FO("tet_rad","Ostalo ide polako.")],
+  cap:"Prva linija je uvijek najduža.\nLeona radi realizam, fine line i blackwork.\nDM za konzultaciju."},
+ {n:"Koliko boli",brend:"ink",cta:"Pitajte što god želite",s:[
+  N("Koliko boli?"),
+  FO("tet_ruka","Ovisi gdje."),
+  FO("tet_proces","Rebra i stopalo najviše.")],
+  cap:"Najčešće pitanje prije prvog termina.\nRebra, stopalo i lakat su najosjetljiviji; podlaktica i rame najlakši.\nPitajte slobodno, nije glupo pitanje."},
+ {n:"14 dana",brend:"ink",cta:"Njega je pola posla",s:[
+  N("Tetovaža je gotova za 3 sata."),
+  L(["Krema 3–4 puta dnevno","Bez sunca","Bez mora i bazena"]),
+  FO("tet_igla","Ostalih 14 dana je na vama.")],
+  cap:"Kako izgleda zacjeljivanje prvih dva tjedna.\nTanki sloj kreme 3–4 puta dnevno, bez sunca, mora i bazena.\nPitajte artista za svoju kremu."},
+ {n:"Donesite referencu",brend:"ink",cta:"DM za termin",s:[
+  N("Ne morate znati što točno želite."),
+  FO("tet_stroj","Donesite ideju."),
+  FO("tet_rad","Skicu crtamo mi.")],
+  cap:"Dovoljna je ideja i jedna slika koja vam se sviđa.\nSkicu crtamo za vas, prije termina.\nDM ili 091 7258 144."},
+ {n:"Vlaška 79",brend:"ink",cta:"Vlaška 79, Zagreb",s:[
+  FO("tet_proces","Vlaška 79."),
+  N("Po dogovoru, sedam dana u tjednu.")],
+  cap:"Tu smo, Vlaška 79.\nRadimo po dogovoru, svaki dan.\n091 7258 144"},
+]);
+
+/* === STUDIO 99 — B2B. Rezultat, pa kako, pa CTA. Bez igre riječima. === */
+const L_S99=mk("s99",[
+ {t:"izjava",f:"diz_ekrani",h:"Jedan brend, <em>svugdje isti.</em>",
+  p:"Logo, jelovnik, auto i web rade po istim pravilima.",
+  cap:"Najčešći problem: logo na Facebooku, na jelovniku i na autu izgledaju kao tri firme.\nSložimo jedan set pravila i držimo ga svugdje.\nJavite se za ponudu."},
+ {t:"popis",h:"Prije početka znate",l:["Koliko košta","Do kad je gotovo","Koliko revizija ulazi"],
+  cap:"Cijenu i rok dogovorimo prije nego počnemo crtati.\nRevizije su uključene, bez naknadnih stavki.\nPošaljite što trebate."},
+ {t:"izjava",f:"diz_boje",h:"Bez <em>šablona.</em>",
+  p:"Svaki brend dobiva svoje, ne kupljeni predložak.",
+  cap:"Ne kupujemo gotove predloške i ne mijenjamo im boju.\nSvaki posao kreće od prazne stranice.\nstudio99.com.hr"},
+ {t:"popis",f:"diz_cmyk",h:"Za ugostitelje",l:["Logo i vizualni identitet","Jelovnik za tisak","Naljepnice i kutije","Grafika na autu","Web s narudžbom"],
+  cap:"Paket za restorane i kafiće, sve iz jedne ruke.\nTisak pripremamo sami, pa nema prebacivanja između firmi.\n099 754 3116"},
+ {t:"izjava",h:"Odgovaramo <em>u 24 sata.</em>",
+  p:"Na upit, ne na ponudu.",
+  cap:"Pošaljete upit danas, javimo se sutra.\nI kad je odgovor da nije za nas.\nstudio99.com.hr"},
+
+ {n:"Tri firme",brend:"s99",cta:"Javite se za ponudu",s:[
+  N("Logo na autu."),
+  N("Logo na jelovniku."),
+  FO("diz_boje","Izgledaju kao tri firme.")],
+  cap:"Najčešći problem s kojim nam dolaze.\nSložimo jedan set pravila i držimo ga na svemu.\nstudio99.com.hr"},
+ {n:"Cijena prije",brend:"s99",cta:"Pošaljite upit",s:[
+  N("Koliko će koštati?"),
+  L(["Cijena prije početka","Rok prije početka","Revizije uključene"])],
+  cap:"Cijenu i rok kažemo prije nego išta nacrtamo.\nBez naknadnih stavki na računu.\n099 754 3116"},
+ {n:"Od skice do tiska",brend:"s99",cta:"Sve iz jedne ruke",s:[
+  FO("diz_boje","Skica."),
+  FO("diz_ekrani","Ekran."),
+  FO("diz_cmyk","Tisak.")],
+  cap:"Dizajn i priprema za tisak rade se kod nas.\nNema prebacivanja posla između dvije firme.\nstudio99.com.hr"},
+ {n:"Webshop",brend:"s99",cta:"studio99.com.hr",s:[
+  N("Web koji samo stoji ne radi ništa."),
+  L(["Narudžba hrane","Rezervacije","Webshop"])],
+  cap:"Prezentacijska stranica je početak, ne cilj.\nRadimo narudžbe, rezervacije i webshopove.\nJavite se da vidimo što vam treba."},
+ {n:"24 sata",brend:"s99",cta:"Odgovor u 24 sata",s:[
+  N("Pošaljete upit danas."),
+  FO("diz_ekrani","Javimo se sutra.")],
+  cap:"Na svaki upit odgovaramo u 24 sata.\nI kad je odgovor da to nije posao za nas.\n099 754 3116"},
+]);
+
+/* === THE WIZARD — vizual nosi objavu, tekst je kratak. Poziv na društvo, ne na kupnju. === */
+const L_WIZ=mk("wiz",[
+ {t:"najava",f:"bar_polumrak",c:"Srijeda, 20 h",h:"Pub kviz",
+  p:"Ekipa do 6 ljudi. Stol se rezervira.",
+  cap:"Kviz je srijedom u 20.\nEkipa do šest ljudi, prijave preko poruke.\nDovedite ekipu."},
+ {t:"izjava",f:"bar_lounge",h:"Ima i <em>društvenih igara.</em>",
+  p:"Polica je tu, uzmite što želite.",
+  cap:"Polica s igrama stoji kraj šanka.\nUzmite što želite, nema posudbe ni naplate.\nDođite u ekipi."},
+ {t:"najava",f:"bar_dvoje",c:"Svaki dan",h:"Sesvete",
+  p:"Kava ujutro, ekipa navečer.",
+  cap:"Tu smo svaki dan, u Sesvetama.\nUjutro kava, navečer ekipa."},
+ {t:"izjava",f:"bar_sank",h:"Stol za <em>šestero.</em>",
+  p:"Rezervira se porukom.",
+  cap:"Veliki stolovi se brzo popune, posebno srijedom.\nJavite se porukom i čuvamo vam mjesto."},
+ {t:"popis",f:"bar_polumrak",h:"Kod nas",l:["Pub kviz","Društvene igre","Bez glazbe do daske"],
+  cap:"Tri razloga zašto se kod nas može razgovarati.\nDovedite ekipu."},
+
+ {n:"Kviz",brend:"wiz",cta:"Rezervirajte stol",s:[
+  FO("bar_polumrak","Srijeda, 20 h."),
+  N("Pub kviz."),
+  FO("bar_dvoje","Ekipa do šestero.")],
+  cap:"Kviz je srijedom u 20.\nEkipa do šest ljudi, stol se rezervira porukom.\nDovedite svoje."},
+ {n:"Polica",brend:"wiz",cta:"Dođite u ekipi",s:[
+  FO("bar_lounge","Polica kraj šanka."),
+  N("Uzmite koju želite.")],
+  cap:"Društvene igre stoje kraj šanka.\nUzmite što vam se sviđa, bez pitanja i bez naplate."},
+ {n:"Navečer",brend:"wiz",cta:"Sesvete",s:[
+  FO("bar_sank","Prije sedam."),
+  FO("bar_dvoje","Poslije devet.")],
+  cap:"Isti lokal, dva različita bara.\nSesvete."},
+ {n:"Bez vikanja",brend:"wiz",cta:"Dovedite ekipu",s:[
+  N("Kod nas se čujete."),
+  FO("bar_lounge","Glazba ide tiše.")],
+  cap:"Nema nadvikivanja s muzikom.\nZato nam ekipe ostaju do kraja."},
+ {n:"Stol",brend:"wiz",cta:"Javite se porukom",s:[
+  N("Veliki stolovi se brzo popune."),
+  FO("bar_polumrak","Posebno srijedom.")],
+  cap:"Ako vas je šestero i više, javite se ranije.\nČuvamo vam stol."},
+]);
+
+return [L_FP,L_RIKYS,L_INK,L_S99,L_WIZ];})();
+
+/* ---------- registracija skupova ---------- */
+const FPN_SKUPOVI=[["n-fp","Foodpoint",FPN_FP],["n-rikys","Riky's",FPN_RIKYS],
+ ["n-ink","Ink Republic",FPN_INK],["n-s99","Studio 99",FPN_S99],["n-wiz","The Wizard",FPN_WIZ]];
+const FPN_MAPA=Object.fromEntries(FPN_SKUPOVI.map(([k,,l])=>[k,l]));
+const fpNNovi=()=>!!FPN_MAPA[fpO.skup];
+
+/* fpOJeR i fpOOd su prepravljeni u fp7.js (bili su const pa se nisu mogli prepisati odavde) */
+{const st=fpOLista; fpOLista=function(){return FPN_MAPA[fpO.skup]||st();};}
+{const st=fpOStavka; fpOStavka=function(o){
+ if(!fpNNovi())return st(o);
+ return Array.isArray(o.s)?fpReelHTML(o):fpNPost(o);};}
+
+/* prebacivanje između novog i starog marketinga */
+function fpOGrupa(g){ fpO.skup = g==="novo" ? FPN_SKUPOVI[0][0] : FP_O_SKUPOVI[0][0]; zoomCrtaj(); }
+
+/* prikaz novog skupa: objave (4:5) i reelovi (9:16) u istoj mreži */
+function fpNObjaveHTML(){
+ const L=fpOLista(), b=fpBr((L[0]||{}).brend);
+ setTimeout(fpRInit,0);
+ const obj=L.filter(o=>!Array.isArray(o.s)).length, rel=L.length-obj;
+ return `<div class="fpo-uvod"><div><h2>${esc(b.naziv)} — ${obj} objava i ${rel} reelova</h2>
+   <p>Testni skup u novom stilu: kratko, konkretno i bez AI fraza. Reel traje 7 do 15 sekundi jer prve tri sekunde odlučuju
+   hoće li itko gledati dalje. Objave su 1080×1350, reelovi 1080×1920. Tekst ispod svake stavke kopirate gumbom,
+   zajedno s oznakama za ${esc(b.naziv)}.</p></div>
+  <div class="fpo-grupe">${FP_O_GRUPE.map(([g,n])=>`<button class="${g==="novo"?"on":""}" onclick="fpOGrupa('${g}')">${n}</button>`).join("")}</div>
+  <div class="fpo-skup">${FPN_SKUPOVI.map(([k,n])=>`<button class="${fpO.skup===k?"on":""}" onclick="fpO.skup='${k}';zoomCrtaj()">${n}</button>`).join("")}</div></div>
+ <div class="fpo-mreza fpn-mreza">${L.map((o,i)=>{const r=Array.isArray(o.s);
+  return `<div class="fpo-kart${r?" je-reel":""}">
+  <div class="fpo-okvir${r?" fpr-okvir":""}">${fpOStavka(o)}</div>
+  <div class="fpo-info"><span class="br">${r?"Reel":"Objava"} ${i+1}</span><span class="tip">${esc(r?o.n:FP_O_NAZ[o.t]||o.t)}${r?` · ${fpRTrajanje(o)} s`:""}</span>
+   <span class="gumbi"><button title="Preko cijelog ekrana" onclick="fpOPuni(${i})">${fpIk("puni",16)}</button>
+   <button title="Kopiraj tekst objave" onclick="fpOKopiraj(${i},this)">${fpIk("kopiraj",16)}</button>
+   ${r?`<button title="Snimi video (webm)" onclick="fpRSnimi(${i},this)">${fpIk("video",16)}</button>
+   <button title="Preuzmi kao HTML" onclick="fpRPreuzmiHTML(${i},this)">${fpIk("preuzmi",16)}</button>`
+     :`<button title="Preuzmi PNG 1080×1350" onclick="fpOPreuzmi(${i},this)">${fpIk("preuzmi",16)}</button>`}</span></div>
+  <details class="fpo-cap"><summary>Tekst objave</summary><p>${esc(o.cap||"")}</p><p class="oz">${o.oz||FP_OZNAKE}</p></details></div>`;}).join("")}</div>`;}
 
 start();
 </script>
