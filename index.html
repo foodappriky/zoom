@@ -9096,7 +9096,7 @@ const FP_ZANIMA=[["partner","Foodpoint sustav — narudžbe i vođenje lokala"],
 const fpZanimaNaziv=k=>((FP_ZANIMA.find(x=>x[0]===k)||[])[1])||(k==="usluga"?"Usluga iz vlasničkog sučelja":((FP_CIJENE.find(x=>x.k===k)||{}).naziv||""));
 const FP_FAQ=[
  ["Trebaju li moji gosti instalirati aplikaciju?","Ne. Stranica se otvara u pregledniku s linka, QR koda ili Instagrama. Tko želi, može je jednim klikom dodati na početni zaslon mobitela."],
- ["Koliko košta?","49 € mjesečno i 10 % na online narudžbe koje stignu preko Foodpointa. Prva 3 mjeseca provizija je samo 5 %. Novac od narudžbi ide izravno vama, a proviziju vam šaljemo jednom mjesečno na računu."],
+ ["Koliko košta?","39 € mjesečno fiksno za održavanje sustava, plus provizija na online narudžbe koje stignu preko Foodpointa: prvih šest mjeseci 5 %, nakon toga 10 %. Novac od narudžbi ide izravno vama, a proviziju vam šaljemo jednom mjesečno na računu."],
  ["Mogu li zadržati Wolt i Glovo?","Možete. Foodpoint je vaš vlastiti kanal za stalne goste. Svaka narudžba koja dođe preko vaše stranice umjesto preko Wolta ili Glova košta vas 10 % umjesto 25–30 %."],
  ["Koliko traje postavljanje?","Obično 2 do 5 radnih dana. Mi unesemo jelovnik, slike, logo i boje, a vi dobijete gotove linkove, QR kodove i kratku obuku za osoblje."],
  ["Treba li mi posebna oprema?","Ne. Dovoljan je bilo koji tablet ili mobitel za kuhinju i mobiteli vozača. Sve radi u pregledniku."],
@@ -9179,7 +9179,7 @@ function fpLandingHTML(){
    <input type="range" id="fp-kalk" min="1000" max="40000" step="500" value="6000" oninput="fpKalk(this.value)">
    <div class="fpl-usp" style="margin-top:18px">
     <div class="los"><small>Provizija 25–30 % mjesečno</small><b id="fp-k-prov">1.500–1.800 €</b></div>
-    <div class="dob"><small>Foodpoint: ${FP_PLAN.prov} % + ${FP_PLAN.mj} €</small><b id="fp-k-fp">649 €</b></div>
+    <div class="dob"><small>Foodpoint: ${FP_PLAN.prov} % + ${FP_PLAN.mj} €</small><b id="fp-k-fp">639 €</b></div>
     <div class="fpl-usteda"><small style="color:#FFE1DC">Ostaje vama godišnje</small><b id="fp-k-god">10.212 €+</b></div></div></div>
  </div></div></div></section>
 
@@ -9190,13 +9190,13 @@ function fpLandingHTML(){
    <p>Bez ugovorne obveze. Plaćate malu mjesečnu pretplatu i proviziju samo na online narudžbe — tri puta manju nego na Woltu i Glovu.</p></div>
   <div class="fpl-plan">
    <div class="fpl-paket istaknut"><h3>Foodpoint partner</h3><p class="za">Za restorane, pizzerije, kafiće i pekare s vlastitom dostavom ili preuzimanjem.</p>
-    <div class="fpl-cij">${FP_PLAN.mj} €<small> / mjesečno</small></div>
+    <div class="fpl-cij">${FP_PLAN.mj} €<small> / mjesečno — fiksno, održavanje sustava</small></div>
     <div class="fpl-prov"><b>+ ${FP_PLAN.prov} %</b> na online narudžbe</div>
     <ul class="fpl-lista">${FP_PLAN.st.map(x=>`<li>${x}</li>`).join("")}</ul>
     <a class="fpl-b" onclick="fpOdaberiPaket('partner')">Zatraži ponudu</a></div>
    <div class="fpl-uvod"><span class="fpl-oz"><i></i>Uvodna ponuda</span>
     <h3>Prva ${FP_PLAN.uvodMj} mjeseca samo ${FP_PLAN.uvodProv} % provizije</h3>
-    <p>Dok se vi i vaše osoblje upoznajete sa sustavom, plaćate ${FP_PLAN.mj} € mjesečno i ${FP_PLAN.uvodProv} % na online narudžbe. Postavljanje, unos jelovnika i obuka su besplatni.</p>
+    <p>Prvih ${FP_PLAN.uvodMj} mjeseci plaćate ${FP_PLAN.mj} € mjesečno i samo ${FP_PLAN.uvodProv} % na online narudžbe, nakon toga ${FP_PLAN.prov} %. Mjesečna cijena je fiksna i pokriva održavanje sustava. Postavljanje, unos jelovnika i obuka su besplatni.</p>
     <div class="fpl-usp-mini"><div><small>Wolt i Glovo</small><b>25–30 %</b></div><div><small>Foodpoint</small><b>${FP_PLAN.prov} %</b></div><div><small>Prva ${FP_PLAN.uvodMj} mjeseca</small><b>${FP_PLAN.uvodProv} %</b></div></div>
     <p class="fpl-napom" style="text-align:left;margin-top:16px">Dizajn, tisak, ambalaža, oglasi i ostale usluge naplaćuju se posebno, prema ponudi. Foodpoint partneri imaju 10 % popusta.</p></div></div>
  </div></section>
@@ -9737,7 +9737,7 @@ async function zoomSpremiPlacanje(id,o,box){
  const r=await sb.from("placanje_postavke").upsert(pod,{onConflict:"lokal_id"});
  return r.error?r.error.message:null;}
 
-/* ===== FOODPOINT 4: ikone, cjenik usluga, ponude iz cjenika, nova cijena (49 € + 10 %) ===== */
+/* ===== FOODPOINT 4: ikone, cjenik usluga, ponude iz cjenika, cijena (39 € fiksno + 5 % / 10 %) ===== */
 
 /* ---------- IKONE (tanke linije, bez emotikona) ---------- */
 const FPI={
@@ -9776,7 +9776,7 @@ const fpIk=(n,v,kl)=>`<svg class="fpi${kl?" "+kl:""}" viewBox="0 0 24 24" width=
 
 /* ---------- CIJENA FOODPOINTA ---------- */
 /* Promijeni ovdje: mjesečno (€), provizija (%) i uvodna ponuda. */
-const FP_PLAN={mj:49,prov:10,uvodMj:3,uvodProv:5,
+const FP_PLAN={mj:39,prov:10,uvodMj:6,uvodProv:5,
  st:["Vaša stranica za narudžbe u vašim bojama, s logom","Ekran za kuhinju, šank i pult","Aplikacija za vaše dostavljače","Narudžbe sa stola preko QR koda","Zakazivanje termina i program vjernosti","Analitika: novi i stalni kupci, promet, najprodavanije","Normativi, troškovi, plaće i nabava","Online plaćanje karticom, Apple Payom i Google Payom","Postavljanje, unos jelovnika i obuka osoblja"]};
 
 /* ---------- CJENIK USLUGA ----------
@@ -9785,7 +9785,7 @@ const FP_PLAN={mj:49,prov:10,uvodMj:3,uvodProv:5,
    trz = tržišne cijene koje sam pronašao (listopad 2026.), da znaš gdje si. Gostima i restoranima nabava se nikad ne prikazuje. */
 const FP_CJENIK=[
  {k:"sustav",n:"Foodpoint sustav",ik:"sustav",o:"Online narudžbe, kuhinja, dostavljači, analitika i vođenje lokala.",s:[
-  {k:"partner",n:"Foodpoint partner — cijeli sustav",j:"mj.",nab:[3,5],cij:[49,49],x:"+ 10 % na online narudžbe; prva 3 mjeseca 5 %",trz:"Wolt i Glovo: 25–30 % provizije"},
+  {k:"partner",n:"Foodpoint partner — cijeli sustav",j:"mj.",nab:[3,5],cij:[39,39],x:"fiksno za održavanje sustava + provizija 5 % prvih 6 mjeseci, zatim 10 % na online narudžbe",trz:"Wolt i Glovo: 25–30 % provizije"},
   {k:"domena",n:"Spajanje vlastite domene (.hr)",j:"jednokratno",nab:[0,0],cij:[49,79],x:"domena kod registra ~20–30 €/god. plaća restoran"},
   {k:"velikijel",n:"Unos velikog jelovnika (60+ jela, više jezika)",j:"jednokratno",cij:[49,99]}]},
  {k:"dizajn",p:["Jelovnici sa sidrenim cijenama","Letci i plakati","Logo i vizualni identitet","Grafike za društvene mreže"],n:"Grafički dizajn",ik:"pero",o:"Letci, jelovnici, plakati, logo i cijeli vizualni identitet.",s:[
@@ -10087,10 +10087,10 @@ const FP_OBJAVE=[
   cap:"Vrijeme je za novi jelovnik? Izrađujemo ga u vašem stilu, sa sidrenim cijenama od prvog dana — za stol, izlog i web."},
  {t:"tamna",oz:"Sidrene cijene",ik:"graf",h:"Strojno čitljiv cjenik? <em>Objavljuje se sam.</em>",p:"S Foodpointom se sidrene cijene i cjenik za web ažuriraju sami nakon svake promjene cijene. Bez tablica i bez brige.",cta:"Pogledajte kako radi",
   cap:"Uz sidrene cijene web stranica mora imati i strojno čitljiv cjenik. U Foodpointu se objavljuje sam, nakon svake promjene cijene."},
- {t:"usporedba",oz:"Provizija",h:"Koliko vam uzima dostava?",a:["Wolt i Glovo","25–30 %"],b:["Foodpoint","10 %"],p:"Plus 49 € mjesečno. Prva 3 mjeseca samo 5 %.",cta:"Izračunajte uštedu",
-  cap:"Platforme za dostavu uzimaju 25–30 % svake narudžbe. S Foodpointom plaćate 49 € mjesečno i 10 % na online narudžbe — a prva 3 mjeseca samo 5 %."},
- {t:"crvena",oz:"Uvodna ponuda",ik:"poklon",h:"Prva 3 mjeseca <em>samo 5 %</em>",p:"49 € mjesečno, postavljanje, unos jelovnika i obuka osoblja besplatni. Bez ugovorne obveze.",cta:"Postanite partner",
-  cap:"Uvodna ponuda za nove Foodpoint partnere: prva 3 mjeseca samo 5 % provizije. Postavljanje, unos jelovnika i obuka su besplatni."},
+ {t:"usporedba",oz:"Provizija",h:"Koliko vam uzima dostava?",a:["Wolt i Glovo","25–30 %"],b:["Foodpoint","10 %"],p:"Plus 39 € mjesečno fiksno. Prvih 6 mjeseci samo 5 %.",cta:"Izračunajte uštedu",
+  cap:"Platforme za dostavu uzimaju 25–30 % svake narudžbe. S Foodpointom plaćate 39 € mjesečno fiksno i 5 % provizije prvih šest mjeseci, nakon toga 10 % na online narudžbe."},
+ {t:"crvena",oz:"Uvodna ponuda",ik:"poklon",h:"Prvih 6 mjeseci <em>samo 5 %</em>",p:"39 € mjesečno fiksno, postavljanje, unos jelovnika i obuka osoblja besplatni. Bez ugovorne obveze.",cta:"Postanite partner",
+  cap:"Uvodna ponuda za nove Foodpoint partnere: prvih šest mjeseci samo 5 % provizije. Postavljanje, unos jelovnika i obuka su besplatni."},
  {t:"ekran",oz:"Vaša stranica",sl:"fp-ekran-vlasnik.png",h:"Vaš logo. Vaše boje. <em>Vaši gosti.</em>",p:"Moderna stranica za narudžbe na vašoj adresi — bez tuđeg imena na vrhu.",cta:"Pogledajte demo",
   cap:"Gosti naručuju na vašoj stranici, u vašim bojama i s vašim logom. Moderno, brzo i bez tuđeg imena na vrhu."},
  {t:"svijetla",oz:"Umjesto telefona",ik:"telefon",h:"Telefon zvoni, a kuhinja <em>ne stigne.</em>",p:"Prebacite narudžbe na stranicu: gost sam bira jela, dodatke i vrijeme, a vi dobivate točnu narudžbu bez zapisivanja.",cta:"Manje poziva",
@@ -10129,8 +10129,8 @@ const FP_OBJAVE=[
   cap:"Od prvog razgovora do prve narudžbe za 2–5 radnih dana. Mi unosimo jelovnik, slike i logo, a vi dobivate gotove linkove i QR kodove."},
  {t:"svijetla",oz:"Bez obveze",ik:"kvaka",h:"Bez ugovorne <em>obveze.</em>",p:"Pretplata je mjesečna. Ostajete jer vam se isplati, a ne zbog ugovora.",cta:"Isprobajte",
   cap:"Bez dugih ugovora: Foodpoint plaćate mjesečno i otkazujete kad želite."},
- {t:"usporedba",oz:"Primjer",h:"300 narudžbi po 20 € mjesečno",a:["Na Woltu","1.680 €"],b:["Foodpoint","649 €"],p:"Ušteda oko 1.000 € mjesečno.",cta:"Izračunajte svoju",
-  cap:"Primjer: 300 online narudžbi mjesečno po 20 €. Na platformi za dostavu provizija je oko 1.680 €, a s Foodpointom 649 € (49 € + 10 %)."},
+ {t:"usporedba",oz:"Primjer",h:"300 narudžbi po 20 € mjesečno",a:["Na Woltu","1.680 €"],b:["Foodpoint","339 €"],p:"Ušteda oko 1.340 € mjesečno prvih pola godine.",cta:"Izračunajte svoju",
+  cap:"Primjer: 300 online narudžbi mjesečno po 20 €. Na platformi za dostavu provizija je oko 1.680 €, a s Foodpointom 339 € prvih šest mjeseci (39 € + 5 %), poslije 639 € (39 € + 10 %)."},
  {t:"foto",foto:"dostava",oz:"Demo",h:"Isprobajte kao <em>vaš gost.</em>",p:"Otvorite demo restoran Casa Lume i naručite od početka do kraja.",cta:"foodpoint · demo",
   cap:"Želite vidjeti kako to izgleda vašim gostima? Otvorite naš demo restoran Casa Lume i prođite cijelu narudžbu."},
  {t:"svijetla",oz:"Troškovi",ik:"vaga",h:"Znate li maržu <em>svakog jela?</em>",p:"Normativi, nabava, troškovi i plaće — vidite koliko vam stvarno ostaje.",cta:"Kontrola poslovanja",
@@ -10177,8 +10177,8 @@ const FP_OBJAVE2=[
   cap:"Bez obzira radite li burgere, tjesteninu ili kavu — Foodpoint je partner za sve ugostitelje u Hrvatskoj."},
  {t:"potpis",f:"pec_zar",h:"Partner za <em>ugostitelje.</em>",p:"Online narudžbe, kontrola poslovanja, dizajn i tisak — u cijeloj Hrvatskoj.",cta:"Javite nam se",
   cap:"Foodpoint — partner za ugostitelje. Online narudžbe, kuhinja, dostavljači, analitika, jelovnici sa sidrenim cijenama, tisak i oglasi."},
- {t:"lf",f:"burger2",oz:"Provizija",h:"Burger naručen. <em>Provizija 10 %.</em>",p:"Umjesto 25–30 % na platformama za dostavu. Uz to 49 € mjesečno.",cta:"Izračunajte uštedu",
-  cap:"Platforme za dostavu uzimaju 25–30 % svake narudžbe. S Foodpointom plaćate 10 % na online narudžbe i 49 € mjesečno."},
+ {t:"lf",f:"burger2",oz:"Provizija",h:"Burger naručen. <em>Provizija 10 %.</em>",p:"Umjesto 25–30 % na platformama za dostavu. Uz to 39 € mjesečno fiksno.",cta:"Izračunajte uštedu",
+  cap:"Platforme za dostavu uzimaju 25–30 % svake narudžbe. S Foodpointom plaćate 10 % na online narudžbe i 39 € mjesečno fiksno."},
  {t:"split",f:"pasta2",h:"Jelovnik koji <em>prodaje.</em>",p:"Fotografije, opisi i sidrene cijene — sve uređeno i pregledno.",cta:"Novi jelovnik",
   cap:"Dobar jelovnik prodaje sam. Uređujemo fotografije, opise i sidrene cijene, za stol i za web."},
  {t:"okvir",f:"kava2",h:"Kava naručena <em>sa stola.</em>",p:"Gost skenira QR kod, narudžba stiže na šank.",cta:"QR narudžbe",
@@ -10187,8 +10187,8 @@ const FP_OBJAVE2=[
   cap:"Vi određujete radno vrijeme i zona dostave. Vaši dostavljači u aplikaciji vide ture, adrese po redu i navigaciju jednim klikom."},
  {t:"kolaz",f:["chef_priprema","chef_noz","chef_rez"],h:"Vi kuhate. <em>Mi brinemo za ostalo.</em>",p:"Narudžbe, nabava, troškovi i oglasi na jednom mjestu.",cta:"Foodpoint partner",
   cap:"Vaš posao je kuhinja. Narudžbe, nabavu, troškove, jelovnike i oglase vodimo zajedno s vama, na jednom mjestu."},
- {t:"lf",f:"pizza_tijesto",oz:"Uvodna ponuda",h:"Prva 3 mjeseca <em>samo 5 %.</em>",p:"49 € mjesečno. Postavljanje, unos jelovnika i obuka osoblja besplatni.",cta:"Postanite partner",
-  cap:"Uvodna ponuda za nove partnere: prva 3 mjeseca samo 5 % provizije. Postavljanje, unos jelovnika i obuka osoblja su besplatni."},
+ {t:"lf",f:"pizza_tijesto",oz:"Uvodna ponuda",h:"Prvih 6 mjeseci <em>samo 5 %.</em>",p:"39 € mjesečno fiksno. Postavljanje, unos jelovnika i obuka osoblja besplatni.",cta:"Postanite partner",
+  cap:"Uvodna ponuda za nove partnere: prvih šest mjeseci samo 5 % provizije. Postavljanje, unos jelovnika i obuka osoblja su besplatni."},
  {t:"potpis",f:"dostava_box",h:"Svaka kutija <em>je reklama.</em>",p:"Kutije, vrećice i naljepnice s vašim logom.",cta:"Ambalaža s logom",
   cap:"Kutije za pizzu, vrećice i naljepnice s vašim logom — svaka dostava postaje reklama za vaš lokal."},
  {t:"split",f:"burger3",h:"Gost plaća <em>odmah online.</em>",p:"Apple Pay, Google Pay ili kartica. Novac ide izravno vama.",cta:"Online plaćanje",
@@ -10232,8 +10232,8 @@ const FP_OBJAVE2=[
 const FP_REELS=[
  {n:"Petak navečer",s:[{v:"foto",f:"pec",h:"Petak navečer."},{v:"naslov",h:"Telefon zvoni. Kuhinja ne stigne."},{v:"ekran",sl:"fp-ekran-kuhinja.png",n:"Nova narudžba · 3 pizze"}],cta:"Narudžbe preko stranice",
   cap:"Petak navečer, telefon ne prestaje. S Foodpointom gosti naručuju sami, a narudžba zazvoni ravno u kuhinji."},
- {n:"Provizija",s:[{v:"naslov",h:"Koliko vam uzima dostava?"},{v:"broj",a:"25–30 %",b:"10 %",p:"+ 49 € mjesečno"},{v:"foto",f:"pizza_ruke",h:"Ostatak ostaje vama."}],cta:"Izračunajte uštedu",
-  cap:"Platforme uzimaju 25–30 % svake narudžbe. Foodpoint: 10 % na online narudžbe i 49 € mjesečno."},
+ {n:"Provizija",s:[{v:"naslov",h:"Koliko vam uzima dostava?"},{v:"broj",a:"25–30 %",b:"10 %",p:"+ 39 € mjesečno fiksno"},{v:"foto",f:"pizza_ruke",h:"Ostatak ostaje vama."}],cta:"Izračunajte uštedu",
+  cap:"Platforme uzimaju 25–30 % svake narudžbe. Foodpoint: 10 % na online narudžbe i 39 € mjesečno fiksno."},
  {n:"Sidrene cijene",s:[{v:"naslov",h:"17. studenoga."},{v:"sidro",j:"Margherita",c:"9,50 €",z:"9,00 €"},{v:"foto",f:"chef_tanjur",h:"Mi upišemo sidrene cijene."}],cta:"Pošaljite jelovnik",
   cap:"Od 17. studenoga uz svaku cijenu ide i sidrena cijena. Obrađujemo postojeće jelovnike i izrađujemo nove."},
  {n:"Sve na jednom mjestu",s:[{v:"foto",f:"burger1",h:"Sve za vaš lokal."},{v:"lista",l:["Online narudžbe","Kuhinja i pult","Aplikacija za vozače","Analitika i troškovi","Jelovnici i tisak"]}],cta:"Foodpoint partner",
@@ -10242,8 +10242,8 @@ const FP_REELS=[
   cap:"Dostavljač je vaš. Foodpoint mu daje aplikaciju s turama, adresama po redu i navigacijom."},
  {n:"QR na stolu",s:[{v:"foto",f:"kava1",h:"Gost sjedne."},{v:"foto",f:"kava2",h:"Skenira QR kod."},{v:"naslov",h:"Narudžba je već na šanku."}],cta:"QR narudžbe",
   cap:"QR kod na stolu: gost naruči s mobitela, narudžba stiže na šank."},
- {n:"Uvodna ponuda",s:[{v:"naslov",h:"Prva 3 mjeseca."},{v:"broj",a:"10 %",b:"5 %",p:"49 € mjesečno · postavljanje besplatno"},{v:"foto",f:"pizza_tijesto",h:"Bez ugovorne obveze."}],cta:"Postanite partner",
-  cap:"Novi partneri prva 3 mjeseca plaćaju samo 5 % provizije. Postavljanje i obuka su besplatni."},
+ {n:"Uvodna ponuda",s:[{v:"naslov",h:"Prvih 6 mjeseci."},{v:"broj",a:"10 %",b:"5 %",p:"39 € mjesečno fiksno · postavljanje besplatno"},{v:"foto",f:"pizza_tijesto",h:"Bez ugovorne obveze."}],cta:"Postanite partner",
+  cap:"Novi partneri prvih šest mjeseci plaćaju samo 5 % provizije. Postavljanje i obuka su besplatni."},
  {n:"Imate jelovnik?",s:[{v:"foto",f:"chef_priprema",h:"Imate jelovnik?"},{v:"naslov",h:"Pošaljite ga nama."},{v:"sidro",j:"Pizza Capricciosa",c:"11,00 €",z:"10,50 €"}],cta:"Obrada jelovnika",
   cap:"Ne treba vam novi jelovnik. Pošaljite postojeći, a mi dodajemo sidrene cijene i vraćamo ga spremnog za tisak i web."},
  {n:"Plaćanje",s:[{v:"foto",f:"burger2",h:"Apple Pay."},{v:"foto",f:"burger3",h:"Google Pay."},{v:"naslov",h:"Ili kartica. Novac ide vama."}],cta:"Online plaćanje",
@@ -10262,8 +10262,8 @@ const FP_REELS=[
   cap:"Od prvog razgovora do prve narudžbe za 2–5 radnih dana."},
  {n:"Marža",s:[{v:"foto",f:"chef_noz",h:"Znate li maržu svakog jela?"},{v:"lista",l:["Normativi","Nabava","Troškovi i plaće","Marža po jelu"]}],cta:"Kontrola troškova",
   cap:"Normativi, nabava i troškovi pokazuju koliko vam stvarno ostaje od svakog jela."},
- {n:"Primjer uštede",s:[{v:"naslov",h:"300 narudžbi po 20 €."},{v:"broj",a:"1.680 €",b:"649 €",p:"provizija mjesečno"},{v:"naslov",h:"Ušteda oko 1.000 € mjesečno."}],cta:"Izračunajte svoju",
-  cap:"Primjer: 300 online narudžbi po 20 €. Na platformi oko 1.680 € provizije, s Foodpointom 649 € (49 € + 10 %)."},
+ {n:"Primjer uštede",s:[{v:"naslov",h:"300 narudžbi po 20 €."},{v:"broj",a:"1.680 €",b:"339 €",p:"provizija mjesečno"},{v:"naslov",h:"Ušteda oko 1.000 € mjesečno."}],cta:"Izračunajte svoju",
+  cap:"Primjer: 300 online narudžbi po 20 €. Na platformi oko 1.680 € provizije, s Foodpointom 339 € (39 € + 5 %)."},
  {n:"Vaša stranica",s:[{v:"foto",f:"pec_zar",h:"Vaša pizza."},{v:"foto",f:"pizza_ruke",h:"Vaša stranica."},{v:"naslov",h:"Vaši gosti."}],cta:"Postanite partner",
   cap:"Gosti naručuju na vašoj stranici, s vašim logom i u vašim bojama."},
  {n:"Cjenik",s:[{v:"naslov",h:"Strojno čitljiv cjenik?"},{v:"sidro",j:"Tjestenina Carbonara",c:"10,00 €",z:"9,50 €"},{v:"naslov",h:"Objavljuje se sam."}],cta:"Sidrene cijene",
@@ -10494,6 +10494,11 @@ html,body{margin:0;background:#0B0807;min-height:100vh;display:flex;align-items:
    Naslovna se uvijek slaže na hrvatskom; kad je odabran engleski, svaki tekst se zamijeni prijevodom iz FP_EN.
    Novi tekst na naslovnoj? Dodaj ga ovdje (lijevo točno hrvatski tekst, desno engleski). */
 const FP_EN={
+ "/ mjesečno — fiksno, održavanje sustava":"/ month — fixed, system maintenance",
+ "Prvih 6 mjeseci plaćate 39 € mjesečno i samo 5 % na online narudžbe, nakon toga 10 %. Mjesečna cijena je fiksna i pokriva održavanje sustava. Postavljanje, unos jelovnika i obuka su besplatni.":
+  "For the first 6 months you pay €39 a month and only 5% on online orders, 10% after that. The monthly fee is fixed and covers system maintenance. Setup, menu entry and training are free.",
+ "39 € mjesečno fiksno za održavanje sustava, plus provizija na online narudžbe koje stignu preko Foodpointa: prvih šest mjeseci 5 %, nakon toga 10 %. Novac od narudžbi ide izravno vama, a proviziju vam šaljemo jednom mjesečno na računu.":
+  "€39 a month, fixed, for system maintenance, plus commission on online orders that come through Foodpoint: 5% for the first six months, 10% after that. Order money goes straight to you, and we invoice the commission once a month.",
  /* traka i izbornik */
  "Sidrene cijene — obveza od 17. studenoga 2026.":"Anchor prices are mandatory from 17 November 2026.",
  "Spremni smo: obrađujemo vaše postojeće jelovnike i izrađujemo nove.":"We're ready: we update your existing menus and design new ones.",
@@ -10574,7 +10579,7 @@ const FP_EN={
   "Wolt and Glovo charge restaurants 25–30% of every order. Move the slider to match your monthly delivery revenue.",
  "Mjesečni promet od online narudžbi":"Monthly revenue from online orders",
  "Provizija 25–30 % mjesečno":"25–30% commission per month",
- "Foodpoint: 10 % + 49 €":"Foodpoint: 10% + €49",
+ "Foodpoint: 5 % + 39 €":"Foodpoint: 5% + €39",
  "Ostaje vama godišnje":"You keep per year",
  /* usluge */
  "Sve za vaš lokal, na jednom mjestu":"Everything for your venue, in one place",
@@ -10602,7 +10607,6 @@ const FP_EN={
  "Bez ugovorne obveze. Plaćate malu mjesečnu pretplatu i proviziju samo na online narudžbe — tri puta manju nego na Woltu i Glovu.":
   "No contract. You pay a small monthly subscription and commission on online orders only — about a third of what Wolt and Glovo charge.",
  "Za restorane, pizzerije, kafiće i pekare s vlastitom dostavom ili preuzimanjem.":"For restaurants, pizzerias, cafés and bakeries with their own delivery or pickup.",
- "/ mjesečno":"/ month","na online narudžbe":"on online orders",
  "Vaša stranica za narudžbe u vašim bojama, s logom":"Your own ordering page in your colours, with your logo",
  "Ekran za kuhinju, šank i pult":"Screens for the kitchen, bar and counter",
  "Aplikacija za vaše dostavljače":"An app for your delivery drivers",
@@ -10613,9 +10617,8 @@ const FP_EN={
  "Online plaćanje karticom, Apple Payom i Google Payom":"Online payment by card, Apple Pay and Google Pay",
  "Postavljanje, unos jelovnika i obuka osoblja":"Setup, menu entry and staff training",
  "Uvodna ponuda":"Introductory offer",
- "Prva 3 mjeseca samo 5 % provizije":"Only 5% commission for the first 3 months",
- "Dok se vi i vaše osoblje upoznajete sa sustavom, plaćate 49 € mjesečno i 5 % na online narudžbe. Postavljanje, unos jelovnika i obuka su besplatni.":
-  "While you and your staff get to know the system, you pay €49 a month and 5% on online orders. Setup, menu entry and training are free.",
+ "Prvih šest mjeseci samo 5 % provizije":"Only 5% commission for the first six months",
+ "Prvih 6 mjeseci samo 5 %":"First 6 months only 5%",
  "Wolt i Glovo":"Wolt and Glovo",
  "Dizajn, tisak, ambalaža, oglasi i ostale usluge naplaćuju se posebno, prema ponudi. Foodpoint partneri imaju 10 % popusta.":
   "Design, printing, packaging, ads and other services are charged separately, based on a quote. Foodpoint partners get 10% off.",
@@ -10625,8 +10628,7 @@ const FP_EN={
  "Ne. Stranica se otvara u pregledniku s linka, QR koda ili Instagrama. Tko želi, može je jednim klikom dodati na početni zaslon mobitela.":
   "No. The page opens in the browser from a link, a QR code or Instagram. Anyone who wants to can add it to their phone's home screen with one tap.",
  "Koliko košta?":"How much does it cost?",
- "49 € mjesečno i 10 % na online narudžbe koje stignu preko Foodpointa. Prva 3 mjeseca provizija je samo 5 %. Novac od narudžbi ide izravno vama, a proviziju vam šaljemo jednom mjesečno na računu.":
-  "€49 a month plus 10% on online orders placed through Foodpoint. For the first 3 months, the commission is only 5%. Payment for orders goes directly to you, and we invoice the commission once a month.",
+ "Koliko košta Foodpoint?":"How much does Foodpoint cost?",
  "Mogu li zadržati Wolt i Glovo?":"Can I keep using Wolt and Glovo?",
  "Možete. Foodpoint je vaš vlastiti kanal za stalne goste. Svaka narudžba koja dođe preko vaše stranice umjesto preko Wolta ili Glova košta vas 10 % umjesto 25–30 %.":
   "Yes. Foodpoint is your own channel for regular customers. Every order that comes through your own page instead of Wolt or Glovo costs you 10% instead of 25–30%.",
@@ -10784,8 +10786,8 @@ const FP_REELS2=(()=>{
   T("pizza_ruke","Gost naruči za *20 €*. Koliko od toga ostaje vama?","Jednostavna računica"),
   B("5–6 €","2 €","toliko ide platformi, a toliko nama"),
   T("konobar_tanjur","Na velikim platformama za dostavu plaćate *25–30 %* od svake narudžbe."),
-  T("pizza_ponos","S Foodpointom je to *10 %* i 49 € mjesečno. Ostatak ostaje u vašem lokalu.")],
-  cap:"Na narudžbi od 20 € platforme za dostavu uzmu 5–6 €. S Foodpointom je to 2 € (10 %) uz 49 € mjesečno. Razlika ostaje vama — svaki dan, svaku narudžbu."},
+  T("pizza_ponos","S Foodpointom je to *10 %* i 39 € mjesečno fiksno. Ostatak ostaje u vašem lokalu.")],
+  cap:"Na narudžbi od 20 € platforme za dostavu uzmu 5–6 €. S Foodpointom je to 2 € (10 %) uz 39 € mjesečno fiksno. Razlika ostaje vama — svaki dan, svaku narudžbu."},
  {n:"Što su sidrene cijene",cta:"Pošaljite nam jelovnik",s:[
   T("gost_jelovnik","Od *17. studenoga* na jelovnicima se mijenja jedna važna stvar.","Sidrene cijene, jednostavno"),
   K("sidro","Što je sidrena cijena?","Uz današnju cijenu jela mora stajati i njegova cijena od 10. rujna. Tako gost odmah vidi je li cijena porasla."),
@@ -10872,10 +10874,10 @@ const FP_REELS2=(()=>{
   cap:"Foodpoint se plaća mjesečno, bez ugovorne obveze. Ostajete jer vam se isplati, ne zato što morate."},
  {n:"Prva 3 mjeseca",cta:"Postanite partner",s:[
   T("kuhinja_ekipa","Novi ste? Prva *3 mjeseca* plaćate upola manju proviziju.","Uvodna ponuda"),
-  B("10 %","5 %","provizija prva 3 mjeseca"),
-  K("graf","Primjer","300 narudžbi po 20 € = 6.000 € prometa. Provizija 300 € + 49 € mjesečno, umjesto 1.500–1.800 € na platformama."),
+  B("10 %","5 %","provizija prvih šest mjeseci"),
+  K("graf","Primjer","300 narudžbi po 20 € = 6.000 € prometa. Provizija 300 € + 39 € mjesečno fiksno, umjesto 1.500–1.800 € na platformama."),
   T("vlasnik_ulaz","Postavljanje, unos jelovnika i obuka su *besplatni*.")],
-  cap:"Uvodna ponuda: prva 3 mjeseca samo 5 % provizije uz 49 € mjesečno. Postavljanje, unos jelovnika i obuka su besplatni."},
+  cap:"Uvodna ponuda: prvih šest mjeseci samo 5 % provizije uz 39 € mjesečno fiksno. Postavljanje, unos jelovnika i obuka su besplatni."},
  {n:"Ne morate ugasiti Wolt",cta:"Vaš vlastiti kanal",s:[
   R("v: Moram li izaći s Wolta i Glova?","f: Ne morate. Neka vam dovode nove goste.","f: A stalne goste pozovite na svoju stranicu."),
   T("prijatelji_tv","Svaki gost koji naruči *izravno kod vas* košta vas 10 % umjesto 25–30 %."),
@@ -10928,10 +10930,10 @@ const FP_REELS2=(()=>{
   L(["Tablet za kuhinju","Mobitel za vozača","Vaš mobitel za pregled"])],
   cap:"Za Foodpoint ne trebate posebnu opremu — dovoljan je tablet ili mobitel. Sve radi u pregledniku."},
  {n:"Koliko stvarno košta",cta:"Zatražite ponudu",s:[
-  R("v: Dobro, recite mi iskreno. Koliko to košta?","f: 49 € mjesečno.","f: I 10 % samo na online narudžbe."),
+  R("v: Dobro, recite mi iskreno. Koliko to košta?","f: 39 € mjesečno fiksno.","f: I 10 % samo na online narudžbe."),
   R("v: A narudžbe telefonom i u lokalu?","f: Na njih nema provizije."),
   T("vlasnica","Bez skrivenih troškova i *bez iznenađenja* na računu.")],
-  cap:"Foodpoint košta 49 € mjesečno i 10 % samo na online narudžbe. Na telefonske narudžbe i one u lokalu nema provizije."},
+  cap:"Foodpoint košta 39 € mjesečno fiksno i 10 % samo na online narudžbe. Na telefonske narudžbe i one u lokalu nema provizije."},
  {n:"Isprobajte sami",cta:"Pogledajte demo",s:[
   T("pizza_mob","Ne morate nam vjerovati na riječ. *Isprobajte* kao pravi gost."),
   E("fp-ekran-gost.jpg","Casa Lume · demo restoran",true),
@@ -11113,9 +11115,9 @@ const FP_REELS3=(()=>{
  {n:"Koliko sira?",cta:"Kontrola troškova",s:[V(42478,"Koliko sira ide na *jednu pizzu*?","pizza_tijesto"),
   K("vaga","Normativi","Recept upišete jednom, a Foodpoint izračuna trošak i maržu svakog jela."),V(1666,"Znate *točno* koliko zarađujete po komadu.","pizza_stol")],
   cap:"Normativi u Foodpointu: recept upišete jednom, a sustav izračuna trošak i maržu svakog jela."},
- {n:"Novi ste?",cta:"Postanite partner",s:[V(42469,"Novi ste s nama?","pizza_tijesto","Uvodna ponuda"),B("10 %","5 %","provizija prva 3 mjeseca"),
+ {n:"Novi ste?",cta:"Postanite partner",s:[V(42469,"Novi ste s nama?","pizza_tijesto","Uvodna ponuda"),B("10 %","5 %","provizija prvih 6 mjeseci"),
   V(42484,"Postavljanje i obuka su *besplatni*.","pizza_ponos")],
-  cap:"Novi partneri prva 3 mjeseca plaćaju 5 % provizije umjesto 10 %, uz 49 € mjesečno. Postavljanje i obuka su besplatni."},
+  cap:"Novi partneri prvih šest mjeseci plaćaju 5 % provizije umjesto 10 %, uz 39 € mjesečno fiksno. Postavljanje i obuka su besplatni."},
  {n:"Tko su vaši gosti",cta:"Analitika",s:[V(41229,"Tko su vaši *najbolji* gosti?","kava_stol"),E("fp-ekran-vlasnik.png","Stalni gosti ovaj mjesec: +18 %"),
   V(4043,"Brojke vam kažu kad je gužva i *što se najviše prodaje*.","bistro")],
   cap:"Analitika pokazuje nove i stalne goste, najjače sate i najprodavanija jela — da znate na čemu ste."},
@@ -11162,7 +11164,7 @@ const FP_REKLAME=[
  {t:"bingo",oz:"Ugostiteljski bingo",h:"Koliko ste ovih skupili <em>ovaj tjedan?</em>",l:["Telefon zvoni u najvećoj gužvi","Papirić koji nitko ne zna pročitati","„Gdje mi je hrana?”","Krivi ulaz, krivi kat","30 % provizije","Vozač zove kuhinju","Bez luka. Ili ipak s lukom?","„Imate li sidrene cijene?”","Konobar ne stiže do stola"],p:"Foodpoint briše cijelu karticu.",cta:"Igrajte s nama",
   cap:"Ugostiteljski bingo: koliko ste ih skupili ovaj tjedan? 😅 Foodpoint rješava cijelu karticu — od telefona u gužvi do sidrenih cijena."},
  {t:"pismo",oz:"Pismo",h:"Draga provizijo od 30 %,",p:"nije do mene, do tebe je. Svaki mjesec uzmeš trećinu, a na telefon se ne javiš. Upoznao sam nekoga tko uzima 10 % i dođe na kavu. Nemoj me više zvati.",pot:"Tvoj ugostitelj",cta:"Prekinite i vi",
-  cap:"Neki rastanci su jednostavno potrebni. 💌 Foodpoint: 10 % provizije, 49 € mjesečno i partner koji se javlja na telefon."},
+  cap:"Neki rastanci su jednostavno potrebni. 💌 Foodpoint: 39 € mjesečno fiksno, 5 % provizije prvih šest mjeseci i partner koji se javlja na telefon."},
  {t:"trazi",oz:"Pretraga",q:"kako da mi dostava ne uzima 30 %",r:["Foodpoint — partner za ugostitelje","Vaša stranica za narudžbe · 10 % provizije · bez ugovora"],h:"Pitali ste. <em>Odgovaramo.</em>",cta:"foodpoint · ponuda",
   cap:"Ako ste ovo ikad guglali, ovo je za vas. Foodpoint: vaša stranica za narudžbe, 10 % provizije, bez ugovora."},
  {t:"tel",f:"pizza_ponos",oz:"Zvuk",n:["Nova narudžba · 2× Margherita","Nova narudžba · Capricciosa + Cola","Nova narudžba · 3× Burger Classic","Nova narudžba · Tiramisu × 2"],h:"Zvuk koji <em>volite čuti.</em>",cta:"Izravno vama",
@@ -11205,8 +11207,8 @@ const FP_REKLAME=[
   cap:"Kviz: što je sidrena cijena? ⚓ Točno je B — cijena od 10. rujna istaknuta uz današnju. Mi je upišemo za vas."},
  {t:"tel",f:"kuhinja_ekipa",oz:"Kuhinja",n:["Nova narudžba #129 · za 25 min","Gost: „Bez luka, molim”","Plaćeno karticom"],h:"Ovo vidi kuhinja. <em>Ništa ne treba pogađati.</em>",cta:"Pogledajte demo",
   cap:"Kad gost naruči, kuhinja vidi sve: jela, napomene, adresu i način plaćanja. Ništa ne treba pogađati."},
- {t:"racun",oz:"Mjesečni račun",r:[["300 narudžbi po 20 €","6.000 €"],["Provizija platforme 25–30 %","1.500–1.800 €"]],z:["Foodpoint: 49 € + 10 %","649 €"],h:"Ista količina posla. <em>Manji račun.</em>",cta:"Izračunajte svoju",
-  cap:"300 narudžbi mjesečno po 20 €: na platformi 1.500–1.800 € provizije, s Foodpointom 649 €. Ista količina posla, manji račun."},
+ {t:"racun",oz:"Mjesečni račun",r:[["300 narudžbi po 20 €","6.000 €"],["Provizija platforme 25–30 %","1.500–1.800 €"]],z:["Foodpoint: 39 € + 10 %","639 €"],h:"Ista količina posla. <em>Manji račun.</em>",cta:"Izračunajte svoju",
+  cap:"300 narudžbi mjesečno po 20 €: na platformi 1.500–1.800 € provizije, s Foodpointom 639 €. Ista količina posla, manji račun."},
  {t:"poster",f:"prijatelji_tv",oz:"Gosti",h:"Platforma dovede gosta. <em>Vi ga zadržite.</em>",p:"Stalni gosti naručuju na vašoj stranici — uz 10 % umjesto 25–30 %.",cta:"Vaš kanal",
   cap:"Ne morate odustati od platformi. Neka vam dovedu nove goste, a stalne zadržite na svojoj stranici. 🤝"},
  {t:"trazi",oz:"Pretraga",q:"pizzerija blizu mene",r:["Pizzeria Mario — naruči izravno","Vaša stranica · vaš logo · vaše cijene"],h:"Neka vas gosti nađu <em>pod vašim imenom.</em>",cta:"Vaša stranica",
@@ -11301,10 +11303,10 @@ const FP_VREKLAME=(()=>{
  /* chat koji se tipka */
  VO(4915,"mob_narudzba","Gost",CHAT("Gost",["g:Je li moja narudžba krenula?","f:Da! Status pratite uživo na stranici.","g:Super, hvala 🙌"],{n_:"Gost pita, stranica odgovara",cta:"Pratite narudžbu uživo",tag:"Gost uvijek zna gdje je hrana"})),
  VO(15867,"chef_priprema","Kuhinja",CHAT("Kuhinja",["k:Stol 5 traži bez luka!","v:Već piše u napomeni 😄","k:Ma stvarno, super je ovo."],{n_:"Konobar i kuhinja",cta:"Sve jasno napisano",tag:"Bez vikanja kroz kuhinju"})),
- VO(3572,"kava_toci","WhatsApp",CHAT("Prijatelj",["p:Kak posao?","v:Bolje. Gosti sad naruče sami.","p:Čekaj, pa to je pod cijenu kave?","v:49 € mjesečno + 10 %. Baš."],{n_:"Vlasnik i prijatelj",cta:"Pogledajte cijenu",tag:"Bez skrivenih troškova"})),
+ VO(3572,"kava_toci","WhatsApp",CHAT("Prijatelj",["p:Kak posao?","v:Bolje. Gosti sad naruče sami.","p:Čekaj, pa to je pod cijenu kave?","v:39 € mjesečno + 5 %. Baš."],{n_:"Vlasnik i prijatelj",cta:"Pogledajte cijenu",tag:"Bez skrivenih troškova"})),
  /* račun koji izlazi */
  VO(42481,"pec","Račun",RACUN([["18× pizza, prosjek 16 €","288,00 €"],["Provizija platforme 28 %","−80,64 €"],["Vama ostaje","207,36 €"]],["S Foodpointom (10 %)","259,20 €"],{n_:"Petak navečer",cta:"Izračunajte svoju",tag:"Razlika se osjeti"})),
- VO(31155,"dostava_skuter","Račun",RACUN([["420 narudžbi × 19 €","7.980,00 €"],["Provizija platforme 30 %","−2.394,00 €"]],["Foodpoint: 49 € + 10 %","6.787,00 €"],{n_:"Mjesec dana dostave",cta:"Pošaljite nam brojke",tag:"Vidimo se na kavi"})),
+ VO(31155,"dostava_skuter","Račun",RACUN([["420 narudžbi × 19 €","7.980,00 €"],["Provizija platforme 30 %","−2.394,00 €"]],["Foodpoint: 39 € + 10 %","6.777,00 €"],{n_:"Mjesec dana dostave",cta:"Pošaljite nam brojke",tag:"Vidimo se na kavi"})),
  VO(44007,"pizza_stol","Račun",RACUN([["Capricciosa","11,50 €"],["Provizija platforme 25 %","−2,88 €"],["Vama ostaje","8,62 €"]],["S Foodpointom","10,35 €"],{n_:"Jedna Capricciosa",cta:"Ista pizza, veća zarada",tag:"Provjerite i vi"})),
  /* kviz koji se rješava */
  VO(24785,"burger2","Kviz",KVIZ("Koliko stvarno platite provizije na narudžbu od 20 €?",["2 €","6 €","Ne znam, bojim se pogledati"],1,{n_:"Brzi kviz za ugostitelje",cta:"Doznajte točan iznos",tag:"Javite se za izračun"})),
@@ -11312,7 +11314,7 @@ const FP_VREKLAME=(()=>{
  VO(42467,"pizza_tijesto","Kviz",KVIZ("Koliko treba da vam postavimo stranicu za narudžbe?",["Mjesec dana","Tjedan dana","2–5 dana"],2,{n_:"Kviz: koliko traje postavljanje",cta:"Krenimo odmah",tag:"Postavljanje je besplatno"})),
  /* Google pretraga koja se tipka */
  VO(42136,"mob_narudzba","Pretraga",TRAZI("pizzerija blizu mene dostava",["Vaša pizzerija — naručite izravno","Vaša stranica, vaše ime, 10 % provizije"],{n_:"Kad gost pita Google",cta:"Neka nađu vas",tag:"Pod vašim imenom, ne tuđim"})),
- VO(42133,"mob_kutija","Pretraga",TRAZI("kako smanjiti proviziju dostave",["Foodpoint — partner za ugostitelje","49 € mjesečno + 10 % — bez ugovora"],{n_:"Ako ste ovo ikad guglali",cta:"Pogledajte ponudu",tag:"Bez ugovorne obveze"})),
+ VO(42133,"mob_kutija","Pretraga",TRAZI("kako smanjiti proviziju dostave",["Foodpoint — partner za ugostitelje","39 € mjesečno + 10 % — bez ugovora"],{n_:"Ako ste ovo ikad guglali",cta:"Pogledajte ponudu",tag:"Bez ugovorne obveze"})),
  VO(51123,"mob_narudzba","Pretraga",TRAZI("najbolja aplikacija za narudžbe restorana",["Vaša vlastita stranica > tuđa aplikacija","Foodpoint je napravi za 2–5 dana"],{n_:"Odgovor na pravo pitanje",cta:"Pogledajte demo",tag:"Vaš logo, vaše boje"})),
  /* bingo s pečatima */
  VO(4678,"raznjici","Bingo",BINGO(["Telefon zvoni u gužvi","Papirić nitko ne razumije","„Gdje mi je hrana?”","Kriva adresa","25 % provizije","Vozač zove kuhinju","Bez luka ili ipak s lukom","Sidrene cijene?!","Konobar trči treći put"],"Foodpoint briše cijelu karticu.",{n_:"Ugostiteljski bingo",cta:"Igrajte s nama",tag:"Pogodili smo?"})),
@@ -11608,17 +11610,17 @@ const mk=(brend,niz)=>niz.map(x=>({...x,brend,oz:FP_BRENDOVI[brend].oznake}));
 const L_FP=mk("fp",[
  {t:"usporedba",al:"Wolt i Glovo",bl:"25–30 %",ad:"Foodpoint",bd:"10 %",
   p:"Provizija po online narudžbi. Prva tri mjeseca 5 %.",
-  cap:"Ista narudžba, tri puta manja provizija.\n49 € mjesečno i 10 % na online narudžbe.\nIzračun za svoj lokal tražite u poruci."},
+  cap:"Ista narudžba, tri puta manja provizija.\n39 € mjesečno fiksno i 5 % provizije prvih šest mjeseci.\nIzračun za svoj lokal tražite u poruci."},
  {t:"izjava",f:"kuhinja",h:"Petak, 19:42.<br>Telefon zvoni <em>četrnaesti put.</em>",
   p:"Svaki poziv je jedna narudžba koju netko zapisuje rukom.",
   cap:"Petak navečer u kuhinji zvuči ovako.\nNarudžbe mogu stizati napisane, s adresom i napomenom.\nPitajte nas kako."},
  {t:"broj",a:"0 €",p:"Postavljanje, unos jelovnika i obuka.",
-  cap:"Unos jelovnika i obuka ne naplaćujemo.\nPlaćate tek kad sustav radi.\n49 € mjesečno, bez ugovorne obveze."},
+  cap:"Unos jelovnika i obuka ne naplaćujemo.\nPlaćate tek kad sustav radi.\n39 € mjesečno fiksno, bez ugovorne obveze."},
  {t:"izjava",f:"gost",h:"Gost pita <em>„gdje mi je hrana?”</em>",
   p:"Na svojoj stranici vidi vrijeme pripreme čim ga kuhar upiše.",
   cap:"Pitanje koje svaki lokal čuje po deset puta navečer.\nKod nas gost sam vidi kad mu hrana stiže.\nPokažemo vam na vašem jelovniku."},
- {t:"popis",h:"Za 49 € mjesečno",l:["Vaša stranica s narudžbom","Ekran za kuhinju","Dostava i preuzimanje","Brojke na kraju dana"],
-  cap:"Što ulazi u mjesečnu cijenu.\nProvizija je 10 % samo na online narudžbe, prva tri mjeseca 5 %.\nTražite ponudu u poruci."},
+ {t:"popis",h:"Za 39 € mjesečno",l:["Vaša stranica s narudžbom","Ekran za kuhinju","Dostava i preuzimanje","Brojke na kraju dana"],
+  cap:"Što ulazi u mjesečnu cijenu.\nProvizija je 5 % prvih šest mjeseci, nakon toga 10 % na online narudžbe.\nTražite ponudu u poruci."},
 
  {n:"14 poziva",brend:"fp",cta:"Pitajte nas kako",s:[
   V(15875,"14 poziva u sat vremena.","kuhinja_ekipa"),
@@ -11930,484 +11932,541 @@ function fpOGrupa(g){
  return Array.isArray(o.s)?fpReelHTML(o):fpNPost(o);};}
 
 /* ---------- RIKY'S PIZZA: 20 objava + 30 reelova ----------
-   Glavne poruke: vlastita dostava, narudžba preko weba (besplatna dostava, 10 % jeftinije od portala,
-   gratis Coca-Cola 0,33 uz svaku pizzu), nova napuljska receptura s tijestom od 3 dana,
-   program vjernosti svaka 10. pizza gratis. */
+   PRAVILO: sve je varijanta Rikovih poruka, ništa izmišljeno. Poruke iz kojih je složeno:
+   A) Pizzerija Riky's ponovo ima svoju dostavu.
+   B) Naruči putem našeg weba i dobiješ besplatnu dostavu, 10 % popusta u odnosu na portale
+      i gratis Coca-Colu 0,33 uz svaku, ali svaku naručenu pizzu.
+   C) Riky's ima novu recepturu i vlastitu dostavu. Probaj našu napuljsku pizzu, tri dana
+      fermentiranu, s najboljim talijanskim i hrvatskim namirnicama.
+   D) Naruči odmah pizzu putem našeg weba, link u opisu, i zgrabi svoju gratis colu.
+   E) Još nisi čuo da možeš naručiti iz Riky'sa putem našeg weba? Sad je vrijeme da isprobaš.
+      Klikni link i pogledaj sve pogodnosti.
+   F) Riky's nudi svoju dostavu i program vjernosti gdje ti je svaka 10. pizza gratis.
+   G) Riky's ima svoju dostavu i svoj web shop. Zaboravi Wolt i Glovo i naruči direktno od nas,
+      gdje ti dajemo hrpu pogodnosti i popusta.                                                  */
 const FPK_RIKYS=(()=>{
  const V=(id,t,f,k)=>({v:"vid",id,t,f,k}), N=h=>({v:"naslov",h}), B=(a,b,p)=>({v:"broj",a,b,p}),
   L=l=>({v:"lista",l}), FO=(f,h)=>({v:"foto",f,h}), J=(j,c,o,f)=>({v:"jelo",j,c,o,f});
  const R=o=>({...o,brend:"rikys",oz:FP_BRENDOVI.rikys.oznake});
+ const POG=["Besplatna dostava","10 % jeftinije nego na portalima","Gratis Coca-Cola uz svaku pizzu"];
+ const WEB="rikyspizza.com.hr";
+
  return [
 
  /* ===== 20 OBJAVA ===== */
- R({t:"izjava",f:"r_skuter",h:"Riky's <em>ponovo vozi sam.</em>",
-  p:"Vlastita dostava. Bez portala između nas i vas.",
-  cap:"Riky's opet ima svoju dostavu. 🛵\nNaručite preko našeg weba i vozimo vam mi, ne portal.\nrikyspizza.com.hr"}),
- R({t:"popis",f:"r_capricciosa",h:"Naruči preko weba",l:["Besplatna dostava","10 % jeftinije nego na portalima","Gratis Coca-Cola uz svaku pizzu"],
-  cap:"Tri razloga da naručite izravno kod nas. 🍕\nBesplatna dostava, 10 % niža cijena nego na portalima i gratis Coca-Cola 0,33 uz svaku pizzu.\nrikyspizza.com.hr"}),
- R({t:"broj",f:"r_tijesto_kade",a:"3 dana",p:"Toliko nam tijesto odmara prije pečenja.",
-  cap:"Nova napuljska receptura. Tijesto fermentira tri dana. 🍕\nLakše je, mekše i probavljivije.\nProbajte je još danas na rikyspizza.com.hr"}),
- R({t:"cijena",f:"r_margherita",j:"Napoletana",c:"NOVO",p:"Nova receptura. Talijansko i hrvatsko, ništa između.",
-  cap:"Nova napuljska pizza, tijesto od tri dana i sastojci koje biramo sami. 🇮🇹🇭🇷\nProbajte je prvi.\nrikyspizza.com.hr"}),
- R({t:"broj",f:"r_rikys",a:"10.",p:"Svaka deseta pizza ide na kuću.",
-  cap:"Program vjernosti: svaka deseta pizza je gratis. 🍕\nBroji se automatski na vaš broj mobitela, bez kartica.\nrikyspizza.com.hr"}),
+ R({t:"izjava",f:"r_skuter",h:"Riky's <em>ponovo ima svoju dostavu.</em>",
+  p:"Vozimo sami. Bez portala između nas i vas.",
+  cap:"Pizzerija Riky's ponovo ima svoju dostavu. 🛵\nNaruči putem našeg weba i vozimo ti mi.\n"+WEB}),
+ R({t:"popis",f:"r_capricciosa",h:"Naruči putem <em>našeg weba</em>",l:POG,
+  cap:"Naruči putem našeg weba i dobivaš besplatnu dostavu, 10 % popusta u odnosu na portale i gratis Coca-Colu 0,33 uz svaku, ali baš svaku naručenu pizzu. 🍕🥤\n"+WEB}),
+ R({t:"broj",f:"r_tijesto_kade",a:"3 dana",p:"Toliko nam tijesto fermentira.",
+  cap:"Riky's ima novu recepturu. Napuljska pizza, tijesto fermentirano tri dana, s najboljim talijanskim i hrvatskim namirnicama. 🍕\nProbaj još danas na "+WEB}),
+ R({t:"cijena",f:"r_margherita",j:"Napuljska",c:"NOVO",p:"Nova receptura. Talijanske i hrvatske namirnice.",
+  cap:"Nova receptura i vlastita dostava.\nProbaj našu napuljsku pizzu, tri dana fermentiranu, za pravi okus.\n"+WEB}),
+ R({t:"broj",f:"r_rikys",a:"10.",p:"Svaka deseta pizza ti je gratis.",
+  cap:"Riky's nudi svoju dostavu i program vjernosti gdje ti je svaka 10. pizza gratis. 🍕\n"+WEB}),
  R({t:"izjava",f:"r_cola",h:"Gratis Cola uz <em>svaku pizzu.</em>",
-  p:"0,33 l. Bez koda i bez minimuma.",
-  cap:"Uz svaku naručenu pizzu ide hladna Coca-Cola 0,33. 🥤\nSamo preko našeg weba.\nrikyspizza.com.hr"}),
+  p:"0,33 l. Uz svaku, ali baš svaku.",
+  cap:"Naruči odmah pizzu putem našeg weba i zgrabi svoju gratis colu. 🥤\nLink u opisu."}),
  R({t:"usporedba",al:"Preko portala",bl:"+10 %",ad:"Naš web",bd:"0 %",
-  p:"Ista pizza. Niža cijena. I dostava je naša.",
-  cap:"Na portalima je ista pizza skuplja oko 10 posto.\nKod nas plaćate pizzu i ništa više, a dostavu vozimo sami.\nrikyspizza.com.hr"}),
- R({t:"izjava",f:"r_dostavljac",h:"Zaboravi Wolt <em>i Glovo.</em>",
-  p:"Naruči izravno i uzmi sve pogodnosti.",
-  cap:"Naš web, naša dostava, naše cijene. 🛵\nBesplatna dostava, gratis Cola i svaka deseta pizza na kuću.\nrikyspizza.com.hr"}),
- R({t:"cijena",f:"r_quattro",j:"Quattro Formaggio",c:"12,20 €",p:"Gorgonzola, grana padano, gouda, mozzarella.",
-  cap:"Četiri sira i tijesto od tri dana. 🧀\nQuattro Formaggio 12,20 €, dostava besplatna.\nrikyspizza.com.hr"}),
+  p:"Ista pizza, 10 % jeftinije. I dostava je besplatna.",
+  cap:"Naruči putem našeg weba: 10 % popusta u odnosu na portale, besplatna dostava i gratis Cola.\n"+WEB}),
+ R({t:"izjava",f:"r_dostavljac",h:"Zaboravi <em>Wolt i Glovo.</em>",
+  p:"Riky's ima svoju dostavu i svoj web shop.",
+  cap:"Riky's ima svoju dostavu i svoj web shop.\nZaboravi na Wolt i Glovo i naruči direktno od nas, gdje ti dajemo hrpu pogodnosti i popusta. 🛵\n"+WEB}),
  R({t:"izjava",f:"r_brasno",h:"Još nisi naručio <em>s našeg weba?</em>",
-  p:"Sad je pravo vrijeme. Link je u opisu.",
-  cap:"Ako još niste probali naručiti izravno kod nas, sad je trenutak.\nBesplatna dostava i gratis Cola uz svaku pizzu.\nLink u opisu."}),
- R({t:"cijena",f:"r_vatrena",j:"Vatrena",c:"13,00 €",p:"Vratina, kulen, špek, chili, feferoni.",
-  cap:"Za one koji vole kad peče. 🌶️\nVatrena 13,00 €, uz nju gratis Cola.\nrikyspizza.com.hr"}),
- R({t:"popis",f:"r_xxl_prsut",h:"XXL sendvič",l:["32 × 32 cm","Pršut, kulen ili piletina","15,00 €"],
-  cap:"Velik je kao pizza, jer je i rađen u njezinoj veličini.\nXXL sendvič 15,00 €.\nrikyspizza.com.hr"}),
- R({t:"izjava",f:"r_daske",h:"Ponedjeljkom <em>peć odmara.</em>",
-  p:"Utorak do nedjelje, 10 do 23. Zagorska 18.",
-  cap:"Ponedjeljak je naš, ostalo je vaše.\nUto–ned 10:00–23:00, Zagorska 18, Zagreb."}),
- R({t:"cijena",f:"r_njoke",j:"Njoke 4 sira",c:"12,00 €",p:"Za dane kad pizza nije opcija.",
-  cap:"Nije sve pizza. Njoke u umaku od četiri sira, 12,00 €.\nDostava je i dalje besplatna.\nrikyspizza.com.hr"}),
- R({t:"broj",f:"r_prsut",a:"0 €",p:"Dostava kad naručite preko weba.",
-  cap:"Dostavu preko našeg weba ne naplaćujemo. 🛵\nNi po kiši, ni petkom navečer.\nrikyspizza.com.hr"}),
- R({t:"cijena",f:"r_cevapi",j:"Ćevapi u lepinji",c:"8,50 €",p:"Domaća junetina, luk, ajvar.",
-  cap:"Lepinja ide u juhu pa na roštilj. 🔥\nĆevapi 8,50 €.\nrikyspizza.com.hr"}),
- R({t:"izjava",f:"r_mijesi",h:"Tijesto radimo <em>svako jutro.</em>",
-  p:"Pa ga pustimo da miruje tri dana.",
-  cap:"Mijesimo ujutro, pečemo tri dana kasnije. Tako napuljska pizza i treba. 🍕\nrikyspizza.com.hr"}),
- R({t:"cijena",f:"r_palacinke",j:"Palačinke",c:"4,00 €",p:"Nutella, Lino Lada ili marmelada.",
-  cap:"Dvije domaće palačinke za 4,00 €. 🥞\nDodajte uz narudžbu.\nrikyspizza.com.hr"}),
- R({t:"popis",f:"r_italiana",h:"Što dobiješ kod nas",l:["Besplatnu dostavu","Gratis Colu uz pizzu","10 % niže cijene","Svaku 10. pizzu gratis"],
-  cap:"Sve pogodnosti na jednom mjestu, samo preko našeg weba. 🍕\nrikyspizza.com.hr"}),
- R({t:"izjava",f:"r_drzi_pizzu",h:"Zagorska 18.",
-  p:"Dođite po svoju ili vam je dovezemo.",
-  cap:"Tu smo, Zagorska 18 u Zagrebu.\nNaručite online ili svratite.\n01 2090 102"}),
+  p:"Sad je vrijeme da isprobaš.",
+  cap:"Još nisi čuo da možeš naručiti iz Riky'sa putem našeg weba?\nSad je vrijeme da to isprobaš. Klikni link i pogledaj sve pogodnosti."}),
+ R({t:"popis",f:"r_italiana",h:"Sve pogodnosti",l:["Besplatna dostava","10 % jeftinije od portala","Gratis Cola uz svaku pizzu","Svaka 10. pizza gratis"],
+  cap:"Klikni link i pogledaj sve pogodnosti.\nNaruči direktno od nas i uzmi ih sve. 🍕\n"+WEB}),
+ R({t:"broj",f:"r_prsut",a:"0 €",p:"Dostava kad naručiš preko weba.",
+  cap:"Naruči putem našeg weba i dostava ti je besplatna. 🛵\n"+WEB}),
+ R({t:"cijena",f:"r_quattro",j:"Quattro Formaggio",c:"12,20 €",p:"Na novom tijestu od tri dana.",
+  cap:"Nova receptura, isti sirevi. 🧀\nNaruči putem našeg weba i uz pizzu ide gratis Cola.\n"+WEB}),
+ R({t:"izjava",f:"r_mijesi",h:"Talijansko <em>i hrvatsko.</em>",
+  p:"Najbolje namirnice koje nađemo.",
+  cap:"Nova receptura: napuljska pizza s najboljim talijanskim i hrvatskim namirnicama. 🇮🇹🇭🇷\nProbaj još danas.\n"+WEB}),
+ R({t:"cijena",f:"r_vatrena",j:"Vatrena",c:"13,00 €",p:"Vratina, kulen, špek, chili.",
+  cap:"Naruči putem našeg weba: besplatna dostava i gratis Cola uz svaku pizzu. 🌶️\n"+WEB}),
+ R({t:"izjava",f:"r_daske",h:"Naš web, <em>naša dostava.</em>",
+  p:"Naše cijene i naše pogodnosti.",
+  cap:"Riky's ima svoju dostavu i svoj web shop.\nNaruči direktno od nas. 🍕\n"+WEB}),
+ R({t:"cijena",f:"r_xxl_prsut",j:"XXL sendvič",c:"15,00 €",p:"32 × 32 cm.",
+  cap:"Uz XXL sendvič ide besplatna dostava kad naručiš preko našeg weba.\n"+WEB}),
+ R({t:"izjava",f:"r_drzi_pizzu",h:"Link je <em>u opisu.</em>",
+  p:"Naruči odmah i zgrabi svoju gratis colu.",
+  cap:"Naruči odmah pizzu putem našeg weba, link je u opisu, i zgrabi svoju gratis colu. 🥤"}),
+ R({t:"popis",f:"r_toscana",h:"Nova receptura",l:["Tijesto fermentirano 3 dana","Talijanske i hrvatske namirnice","Napuljski način pečenja"],
+  cap:"Riky's ima novu recepturu i vlastitu dostavu.\nProbaj našu napuljsku pizzu još danas. 🍕\n"+WEB}),
+ R({t:"izjava",f:"r_njoke",h:"Nije samo <em>pizza.</em>",
+  p:"Ali gratis Cola ide uz pizzu.",
+  cap:"Na webu je cijeli jelovnik, a uz svaku naručenu pizzu ide gratis Coca-Cola 0,33.\n"+WEB}),
+ R({t:"izjava",f:"r_dostavljac",h:"Zagorska 18.",
+  p:"Naručite online ili svratite.",
+  cap:"Riky's ponovo ima svoju dostavu.\nZagorska 18, Zagreb · 01 2090 102\n"+WEB}),
 
  /* ===== 30 REELOVA ===== */
- R({n:"Opet vozimo sami",cta:"rikyspizza.com.hr",s:[
-  V(31136,"Riky's opet vozi sam.","r_skuter"),V(31155,"Bez portala između.","r_dostavljac")],
-  cap:"Vratili smo vlastitu dostavu. 🛵\nNaručite preko našeg weba i vozimo vam mi.\nrikyspizza.com.hr"}),
- R({n:"Tri pogodnosti",cta:"Naruči preko weba",s:[
-  N("Naruči preko našeg weba."),L(["Besplatna dostava","10 % jeftinije","Gratis Cola"])],
-  cap:"Besplatna dostava, 10 % niža cijena nego na portalima i gratis Coca-Cola uz svaku pizzu. 🍕\nrikyspizza.com.hr"}),
- R({n:"Tijesto od 3 dana",cta:"Probaj napoletanu",s:[
-  V(42467,"Mijesimo ujutro.","r_mijesi"),B("3","DANA","toliko tijesto odmara"),
-  V(42478,"Pa tek onda u peć.","r_tijesto_kade")],
-  cap:"Nova napuljska receptura. Tijesto fermentira tri dana. 🍕\nLakše je i mekše.\nrikyspizza.com.hr"}),
- R({n:"Gratis Cola",cta:"Zgrabi svoju Colu",s:[
-  V(44001,"Naručiš pizzu.","r_capricciosa"),J("Coca-Cola 0,33","gratis","uz svaku naručenu pizzu","r_cola")],
-  cap:"Uz svaku pizzu s našeg weba ide hladna Cola. 🥤\nBez koda, bez minimuma.\nLink u opisu."}),
+ R({n:"Ponovo svoja dostava",cta:"rikyspizza.com.hr",s:[
+  N("Riky's ponovo ima svoju dostavu."),V(31136,"Vozimo sami.","r_skuter")],
+  cap:"Pizzerija Riky's ponovo ima svoju dostavu. 🛵\nNaruči putem našeg weba.\n"+WEB}),
+ R({n:"Tri pogodnosti",cta:"Naruči putem našeg weba",s:[
+  N("Naruči putem našeg weba."),L(POG)],
+  cap:"Besplatna dostava, 10 % popusta u odnosu na portale i gratis Coca-Cola uz svaku naručenu pizzu. 🍕\n"+WEB}),
+ R({n:"Nova receptura",cta:"Probaj još danas",s:[
+  N("Nova receptura."),V(42467,"Napuljska pizza.","r_ruke_tijesto"),
+  B("3","DANA","tijesto fermentira")],
+  cap:"Riky's ima novu recepturu i vlastitu dostavu.\nProbaj našu napuljsku pizzu, tri dana fermentiranu, s najboljim talijanskim i hrvatskim namirnicama.\nProbaj još danas! 🍕"}),
+ R({n:"Zgrabi svoju colu",cta:"Link u opisu",s:[
+  V(44001,"Naruči odmah pizzu.","r_capricciosa"),J("Coca-Cola 0,33","gratis","uz svaku naručenu pizzu","r_cola")],
+  cap:"Naruči odmah pizzu putem našeg weba, link u opisu, i zgrabi svoju gratis colu. 🥤"}),
  R({n:"Svaka deseta",cta:"Program vjernosti",s:[
-  V(42487,"Devet puta si naručio.","r_rikys"),B("10.","GRATIS","pizza ide na kuću")],
-  cap:"Svaka deseta pizza je naša. 🍕\nBroji se sama, na vaš broj mobitela.\nrikyspizza.com.hr"}),
- R({n:"Portal ili mi",cta:"Naruči izravno",s:[
-  N("Ista pizza."),B("+10 %","0 %","portal ili naš web"),
-  V(42136,"Izravno je jeftinije.","r_italiana")],
-  cap:"Na portalu ista pizza košta oko 10 posto više.\nKod nas plaćate pizzu i ništa drugo.\nrikyspizza.com.hr"}),
+  N("Riky's nudi i program vjernosti."),B("10.","GRATIS","pizza ide na kuću")],
+  cap:"Program vjernosti gdje ti je svaka 10. pizza gratis. 🍕\n"+WEB}),
+ R({n:"Zaboravi portale",cta:"Naruči direktno od nas",s:[
+  N("Riky's ima svoju dostavu i svoj web shop."),
+  N("Zaboravi Wolt i Glovo."),V(42136,"Naruči direktno od nas.","r_italiana")],
+  cap:"Riky's ima svoju dostavu i svoj web shop.\nZaboravi na Wolt i Glovo i naruči direktno od nas, gdje ti dajemo hrpu pogodnosti i popusta.\n"+WEB}),
  R({n:"Još nisi probao",cta:"Klikni link u opisu",s:[
-  N("Još nisi naručio s našeg weba?"),V(42133,"Sad je vrijeme.","r_brasno")],
-  cap:"Ako još niste naručili izravno kod nas, sad je trenutak.\nPogledajte sve pogodnosti.\nLink u opisu."}),
- R({n:"Petak",cta:"Naruči za petak",s:[
-  V(42481,"Petak. Peć je puna.","r_daske"),J("Capricciosa","10,60 €","Šunka, šampinjoni, mozzarella","r_capricciosa")],
-  cap:"Petak navečer i peć koja ne staje. 🍕\nCapricciosa 10,60 €, dostava besplatna.\nrikyspizza.com.hr"}),
- R({n:"Vatrena",cta:"Vatrena 13,00 €",s:[
-  V(4118,"Koliko ljuto izdržiš?","r_vatrena"),J("Vatrena","13,00 €","Vratina, kulen, špek, chili","r_vatrena")],
-  cap:"Vratina, kulen, špek, chili i feferoni. 🌶️\nVatrena 13,00 €.\nrikyspizza.com.hr"}),
+  N("Još nisi naručio iz Riky'sa preko weba?"),V(42133,"Sad je vrijeme da isprobaš.","r_brasno")],
+  cap:"Još nisi čuo da možeš naručiti iz Riky'sa putem našeg weba?\nSad je vrijeme da to isprobaš. Klikni link i pogledaj sve pogodnosti."}),
  R({n:"Dostava 0 €",cta:"Besplatna dostava",s:[
-  V(31139,"Koliko košta dostava?","r_dostavljac"),B("0 €","uvijek","preko našeg weba")],
-  cap:"Dostavu preko weba ne naplaćujemo. 🛵\nNi po kiši, ni u najvećoj gužvi.\nrikyspizza.com.hr"}),
- R({n:"Quattro",cta:"Quattro 12,20 €",s:[
-  V(42478,"Četiri sira.","r_quattro"),J("Quattro Formaggio","12,20 €","Gorgonzola, grana, gouda, mozzarella","r_quattro")],
-  cap:"Gorgonzola, grana padano, gouda i mozzarella. 🧀\n12,20 €.\nrikyspizza.com.hr"}),
- R({n:"XXL",cta:"XXL 15,00 €",s:[
-  N("Velik je kao pizza."),J("XXL sendvič","15,00 €","32 × 32 cm, pršut ili kulen","r_xxl_prsut")],
-  cap:"32 × 32 cm, točno kao pizza. 15,00 €.\nrikyspizza.com.hr"}),
- R({n:"Utakmica",cta:"Naruči prije prvog gola",s:[
-  V(26089,"Utakmica za 20 minuta.","r_capricciosa"),V(31155,"Stigne prije prvog gola.","r_dostavljac")],
-  cap:"Naručite sad, stiže prije početka. ⚽\nrikyspizza.com.hr"}),
- R({n:"Napoletana",cta:"Probaj još danas",s:[
-  V(42467,"Nova receptura.","r_ruke_tijesto"),N("Napuljska."),
-  V(42480,"Tijesto od tri dana.","r_margherita")],
-  cap:"Napuljska pizza s tijestom koje odmara tri dana. 🍕\nProbajte je još danas.\nrikyspizza.com.hr"}),
- R({n:"Sastojci",cta:"rikyspizza.com.hr",s:[
-  N("Odakle nam sastojci?"),L(["Talijanski pelati","Domaći kulen","Mozzarella svaki dan"])],
-  cap:"Najbolje talijansko i najbolje domaće, bez kompromisa.\nrikyspizza.com.hr"}),
- R({n:"Ponedjeljak",cta:"Vidimo se u utorak",s:[
-  N("Ponedjeljkom peć odmara."),B("Uto–ned","10–23","Zagorska 18")],
-  cap:"Ponedjeljak je naš. Utorak do nedjelje 10:00–23:00. 🍕"}),
- R({n:"Njoke",cta:"Njoke 12,00 €",s:[
-  V(13258,"Kad pizza nije opcija.","r_njoke"),J("Njoke 4 sira","12,00 €","U umaku od četiri sira","r_njoke")],
-  cap:"Nije sve pizza. Njoke 4 sira, 12,00 €.\nrikyspizza.com.hr"}),
- R({n:"Ćevapi",cta:"Ćevapi 8,50 €",s:[
-  V(4678,"Lepinja ide u juhu.","r_cevapi"),J("Ćevapi u lepinji","8,50 €","Domaća junetina, luk, ajvar","r_cevapi")],
-  cap:"Pa na roštilj, pa na stol. 🔥\n8,50 €.\nrikyspizza.com.hr"}),
- R({n:"Jutro",cta:"Svrati na doručak",s:[
-  V(42464,"Otvaramo u 10.","r_tost"),J("Tost šunka sir","4,95 €","S topljenim sirom","r_tost")],
-  cap:"Jutro u Zagorskoj. Tost 4,95 €. ☕\nrikyspizza.com.hr"}),
- R({n:"Pet razloga",cta:"Naruči izravno",s:[
-  N("Zašto baš naš web?"),L(["Dostava 0 €","Gratis Cola","10 % niže","Svaka 10. gratis"])],
-  cap:"Četiri razloga koja ne dobivate nigdje drugdje. 🍕\nrikyspizza.com.hr"}),
- R({n:"Pršut",cta:"Pršut 12,40 €",s:[
-  V(20913,"Pršut ide na kraju.","r_prsut"),J("Pršut","12,40 €","Nakon pečenja, da ostane mekan","r_prsut")],
-  cap:"Pršut stavljamo tek kad pizza izađe iz peći.\n12,40 €.\nrikyspizza.com.hr"}),
- R({n:"Kiša",cta:"Dostava je i dalje 0 €",s:[
+  N("Koliko košta dostava?"),B("0 €","uvijek","preko našeg weba")],
+  cap:"Naruči putem našeg weba i dostava ti je besplatna. 🛵\n"+WEB}),
+ R({n:"10 posto",cta:"Naruči izravno",s:[
+  N("Ista pizza."),B("+10 %","0 %","portal ili naš web")],
+  cap:"Na portalima je ista pizza skuplja.\nNaruči putem našeg weba i uzmi 10 % popusta.\n"+WEB}),
+ R({n:"Tijesto",cta:"Probaj napuljsku",s:[
+  V(42467,"Mijesimo ujutro.","r_mijesi"),V(42478,"Pa odmara tri dana.","r_tijesto_kade")],
+  cap:"Nova receptura: tijesto fermentira tri dana.\nProbaj našu napuljsku pizzu još danas. 🍕\n"+WEB}),
+ R({n:"Namirnice",cta:"Probaj još danas",s:[
+  N("Odakle namirnice?"),L(["Najbolje talijansko","Najbolje domaće"])],
+  cap:"Napuljska pizza s najboljim talijanskim i hrvatskim namirnicama. 🇮🇹🇭🇷\n"+WEB}),
+ R({n:"Sve pogodnosti",cta:"Pogledaj sve pogodnosti",s:[
+  N("Zašto baš naš web?"),L(["Dostava 0 €","10 % jeftinije","Gratis Cola","Svaka 10. gratis"])],
+  cap:"Klikni link i pogledaj sve pogodnosti. 🍕\n"+WEB}),
+ R({n:"Vlastita dostava",cta:"Naruči putem našeg weba",s:[
+  V(31139,"Naši vozači.","r_dostavljac"),N("Naša pravila.")],
+  cap:"Riky's ponovo ima svoju dostavu.\nNaruči putem našeg weba.\n"+WEB}),
+ R({n:"Cola uz svaku",cta:"Zgrabi svoju colu",s:[
+  N("Uz svaku pizzu."),N("Ali baš svaku."),J("Coca-Cola 0,33","gratis","uz svaku naručenu pizzu","r_cola")],
+  cap:"Gratis Coca-Cola 0,33 uz svaku, ali baš svaku naručenu pizzu. 🥤\n"+WEB}),
+ R({n:"Petak",cta:"Naruči putem našeg weba",s:[
+  V(42481,"Petak. Peć je puna.","r_daske"),J("Capricciosa","10,60 €","Na novom tijestu","r_capricciosa")],
+  cap:"Naruči putem našeg weba: besplatna dostava i gratis Cola uz svaku pizzu. 🍕\n"+WEB}),
+ R({n:"Vatrena",cta:"Naruči putem našeg weba",s:[
+  V(4118,"Koliko ljuto izdržiš?","r_vatrena"),J("Vatrena","13,00 €","Vratina, kulen, špek, chili","r_vatrena")],
+  cap:"Uz svaku pizzu s našeg weba ide gratis Cola. 🌶️🥤\n"+WEB}),
+ R({n:"XXL",cta:"Naruči putem našeg weba",s:[
+  N("Velik je kao pizza."),J("XXL sendvič","15,00 €","32 × 32 cm","r_xxl_prsut")],
+  cap:"Naruči putem našeg weba i dostava je besplatna.\n"+WEB}),
+ R({n:"Quattro",cta:"Naruči putem našeg weba",s:[
+  V(42478,"Četiri sira.","r_quattro"),J("Quattro Formaggio","12,20 €","Na novom tijestu","r_quattro")],
+  cap:"Nova receptura, isti sirevi. 🧀\nUz pizzu gratis Cola.\n"+WEB}),
+ R({n:"Web shop",cta:"Naruči direktno od nas",s:[
+  N("Riky's ima svoj web shop."),V(42123,"Cijeli jelovnik je tu.","r_toscana")],
+  cap:"Riky's ima svoju dostavu i svoj web shop.\nNaruči direktno od nas.\n"+WEB}),
+ R({n:"Kiša",cta:"Dostava je besplatna",s:[
   N("Pada kiša."),V(31136,"Mi i dalje vozimo.","r_skuter")],
-  cap:"Po kiši se ne izlazi. Zato vozimo mi. 🛵\nDostava besplatna.\nrikyspizza.com.hr"}),
- R({n:"Riky's pizza",cta:"Naša pizza",s:[
+  cap:"Naš vozač, naša dostava, i dalje besplatna.\n"+WEB}),
+ R({n:"Riky's pizza",cta:"Naruči putem našeg weba",s:[
   N("Jednu smo nazvali po sebi."),J("Riky's","13,00 €","Šunka, kulen, špek, dimljeni sir","r_rikys")],
-  cap:"Pizza koja nosi naše ime. 13,00 €.\nrikyspizza.com.hr"}),
- R({n:"Bez minimuma",cta:"Naruči koliko želiš",s:[
-  N("Koliko je minimalna narudžba?"),V(42123,"Jedna pizza je dovoljna.","r_vesuvio")],
-  cap:"Jedna pizza je sasvim dovoljna. Dostava je i tad besplatna.\nrikyspizza.com.hr"}),
- R({n:"Burger",cta:"Bacon 9,54 €",s:[
-  V(12016,"Cheddar se topi.","r_bacon"),J("Bacon Cheeseburger","9,54 €","100 % juneće, brioche pecivo","r_bacon")],
-  cap:"Nije samo pizza. 🍔\nBacon Cheeseburger 9,54 €.\nrikyspizza.com.hr"}),
- R({n:"Nedjelja",cta:"Naruči ručak",s:[
-  N("Nedjelja. Nitko ne želi kuhati."),J("Pohani odrezak","10,90 €","S pomfritom i tartarom","r_odrezak")],
-  cap:"Nedjeljni ručak bez suđa. 10,90 €.\nrikyspizza.com.hr"}),
- R({n:"Calzone",cta:"Calzone 9,50 €",s:[
-  N("Pizza koja se presavila."),J("Vesuvius Calzone","9,50 €","Pelati, gouda, mozzarella, šunka","r_calzone")],
-  cap:"Zatvorena, pa ostane topla duže. 9,50 €.\nrikyspizza.com.hr"}),
- R({n:"Dvije pizze",cta:"Naruči za dvoje",s:[
+  cap:"Na novom tijestu od tri dana. 🍕\nUz nju gratis Cola.\n"+WEB}),
+ R({n:"Deseta",cta:"Svaka 10. gratis",s:[
+  V(42487,"Devet puta si naručio.","r_rikys"),N("Deseta ti je gratis.")],
+  cap:"Program vjernosti gdje ti je svaka 10. pizza gratis.\n"+WEB}),
+ R({n:"Napuljska",cta:"Probaj još danas",s:[
+  N("Napuljska."),V(42480,"Tri dana tijesta.","r_margherita"),N("Probaj još danas!")],
+  cap:"Riky's ima novu recepturu i vlastitu dostavu.\nProbaj našu napuljsku pizzu još danas. 🍕\n"+WEB}),
+ R({n:"Bez portala",cta:"Naruči direktno od nas",s:[
+  N("Bez portala između nas i tebe."),V(31155,"Od peći do vrata.","r_dostavljac")],
+  cap:"Zaboravi Wolt i Glovo i naruči direktno od nas.\n"+WEB}),
+ R({n:"Utakmica",cta:"Naruči putem našeg weba",s:[
+  V(26089,"Utakmica za 20 minuta.","r_capricciosa"),V(31155,"Naša dostava stiže.","r_dostavljac")],
+  cap:"Naruči putem našeg weba: besplatna dostava i gratis Cola. ⚽🍕\n"+WEB}),
+ R({n:"Hrpa pogodnosti",cta:"Pogledaj sve pogodnosti",s:[
+  N("Hrpa pogodnosti i popusta."),L(["Dostava 0 €","10 % popusta","Gratis Cola"])],
+  cap:"Naruči direktno od nas, gdje ti dajemo hrpu pogodnosti i popusta.\n"+WEB}),
+ R({n:"Link u opisu",cta:"Link u opisu",s:[
+  N("Naruči odmah."),N("Link je u opisu.")],
+  cap:"Naruči odmah pizzu putem našeg weba, link u opisu, i zgrabi svoju gratis colu. 🥤"}),
+ R({n:"Jedna pizza",cta:"Naruči putem našeg weba",s:[
+  N("I jedna pizza je dovoljna."),V(20913,"Dostava je svejedno besplatna.","r_vesuvio")],
+  cap:"Naruči putem našeg weba, dostava je besplatna i uz pizzu ide gratis Cola.\n"+WEB}),
+ R({n:"Dvije pizze",cta:"Naruči putem našeg weba",s:[
   V(44007,"Dvije pizze.","r_toscana"),B("2","COLE","jer gratis ide uz svaku")],
-  cap:"Dvije pizze znače dvije gratis Cole. 🥤🥤\nrikyspizza.com.hr"}),
- R({n:"Hawaii",cta:"Hawaii 11,25 €",s:[
-  N("Ananas na pizzi?"),V(44012,"Mi ne sudimo.","r_hawaii")],
-  cap:"Tema o kojoj se ne raspravlja. Mi je imamo. 🍍\nHawaii 11,25 €.\nrikyspizza.com.hr"}),
- R({n:"Hvala",cta:"Vidimo se",s:[
-  V(44015,"Neke narudžbe znamo napamet.","r_drzi_pizzu"),N("Hvala što ste naši.")],
-  cap:"Ime, adresa, bez luka. Znamo. ❤️\nrikyspizza.com.hr"}),
+  cap:"Gratis Cola ide uz svaku, ali baš svaku naručenu pizzu. 🥤🥤\n"+WEB}),
+ R({n:"Riky's",cta:"rikyspizza.com.hr",s:[
+  N("Riky's ponovo ima svoju dostavu."),N("Naruči putem našeg weba.")],
+  cap:"Pizzerija Riky's ponovo ima svoju dostavu i svoj web shop.\nNaruči direktno od nas. 🍕\n"+WEB}),
  ];})();
 
 /* ===== FOODPOINT 15: kampanje za Foodpoint i Studio 99 =====
-   Foodpoint koristi vlastite snimke sučelja i ugostiteljske scene.
-   Studio 99 ne dijeli nijednu sliku s ostalima: dizajnerske fotografije i tipografske objave u plavoj,
-   bez ijednog videa hrane, jer je to drugi posao i drugi profil.                                   */
+   PRAVILO OVOG SKUPA: svaka objava i svaki reel je varijanta Rikovih vlastitih tekstova.
+   Ništa se ne izmišlja — mijenja se samo koji dio poruke je u prvom planu i u kojem je obliku.
+
+   Rikovi tekstovi za Foodpoint, iz kojih je sve složeno:
+   1) "Foodpoint, najbolji prijatelj svakog ugostitelja. Izrada web shopa, upravljanje dostavama,
+       analitika i kontrola prodaje, organizacija dostavljača, svi vaši troškovi i namirnice u jednom
+       sučelju za jednostavno poslovanje i kontrolu. I još puno opcija koje možete pregledati na našem
+       webu. Pošaljite ponudu već danas i olakšajte si svoje poslovanje."
+   2) "Foodpoint, partner svakog ugostitelja. Web aplikacija u kojoj imate cijelo svoje poslovanje,
+       rađena s iskustvom dugogodišnjih ugostitelja i prilagođena točno vašim potrebama. Otvorite našu
+       web stranicu i pregledajte točno sve što nudimo. Pošaljite upit još danas."
+   3) "Foodpoint, najbolji partner svakog ugostitelja. Uz Foodpoint ne samo da dobivate web shop i
+       kontrolu nad svojim dostavama, dobivate i sve što jednom poslovanju treba: izrada grafičkih
+       vizuala, letaka, plakata, dizajniranje brenda, jelovnika, banera, loga, oblijepljivanje vašeg
+       auta. S Foodpointom imate sve na jednom mjestu."
+
+   Rikovi tekstovi za Studio 99:
+   1) "Studio 99, grafički i web studio koji ti može napraviti sve za tvoje poslovanje ili privatne
+       projekte. Od web stranica, letaka i dizajniranja brendinga poslovanja do printa na majice i
+       izrade web aplikacija i sučelja točno za vaše potrebe. Link je u opisu ili na našem profilu.
+       Pošaljite upit još danas."
+   2) "Studio 99 za sve vaše digitalne probleme. Otvorite link u opisu i pogledajte našu ponudu.
+       Javite se još danas."
+
+   Cijena (nova): 39 € mjesečno fiksno za održavanje sustava + provizija 5 % prvih 6 mjeseci, zatim 10 %. */
 
 /* ---------- FOODPOINT: 20 objava + 30 reelova ---------- */
 const FPK_FP=(()=>{
  const V=(id,t,f,k)=>({v:"vid",id,t,f,k}), N=h=>({v:"naslov",h}), B=(a,b,p)=>({v:"broj",a,b,p}),
-  L=l=>({v:"lista",l}), E=(sl,n,mob)=>({v:"ekran",sl,n,mob}), K=(ik,n,t)=>({v:"k",ik,n,t});
+  L=l=>({v:"lista",l}), E=(sl,n,mob)=>({v:"ekran",sl,n,mob});
  const R=o=>({...o,brend:"fp",oz:FP_BRENDOVI.fp.oznake});
+ /* Rikove završne rečenice, koriste se u izmjeni */
+ const CTA1="Pošaljite ponudu već danas i olakšajte si svoje poslovanje.";
+ const CTA2="Pošaljite upit još danas.";
+ const CTA3="Otvorite našu web stranicu i pregledajte točno sve što nudimo.";
+ const POPIS=["Izrada web shopa","Upravljanje dostavama","Analitika i kontrola prodaje","Organizacija dostavljača","Troškovi i namirnice"];
  return [
 
  /* ===== 20 OBJAVA ===== */
- R({t:"izjava",f:"kuhinja",h:"Foodpoint, najbolji prijatelj <em>svakog ugostitelja.</em>",
-  p:"Cijelo poslovanje u jednom sučelju.",
-  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nIzrada web shopa, upravljanje dostavama, analitika i kontrola prodaje, organizacija dostavljača, svi troškovi i namirnice u jednom sučelju.\nPošaljite upit još danas."}),
- R({t:"popis",h:"Što radi Foodpoint",l:["Izrada web shopa","Upravljanje dostavama","Analitika i kontrola prodaje","Organizacija dostavljača","Troškovi i namirnice"],
-  cap:"Sve što jedan lokal treba, na jednom mjestu.\nI još puno opcija koje možete pregledati na našem webu.\nPošaljite upit još danas i olakšajte si poslovanje."}),
+ /* 1–3: tri Rikova teksta, svaki kao nosiva objava */
+ R({t:"popis",f:"kuhinja",h:"Najbolji prijatelj<br><em>svakog ugostitelja</em>",l:POPIS,
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nIzrada web shopa, upravljanje dostavama, analitika i kontrola prodaje, organizacija dostavljača, svi vaši troškovi i namirnice u jednom sučelju za jednostavno poslovanje i kontrolu.\nI još puno opcija koje možete pregledati na našem webu.\n"+CTA1}),
  R({t:"izjava",f:"bistro",h:"Partner <em>svakog ugostitelja.</em>",
-  p:"Rađeno s iskustvom dugogodišnjih ugostitelja.",
-  cap:"Web aplikacija u kojoj imate cijelo svoje poslovanje.\nRađena s iskustvom dugogodišnjih ugostitelja i prilagođena točno vašim potrebama.\nOtvorite naš web i pogledajte sve što nudimo."}),
- R({t:"popis",f:"chef_priprema",h:"Uz Foodpoint dobivate i",l:["Grafičke vizuale i letke","Dizajn brenda i jelovnika","Logo i banere","Oblijepljivanje auta"],
-  cap:"Foodpoint, najbolji partner svakog ugostitelja.\nNe samo web shop i kontrola nad dostavama, nego i sve ostalo što poslovanju treba: vizuali, letci, plakati, brend, jelovnici, baneri, logo i oblijepljivanje vašeg auta.\nS Foodpointom imate sve na jednom mjestu."}),
- R({t:"usporedba",al:"Wolt i Glovo",bl:"25–30 %",ad:"Foodpoint",bd:"10 %",
-  p:"Provizija po online narudžbi. Prva tri mjeseca 5 %.",
-  cap:"Ista narudžba, tri puta manja provizija.\n49 € mjesečno i 10 % na online narudžbe, prva tri mjeseca 5 %.\nPošaljite upit za izračun na svoj promet."}),
- R({t:"izjava",f:"kuhar_lonac",h:"Vaše poslovanje <em>na jednom ekranu.</em>",
-  p:"Narudžbe, dostava, troškovi i brojke.",
-  cap:"Umjesto pet bilježnica i tri aplikacije, jedno sučelje.\nOtvorite naš web i pogledajte sve što nudimo.\nPošaljite upit još danas."}),
- R({t:"broj",a:"0 €",p:"Postavljanje, unos jelovnika i obuka.",
-  cap:"Unos jelovnika, postavljanje i obuku ne naplaćujemo.\nPlaćate tek kad sustav radi.\n49 € mjesečno, bez ugovorne obveze."}),
- R({t:"popis",f:"dostava",h:"Upravljanje dostavama",l:["Ture po vozaču","Navigacija jednim klikom","Gost vidi gdje mu je hrana"],
-  cap:"Organizacija dostavljača bez telefoniranja.\nVozač dobije turu, gost prati narudžbu, vi vidite sve.\nPošaljite upit još danas."}),
- R({t:"izjava",f:"kava_stol",h:"Analitika koja se <em>stvarno čita.</em>",
+  p:"Web aplikacija u kojoj imate cijelo svoje poslovanje.",
+  cap:"Foodpoint, partner svakog ugostitelja.\nWeb aplikacija u kojoj imate cijelo svoje poslovanje, rađena s iskustvom dugogodišnjih ugostitelja i prilagođena točno vašim potrebama.\n"+CTA3+"\n"+CTA2}),
+ R({t:"popis",f:"chef_priprema",h:"Ne samo <em>web shop</em>",l:["Grafički vizuali, letci i plakati","Dizajn brenda i jelovnika","Baneri i logo","Oblijepljivanje vašeg auta"],
+  cap:"Foodpoint, najbolji partner svakog ugostitelja.\nUz Foodpoint ne samo da dobivate web shop i kontrolu nad svojim dostavama, dobivate i sve što jednom poslovanju treba: izrada grafičkih vizuala, letaka, plakata, dizajniranje brenda, jelovnika, banera, loga, oblijepljivanje vašeg auta.\nS Foodpointom imate sve na jednom mjestu."}),
+
+ /* 4–8: svaka stavka iz Rikovog popisa dobiva svoju objavu */
+ R({t:"izjava",f:"gost",h:"Izrada <em>web shopa.</em>",
+  p:"Vaša stranica za narudžbe, s vašim imenom i logom.",
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nPrva stavka: izrada web shopa — vaša stranica za narudžbe, u vašim bojama i s vašim logom.\n"+CTA1}),
+ R({t:"izjava",f:"dostava",h:"Upravljanje <em>dostavama.</em>",
+  p:"Ture, zone i cijene po vašim pravilima.",
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nUpravljanje dostavama: ture po vozaču, zone, cijene i minimalna narudžba koje postavljate sami.\n"+CTA1}),
+ R({t:"izjava",f:"kava_stol",h:"Analitika i <em>kontrola prodaje.</em>",
   p:"Promet, najprodavanije, novi i stalni gosti.",
-  cap:"Kontrola prodaje bez tablica.\nVidite što se prodaje, kad je gužva i tko se vraća.\nOtvorite naš web i pogledajte."}),
- R({t:"popis",f:"vaga",h:"Troškovi i namirnice",l:["Normativi po jelu","Marža po komadu","Nabava jednim klikom"],
-  cap:"Svi troškovi i namirnice u jednom sučelju.\nZnate koliko zarađujete na svakom jelu.\nPošaljite upit još danas."}),
- R({t:"izjava",f:"konobar",h:"Rađeno od ugostitelja, <em>za ugostitelje.</em>",
-  p:"Ne od programera koji nikad nisu radili smjenu.",
-  cap:"Sustav je nastao u pravoj pizzeriji, u pravoj gužvi.\nZato radi onako kako vam treba.\nPošaljite upit još danas."}),
- R({t:"broj",f:"chef_rez",a:"49 €",p:"Mjesečno. Bez ugovorne obveze.",
-  cap:"49 € mjesečno i 10 % na online narudžbe.\nPrekidate kad želite, bez otkaznog roka.\nPošaljite upit još danas."}),
- R({t:"izjava",f:"restoran_sala",h:"I vaš jelovnik <em>dizajniramo mi.</em>",
-  p:"Za tisak i za web, u istom stilu.",
-  cap:"Uz sustav dolazi i dizajn: jelovnik, letci, plakati i logo.\nSve u istom stilu, sve na jednom mjestu.\nPošaljite upit."}),
- R({t:"popis",f:"restoran_drvo",h:"Za koga radimo",l:["Pizzerije","Restorane","Kafiće","Pekare"],
-  cap:"Radimo s lokalima u cijeloj Hrvatskoj, od kafića do restorana.\nSvaki dobije svoju stranicu i svoje ime, ne naše.\nPošaljite upit još danas."}),
- R({t:"izjava",f:"kuharica",h:"Sidrene cijene <em>upisujemo mi.</em>",
-  p:"Rok je 17. studenoga.",
-  cap:"Od 17. studenoga jelovnik mora pokazati i sidrenu cijenu.\nPošaljite nam jelovnik, upisujemo ih umjesto vas, i za web i za tisak."}),
- R({t:"broj",f:"kuhinja_ekipa",a:"24 h",p:"Toliko traje postavljanje.",
-  cap:"Od poslanog jelovnika do stranice koja prima narudžbe.\nObuka je uključena.\nPošaljite upit još danas."}),
- R({t:"izjava",f:"barista",h:"QR na stolu, <em>narudžba na šanku.</em>",
-  p:"Bez aplikacije i bez čekanja konobara.",
-  cap:"Gost skenira QR kod za stolom i naruči sam.\nNarudžba stiže ravno na šank.\nOtvorite naš web i pogledajte."}),
- R({t:"popis",f:"pekara",h:"Narudžbe unaprijed",l:["Gost bira dan i sat","Do sedam dana unaprijed","Vi pripremite na vrijeme"],
-  cap:"Ured naruči doručak za ponedjeljak u sedam, vi to vidite u petak.\nPošaljite upit još danas."}),
- R({t:"izjava",f:"chef_tanjur",h:"Novac ide <em>izravno vama.</em>",
-  p:"Proviziju plaćate jednom mjesečno, na račun.",
-  cap:"Ne držimo vaš novac.\nNarudžbe se naplaćuju vama, a proviziju šaljemo jednom mjesečno na računu.\nPošaljite upit."}),
- R({t:"izjava",f:"kava_toci",h:"Popijmo kavu <em>pa vam pokažemo.</em>",
-  p:"Dođemo u lokal, bez obveze.",
-  cap:"Najlakše je da vidite uživo, na svom jelovniku.\nDođemo, pokažemo i odgovorimo na sve.\nPošaljite upit još danas."}),
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nAnalitika i kontrola prodaje: promet po danu, najprodavanija jela, novi i stalni gosti.\n"+CTA1}),
+ R({t:"izjava",f:"dostava_portret",h:"Organizacija <em>dostavljača.</em>",
+  p:"Vozač dobije turu, gost prati narudžbu.",
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nOrganizacija dostavljača: vozač dobije turu i navigaciju, gost vidi gdje mu je hrana.\n"+CTA1}),
+ R({t:"izjava",f:"vaga",h:"Troškovi i namirnice<br><em>u jednom sučelju.</em>",
+  p:"Normativi, marža po jelu, nabava.",
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nSvi vaši troškovi i namirnice u jednom sučelju za jednostavno poslovanje i kontrolu.\n"+CTA1}),
+
+ /* 9–13: usluge iz trećeg teksta, svaka zasebno */
+ R({t:"izjava",f:"restoran_sala",h:"Letci i <em>plakati.</em>",
+  p:"Dizajn i tisak, s dostavom na adresu lokala.",
+  cap:"Uz Foodpoint dobivate i sve što jednom poslovanju treba.\nIzrada grafičkih vizuala, letaka i plakata.\nS Foodpointom imate sve na jednom mjestu."}),
+ R({t:"izjava",f:"chef_tanjur",h:"Dizajniranje <em>brenda.</em>",
+  p:"Logo, boje, pravila — i sve ostalo po njima.",
+  cap:"Uz Foodpoint dobivate i dizajniranje brenda i loga.\nJedan brend koji izgleda isto na jelovniku, na letku i na autu.\nS Foodpointom imate sve na jednom mjestu."}),
+ R({t:"izjava",f:"kuharica",h:"Jelovnici.",
+  p:"Za tisak i za web, sa sidrenim cijenama.",
+  cap:"Uz Foodpoint dobivate i dizajn jelovnika, sa sidrenim cijenama upisanima kako treba.\nS Foodpointom imate sve na jednom mjestu."}),
+ R({t:"izjava",f:"restoran_drvo",h:"Baneri i <em>vizuali.</em>",
+  p:"Za mreže, oglase i stranicu.",
+  cap:"Uz Foodpoint dobivate i izradu grafičkih vizuala i banera.\nS Foodpointom imate sve na jednom mjestu."}),
+ R({t:"izjava",f:"dostavljac_ulica",h:"Oblijepljivanje <em>vašeg auta.</em>",
+  p:"Logo i tekst, djelomično ili cijelo vozilo.",
+  cap:"Uz Foodpoint dobivate i oblijepljivanje vašeg auta.\nVaš auto stoji u gradu cijeli dan, neka radi za vas.\nS Foodpointom imate sve na jednom mjestu."}),
+
+ /* 14–20: ostale Rikove rečenice */
+ R({t:"izjava",f:"konobar",h:"Rađena <em>iskustvom ugostitelja.</em>",
+  p:"Ne od nekoga tko nikad nije radio smjenu.",
+  cap:"Foodpoint, partner svakog ugostitelja.\nWeb aplikacija rađena s iskustvom dugogodišnjih ugostitelja.\n"+CTA2}),
+ R({t:"izjava",f:"kuhar_lonac",h:"Prilagođena <em>točno vašim potrebama.</em>",
+  p:"Uključuje se samo ono što koristite.",
+  cap:"Foodpoint, partner svakog ugostitelja.\nWeb aplikacija u kojoj imate cijelo svoje poslovanje, prilagođena točno vašim potrebama.\n"+CTA3}),
+ R({t:"izjava",f:"kuhinja_ekipa",h:"Cijelo svoje poslovanje<br><em>na jednom mjestu.</em>",
+  p:"Narudžbe, kuhinja, dostava, troškovi i brojke.",
+  cap:"Foodpoint, partner svakog ugostitelja.\nWeb aplikacija u kojoj imate cijelo svoje poslovanje.\nS Foodpointom imate sve na jednom mjestu.\n"+CTA2}),
+ R({t:"usporedba",al:"Wolt i Glovo",bl:"25–30 %",ad:"Foodpoint",bd:"5 %",
+  p:"Prvih 6 mjeseci 5 %, nakon toga 10 %. Mjesečno 39 € fiksno.",
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\n39 € mjesečno fiksno za održavanje sustava i provizija 5 % prvih šest mjeseci, nakon toga 10 %.\n"+CTA1}),
+ R({t:"broj",a:"39 €",p:"Mjesečno, fiksno. Održavanje sustava.",
+  cap:"39 € mjesečno fiksno za održavanje sustava.\nPostavljanje, unos jelovnika i obuka su besplatni.\n"+CTA2}),
+ R({t:"izjava",f:"barista",h:"I još puno opcija<br><em>na našem webu.</em>",
+  p:"Popis je dulji nego što stane u objavu.",
+  cap:"Ovo je samo dio onoga što Foodpoint radi.\nI još puno opcija koje možete pregledati na našem webu.\n"+CTA3}),
+ R({t:"izjava",f:"kava_toci",h:"Olakšajte si <em>svoje poslovanje.</em>",
+  p:"Dođemo, popijemo kavu i pokažemo sve.",
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\n"+CTA1}),
 
  /* ===== 30 REELOVA ===== */
- R({n:"Najbolji prijatelj",cta:"Pošaljite upit još danas",s:[
-  N("Foodpoint, najbolji prijatelj svakog ugostitelja."),
-  L(["Web shop","Dostave","Analitika","Troškovi"])],
-  cap:"Izrada web shopa, upravljanje dostavama, analitika i kontrola prodaje, organizacija dostavljača i svi troškovi u jednom sučelju.\nPošaljite upit još danas i olakšajte si poslovanje."}),
- R({n:"Cijelo poslovanje",cta:"Otvorite naš web",s:[
-  V(15875,"Pet bilježnica.","kuhinja_ekipa"),N("Tri aplikacije."),
+ R({n:"Najbolji prijatelj",cta:"Pošaljite ponudu već danas",s:[
+  N("Foodpoint, najbolji prijatelj svakog ugostitelja."),L(POPIS)],
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nIzrada web shopa, upravljanje dostavama, analitika i kontrola prodaje, organizacija dostavljača, svi vaši troškovi i namirnice u jednom sučelju za jednostavno poslovanje i kontrolu.\n"+CTA1}),
+ R({n:"Partner svakog ugostitelja",cta:"Pošaljite upit još danas",s:[
+  N("Foodpoint, partner svakog ugostitelja."),
+  V(15875,"Web aplikacija u kojoj imate cijelo svoje poslovanje.","kuhinja_ekipa"),
   E("fp-ekran-vlasnik.png","Sve na jednom ekranu")],
-  cap:"Web aplikacija u kojoj imate cijelo svoje poslovanje.\nRađena s iskustvom dugogodišnjih ugostitelja.\nOtvorite naš web i pogledajte sve što nudimo."}),
- R({n:"25 ili 10",cta:"Izračunajte razliku",s:[
-  B("25–30 %","10 %","provizija po narudžbi"),V(44001,"Na 10.000 € prometa.","pizza_stol"),
-  B("2.500 €","1.000 €","razlika ostaje vama")],
-  cap:"Provizija na portalima je 25 do 30 posto, kod nas 10.\nNa 10.000 € online prometa to je oko 1.500 € mjesečno.\nPošaljite svoj promet, izračunamo točno."}),
- R({n:"I dizajn",cta:"Sve na jednom mjestu",s:[
+  cap:"Foodpoint, partner svakog ugostitelja.\nWeb aplikacija u kojoj imate cijelo svoje poslovanje, rađena s iskustvom dugogodišnjih ugostitelja i prilagođena točno vašim potrebama.\n"+CTA2}),
+ R({n:"Ne samo web shop",cta:"Sve na jednom mjestu",s:[
   N("Uz Foodpoint ne dobivate samo web shop."),
-  L(["Letci i plakati","Jelovnik i logo","Oblijepljivanje auta"])],
-  cap:"Foodpoint, najbolji partner svakog ugostitelja.\nUz sustav dolaze i vizuali, letci, plakati, brend, jelovnici, baneri, logo i oblijepljivanje vašeg auta.\nS Foodpointom imate sve na jednom mjestu."}),
- R({n:"Kuhinja",cta:"Pošaljite upit",s:[
-  V(39535,"Telefon zvoni četrnaesti put.","kuhar_lonac"),
-  E("fp-ekran-kuhinja.png","Nova narudžba · 3 pizze"),
-  V(15867,"Napisana, s adresom.","chef_priprema")],
-  cap:"Petak navečer u kuhinji.\nNarudžbe mogu stizati napisane, bez dizanja slušalice.\nPošaljite upit još danas."}),
- R({n:"Dostave",cta:"Upravljanje dostavama",s:[
-  V(31139,"Tko vozi gdje?","dostava_portret"),L(["Ture po vozaču","Navigacija","Gost prati narudžbu"])],
-  cap:"Organizacija dostavljača bez telefoniranja.\nVozač dobije turu, gost vidi gdje mu je hrana.\nPošaljite upit."}),
- R({n:"Brojke",cta:"Analitika i kontrola",s:[
-  V(42123,"Koliko ste zaradili danas?","kava_stol"),E("fp-ekran-vlasnik.png","Promet, jela, gosti")],
-  cap:"Kontrola prodaje bez tablica.\nPromet, najprodavanije i tko se vraća.\nOtvorite naš web."}),
- R({n:"Postavljanje 0 €",cta:"Postavljanje je besplatno",s:[
-  N("Tko će upisati 60 jela?"),N("Mi."),V(13261,"Vi pošaljete jelovnik.","chef_tanjur")],
-  cap:"Postavljanje, unos jelovnika i obuku ne naplaćujemo.\nPošaljite jelovnik u poruci."}),
- R({n:"Troškovi",cta:"Troškovi i namirnice",s:[
-  V(1666,"Koliko zarađujete po pizzi?","vaga"),L(["Normativ po jelu","Marža po komadu","Nabava"])],
-  cap:"Svi troškovi i namirnice u jednom sučelju.\nZnate maržu na svakom jelu.\nPošaljite upit."}),
- R({n:"Bez ugovora",cta:"Bez ugovorne obveze",s:[
-  V(21864,"Nema ugovora na dvije godine.","kava_stol"),N("Prekidate kad želite.")],
-  cap:"Ne vežemo nikoga.\n49 € mjesečno, prekid bez otkaznog roka.\nPošaljite upit."}),
- R({n:"QR na stolu",cta:"Za kafiće",s:[
-  V(219,"Konobar ne stigne do svakog stola.","konobar"),
-  K("qr","QR kod na stolu","Gost skenira, odabere i naruči. Bez aplikacije."),
-  V(3574,"Narudžba stiže na šank.","kava_toci")],
-  cap:"Jutarnja gužva? Gost skenira QR kod i naruči sam.\nOtvorite naš web i pogledajte."}),
- R({n:"Sidrene",cta:"Pošaljite jelovnik",s:[
-  V(2433,"Od 17. studenoga.","pasta1","Rok"),N("Uz svaku cijenu ide i sidrena."),
-  V(13261,"Mi ih upišemo.","kuharica")],
-  cap:"Od 17. studenoga jelovnik mora pokazati i sidrenu cijenu.\nUpisujemo ih umjesto vas.\nPošaljite jelovnik."}),
- R({n:"24 sata",cta:"Pošaljite upit",s:[
-  N("Koliko traje postavljanje?"),B("24","SATA","od jelovnika do narudžbi")],
-  cap:"Od poslanog jelovnika do stranice koja prima narudžbe.\nObuka uključena.\nPošaljite upit još danas."}),
- R({n:"Vaše ime",cta:"Vaša stranica",s:[
-  V(4385,"Na stranici piše vaše ime.","bistro"),N("Ne naše.")],
-  cap:"Gost naručuje na vašoj adresi, s vašim logom i vašim bojama.\nOtvorite naš web."}),
- R({n:"Gost pita",cta:"Pošaljite upit",s:[
-  N("„Gdje mi je hrana?”"),E("fp-ekran-gost.jpg","Vrijeme pripreme · 25 min",true)],
-  cap:"Pitanje koje svaki lokal čuje deset puta navečer.\nKod nas gost sam vidi kad hrana stiže.\nPošaljite upit."}),
- R({n:"Pauza u gužvi",cta:"Vaša pravila",s:[
-  V(4118,"Previše narudžbi odjednom?","kuhar_noc"),N("Pauzirate jednim klikom.")],
-  cap:"Kad kuhinja ne stigne, primanje narudžbi se pauzira jednim klikom.\nPošaljite upit."}),
- R({n:"Novac",cta:"Novac ide vama",s:[
-  N("Tko drži vaš novac?"),N("Vi."),V(51123,"Proviziju plaćate na račun.","mob_narudzba")],
-  cap:"Narudžbe se naplaćuju izravno vama.\nProviziju šaljemo jednom mjesečno na računu.\nPošaljite upit."}),
- R({n:"Vjernost",cta:"Program vjernosti",s:[
-  V(42487,"Tko su vaši najbolji gosti?","pizza_stol2"),
-  K("poklon","Vjernost po broju mobitela","Bez kartica. Narudžbe se broje same, vi birate nagradu.")],
-  cap:"Program vjernosti bez kartica i aplikacija.\nVi birate nagradu.\nPošaljite upit."}),
- R({n:"Zakazivanje",cta:"Narudžbe unaprijed",s:[
-  V(42464,"Ured naruči za ponedjeljak u 7.","pekara"),N("Vi to vidite u petak.")],
-  cap:"Gost bira dan i sat, do sedam dana unaprijed.\nPošaljite upit."}),
- R({n:"Mali lokal",cta:"Za male lokale",s:[
-  V(4385,"Mali lokal.","bistro"),N("Ne treba vam velika aplikacija."),
-  V(13875,"Treba vam partner.","kuharica")],
-  cap:"Radimo s obiteljskim lokalima jednako kao s restoranima.\nPošaljite upit."}),
- R({n:"Kava",cta:"Popijmo kavu",s:[
-  V(222,"Dođemo u lokal.","barista"),N("Pokažemo na vašem jelovniku.")],
-  cap:"Najlakše je da vidite uživo, bez obveze.\nPošaljite upit još danas."}),
- R({n:"Vozač",cta:"Aplikacija za vozače",s:[
-  V(31136,"Vaš vozač, vaša pravila.","dostavljac_ulica"),
+  L(["Vizuali, letci, plakati","Brend, jelovnik, logo","Baneri","Oblijepljivanje auta"])],
+  cap:"Foodpoint, najbolji partner svakog ugostitelja.\nUz Foodpoint dobivate i sve što jednom poslovanju treba: izrada grafičkih vizuala, letaka, plakata, dizajniranje brenda, jelovnika, banera, loga, oblijepljivanje vašeg auta.\nS Foodpointom imate sve na jednom mjestu."}),
+ R({n:"Izrada web shopa",cta:"Pošaljite ponudu već danas",s:[
+  N("Izrada web shopa."),E("fp-ekran-gost.jpg","Vaša stranica, vaše ime",true)],
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nIzrada web shopa — vaša stranica za narudžbe, u vašim bojama i s vašim logom.\n"+CTA1}),
+ R({n:"Upravljanje dostavama",cta:"Pošaljite ponudu već danas",s:[
+  N("Upravljanje dostavama."),V(31139,"Ture, zone i cijene po vašim pravilima.","dostava_portret")],
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nUpravljanje dostavama: ture po vozaču, zone i cijene koje postavljate sami.\n"+CTA1}),
+ R({n:"Analitika",cta:"Pošaljite ponudu već danas",s:[
+  N("Analitika i kontrola prodaje."),V(42123,"Promet, najprodavanije, gosti.","kava_stol"),
+  E("fp-ekran-vlasnik.png","Brojke na kraju dana")],
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nAnalitika i kontrola prodaje na jednom ekranu.\n"+CTA1}),
+ R({n:"Organizacija dostavljača",cta:"Pošaljite ponudu već danas",s:[
+  N("Organizacija dostavljača."),V(31136,"Vozač dobije turu.","dostavljac_ulica"),
   E("fp-ekran-vozac.png","Tura · 4 adrese")],
-  cap:"Vozač dobije turu po redu i navigaciju jednim klikom.\nPošaljite upit."}),
- R({n:"Papirići",cta:"Kuhinja bez papirića",s:[
-  N("Koliko papirića je nestalo ovaj tjedan?"),V(15867,"Kod nas nijedan.","chef_priprema")],
-  cap:"Narudžba stiže napisana i ostaje zapisana.\nPošaljite upit."}),
- R({n:"Akcije",cta:"Vaše akcije",s:[
-  V(29050,"Tiho je u utorak?","restoran_sala"),
-  K("poklon","Akcija jednim klikom","Uključite 4 + 1 ili piće uz narudžbu. Isključite kad želite.")],
-  cap:"Dajte gostima razlog da naruče baš danas.\nPošaljite upit."}),
- R({n:"Recenzije",cta:"Recenzije na stranici",s:[
-  V(44015,"Zadovoljan gost.","prijatelji_pizza"),N("Napiše recenziju kod vas, ne na portalu.")],
-  cap:"Recenzije ostaju na vašoj stranici i rade za vas.\nPošaljite upit."}),
- R({n:"Jelovnik",cta:"I dizajn je naš",s:[
-  N("Tko vam radi jelovnik?"),L(["Za tisak","Za web","U istom stilu"])],
-  cap:"Uz sustav dolazi i dizajn jelovnika, letaka i logotipa.\nS Foodpointom imate sve na jednom mjestu."}),
- R({n:"Cijela Hrvatska",cta:"Gdje god kuhate",s:[
-  V(2597,"Od Osijeka do Dubrovnika.","restoran_drvo"),N("Radimo online.")],
-  cap:"Nismo vezani za jedan grad.\nPošaljite upit još danas."}),
- R({n:"Prvi dan",cta:"Pošaljite upit",s:[
-  N("Kako izgleda prvi dan?"),L(["Pošaljete jelovnik","Mi postavimo","Vi primate narudžbe"])],
-  cap:"Tri koraka i stranica radi.\nObuka je uključena.\nPošaljite upit."}),
- R({n:"Fotografije",cta:"Slikamo i vaša jela",s:[
-  V(14010,"Jela se jedu očima.","burger4"),N("Fotografiramo ih mi.")],
-  cap:"Loša fotografija košta narudžbu.\nSnimimo vaš jelovnik kako treba.\nPošaljite upit."}),
- R({n:"Jedno sučelje",cta:"Sve na jednom mjestu",s:[
-  N("Koliko aplikacija koristite danas?"),V(3806,"S nama jednu.","kuhar_lonac")],
-  cap:"Narudžbe, dostava, troškovi, plaće i brojke u jednom sučelju.\nPošaljite upit još danas."}),
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nOrganizacija dostavljača: tura, navigacija i gost koji prati narudžbu.\n"+CTA1}),
+ R({n:"Troškovi i namirnice",cta:"Pošaljite ponudu već danas",s:[
+  N("Svi troškovi i namirnice."),V(1666,"U jednom sučelju.","vaga")],
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nSvi vaši troškovi i namirnice u jednom sučelju za jednostavno poslovanje i kontrolu.\n"+CTA1}),
+ R({n:"Cijelo poslovanje",cta:"Otvorite našu web stranicu",s:[
+  N("Koliko aplikacija koristite danas?"),V(3806,"S Foodpointom jednu.","kuhar_lonac")],
+  cap:"Foodpoint, partner svakog ugostitelja.\nWeb aplikacija u kojoj imate cijelo svoje poslovanje.\n"+CTA3}),
+ R({n:"Iskustvo ugostitelja",cta:"Pošaljite upit još danas",s:[
+  N("Tko je ovo radio?"),V(39535,"Ugostitelji. Za ugostitelje.","kuhar_lonac")],
+  cap:"Foodpoint, partner svakog ugostitelja.\nWeb aplikacija rađena s iskustvom dugogodišnjih ugostitelja.\n"+CTA2}),
+ R({n:"Prilagođeno vama",cta:"Pošaljite upit još danas",s:[
+  N("Ne treba vam sve."),V(4385,"Uključuje se samo ono što koristite.","bistro")],
+  cap:"Foodpoint, partner svakog ugostitelja.\nPrilagođena točno vašim potrebama.\n"+CTA2}),
+ R({n:"39 € mjesečno",cta:"Pošaljite upit još danas",s:[
+  N("Koliko košta?"),B("39 €","mjesečno","fiksno, održavanje sustava")],
+  cap:"39 € mjesečno fiksno za održavanje sustava.\nProvizija 5 % prvih šest mjeseci, nakon toga 10 %.\n"+CTA2}),
+ R({n:"5 posto",cta:"Pošaljite ponudu već danas",s:[
+  B("25–30 %","5 %","platforma ili Foodpoint"),
+  V(44001,"Prvih šest mjeseci.","pizza_stol"),
+  N("Nakon toga 10 %.")],
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\nProvizija 5 % prvih šest mjeseci, nakon toga 10 %, uz 39 € mjesečno fiksno.\n"+CTA1}),
+ R({n:"Letci i plakati",cta:"Sve na jednom mjestu",s:[
+  N("Trebate letke?"),V(14010,"I to radimo.","burger4")],
+  cap:"Uz Foodpoint dobivate i izradu grafičkih vizuala, letaka i plakata.\nS Foodpointom imate sve na jednom mjestu."}),
+ R({n:"Brend i logo",cta:"Sve na jednom mjestu",s:[
+  N("Dizajniranje brenda i loga."),V(13261,"Jedan brend, svugdje isti.","chef_tanjur")],
+  cap:"Uz Foodpoint dobivate i dizajniranje brenda i loga.\nS Foodpointom imate sve na jednom mjestu."}),
+ R({n:"Jelovnik",cta:"Sve na jednom mjestu",s:[
+  N("Jelovnik je prvo što gost vidi."),V(13258,"Dizajniramo ga mi.","chef_rez")],
+  cap:"Uz Foodpoint dobivate i dizajn jelovnika, sa sidrenim cijenama.\nS Foodpointom imate sve na jednom mjestu."}),
+ R({n:"Auto",cta:"Sve na jednom mjestu",s:[
+  N("Vaš auto stoji u gradu cijeli dan."),V(31136,"Neka radi za vas.","dostavljac_ulica")],
+  cap:"Uz Foodpoint dobivate i oblijepljivanje vašeg auta.\nS Foodpointom imate sve na jednom mjestu."}),
+ R({n:"Baneri",cta:"Sve na jednom mjestu",s:[
+  N("Baneri i vizuali za mreže."),V(4919,"I to je uključeno u ponudu.","barista2")],
+  cap:"Uz Foodpoint dobivate i izradu banera i grafičkih vizuala.\nS Foodpointom imate sve na jednom mjestu."}),
+ R({n:"Još puno opcija",cta:"Otvorite našu web stranicu",s:[
+  N("Ovo je samo dio."),V(42469,"Ostalo je na našem webu.","pizza_tijesto")],
+  cap:"I još puno opcija koje možete pregledati na našem webu.\n"+CTA3}),
+ R({n:"Olakšajte si",cta:"Pošaljite ponudu već danas",s:[
+  V(15875,"Petak navečer.","kuhinja_ekipa"),N("Olakšajte si svoje poslovanje.")],
+  cap:"Foodpoint, najbolji prijatelj svakog ugostitelja.\n"+CTA1}),
+ R({n:"Web shop i dostave",cta:"Pošaljite upit još danas",s:[
+  N("Web shop i kontrola nad dostavama."),N("I sve ostalo što poslovanju treba.")],
+  cap:"Foodpoint, najbolji partner svakog ugostitelja.\nUz Foodpoint ne samo da dobivate web shop i kontrolu nad svojim dostavama, dobivate i sve što jednom poslovanju treba.\n"+CTA2}),
+ R({n:"Jedno sučelje",cta:"Otvorite našu web stranicu",s:[
+  N("Pet bilježnica."),N("Tri aplikacije."),V(3806,"Ili jedno sučelje.","kuhar_lonac")],
+  cap:"Web aplikacija u kojoj imate cijelo svoje poslovanje.\n"+CTA3}),
+ R({n:"Kuhinja",cta:"Pošaljite ponudu već danas",s:[
+  V(39535,"Narudžba stiže napisana.","kuhar_lonac"),E("fp-ekran-kuhinja.png","Nova narudžba · 3 pizze")],
+  cap:"Izrada web shopa znači i ekran za kuhinju: narudžba stiže napisana, s adresom i napomenom.\n"+CTA1}),
+ R({n:"Gost prati narudžbu",cta:"Pošaljite upit još danas",s:[
+  N("Gdje mi je hrana?"),E("fp-ekran-gost.jpg","Vrijeme pripreme · 25 min",true)],
+  cap:"Upravljanje dostavama znači i da gost sam vidi kad mu hrana stiže.\n"+CTA2}),
+ R({n:"Postavljanje",cta:"Pošaljite upit još danas",s:[
+  N("Tko će upisati jelovnik?"),N("Mi."),V(13261,"Postavljanje i obuka su besplatni.","chef_tanjur")],
+  cap:"Postavljanje, unos jelovnika i obuka osoblja su besplatni.\n39 € mjesečno fiksno.\n"+CTA2}),
+ R({n:"Vaše ime",cta:"Otvorite našu web stranicu",s:[
+  V(4385,"Na stranici piše vaše ime.","bistro"),N("Ne naše.")],
+  cap:"Izrada web shopa: vaša stranica, vaše ime, vaš logo.\n"+CTA3}),
+ R({n:"Sidrene cijene",cta:"Pošaljite upit još danas",s:[
+  V(2433,"Od 17. studenoga.","pasta1","Rok"),N("Upisujemo ih umjesto vas.")],
+  cap:"Uz dizajn jelovnika upisujemo i sidrene cijene, i za web i za tisak.\n"+CTA2}),
+ R({n:"Kontrola",cta:"Pošaljite ponudu već danas",s:[
+  N("Jednostavno poslovanje i kontrola."),L(["Troškovi","Namirnice","Marža po jelu"])],
+  cap:"Svi vaši troškovi i namirnice u jednom sučelju za jednostavno poslovanje i kontrolu.\n"+CTA1}),
+ R({n:"Popijmo kavu",cta:"Pošaljite upit još danas",s:[
+  V(222,"Dođemo u lokal.","barista"),N("Pokažemo sve na vašem jelovniku.")],
+  cap:"Najlakše je da vidite uživo, bez obveze.\n"+CTA2}),
+ R({n:"Sve na jednom mjestu",cta:"Sve na jednom mjestu",s:[
+  N("Foodpoint, najbolji partner svakog ugostitelja."),
+  N("S Foodpointom imate sve na jednom mjestu.")],
+  cap:"Foodpoint, najbolji partner svakog ugostitelja.\nS Foodpointom imate sve na jednom mjestu.\n"+CTA2}),
  ];})();
 
 /* ---------- STUDIO 99: 20 objava + 30 reelova ----------
-   Nijedna slika se ne dijeli s Riky'som ni Foodpointom. Bez videa hrane. */
+   Sve je varijanta Rikova dva teksta. Nijedna slika se ne dijeli s Riky'som ni Foodpointom. */
 const FPK_S99=(()=>{
  const N=h=>({v:"naslov",h}), B=(a,b,p)=>({v:"broj",a,b,p}), L=l=>({v:"lista",l}),
   FO=(f,h)=>({v:"foto",f,h});
  const R=o=>({...o,brend:"s99",oz:FP_BRENDOVI.s99.oznake});
+ const CTA1="Link je u opisu ili na našem profilu. Pošaljite upit još danas.";
+ const CTA2="Otvorite link u opisu i pogledajte našu ponudu. Javite se još danas.";
+ const SVE=["Web stranice","Letci","Dizajniranje brendinga","Print na majice","Web aplikacije i sučelja"];
  return [
 
  /* ===== 20 OBJAVA ===== */
- R({t:"izjava",f:"diz_ekrani",h:"Studio 99.",
-  p:"Grafički i web studio za vaše poslovanje i privatne projekte.",
-  cap:"Studio 99, grafički i web studio koji vam može napraviti sve za poslovanje ili privatne projekte.\nOd web stranica, letaka i dizajna brenda do printa na majice i izrade web aplikacija.\nLink je u opisu ili na našem profilu. Pošaljite upit još danas."}),
- R({t:"popis",f:"diz_boje",h:"Što radimo",l:["Web stranice i aplikacije","Logo i vizualni identitet","Letci, plakati, jelovnici","Print na majice","Grafika na autu"],
-  cap:"Sve za vaš brend na jednom mjestu.\nLink je u opisu ili na našem profilu.\nPošaljite upit još danas."}),
- R({t:"izjava",h:"Za sve vaše <em>digitalne probleme.</em>",
-  p:"Otvorite link u opisu i pogledajte ponudu.",
-  cap:"Studio 99 za sve vaše digitalne probleme.\nOtvorite link u opisu i pogledajte našu ponudu.\nJavite se još danas."}),
- R({t:"popis",h:"Prije nego počnemo",l:["Znate cijenu","Znate rok","Revizije su uključene"],
-  cap:"Cijenu i rok dogovorimo prije prvog poteza.\nBez naknadnih stavki na računu.\n099 754 3116"}),
- R({t:"izjava",f:"diz_cmyk",h:"Bez <em>šablona.</em>",
-  p:"Svaki brend kreće od prazne stranice.",
-  cap:"Ne kupujemo gotove predloške i ne mijenjamo im boju.\nSvaki posao radimo za vas, od nule.\nstudio99.com.hr"}),
- R({t:"izjava",f:"s_papir",h:"Jedan brend, <em>svugdje isti.</em>",
-  p:"Logo, jelovnik, auto i web po istim pravilima.",
-  cap:"Najčešći problem: logo na Facebooku, na jelovniku i na autu izgledaju kao tri firme.\nSložimo jedna pravila i držimo ih svugdje.\nPošaljite upit."}),
- R({t:"popis",f:"diz_ekrani",h:"Web koji radi",l:["Prezentacijska stranica","Webshop","Rezervacije","Narudžba hrane"],
-  cap:"Stranica koja samo stoji ne donosi ništa.\nRadimo i web aplikacije i sučelja točno za vaše potrebe.\nLink u opisu."}),
- R({t:"broj",a:"24 h",p:"Toliko čekate naš odgovor.",
-  cap:"Na svaki upit odgovaramo u 24 sata.\nI kad je odgovor da to nije posao za nas.\nJavite se još danas."}),
+ R({t:"popis",f:"diz_ekrani",h:"Sve za tvoje<br><em>poslovanje</em>",l:SVE,
+  cap:"Studio 99, grafički i web studio koji ti može napraviti sve za tvoje poslovanje ili privatne projekte.\nOd web stranica, letaka i dizajniranja brendinga poslovanja do printa na majice i izrade web aplikacija i sučelja točno za vaše potrebe.\n"+CTA1}),
+ R({t:"izjava",h:"Za sve vaše<br><em>digitalne probleme.</em>",
+  p:"Studio 99.",
+  cap:"Studio 99 za sve vaše digitalne probleme.\n"+CTA2}),
  R({t:"izjava",f:"diz_boje",h:"I za <em>privatne projekte.</em>",
-  p:"Majica, pozivnica, poklon, logo za hobi.",
-  cap:"Ne radimo samo za firme.\nMajice, pozivnice, posteri i logotipi za privatne projekte.\nPošaljite upit."}),
- R({t:"popis",f:"diz_cmyk",h:"Za ugostitelje",l:["Jelovnik za tisak","Naljepnice i kutije","Grafika na autu","Web s narudžbom"],
-  cap:"Kompletan paket za restorane i kafiće.\nPripremu za tisak radimo sami, bez prebacivanja između firmi.\n099 754 3116"}),
- R({t:"izjava",h:"Logo nije <em>samo slika.</em>",
-  p:"Mora raditi i na majici i na autu i na ekranu.",
-  cap:"Logo koji dobro izgleda samo na bijeloj pozadini nije gotov logo.\nMi ga testiramo svugdje gdje će stajati.\nstudio99.com.hr"}),
- R({t:"popis",f:"s_papir",h:"Print",l:["Letci i plakati","Majice","Naljepnice","Jelovnici"],
-  cap:"Od pripreme do gotovog proizvoda.\nLink je u opisu ili na našem profilu.\nPošaljite upit još danas."}),
- R({t:"izjava",f:"diz_ekrani",h:"Web aplikacije <em>po mjeri.</em>",
-  p:"Sučelje koje radi točno ono što vam treba.",
-  cap:"Kad gotovo rješenje ne pokriva vaš posao, napravimo svoje.\nWeb aplikacije i sučelja točno za vaše potrebe.\nPošaljite upit."}),
- R({t:"broj",a:"0",p:"Skrivenih stavki na računu.",
-  cap:"Cijena dogovorena na početku je cijena na kraju.\nRevizije su uključene.\n099 754 3116"}),
- R({t:"izjava",f:"diz_boje",h:"Boje se <em>biraju, ne pogađaju.</em>",
-  p:"Ista nijansa na ekranu i u tisku.",
-  cap:"Zato pripremu za tisak radimo sami.\nOno što vidite na ekranu dobijete i na papiru.\nstudio99.com.hr"}),
- R({t:"popis",h:"Kako radimo",l:["Pošaljete upit","Dogovorimo cijenu i rok","Crtamo","Dobijete datoteke"],
-  cap:"Četiri koraka, bez iznenađenja.\nJavite se još danas."}),
- R({t:"izjava",f:"diz_cmyk",h:"Vaše datoteke <em>ostaju vama.</em>",
-  p:"Izvorni fajlovi, ne samo slika.",
-  cap:"Dobijete i izvorne datoteke, da niste vezani za nas.\nTako to treba izgledati.\nstudio99.com.hr"}),
- R({t:"popis",f:"diz_ekrani",h:"Trebate oboje?",l:["Dizajn i web kod nas","Jedan sugovornik","Jedan rok"],
-  cap:"Dizajn i digitalno na jednom mjestu.\nBez prebacivanja posla između dvije firme.\nLink u opisu."}),
+  p:"Ne samo za firme.",
+  cap:"Studio 99, grafički i web studio koji ti može napraviti sve za tvoje poslovanje ili privatne projekte.\n"+CTA1}),
+ R({t:"izjava",f:"diz_ekrani",h:"Web <em>stranice.</em>",
+  p:"Prva stavka s našeg popisa.",
+  cap:"Od web stranica, letaka i dizajniranja brendinga do printa na majice i izrade web aplikacija.\n"+CTA1}),
+ R({t:"izjava",f:"s_papir",h:"Letci.",
+  p:"Dizajn i priprema za tisak.",
+  cap:"Studio 99 radi i letke, od dizajna do pripreme za tisak.\n"+CTA1}),
+ R({t:"izjava",f:"diz_cmyk",h:"Dizajniranje <em>brendinga.</em>",
+  p:"Logo, boje, pravila.",
+  cap:"Dizajniranje brendinga poslovanja — logo, boje i pravila koja se drže svugdje.\n"+CTA1}),
+ R({t:"izjava",f:"s_papir",h:"Print na <em>majice.</em>",
+  p:"Od jedne do tristo komada.",
+  cap:"Studio 99 radi i print na majice.\n"+CTA1}),
+ R({t:"izjava",f:"diz_ekrani",h:"Web aplikacije<br><em>i sučelja.</em>",
+  p:"Točno za vaše potrebe.",
+  cap:"Izrada web aplikacija i sučelja točno za vaše potrebe.\n"+CTA1}),
+ R({t:"popis",f:"diz_boje",h:"Digitalni problemi",l:["Stara stranica","Logo koji ne radi svugdje","Nema vizuala za mreže","Treba vam sučelje po mjeri"],
+  cap:"Studio 99 za sve vaše digitalne probleme.\n"+CTA2}),
  R({t:"izjava",h:"Javite se <em>još danas.</em>",
-  p:"Upit ne košta ništa.",
-  cap:"Recite što trebate, javimo se u 24 sata s cijenom i rokom.\n099 754 3116\nstudio99.com.hr"}),
- R({t:"izjava",f:"s_papir",h:"Zagorska 18.",
-  p:"Studio 99, Zagreb.",
-  cap:"Tu smo.\nPošaljite upit ili svratite.\nstudio99.com.hr · 099 754 3116"}),
+  p:"Link je u opisu ili na našem profilu.",
+  cap:"Studio 99 za sve vaše digitalne probleme.\n"+CTA2}),
+ R({t:"izjava",f:"diz_cmyk",h:"Točno za <em>vaše potrebe.</em>",
+  p:"Ne gotov predložak.",
+  cap:"Izrada web aplikacija i sučelja točno za vaše potrebe.\n"+CTA1}),
+ R({t:"popis",f:"s_papir",h:"Što radimo",l:SVE,
+  cap:"Studio 99, grafički i web studio koji ti može napraviti sve za tvoje poslovanje ili privatne projekte.\n"+CTA1}),
+ R({t:"izjava",f:"diz_ekrani",h:"Grafički <em>i web.</em>",
+  p:"Jedan studio za oboje.",
+  cap:"Studio 99, grafički i web studio.\nOd web stranica do printa na majice.\n"+CTA1}),
+ R({t:"izjava",f:"diz_boje",h:"Pogledajte <em>našu ponudu.</em>",
+  p:"Link je u opisu.",
+  cap:"Studio 99 za sve vaše digitalne probleme.\n"+CTA2}),
+ R({t:"izjava",f:"s_papir",h:"Od ideje <em>do tiska.</em>",
+  p:"Dizajn i priprema kod nas.",
+  cap:"Letci, brendiranje i print — sve kod nas.\n"+CTA1}),
+ R({t:"izjava",f:"diz_cmyk",h:"Vaš <em>brending.</em>",
+  p:"Da izgleda isto svugdje.",
+  cap:"Dizajniranje brendinga poslovanja.\n"+CTA1}),
+ R({t:"izjava",f:"diz_ekrani",h:"Sučelje <em>po mjeri.</em>",
+  p:"Kad gotovo rješenje ne pokriva vaš posao.",
+  cap:"Izrada web aplikacija i sučelja točno za vaše potrebe.\n"+CTA1}),
+ R({t:"izjava",h:"Studio 99.",
+  p:"Grafički i web studio, Zagreb.",
+  cap:"Studio 99, grafički i web studio koji ti može napraviti sve za tvoje poslovanje ili privatne projekte.\n"+CTA1}),
+ R({t:"izjava",f:"diz_boje",h:"Pošaljite <em>upit.</em>",
+  p:"Odgovaramo u 24 sata.",
+  cap:"Recite što trebate.\n"+CTA1}),
+ R({t:"izjava",f:"s_papir",h:"Link je <em>u opisu.</em>",
+  p:"Ili na našem profilu.",
+  cap:"Studio 99 za sve vaše digitalne probleme.\n"+CTA2}),
 
  /* ===== 30 REELOVA ===== */
- R({n:"Studio 99",cta:"Pošaljite upit još danas",s:[
-  N("Studio 99."),L(["Web stranice","Letci i brending","Print na majice","Web aplikacije"])],
-  cap:"Grafički i web studio koji vam može napraviti sve za poslovanje ili privatne projekte.\nLink je u opisu ili na našem profilu.\nPošaljite upit još danas."}),
- R({n:"Digitalni problemi",cta:"Otvorite link u opisu",s:[
+ R({n:"Sve za poslovanje",cta:"Pošaljite upit još danas",s:[
+  N("Studio 99."),L(SVE)],
+  cap:"Studio 99, grafički i web studio koji ti može napraviti sve za tvoje poslovanje ili privatne projekte.\nOd web stranica, letaka i dizajniranja brendinga poslovanja do printa na majice i izrade web aplikacija i sučelja točno za vaše potrebe.\n"+CTA1}),
+ R({n:"Digitalni problemi",cta:"Javite se još danas",s:[
   N("Studio 99 za sve vaše digitalne probleme."),FO("diz_ekrani","Pogledajte našu ponudu.")],
-  cap:"Studio 99 za sve vaše digitalne probleme.\nOtvorite link u opisu i pogledajte ponudu.\nJavite se još danas."}),
- R({n:"Tri firme",cta:"Javite se za ponudu",s:[
-  N("Logo na autu."),N("Logo na jelovniku."),FO("diz_boje","Izgledaju kao tri firme.")],
-  cap:"Jedan brend mora izgledati isto svugdje.\nSložimo pravila i držimo ih.\nstudio99.com.hr"}),
- R({n:"Cijena prije",cta:"Pošaljite upit",s:[
-  N("Koliko će koštati?"),L(["Cijena prije početka","Rok prije početka","Revizije uključene"])],
-  cap:"Cijenu i rok kažemo prije nego išta nacrtamo.\n099 754 3116"}),
- R({n:"Bez šablona",cta:"studio99.com.hr",s:[
-  N("Kupljeni predložak?"),FO("diz_cmyk","Ne kod nas.")],
-  cap:"Svaki brend kreće od prazne stranice.\nstudio99.com.hr"}),
- R({n:"Od skice do tiska",cta:"Sve iz jedne ruke",s:[
-  FO("diz_boje","Skica."),FO("diz_ekrani","Ekran."),FO("s_papir","Tisak.")],
-  cap:"Dizajn i pripremu za tisak radimo sami.\nBez prebacivanja između dvije firme.\nLink u opisu."}),
- R({n:"24 sata",cta:"Odgovor u 24 sata",s:[
-  N("Pošaljete upit danas."),FO("diz_ekrani","Javimo se sutra.")],
-  cap:"Na svaki upit odgovaramo u 24 sata.\n099 754 3116"}),
- R({n:"Web koji radi",cta:"Link u opisu",s:[
-  N("Stranica koja samo stoji ne radi ništa."),L(["Webshop","Rezervacije","Narudžba hrane"])],
-  cap:"Radimo i web aplikacije i sučelja točno za vaše potrebe.\nPošaljite upit još danas."}),
- R({n:"Majice",cta:"Print na majice",s:[
-  N("Treba vam 20 majica za ekipu?"),FO("s_papir","Dizajn i print kod nas.")],
-  cap:"Od ideje do gotove majice.\nLink je u opisu ili na našem profilu."}),
- R({n:"Privatni projekti",cta:"I za vas osobno",s:[
-  N("Ne radimo samo za firme."),L(["Pozivnice","Posteri","Logo za hobi"])],
-  cap:"Privatni projekti su nam jednako zanimljivi.\nJavite se još danas."}),
- R({n:"Logo svugdje",cta:"Pošaljite upit",s:[
-  N("Logo mora raditi svugdje."),L(["Na majici","Na autu","Na ekranu"])],
-  cap:"Logo koji dobro izgleda samo na bijeloj pozadini nije gotov.\nstudio99.com.hr"}),
- R({n:"Boje",cta:"studio99.com.hr",s:[
-  FO("diz_boje","Ista nijansa na ekranu."),FO("diz_cmyk","I u tisku.")],
-  cap:"Zato pripremu radimo sami.\nOno što vidite dobijete i na papiru."}),
- R({n:"Jelovnik",cta:"Za ugostitelje",s:[
-  N("Jelovnik je prvo što gost vidi."),FO("s_papir","Napravimo ga kako treba.")],
-  cap:"Jelovnik, naljepnice, kutije i grafika na autu.\n099 754 3116"}),
- R({n:"Datoteke",cta:"Vaše datoteke ostaju vama",s:[
-  N("Čiji su izvorni fajlovi?"),N("Vaši.")],
-  cap:"Dobijete i izvorne datoteke, da niste vezani za nas.\nstudio99.com.hr"}),
- R({n:"Četiri koraka",cta:"Javite se još danas",s:[
-  N("Kako radimo?"),L(["Upit","Cijena i rok","Crtamo","Dobijete datoteke"])],
-  cap:"Bez iznenađenja i bez skrivenih stavki.\n099 754 3116"}),
- R({n:"Auto",cta:"Grafika na autu",s:[
-  N("Vaš auto stoji u gradu cijeli dan."),FO("diz_cmyk","Neka radi za vas.")],
-  cap:"Oblijepljivanje auta, od dizajna do montaže.\nPošaljite upit."}),
- R({n:"Stari web",cta:"Pošaljite upit",s:[
+  cap:"Studio 99 za sve vaše digitalne probleme.\n"+CTA2}),
+ R({n:"Web stranice",cta:"Link u opisu",s:[
+  N("Web stranice."),FO("diz_ekrani","Prva stavka s popisa.")],
+  cap:"Od web stranica do izrade web aplikacija i sučelja točno za vaše potrebe.\n"+CTA1}),
+ R({n:"Letci",cta:"Pošaljite upit još danas",s:[
+  N("Letci."),FO("s_papir","Dizajn i priprema za tisak.")],
+  cap:"Studio 99 radi i letke.\n"+CTA1}),
+ R({n:"Brending",cta:"Pošaljite upit još danas",s:[
+  N("Dizajniranje brendinga poslovanja."),L(["Logo","Boje","Pravila"])],
+  cap:"Dizajniranje brendinga poslovanja.\n"+CTA1}),
+ R({n:"Majice",cta:"Pošaljite upit još danas",s:[
+  N("Print na majice."),FO("s_papir","Od jedne do tristo komada.")],
+  cap:"Studio 99 radi i print na majice.\n"+CTA1}),
+ R({n:"Web aplikacije",cta:"Link u opisu",s:[
+  N("Web aplikacije i sučelja."),FO("diz_ekrani","Točno za vaše potrebe.")],
+  cap:"Izrada web aplikacija i sučelja točno za vaše potrebe.\n"+CTA1}),
+ R({n:"Privatni projekti",cta:"Pošaljite upit još danas",s:[
+  N("Ne samo za firme."),FO("diz_boje","I za privatne projekte.")],
+  cap:"Sve za tvoje poslovanje ili privatne projekte.\n"+CTA1}),
+ R({n:"Ponuda",cta:"Javite se još danas",s:[
+  N("Otvorite link u opisu."),FO("diz_cmyk","Pogledajte našu ponudu.")],
+  cap:"Studio 99 za sve vaše digitalne probleme.\n"+CTA2}),
+ R({n:"Grafički i web",cta:"Link u opisu",s:[
+  N("Grafički studio."),N("I web studio."),FO("diz_ekrani","Isti tim.")],
+  cap:"Studio 99, grafički i web studio.\n"+CTA1}),
+ R({n:"Po mjeri",cta:"Pošaljite upit još danas",s:[
+  N("Gotovo rješenje ne pokriva vaš posao?"),FO("diz_ekrani","Napravimo sučelje po mjeri.")],
+  cap:"Izrada web aplikacija i sučelja točno za vaše potrebe.\n"+CTA1}),
+ R({n:"Od ideje do tiska",cta:"Pošaljite upit još danas",s:[
+  FO("diz_boje","Ideja."),FO("diz_cmyk","Priprema."),FO("s_papir","Tisak.")],
+  cap:"Letci i brending, od ideje do gotovog proizvoda.\n"+CTA1}),
+ R({n:"Logo",cta:"Pošaljite upit još danas",s:[
+  N("Logo mora raditi svugdje."),L(["Na majici","Na stranici","Na letku"])],
+  cap:"Dizajniranje brendinga poslovanja.\n"+CTA1}),
+ R({n:"Stara stranica",cta:"Link u opisu",s:[
   N("Kad ste zadnji put otvorili svoju stranicu?"),FO("diz_ekrani","Gost je otvara danas.")],
-  cap:"Stara stranica radi protiv vas.\nLink je u opisu.\nstudio99.com.hr"}),
- R({n:"Dizajn i web",cta:"Jedan sugovornik",s:[
+  cap:"Studio 99 za sve vaše digitalne probleme.\n"+CTA2}),
+ R({n:"24 sata",cta:"Javite se još danas",s:[
+  N("Pošaljete upit danas."),FO("diz_boje","Javimo se sutra.")],
+  cap:"Recite što trebate.\n"+CTA1}),
+ R({n:"Studio 99",cta:"Pošaljite upit još danas",s:[
+  N("Studio 99."),N("Grafički i web studio.")],
+  cap:"Sve za tvoje poslovanje ili privatne projekte.\n"+CTA1}),
+ R({n:"Vizuali",cta:"Link u opisu",s:[
+  N("Treba vam vizual za mreže?"),FO("diz_boje","I to radimo.")],
+  cap:"Studio 99 za sve vaše digitalne probleme.\n"+CTA2}),
+ R({n:"Jedan studio",cta:"Pošaljite upit još danas",s:[
   N("Dizajner kaže jedno."),N("Programer drugo."),FO("diz_ekrani","Kod nas isti tim.")],
-  cap:"Dizajn i digitalno na jednom mjestu, jedan rok.\nJavite se još danas."}),
- R({n:"Letci",cta:"Letci i plakati",s:[
-  N("Letak koji nitko ne baci."),FO("s_papir","Počinje od dobrog dizajna.")],
-  cap:"Letci, plakati i jelovnici.\nPriprema za tisak uključena.\n099 754 3116"}),
- R({n:"Upit je besplatan",cta:"Javite se još danas",s:[
-  N("Upit ne košta ništa."),FO("diz_boje","Odgovor stiže u 24 sata.")],
-  cap:"Recite što trebate, javimo se s cijenom i rokom.\nstudio99.com.hr"}),
- R({n:"Brend",cta:"Dizajn brenda",s:[
-  N("Brend nije samo logo."),L(["Boje","Tipografija","Pravila"])],
-  cap:"Brend je set pravila koja se drže svugdje.\nPošaljite upit."}),
- R({n:"Naljepnice",cta:"Naljepnice i kutije",s:[
-  N("Kutija je zadnje što gost vidi."),FO("s_papir","Neka i ona nosi vaše ime.")],
-  cap:"Naljepnice, kutije i ambalaža.\n099 754 3116"}),
- R({n:"Sučelje",cta:"Web aplikacije",s:[
-  N("Gotovo rješenje ne pokriva vaš posao?"),FO("diz_ekrani","Napravimo svoje.")],
-  cap:"Web aplikacije i sučelja točno za vaše potrebe.\nLink u opisu."}),
- R({n:"Revizije",cta:"Revizije su uključene",s:[
-  N("Koliko ispravki ulazi u cijenu?"),N("Dogovorimo na početku.")],
-  cap:"Bez naplate po ispravci.\nstudio99.com.hr"}),
- R({n:"Zagorska 18",cta:"Studio 99, Zagreb",s:[
-  FO("diz_ekrani","Zagorska 18."),N("Svratite ili pišite.")],
-  cap:"Tu smo.\n099 754 3116 · studio99.com.hr"}),
- R({n:"Prvi dojam",cta:"Pošaljite upit",s:[
-  N("Gost odluči u tri sekunde."),FO("diz_boje","Zato dizajn nije ukras.")],
-  cap:"Prvi dojam se ne ponavlja.\nJavite se još danas."}),
- R({n:"Baner",cta:"Baneri i oglasi",s:[
-  N("Oglas koji nitko ne klikne."),FO("diz_cmyk","Obično je problem u vizualu.")],
-  cap:"Baneri i oglasni vizuali za mreže.\nstudio99.com.hr"}),
- R({n:"Pitajte",cta:"Javite se još danas",s:[
+  cap:"Grafički i web studio na jednom mjestu.\n"+CTA1}),
+ R({n:"Print",cta:"Pošaljite upit još danas",s:[
+  N("Print na majice i letke."),FO("s_papir","Sve kod nas.")],
+  cap:"Od letaka do printa na majice.\n"+CTA1}),
+ R({n:"Pogledajte ponudu",cta:"Javite se još danas",s:[
+  N("Link je u opisu."),FO("diz_cmyk","Pogledajte našu ponudu.")],
+  cap:"Studio 99 za sve vaše digitalne probleme.\n"+CTA2}),
+ R({n:"Sučelja",cta:"Link u opisu",s:[
+  N("Sučelja točno za vaše potrebe."),FO("diz_ekrani","Ne gotov predložak.")],
+  cap:"Izrada web aplikacija i sučelja točno za vaše potrebe.\n"+CTA1}),
+ R({n:"Brend svugdje",cta:"Pošaljite upit još danas",s:[
+  N("Brend mora izgledati isto svugdje."),FO("diz_boje","Zato radimo pravila.")],
+  cap:"Dizajniranje brendinga poslovanja.\n"+CTA1}),
+ R({n:"Tri usluge",cta:"Link u opisu",s:[
+  L(["Web stranice","Brending","Print"]),FO("s_papir","I još.")],
+  cap:"Sve za tvoje poslovanje ili privatne projekte.\n"+CTA1}),
+ R({n:"Upit",cta:"Pošaljite upit još danas",s:[
   N("Niste sigurni što vam treba?"),N("Pitajte, pa vidimo zajedno.")],
-  cap:"Nije svaki posao za nas i to vam kažemo odmah.\n099 754 3116"}),
- R({n:"Sve na jednom",cta:"Link u opisu",s:[
-  N("Web, print, brend."),FO("s_papir","Jedna adresa.")],
-  cap:"Sve za vaš brend na jednom mjestu.\nLink je u opisu ili na našem profilu."}),
+  cap:"Recite što trebate.\n"+CTA1}),
+ R({n:"Boje",cta:"Pošaljite upit još danas",s:[
+  FO("diz_boje","Ista nijansa na ekranu."),FO("diz_cmyk","I u tisku.")],
+  cap:"Dizajniranje brendinga, od ekrana do tiska.\n"+CTA1}),
+ R({n:"Profil",cta:"Link na našem profilu",s:[
+  N("Link je u opisu."),N("Ili na našem profilu.")],
+  cap:"Studio 99 za sve vaše digitalne probleme.\n"+CTA2}),
+ R({n:"Webshop",cta:"Link u opisu",s:[
+  N("Web stranica koja prodaje."),FO("diz_ekrani","Ne samo stoji.")],
+  cap:"Od web stranica do web aplikacija točno za vaše potrebe.\n"+CTA1}),
+ R({n:"Sve odjednom",cta:"Pošaljite upit još danas",s:[
+  N("Treba vam logo, letak i stranica?"),FO("diz_cmyk","Sve kod nas.")],
+  cap:"Sve za tvoje poslovanje ili privatne projekte.\n"+CTA1}),
+ R({n:"Danas",cta:"Javite se još danas",s:[
+  N("Javite se još danas."),FO("diz_ekrani","Studio 99.")],
+  cap:"Studio 99 za sve vaše digitalne probleme.\n"+CTA2}),
  R({n:"Pošaljite upit",cta:"Pošaljite upit još danas",s:[
   N("Studio 99."),N("Pošaljite upit još danas.")],
-  cap:"Grafički i web studio za poslovanje i privatne projekte.\nLink u opisu.\nstudio99.com.hr"}),
+  cap:"Grafički i web studio za poslovanje i privatne projekte.\n"+CTA1}),
  ];})();
 
 /* ---------- upis kampanja ---------- */
